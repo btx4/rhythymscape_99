@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://g1prutamg2s3"]
+
+[ext_resource type="Texture2D" uid="uid://sj6o4grhu1hl" path="res://assets/Magic.png" id="1_xmbs2"]
+
+[sub_resource type="Curve" id="Curve_d3ylo"]
+_data = [Vector2(0.210667, 1), 0.0, 0.0, 0, 0, Vector2(0.312, 0), 0.0, 0.0, 0, 0, Vector2(0.536, 1), 0.0, 0.0, 0, 0, Vector2(0.749333, 0), 0.0, 0.0, 0, 0, Vector2(0.864, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="CurveTexture" id="CurveTexture_n214v"]
+curve = SubResource("Curve_d3ylo")
+
+[sub_resource type="Curve" id="Curve_73alw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.109333, 0.524717), 0.0, 0.0, 0, 0, Vector2(0.208, 1), 0.0, 0.0, 0, 0, Vector2(0.354667, 0.49794), 0.0, 0.0, 0, 0, Vector2(0.416, 1), 0.0, 0.0, 0, 0, Vector2(0.536, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.022657), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="CurveTexture" id="CurveTexture_g0vxu"]
+curve = SubResource("Curve_73alw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_036o8"]
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_max = 54.7
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -3.89
+linear_accel_max = 42.34
+scale_curve = SubResource("CurveTexture_g0vxu")
+alpha_curve = SubResource("CurveTexture_n214v")
+
+[node name="Magic" type="GPUParticles2D" groups=["magic_particles"]]
+texture_filter = 1
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_036o8")
+texture = ExtResource("1_xmbs2")

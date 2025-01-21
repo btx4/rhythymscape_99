@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://dm7heh8dwxsv3"]
+
+[ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="1_e8oe4"]
+[ext_resource type="AudioStream" uid="uid://dcw21rksjky5j" path="res://music/Michael Jackson - Beat It [8 Bit - Chiptune Remix]  8 Bit Planet.mp3" id="1_pjm73"]
+[ext_resource type="Script" path="res://scripts/magic_maker.gd" id="4_3x0jw"]
+[ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="5_307aj"]
+[ext_resource type="Script" path="res://scripts/attack_handler.gd" id="6_ptbcn"]
+[ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="6_vjscy"]
+[ext_resource type="PackedScene" uid="uid://bnyphepu6nqg2" path="res://scenes/challenges/triangle_challenge.tscn" id="7_kwsg1"]
+[ext_resource type="PackedScene" uid="uid://bxg2urdwu4h2r" path="res://scenes/challenges/sine_challenge.tscn" id="8_vvso2"]
+[ext_resource type="PackedScene" uid="uid://b0656ohdbf7yo" path="res://scenes/challenges/circle_challenge.tscn" id="9_sysko"]
+[ext_resource type="PackedScene" uid="uid://cecs1gtpvc05p" path="res://scenes/osu_circle.tscn" id="10_ma4be"]
+[ext_resource type="Script" path="res://scenes/combo.gd" id="11_oq3yl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uk40m"]
+
+[node name="Level One - Beat It" type="Node2D"]
+
+[node name="Divider" type="Sprite2D" parent="."]
+position = Vector2(319.958, 184.394)
+scale = Vector2(2.08411, 432.013)
+texture = SubResource("CanvasTexture_uk40m")
+
+[node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_pjm73")
+script = ExtResource("1_e8oe4")
+
+[node name="Magic_Maker" type="Node2D" parent="."]
+script = ExtResource("4_3x0jw")
+
+[node name="Magic" parent="Magic_Maker" instance=ExtResource("5_307aj")]
+lifetime = 0.5
+
+[node name="cursor_sprite" type="Sprite2D" parent="Magic_Maker"]
+texture_filter = 1
+texture = ExtResource("6_vjscy")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(240, 270)
+
+[node name="Attack_Handler" type="Node2D" parent="."]
+position = Vector2(80, 90)
+script = ExtResource("6_ptbcn")
+triangle_scene = ExtResource("7_kwsg1")
+sine_scene = ExtResource("8_vvso2")
+circle_scene = ExtResource("9_sysko")
+osu_circle_scene = ExtResource("10_ma4be")
+
+[node name="Combo" type="RichTextLabel" parent="Attack_Handler"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -35.5
+offset_right = 34.0
+offset_bottom = 35.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[center]Example[/center]"
+script = ExtResource("11_oq3yl")
+
+[node name="Circle" parent="." instance=ExtResource("10_ma4be")]
+target_beat = 10
+
+[connection signal="circle_not_popped" from="Circle" to="Attack_Handler" method="_on_circle_circle_not_popped"]
+[connection signal="circle_popped" from="Circle" to="Attack_Handler" method="_on_circle_circle_popped"]

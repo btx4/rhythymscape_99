@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0656ohdbf7yo"]
+
+[ext_resource type="Script" path="res://scenes/challenges/circle_challenge_script.gd" id="1_e2pnn"]
+[ext_resource type="PackedScene" uid="uid://cecs1gtpvc05p" path="res://scenes/osu_circle.tscn" id="1_fefk0"]
+
+[node name="circle_challenge" type="Node2D"]
+script = ExtResource("1_e2pnn")
+
+[node name="Area2D" parent="." instance=ExtResource("1_fefk0")]
+position = Vector2(160, 60)
+
+[node name="Area2D2" parent="." instance=ExtResource("1_fefk0")]
+position = Vector2(244.853, 95.147)
+
+[node name="Area2D3" parent="." instance=ExtResource("1_fefk0")]
+position = Vector2(280, 180)
+
+[node name="Area2D4" parent="." instance=ExtResource("1_fefk0")]
+position = Vector2(244.853, 264.853)
+
+[node name="Area2D5" parent="." instance=ExtResource("1_fefk0")]
+position = Vector2(160, 300)
+
+[node name="Area2D6" parent="." instance=ExtResource("1_fefk0")]
+position = Vector2(75.147, 264.853)
+
+[node name="Area2D7" parent="." instance=ExtResource("1_fefk0")]
+position = Vector2(40, 180)
+
+[node name="Area2D8" parent="." instance=ExtResource("1_fefk0")]
+position = Vector2(75.147, 95.147)
