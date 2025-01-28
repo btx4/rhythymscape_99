@@ -6,18 +6,24 @@ var angle: float = randf()  # Current angle in radians
 var hit = false
 
 var velocity: Vector2
-var speed: float = 200.0
+var speed: float = 50.0
 var fade_speed: float = 1.0  # Speed at which the sprite fades out
+var direction = Vector2(0,0)
 
 func _ready() -> void:
+	$Despawn_timer.start()
 	var random_angle = randf_range(0, 2 * PI)
-	
 	velocity = Vector2(cos(random_angle), sin(random_angle)) * speed
 
 func _process(delta: float) -> void:
 	# Increment the angle based on speed and delta
 	if hit == false:
-		position.y += (sin(Time.get_unix_time_from_system())/10)
+		if speed > 0:
+			position = position + direction * speed * delta
+			speed = speed - 1
+		if speed < 0:
+			position = position + direction * speed * delta
+			speed = speed + 1
 		angle += circular_speed * delta
 		rotation = angle + PI / 2
 	else:
@@ -38,4 +44,9 @@ func _on_mouse_entered() -> void:
 	if collision_shape:
 		collision_shape.disabled = true
 	hit = true
+	pass # Replace with function body.
+
+
+func _on_despawn_timer_timeout() -> void:
+	queue_free()
 	pass # Replace with function body.

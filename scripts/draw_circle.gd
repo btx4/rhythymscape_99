@@ -11,10 +11,11 @@ var tween_duration
 var second_circle
 
 func _process(delta: float) -> void:
-	# Reduce the radius linearly over time
+	# Reduce the radius linearly over times
 	if shrinking:
 		var tween = get_tree().create_tween()
 		tween.tween_property(self, "radius", 16, tween_duration)
+		tween.tween_property(self, "COLOR:a", 1.0, tween_duration)  # Tween alpha to fully opaque
 		tween.play()
 		tween.set_ease(3)
 		tween.set_trans(0)

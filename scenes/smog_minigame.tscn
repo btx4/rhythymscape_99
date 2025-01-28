@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c4o8lct88t0m"]
 
-[ext_resource type="Script" path="res://smog_spawner.gd" id="1_cd7bg"]
-[ext_resource type="PackedScene" uid="uid://mkcoxqia2fyf" path="res://smog_piece.tscn" id="2_gbfkn"]
-[ext_resource type="Script" path="res://label.gd" id="3_d30q1"]
+[ext_resource type="Script" path="res://scripts/smog_spawner.gd" id="1_cd7bg"]
+[ext_resource type="PackedScene" uid="uid://mkcoxqia2fyf" path="res://scenes/smog_piece.tscn" id="2_gbfkn"]
+[ext_resource type="Script" path="res://scripts/label.gd" id="3_d30q1"]
 
 [node name="Smog_Minigame" type="Node2D"]
 script = ExtResource("1_cd7bg")

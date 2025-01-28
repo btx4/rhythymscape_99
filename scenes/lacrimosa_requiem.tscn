@@ -1,0 +1,154 @@
+[gd_scene load_steps=22 format=3 uid="uid://vmlkwng6geex"]
+
+[ext_resource type="Script" path="res://scripts/level_script.gd" id="1_3hyc0"]
+[ext_resource type="AudioStream" uid="uid://u3fkfh74rbgy" path="res://music/8_bit_lacrimosa_requiem-credit_8bitindustry_YT.mp3" id="1_nf6y7"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="2_ksi66"]
+[ext_resource type="Script" path="res://scripts/magic_maker.gd" id="3_hi8kt"]
+[ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="4_k5mh0"]
+[ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="5_xc1em"]
+[ext_resource type="Script" path="res://scripts/attack_handler.gd" id="6_wsi4t"]
+[ext_resource type="PackedScene" uid="uid://bnyphepu6nqg2" path="res://scenes/challenges/triangle_challenge.tscn" id="7_ov2e5"]
+[ext_resource type="PackedScene" uid="uid://bxg2urdwu4h2r" path="res://scenes/challenges/sine_challenge.tscn" id="8_3nvu1"]
+[ext_resource type="PackedScene" uid="uid://b0656ohdbf7yo" path="res://scenes/challenges/circle_challenge.tscn" id="9_gpi5i"]
+[ext_resource type="PackedScene" uid="uid://cecs1gtpvc05p" path="res://scenes/osu_circle.tscn" id="10_gbnnx"]
+[ext_resource type="PackedScene" uid="uid://dpwjegdem0px3" path="res://scenes/paint_can_scene.tscn" id="11_6rfim"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="12_1bov4"]
+[ext_resource type="Script" path="res://scripts/combo.gd" id="13_j14e6"]
+[ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="14_apsvi"]
+[ext_resource type="PackedScene" uid="uid://c3gw4gtlp8qb0" path="res://scenes/stomp_buttons.tscn" id="15_rmqdg"]
+[ext_resource type="PackedScene" uid="uid://klvmo4jisord" path="res://scenes/spray_paint_minigame.tscn" id="16_1ebyj"]
+[ext_resource type="PackedScene" uid="uid://bu2kk1dlh78d2" path="res://scenes/boom_box_challenge.tscn" id="17_rkktm"]
+[ext_resource type="Script" path="res://scripts/pulsing_circle.gd" id="19_1kcy5"]
+[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="20_nh45t"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7hjyr"]
+
+[node name="Lacrimosa_requiem" type="Node2D"]
+script = ExtResource("1_3hyc0")
+
+[node name="Divider" type="Sprite2D" parent="."]
+position = Vector2(319.958, 184.394)
+scale = Vector2(2.08411, 432.013)
+texture = SubResource("CanvasTexture_7hjyr")
+
+[node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_nf6y7")
+script = ExtResource("2_ksi66")
+bpm = 120
+measures = 3
+
+[node name="Magic_Maker" type="Node2D" parent="."]
+script = ExtResource("3_hi8kt")
+
+[node name="Magic" parent="Magic_Maker" instance=ExtResource("4_k5mh0")]
+lifetime = 0.5
+
+[node name="cursor_sprite" type="Sprite2D" parent="Magic_Maker"]
+texture_filter = 1
+texture = ExtResource("5_xc1em")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(240, 270)
+
+[node name="Attack_Handler" type="Node2D" parent="."]
+position = Vector2(80, 90)
+script = ExtResource("6_wsi4t")
+triangle_scene = ExtResource("7_ov2e5")
+sine_scene = ExtResource("8_3nvu1")
+circle_scene = ExtResource("9_gpi5i")
+osu_circle_scene = ExtResource("10_gbnnx")
+smog_scene = ExtResource("11_6rfim")
+beats_per_measure = 6
+offset = 0
+
+[node name="Score" type="RichTextLabel" parent="Attack_Handler"]
+visible = false
+offset_left = 69.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 260.0
+text = "2000"
+script = ExtResource("12_1bov4")
+
+[node name="Combo" type="RichTextLabel" parent="Attack_Handler"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = -49.0
+offset_right = -119.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(80, 30)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[center]1[/center]"
+script = ExtResource("13_j14e6")
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Attack_Handler"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 340.0
+offset_top = -40.0
+offset_right = 460.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center]3[/center]"
+script = ExtResource("14_apsvi")
+metadata/_edit_use_anchors_ = true
+
+[node name="stomp_buttons" parent="." instance=ExtResource("15_rmqdg")]
+position = Vector2(0, 38)
+
+[node name="Spray_paint_minigame" parent="." instance=ExtResource("16_1ebyj")]
+
+[node name="boom_box_challenge" parent="." instance=ExtResource("17_rkktm")]
+
+[node name="Pulsing_circle" type="Node2D" parent="."]
+script = ExtResource("19_1kcy5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Pulsing_circle"]
+offset_left = 511.0
+offset_top = 115.0
+offset_right = 618.0
+offset_bottom = 155.0
+text = "<---  STOMP!
+"
+
+[node name="Stomp_spot" type="Sprite2D" parent="Pulsing_circle"]
+texture_filter = 1
+position = Vector2(480, 126)
+texture = ExtResource("20_nh45t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Pulsing_circle"]
+texture_filter = 1
+position = Vector2(480, 88)
+texture = ExtResource("20_nh45t")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Pulsing_circle"]
+texture_filter = 1
+position = Vector2(480, 50)
+texture = ExtResource("20_nh45t")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Pulsing_circle"]
+texture_filter = 1
+position = Vector2(480, 12)
+texture = ExtResource("20_nh45t")
+
+[node name="Trigger_Line" type="Sprite2D" parent="Pulsing_circle"]

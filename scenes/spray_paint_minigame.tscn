@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://klvmo4jisord"]
+
+[ext_resource type="Script" path="res://scripts/spray_paint_minigame.gd" id="1_ngr1s"]
+[ext_resource type="PackedScene" uid="uid://dpwjegdem0px3" path="res://scenes/paint_can_scene.tscn" id="2_mf8nq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8lvd"]
+size = Vector2(20, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mo3ly"]
+size = Vector2(68, 20)
+
+[node name="Spray_paint_minigame" type="Node2D" node_paths=PackedStringArray("spawn_areas")]
+script = ExtResource("1_ngr1s")
+spray_can_scene = ExtResource("2_mf8nq")
+spawn_areas = [NodePath("Spawn_area"), NodePath("Spawn_area2"), NodePath("Spawn_area3"), NodePath("Spawn_area4")]
+
+[node name="Spawn_area" type="Area2D" parent="." groups=["paint_can_spawn"]]
+position = Vector2(-20, 180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn_area"]
+shape = SubResource("RectangleShape2D_n8lvd")
+
+[node name="Spawn_area2" type="Area2D" parent="." groups=["paint_can_spawn"]]
+position = Vector2(340, 180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn_area2"]
+shape = SubResource("RectangleShape2D_n8lvd")
+
+[node name="Spawn_area3" type="Area2D" parent="." groups=["paint_can_spawn"]]
+position = Vector2(160, -20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn_area3"]
+shape = SubResource("RectangleShape2D_mo3ly")
+
+[node name="Spawn_area4" type="Area2D" parent="." groups=["paint_can_spawn"]]
+position = Vector2(160, 380)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn_area4"]
+shape = SubResource("RectangleShape2D_mo3ly")

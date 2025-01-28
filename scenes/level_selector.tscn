@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bkdoonb2ixcom"]
+
+[ext_resource type="Script" path="res://scripts/level_selector.gd" id="1_7knvd"]
+[ext_resource type="PackedScene" uid="uid://dm7heh8dwxsv3" path="res://scenes/beat_it.tscn" id="2_n0144"]
+[ext_resource type="PackedScene" uid="uid://vmlkwng6geex" path="res://scenes/lacrimosa_requiem.tscn" id="3_qxbrq"]
+[ext_resource type="PackedScene" uid="uid://oxh5ihuddeen" path="res://scenes/take_five.tscn" id="4_pvpq6"]
+
+[node name="Level_Selector" type="Node2D"]
+script = ExtResource("1_7knvd")
+beat_it = ExtResource("2_n0144")
+lacrimosa_requiem = ExtResource("3_qxbrq")
+take_five = ExtResource("4_pvpq6")
+
+[node name="Beat It" type="Button" parent="."]
+offset_left = 230.0
+offset_top = 116.0
+offset_right = 410.0
+offset_bottom = 153.0
+text = "Beat It"
+
+[node name="Lacrimosa Requiem" type="Button" parent="."]
+offset_left = 230.0
+offset_top = 176.0
+offset_right = 410.0
+offset_bottom = 213.0
+text = "Lacrimosa Requiem
+"
+
+[node name="Take 5" type="Button" parent="."]
+offset_left = 230.0
+offset_top = 236.0
+offset_right = 410.0
+offset_bottom = 273.0
+text = "Take 5"
+
+[node name="Lean Beef Patty" type="Button" parent="."]
+offset_left = 230.0
+offset_top = 296.0
+offset_right = 410.0
+offset_bottom = 333.0
+text = "Lean Beef Patty"
+
+[connection signal="pressed" from="Beat It" to="." method="_on_beat_it_pressed"]
+[connection signal="pressed" from="Lacrimosa Requiem" to="." method="_on_lacrimosa_requiem_pressed"]
+[connection signal="pressed" from="Take 5" to="." method="_on_take_5_pressed"]
+[connection signal="pressed" from="Lean Beef Patty" to="." method="_on_beat_it_button_4_pressed"]

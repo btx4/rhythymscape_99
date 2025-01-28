@@ -14,7 +14,7 @@ func start_fade_out():
 	fade_timer = fade_duration
 	position.x =  randi_range(-80,80)
 	position.y =  randi_range(0,126)
-	rotation = randf_range(0, PI)
+	rotation = deg_to_rad(randi_range(-60, 60))
 	set_process(true)
 
 # Process function to handle the fade

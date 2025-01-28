@@ -6,6 +6,9 @@ extends Node2D
 @export var osu_circle_scene : PackedScene
 @export var smog_scene : PackedScene
 
+@export var attack_start_beat = 20
+@export var beats_per_measure = 4
+@export var offset = 3
 var total_score = 0
 var random_scene
 var new_scene
@@ -25,40 +28,23 @@ func _process(delta: float) -> void:
 
 
 func beat_listener(beat: int) ->void:
-	if beat == 332:
-		new_scene = smog_scene.instantiate()
-		get_parent().add_child(new_scene)
-	if beat % 4 == 3  and beat > 20:
-		if beat < 332 or beat > 340:
-			new_scene = osu_circle_scene.instantiate()
-			new_scene.position.x = randi() % 160
-			new_scene.position.y = randi() % 180
-			new_scene.target_beat = beat + 5
-			
-			new_scene.circle_popped.connect(self._on_circle_circle_popped)
-			new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)
-			
-			add_child(new_scene)
-		
-		
-	if beat % 32 == 0 and 1 == 2:
-		random_scene = randi()%3
-		match random_scene:
+	if beat % (beats_per_measure * 4) == 0:
+		match randi()%2:
 			0:
-				new_scene = triangle_scene.instantiate()
-				new_scene.beat_start = beat
-				add_child(new_scene)
-				pass
+				get_parent().get_node("Spray_paint_minigame").spawn_spray_can()
 			1:
-				new_scene = circle_scene.instantiate()
-				new_scene.beat_start = beat
-				add_child(new_scene)
-				pass
-			2:
-				new_scene = sine_scene.instantiate()
-				new_scene.beat_start = beat
-				add_child(new_scene)
-				pass
+				get_parent().get_node("boom_box_challenge")._spawn_boom_box()
+	if beat % beats_per_measure == offset  and beat > attack_start_beat:
+		new_scene = osu_circle_scene.instantiate()
+		new_scene.position.x = randi() % 160
+		new_scene.position.y = randi() % 180
+		new_scene.target_beat = beat + 5
+		
+		get_parent().get_node("Pulsing_circle").targetBeat.append(beat + 5)
+		new_scene.circle_popped.connect(self._on_circle_circle_popped)
+		new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)
+		print("adding_child")
+		add_child(new_scene)
 	pass
 var COMBO = 1
 

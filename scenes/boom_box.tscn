@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpq8v08slnoid"]
+
+[ext_resource type="Shader" path="res://radar_ping.gdshader" id="1_ogaqu"]
+[ext_resource type="Script" path="res://scripts/boom_box.gd" id="2_fx8mo"]
+[ext_resource type="Texture2D" uid="uid://b5drjksq5bls0" path="res://assets/texture_tester.jpg" id="2_rla3a"]
+[ext_resource type="Script" path="res://scripts/sprite_2d.gd" id="3_netyc"]
+[ext_resource type="Texture2D" uid="uid://ypsqyha0dcxm" path="res://assets/boom_box.png" id="4_5uwos"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7tw5c"]
+shader = ExtResource("1_ogaqu")
+shader_parameter/circle_width = 0.15
+shader_parameter/wait_time = 0.4
+shader_parameter/speed = 1.3
+shader_parameter/alpha_boost = 2.0
+shader_parameter/active = true
+
+[node name="Boom Box" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(332, 178)
+rotation = -0.261799
+texture = ExtResource("4_5uwos")
+script = ExtResource("2_fx8mo")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="ShaderSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7tw5c")
+position = Vector2(0, 5)
+scale = Vector2(0.351458, 0.351458)
+texture = ExtResource("2_rla3a")
+script = ExtResource("3_netyc")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

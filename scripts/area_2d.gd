@@ -50,15 +50,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if poppable == true:
 		$Sprite2D.modulate.a = 255
+	else: $Sprite2D.modulate.a = 0.2
 	
 	if current_beat == target_beat - 4:
 		$Node2D.shrinking = true
 		$Node2D.COLOR = myColor
-		$Node2D.tween_duration = sec_per_beat * 2
+		$Node2D.COLOR.a = 0.5
+		$Node2D.tween_duration = sec_per_beat * 3
 		
 	if current_beat == target_beat - 1:
 		poppable = true
-		$Sprite2D.modulate.a = 255
 		
 	if current_beat == target_beat + 2:
 		if popped == false:

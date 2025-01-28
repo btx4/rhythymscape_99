@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://de5pla708hx17"]
+
+[ext_resource type="Shader" path="res://radar_ping.gdshader" id="1_o0tq8"]
+[ext_resource type="Texture2D" uid="uid://b5drjksq5bls0" path="res://assets/texture_tester.jpg" id="2_1swss"]
+[ext_resource type="Script" path="res://scripts/sprite_2d.gd" id="3_ppr3d"]
+[ext_resource type="Texture2D" uid="uid://ypsqyha0dcxm" path="res://assets/boom_box.png" id="4_07ro0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w83cw"]
+shader = ExtResource("1_o0tq8")
+shader_parameter/circle_width = 0.15
+shader_parameter/wait_time = 0.0
+shader_parameter/speed = 1.6
+shader_parameter/alpha_boost = 1.5
+shader_parameter/active = true
+
+[node name="New Shader Test" type="Node2D"]
+position = Vector2(322, 198)
+
+[node name="ShaderSprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_w83cw")
+position = Vector2(0, 5)
+scale = Vector2(0.357942, 0.357942)
+texture = ExtResource("2_1swss")
+script = ExtResource("3_ppr3d")
+
+[node name="Boom Box" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("4_07ro0")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfghnydasbi8w"]
+
+[ext_resource type="PackedScene" uid="uid://cecs1gtpvc05p" path="res://scenes/osu_circle.tscn" id="1_vj00p"]
+
+[node name="Double_Osu_Scene" type="Node2D"]
+
+[node name="Circle" parent="." instance=ExtResource("1_vj00p")]
+
+[node name="Circle2" parent="." instance=ExtResource("1_vj00p")]
+position = Vector2(298, 198)

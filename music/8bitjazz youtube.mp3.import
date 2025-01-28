@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxh6s86sabucw"
+path="res://.godot/imported/8bitjazz youtube.mp3-580a071cd4958f72fe1f9ae25e452c13.mp3str"
+
+[deps]
+
+source_file="res://music/8bitjazz youtube.mp3"
+dest_files=["res://.godot/imported/8bitjazz youtube.mp3-580a071cd4958f72fe1f9ae25e452c13.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

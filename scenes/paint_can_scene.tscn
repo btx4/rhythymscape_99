@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpwjegdem0px3"]
+
+[ext_resource type="Texture2D" uid="uid://donvgox5413le" path="res://assets/PAINTCAN.png" id="1_u4fys"]
+[ext_resource type="Script" path="res://scripts/paint_can.gd" id="2_sjd4x"]
+[ext_resource type="PackedScene" uid="uid://mkcoxqia2fyf" path="res://scenes/smog_piece.tscn" id="3_e7k7o"]
+
+[node name="Paint_can" type="Sprite2D"]
+texture_filter = 1
+position = Vector2(327, 397)
+texture = ExtResource("1_u4fys")
+script = ExtResource("2_sjd4x")
+instance_scene = ExtResource("3_e7k7o")
+
+[node name="Despawn_timer" type="Timer" parent="."]
+wait_time = 1.6
+
+[connection signal="timeout" from="Despawn_timer" to="." method="_on_despawn_timer_timeout"]
