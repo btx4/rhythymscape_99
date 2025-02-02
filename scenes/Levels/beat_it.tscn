@@ -1,0 +1,54 @@
+[gd_scene load_steps=13 format=3 uid="uid://dm7heh8dwxsv3"]
+
+[ext_resource type="Script" path="res://scripts/level_script.gd" id="1_tahxb"]
+[ext_resource type="AudioStream" uid="uid://dcw21rksjky5j" path="res://music/Michael Jackson - Beat It [8 Bit - Chiptune Remix]  8 Bit Planet.mp3" id="2_trtf2"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="3_5ltpv"]
+[ext_resource type="Script" path="res://scripts/magic_maker.gd" id="4_fwk2v"]
+[ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="5_bukp5"]
+[ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="6_o4lf3"]
+[ext_resource type="PackedScene" uid="uid://c3gw4gtlp8qb0" path="res://scenes/stomp_buttons.tscn" id="7_yterc"]
+[ext_resource type="PackedScene" uid="uid://bile34x56qdpj" path="res://attack_handler.tscn" id="8_y2udi"]
+[ext_resource type="PackedScene" uid="uid://klvmo4jisord" path="res://scenes/spray_paint_minigame.tscn" id="9_fwx01"]
+[ext_resource type="PackedScene" uid="uid://bu2kk1dlh78d2" path="res://scenes/boom_box_challenge.tscn" id="10_dbg0g"]
+[ext_resource type="PackedScene" uid="uid://n5et3iter4ro" path="res://pulsing_circle.tscn" id="11_72kxt"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uk40m"]
+
+[node name="Level One - Beat It" type="Node2D"]
+script = ExtResource("1_tahxb")
+
+[node name="Divider" type="Sprite2D" parent="."]
+position = Vector2(319.958, 184.394)
+scale = Vector2(2.08411, 432.013)
+texture = SubResource("CanvasTexture_uk40m")
+
+[node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_trtf2")
+script = ExtResource("3_5ltpv")
+
+[node name="Magic_Maker" type="Node2D" parent="."]
+script = ExtResource("4_fwk2v")
+
+[node name="Magic" parent="Magic_Maker" instance=ExtResource("5_bukp5")]
+lifetime = 0.5
+
+[node name="cursor_sprite" type="Sprite2D" parent="Magic_Maker"]
+texture_filter = 1
+texture = ExtResource("6_o4lf3")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(240, 270)
+
+[node name="stomp_buttons" parent="." instance=ExtResource("7_yterc")]
+position = Vector2(0, 40)
+
+[node name="Attack_Handler" parent="." instance=ExtResource("8_y2udi")]
+beats_per_measure = 4
+offset = 2
+
+[node name="Spray_paint_minigame" parent="." instance=ExtResource("9_fwx01")]
+
+[node name="boom_box_challenge" parent="." instance=ExtResource("10_dbg0g")]
+
+[node name="Pulsing_circle" parent="." instance=ExtResource("11_72kxt")]
+position = Vector2(1, 36)

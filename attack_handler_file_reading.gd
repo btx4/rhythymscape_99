@@ -10,6 +10,10 @@ extends Node2D
 @export var beats_per_measure = 4
 @export var offset = 3
 
+var file_path = "res://scenes/Levels/level_layout_files/Beat it 1.txt" 
+var file = FileAccess.open(file_path, FileAccess.READ)
+
+var data_array = []
 
 var YELLOW = Color(1,1,0)
 var RED = Color(1,0,0)
@@ -21,11 +25,30 @@ var random_scene
 var new_scene
 var pop_streak = 0
 
+
+
 var last_location
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	EventScript.beat.connect(beat_listener)
+	
+	if file:
+		while not file.eof_reached():
+			var line = file.get_line().strip_edges()  # Remove any leading/trailing spaces
+
+			if line.is_empty():
+				continue  # Skip empty lines
+
+			line = line.trim_suffix(" :")  # Remove the trailing " :"
+			var parts = line.split(",")
+
+			if parts.size() == 4:  # Ensure correct format
+				var tuple_data = [int(parts[0]), int(parts[1]), int(parts[2])]  # Use an array instead of a tuple
+				data_array.append(tuple_data)
+	else:
+		print("Failed to open file.")
+	print(data_array)  # Debug: Print the array
 	pass # Replace with function body.
 
 
@@ -35,13 +58,8 @@ func _process(delta: float) -> void:
 
 
 func beat_listener(beat: int) ->void:
-	if beat % (beats_per_measure * 4) == 0:
-		match randi()%2:
-			0:
-				get_parent().get_node("Spray_paint_minigame").spawn_spray_can()
-			1:
-				get_parent().get_node("boom_box_challenge")._spawn_boom_box()
-	if beat % beats_per_measure == offset  and beat > attack_start_beat:
+	#print(data_array[beat])
+	if (data_array[beat][1] == 1):
 		new_scene = osu_circle_scene.instantiate()
 		new_scene.position.x = randi() % 160
 		new_scene.position.y = randi() % 180
@@ -53,9 +71,19 @@ func beat_listener(beat: int) ->void:
 		get_parent().get_node("Pulsing_circle").targetBeat.append([beat + 9,beat_color])
 		new_scene.circle_popped.connect(self._on_circle_circle_popped)
 		new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)
-		#print("adding_child")
 		add_child(new_scene)
-	pass
+		pass
+	
+	if (data_array[beat][2] == 1):
+		
+		match randi()%2:
+			0:
+				get_parent().get_node("Spray_paint_minigame").spawn_spray_can()
+			1:
+				get_parent().get_node("boom_box_challenge")._spawn_boom_box()
+	"""
+		
+	"""
 var COMBO = 1
 
 func _on_circle_circle_popped() -> void:
@@ -68,7 +96,7 @@ func _on_circle_circle_popped() -> void:
 	COMBO = ceil(pop_streak / 10)
 	
 	total_score = total_score + (pop_streak * COMBO)
-	print(total_score)
+	#print(total_score)
 	pass # Replace with function body.
 
 

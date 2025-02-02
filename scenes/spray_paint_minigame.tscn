@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://klvmo4jisord"]
+[gd_scene load_steps=6 format=3 uid="uid://klvmo4jisord"]
 
 [ext_resource type="Script" path="res://scripts/spray_paint_minigame.gd" id="1_ngr1s"]
 [ext_resource type="PackedScene" uid="uid://dpwjegdem0px3" path="res://scenes/paint_can_scene.tscn" id="2_mf8nq"]
@@ -8,6 +8,9 @@ size = Vector2(20, 66)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mo3ly"]
 size = Vector2(68, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aa4ly"]
+size = Vector2(340, 418)
 
 [node name="Spray_paint_minigame" type="Node2D" node_paths=PackedStringArray("spawn_areas")]
 script = ExtResource("1_ngr1s")
@@ -37,3 +40,9 @@ position = Vector2(160, 380)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Spawn_area4"]
 shape = SubResource("RectangleShape2D_mo3ly")
+
+[node name="destroy_area" type="Area2D" parent="." groups=["destroy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="destroy_area"]
+position = Vector2(169, 180)
+shape = SubResource("RectangleShape2D_aa4ly")

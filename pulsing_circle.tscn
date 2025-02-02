@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3 uid="uid://n5et3iter4ro"]
+
+[ext_resource type="Script" path="res://scripts/pulsing_circle.gd" id="1_mocif"]
+[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="2_sk0ox"]
+
+[node name="Pulsing_circle" type="Node2D"]
+script = ExtResource("1_mocif")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 511.0
+offset_top = 227.0
+offset_right = 618.0
+offset_bottom = 267.0
+text = "<---  STOMP!
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Trigger_Line" type="Sprite2D" parent="."]
+
+[node name="Stomp_spot" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(480, 238)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sk0ox")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(480, 200)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sk0ox")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(480, 162)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sk0ox")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(480, 124)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sk0ox")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(480, 86)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sk0ox")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(480, 48)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sk0ox")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(480, 10)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sk0ox")

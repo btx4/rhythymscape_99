@@ -9,12 +9,14 @@
 radius = 23.0868
 
 [node name="Circle" type="Area2D"]
+visible = false
 position = Vector2(178, 198)
 script = ExtResource("1_wdsxo")
 
 [node name="break_particles" parent="." instance=ExtResource("4_ogeyk")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 self_modulate = Color(1, 1, 1, 0.498039)
 texture_filter = 1
 texture = ExtResource("2_h1qtl")
@@ -22,7 +24,8 @@ texture = ExtResource("2_h1qtl")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0i5ce")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Beat_Quality_Timer" type="Timer" parent="."]
+wait_time = 10.0
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("3_qvjlt")

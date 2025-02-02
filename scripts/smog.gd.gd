@@ -14,7 +14,7 @@ func _ready() -> void:
 	$Despawn_timer.start()
 	var random_angle = randf_range(0, 2 * PI)
 	velocity = Vector2(cos(random_angle), sin(random_angle)) * speed
-
+	
 func _process(delta: float) -> void:
 	# Increment the angle based on speed and delta
 	if hit == false:
@@ -49,4 +49,11 @@ func _on_mouse_entered() -> void:
 
 func _on_despawn_timer_timeout() -> void:
 	queue_free()
+	pass # Replace with function body.
+
+
+func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+	if area:
+		if area.is_in_group("destroy"):
+			queue_free()
 	pass # Replace with function body.
