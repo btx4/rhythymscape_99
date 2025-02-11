@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://mkcoxqia2fyf"]
+[gd_scene load_steps=8 format=3 uid="uid://mkcoxqia2fyf"]
 
 [ext_resource type="Script" path="res://scripts/smog.gd.gd" id="1_ho213"]
-[ext_resource type="Texture2D" uid="uid://gxppvveq0drp" path="res://assets/smog.png" id="1_yt5n3"]
+[ext_resource type="Texture2D" uid="uid://78qf31esj0qm" path="res://assets/Untitled_Artwork-1.png" id="3_8l7l5"]
+[ext_resource type="Script" path="res://scenes/smog.gd" id="3_tq2m8"]
+[ext_resource type="Texture2D" uid="uid://du4nbu44i0g7m" path="res://assets/Untitled_Artwork-2.png" id="4_kge61"]
+[ext_resource type="Texture2D" uid="uid://cguenexi0ynep" path="res://assets/Untitled_Artwork-3.png" id="5_8e3nt"]
+[ext_resource type="Texture2D" uid="uid://bn8vkelx7ipwc" path="res://assets/Untitled_Artwork-4.png" id="6_3qef4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e6myq"]
 radius = 35.0
@@ -14,8 +18,11 @@ script = ExtResource("1_ho213")
 shape = SubResource("CircleShape2D_e6myq")
 
 [node name="Smog" type="Sprite2D" parent="."]
+modulate = Color(0.532288, 0.000103048, 0.487115, 1)
 texture_filter = 1
-texture = ExtResource("1_yt5n3")
+scale = Vector2(0.05, 0.05)
+script = ExtResource("3_tq2m8")
+sprite_list = Array[Texture2D]([ExtResource("3_8l7l5"), ExtResource("4_kge61"), ExtResource("5_8e3nt"), ExtResource("6_3qef4")])
 
 [node name="Despawn_timer" type="Timer" parent="."]
 wait_time = 25.0

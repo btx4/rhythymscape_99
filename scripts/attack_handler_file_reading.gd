@@ -5,6 +5,7 @@ extends Node2D
 @export var circle_scene : PackedScene
 @export var osu_circle_scene : PackedScene
 @export var smog_scene : PackedScene
+@export var follow_the_wire_scene : PackedScene
 
 @export var attack_start_beat = 20
 @export var beats_per_measure = 4
@@ -15,6 +16,7 @@ var file = FileAccess.open(file_path, FileAccess.READ)
 
 var data_array = []
 
+var WHITE = Color(1,1,1)
 var YELLOW = Color(1,1,0)
 var RED = Color(1,0,0)
 var GREEN = Color(0,1,0)
@@ -59,6 +61,8 @@ func _process(delta: float) -> void:
 
 func beat_listener(beat: int) ->void:
 	#print(data_array[beat])
+	if beat >= data_array.size():
+		return  # Exit early if beat exceeds the array bounds
 	if (data_array[beat][1] == 1):
 		new_scene = osu_circle_scene.instantiate()
 		new_scene.position.x = randi() % 160
@@ -72,8 +76,20 @@ func beat_listener(beat: int) ->void:
 		new_scene.circle_popped.connect(self._on_circle_circle_popped)
 		new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)
 		add_child(new_scene)
-		pass
 	
+	if (data_array[beat][1] == 2):
+		print("in here")
+		new_scene = follow_the_wire_scene.instantiate()
+		new_scene.position.x = 0
+		new_scene.position.y = 0
+		new_scene.start_circle_target_beat = beat + 9
+		
+		new_scene.end_circle_target_beat = beat + 9 + beats_per_measure
+		var beat_color = get_random_color()
+		get_parent().get_node("Pulsing_circle").targetBeat.append([beat + 9,beat_color])
+		get_parent().get_node("Pulsing_circle").targetBeat.append([beat + 9 + beats_per_measure,beat_color])
+		new_scene.circle_color = beat_color
+		
 	if (data_array[beat][2] == 1):
 		
 		match randi()%2:
@@ -86,12 +102,27 @@ func beat_listener(beat: int) ->void:
 	"""
 var COMBO = 1
 
-func _on_circle_circle_popped() -> void:
+func _on_circle_circle_popped(quality: int) -> void:
+	print("HOORAY")
 	pop_streak +=1
 	#print("STREAKBOOST")
-	$Combo.text = "[center]" + str(pop_streak) + "[/center]"
-	$Combo.modulate.a = 255
-	$Combo.start_fade_out()
+	match(quality):
+		3:
+			$Combo.text = "[center]" + "Perfect!" + "[/center]"
+			$Combo.modulate.a = 255
+			$Combo.start_fade_out()
+		2:
+			$Combo.text = "[center]" + "Great!" + "[/center]"
+			$Combo.modulate.a = 255
+			$Combo.start_fade_out()
+		1:
+			$Combo.text = "[center]" + "Good" + "[/center]"
+			$Combo.modulate.a = 255
+			$Combo.start_fade_out()
+		0:
+			$Combo.text = "[center]" + "Ok" + "[/center]"
+			$Combo.modulate.a = 255
+			$Combo.start_fade_out()
 	
 	COMBO = ceil(pop_streak / 10)
 	
@@ -117,7 +148,7 @@ func _on_music_conductor_song_over() -> void:
 	pass # Replace with function body.
 	
 func get_random_color() -> Color:
-	var type = randi()%4 + 1
+	var type = randi()%5 + 1
 	#print(type)
 	match type:
 		1:
@@ -128,5 +159,7 @@ func get_random_color() -> Color:
 			return GREEN
 		4:
 			return BLUE
+		5:
+			return WHITE
 			
 	return RED

@@ -1,7 +1,7 @@
 extends Area2D
 var poppable = false
 var type 
-var current_beat
+var current_beat = 0
 var mouse_in = false
 
 var LARGE_RADIUS = 1.2
@@ -9,6 +9,7 @@ var YELLOW = Color(1,1,0)
 var RED = Color(1,0,0)
 var GREEN = Color(0,1,0)
 var BLUE = Color(0,0,1)
+var WHITE = Color(1,1,1)
 
 var myColor = Color(1,1,1)
 
@@ -21,18 +22,17 @@ var two_pressed = false
 var three_pressed = false
 var four_pressed = false
 
-signal circle_popped
+signal circle_popped(quality: int)
 signal circle_not_popped
-signal pop_quality(quality: int)
 
 var difference
 var start_time
 var target_time
 var pop_time
 
-var perfect_threshold = 20
-var great_threshold = 50
-var good_threshold = 200
+var perfect_threshold = 50
+var great_threshold = 100
+var good_threshold = 300
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -75,7 +75,7 @@ func _process(delta: float) -> void:
 		#perfect_timing = get_system
 		if poppable == false:
 			start_time = Time.get_ticks_msec()
-			target_time = start_time + (sec_per_beat * 2000)
+			target_time = start_time + (sec_per_beat * 1500)
 			poppable = true
 		
 	
@@ -108,7 +108,7 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	mouse_in = false
 	pass # Replace with function body.
-
+var quality
 func _input(event: InputEvent) -> void:
 	
 	# Color handler ---------------------------------------------------------*
@@ -135,78 +135,103 @@ func _input(event: InputEvent) -> void:
 	if mouse_in == true and poppable:
 		if myColor == YELLOW:
 			if one_pressed and event.is_action_pressed("stomp"):
-				emit_signal("circle_popped")
 				pop_time = Time.get_ticks_msec()
 				difference = abs(pop_time - target_time)
 				print(difference)
 				
 				if difference < perfect_threshold:
 					print("Perfect")
+					quality = 3
 				elif difference < great_threshold:
 					print("Great!")
+					quality = 2
 				elif difference < good_threshold:
 					print("Good")
+					quality = 1
 				else:
 					print("Ok...")
-				
-				circle_popped.emit()
+					quality = 0
+				emit_signal("circle_popped", quality)
 				queue_free()
 		elif myColor == RED:
 			if two_pressed and event.is_action_pressed("stomp"):
-				emit_signal("circle_popped")
 				pop_time = Time.get_ticks_msec()
 				difference = abs(pop_time - target_time)
 				print(difference)
 				
 				if difference < perfect_threshold:
 					print("Perfect")
+					quality = 3
 				elif difference < great_threshold:
 					print("Great!")
+					quality = 2
 				elif difference < good_threshold:
 					print("Good")
+					quality = 1
 				else:
 					print("Ok...")
-				
-				circle_popped.emit()
+					quality = 0
+				emit_signal("circle_popped", quality)
 				queue_free()
 		elif myColor == GREEN:
 			if three_pressed and event.is_action_pressed("stomp"):
-				emit_signal("circle_popped")
 				pop_time = Time.get_ticks_msec()
 				difference = abs(pop_time - target_time)
 				print(difference)
 				
 				if difference < perfect_threshold:
 					print("Perfect")
-					emit_signal("pop_quality",3)
+					quality = 3
 				elif difference < great_threshold:
 					print("Great!")
-					emit_signal("pop_quality",2)
+					quality = 2
 				elif difference < good_threshold:
 					print("Good")
-					emit_signal("pop_quality",1)
+					quality = 1
 				else:
 					print("Ok...")
-					emit_signal("pop_quality",0)
-				
-				circle_popped.emit()
+					quality = 0
+				emit_signal("circle_popped", quality)
 				queue_free()
 		elif myColor == BLUE:
 			if four_pressed and event.is_action_pressed("stomp"):
-				emit_signal("circle_popped")
 				pop_time = Time.get_ticks_msec()
 				difference = abs(pop_time - target_time)
 				print(difference)
+				
 				if difference < perfect_threshold:
 					print("Perfect")
+					quality = 3
 				elif difference < great_threshold:
 					print("Great!")
+					quality = 2
 				elif difference < good_threshold:
 					print("Good")
+					quality = 1
 				else:
 					print("Ok...")
+					quality = 0
+				emit_signal("circle_popped", quality)
+				queue_free()
+		elif myColor == WHITE:
+			if event.is_action_pressed("stomp"):
+				pop_time = Time.get_ticks_msec()
+				difference = abs(pop_time - target_time)
+				print(difference)
 				
-				circle_popped.emit()
+				if difference < perfect_threshold:
+					print("Perfect")
+					quality = 3
+				elif difference < great_threshold:
+					print("Great!")
+					quality = 2
+				elif difference < good_threshold:
+					print("Good")
+					quality = 1
+				else:
+					print("Ok...")
+					quality = 0
+				emit_signal("circle_popped", quality)
 				queue_free()
 	# Stomp handler ---------------------------------------------------------*
 

@@ -17,6 +17,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	# Increment the angle based on speed and delta
+	#angle += circular_speed * delta
 	if hit == false:
 		if speed > 0:
 			position = position + direction * speed * delta
@@ -24,12 +25,11 @@ func _process(delta: float) -> void:
 		if speed < 0:
 			position = position + direction * speed * delta
 			speed = speed + 1
-		angle += circular_speed * delta
-		rotation = angle + PI / 2
+		#rotation = angle + PI / 2
 	else:
 		# Move the sprite in the random direction
 		position += velocity * delta
-
+		#rotation = angle + PI / 2
 		# Gradually lower opacity
 		modulate.a -= fade_speed * delta
 		if modulate.a <= 0:
@@ -41,8 +41,9 @@ func _process(delta: float) -> void:
 
 func _on_mouse_entered() -> void:
 	var collision_shape = $CollisionShape2D
-	if collision_shape:
-		collision_shape.disabled = true
+	if collision_shape and not hit:
+		#collision_shape.disabled = true
+		pass
 	hit = true
 	pass # Replace with function body.
 
@@ -55,5 +56,6 @@ func _on_despawn_timer_timeout() -> void:
 func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	if area:
 		if area.is_in_group("destroy"):
+			print("Boing")
 			queue_free()
 	pass # Replace with function body.

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqeftm67bi001"]
+
+[ext_resource type="Shader" path="res://shader_test.gdshader" id="1_mbtrx"]
+[ext_resource type="Texture2D" uid="uid://b5drjksq5bls0" path="res://assets/texture_tester.jpg" id="1_uyhvu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yh021"]
+resource_local_to_scene = true
+shader = ExtResource("1_mbtrx")
+shader_parameter/fade_strength = 0.946
+shader_parameter/fade_size = 0.537
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_yh021")
+position = Vector2(314, 210)
+scale = Vector2(0.252796, 0.252796)
+texture = ExtResource("1_uyhvu")

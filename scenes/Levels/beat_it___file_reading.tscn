@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b0g8gtffmemhq"]
+[gd_scene load_steps=21 format=3 uid="uid://b0g8gtffmemhq"]
 
 [ext_resource type="Script" path="res://scripts/level_script.gd" id="1_ag5wq"]
 [ext_resource type="AudioStream" uid="uid://dcw21rksjky5j" path="res://music/Michael Jackson - Beat It [8 Bit - Chiptune Remix]  8 Bit Planet.mp3" id="1_yh68l"]
@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="4_nuahk"]
 [ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="5_prgu6"]
 [ext_resource type="PackedScene" uid="uid://c3gw4gtlp8qb0" path="res://scenes/stomp_buttons.tscn" id="6_1o83i"]
-[ext_resource type="Script" path="res://attack_handler_file_reading.gd" id="7_jp0dm"]
+[ext_resource type="Script" path="res://scripts/attack_handler_file_reading.gd" id="7_jp0dm"]
 [ext_resource type="PackedScene" uid="uid://klvmo4jisord" path="res://scenes/spray_paint_minigame.tscn" id="8_uj7w7"]
 [ext_resource type="PackedScene" uid="uid://bu2kk1dlh78d2" path="res://scenes/boom_box_challenge.tscn" id="9_lk1gt"]
-[ext_resource type="PackedScene" uid="uid://n5et3iter4ro" path="res://pulsing_circle.tscn" id="10_6l20k"]
+[ext_resource type="PackedScene" uid="uid://n5et3iter4ro" path="res://scenes/pulsing_circle.tscn" id="10_6l20k"]
+[ext_resource type="PackedScene" uid="uid://d38igcybbx3n7" path="res://follow_the_wire.tscn" id="10_hl4s3"]
 [ext_resource type="PackedScene" uid="uid://cecs1gtpvc05p" path="res://scenes/osu_circle.tscn" id="11_ms81c"]
 [ext_resource type="Script" path="res://scripts/score.gd" id="13_mw5p2"]
 [ext_resource type="Script" path="res://scripts/combo.gd" id="14_gk14p"]
@@ -53,6 +54,7 @@ position = Vector2(0, 40)
 position = Vector2(80, 90)
 script = ExtResource("7_jp0dm")
 osu_circle_scene = ExtResource("11_ms81c")
+follow_the_wire_scene = ExtResource("10_hl4s3")
 
 [node name="Score" type="RichTextLabel" parent="Attack_Handler"]
 visible = false

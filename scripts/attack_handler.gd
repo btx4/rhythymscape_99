@@ -5,6 +5,7 @@ extends Node2D
 @export var circle_scene : PackedScene
 @export var osu_circle_scene : PackedScene
 @export var smog_scene : PackedScene
+@export var follow_the_wire_scene : PackedScene
 
 @export var attack_start_beat = 20
 @export var beats_per_measure = 4
@@ -35,13 +36,26 @@ func _process(delta: float) -> void:
 
 
 func beat_listener(beat: int) ->void:
-	if beat % (beats_per_measure * 4) == 0:
+	if beat == 15 or beat == 45:
+		new_scene = follow_the_wire_scene.instantiate()
+		new_scene.position.x = 0
+		new_scene.position.y = 0
+		new_scene.start_circle_target_beat = beat + 9
+		
+		new_scene.end_circle_target_beat = beat + 9 + beats_per_measure
+		var beat_color = get_random_color()
+		get_parent().get_node("Pulsing_circle").targetBeat.append([beat + 9,beat_color])
+		get_parent().get_node("Pulsing_circle").targetBeat.append([beat + 9 + beats_per_measure,beat_color])
+		new_scene.circle_color = beat_color
+		#print("adding_child")
+		add_child(new_scene)
+	if beat % (beats_per_measure * 4) == 0 and true == false:
 		match randi()%2:
 			0:
 				get_parent().get_node("Spray_paint_minigame").spawn_spray_can()
 			1:
 				get_parent().get_node("boom_box_challenge")._spawn_boom_box()
-	if beat % beats_per_measure == offset  and beat > attack_start_beat:
+	if beat % beats_per_measure == offset  and beat > attack_start_beat and true == false:
 		new_scene = osu_circle_scene.instantiate()
 		new_scene.position.x = randi() % 160
 		new_scene.position.y = randi() % 180

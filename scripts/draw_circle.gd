@@ -4,6 +4,7 @@ extends Node2D
 var radius: float = 100.0
 var shrinking = false
 var COLOR = Color(1,1,1)
+@export var glow_material: ShaderMaterial
 # Rate at which the circle shrinks (pixels per second)
 var shrink_rate: float = 20.0
 var tween
@@ -12,6 +13,7 @@ var second_circle
 var shrinking_alpha = 0.5
 var shrinking_color
 func _process(delta: float) -> void:
+	
 	# Reduce the radius linearly over times
 	if shrinking:
 		var tween = get_tree().create_tween()
@@ -26,6 +28,9 @@ func _process(delta: float) -> void:
 func _draw() -> void:
 	shrinking_color = Color(COLOR.r,COLOR.g,COLOR.b,shrinking_alpha)
 	second_circle = Color(COLOR.r,COLOR.g,COLOR.b,0.5)
+	
+	if material and material is ShaderMaterial:
+		material.set_shader_parameter("glow_color", shrinking_color)		
 	# Draw the circle with the current radius
 	
 	if radius > 16 and shrinking:

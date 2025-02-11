@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://oxh5ihuddeen"]
+[gd_scene load_steps=14 format=3 uid="uid://oxh5ihuddeen"]
 
 [ext_resource type="Script" path="res://scripts/level_script.gd" id="1_lluc2"]
 [ext_resource type="AudioStream" uid="uid://dxh6s86sabucw" path="res://music/8bitjazz youtube.mp3" id="2_peujd"]
@@ -6,11 +6,12 @@
 [ext_resource type="Script" path="res://scripts/magic_maker.gd" id="4_waacm"]
 [ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="5_tcy1w"]
 [ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="6_e64qg"]
-[ext_resource type="PackedScene" uid="uid://bile34x56qdpj" path="res://attack_handler.tscn" id="7_cjfui"]
+[ext_resource type="PackedScene" uid="uid://bile34x56qdpj" path="res://scenes/attack_handler.tscn" id="7_cjfui"]
 [ext_resource type="PackedScene" uid="uid://c3gw4gtlp8qb0" path="res://scenes/stomp_buttons.tscn" id="8_7echb"]
+[ext_resource type="PackedScene" uid="uid://d38igcybbx3n7" path="res://follow_the_wire.tscn" id="8_opyfe"]
 [ext_resource type="PackedScene" uid="uid://klvmo4jisord" path="res://scenes/spray_paint_minigame.tscn" id="9_igboq"]
 [ext_resource type="PackedScene" uid="uid://bu2kk1dlh78d2" path="res://scenes/boom_box_challenge.tscn" id="10_sb1jv"]
-[ext_resource type="PackedScene" uid="uid://n5et3iter4ro" path="res://pulsing_circle.tscn" id="11_p3qi8"]
+[ext_resource type="PackedScene" uid="uid://n5et3iter4ro" path="res://scenes/pulsing_circle.tscn" id="11_p3qi8"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_0nrqh"]
 
@@ -42,6 +43,7 @@ texture = ExtResource("6_e64qg")
 position = Vector2(240, 270)
 
 [node name="Attack_Handler" parent="." instance=ExtResource("7_cjfui")]
+follow_the_wire_scene = ExtResource("8_opyfe")
 
 [node name="stomp_buttons" parent="." instance=ExtResource("8_7echb")]
 position = Vector2(0, 40)

@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkdoonb2ixcom"]
+[gd_scene load_steps=8 format=3 uid="uid://bsju3om1r6a3r"]
 
 [ext_resource type="Script" path="res://scripts/level_selector.gd" id="1_7knvd"]
-[ext_resource type="PackedScene" uid="uid://dm7heh8dwxsv3" path="res://scenes/Levels/beat_it.tscn" id="2_n0144"]
+[ext_resource type="PackedScene" uid="uid://b0g8gtffmemhq" path="res://scenes/Levels/beat_it___file_reading.tscn" id="2_63jka"]
 [ext_resource type="PackedScene" uid="uid://vmlkwng6geex" path="res://scenes/Levels/lacrimosa_requiem.tscn" id="3_qxbrq"]
 [ext_resource type="PackedScene" uid="uid://oxh5ihuddeen" path="res://scenes/Levels/take_five.tscn" id="4_pvpq6"]
 [ext_resource type="Script" path="res://scenes/Levels/magic_maker_lvl_0.gd" id="5_oeepc"]
@@ -10,7 +10,7 @@
 
 [node name="Level_Selector" type="Node2D"]
 script = ExtResource("1_7knvd")
-beat_it = ExtResource("2_n0144")
+beat_it = ExtResource("2_63jka")
 lacrimosa_requiem = ExtResource("3_qxbrq")
 take_five = ExtResource("4_pvpq6")
 

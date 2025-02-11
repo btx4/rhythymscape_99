@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="5_bukp5"]
 [ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="6_o4lf3"]
 [ext_resource type="PackedScene" uid="uid://c3gw4gtlp8qb0" path="res://scenes/stomp_buttons.tscn" id="7_yterc"]
-[ext_resource type="PackedScene" uid="uid://bile34x56qdpj" path="res://attack_handler.tscn" id="8_y2udi"]
+[ext_resource type="PackedScene" uid="uid://bile34x56qdpj" path="res://scenes/attack_handler.tscn" id="8_y2udi"]
 [ext_resource type="PackedScene" uid="uid://klvmo4jisord" path="res://scenes/spray_paint_minigame.tscn" id="9_fwx01"]
 [ext_resource type="PackedScene" uid="uid://bu2kk1dlh78d2" path="res://scenes/boom_box_challenge.tscn" id="10_dbg0g"]
-[ext_resource type="PackedScene" uid="uid://n5et3iter4ro" path="res://pulsing_circle.tscn" id="11_72kxt"]
+[ext_resource type="PackedScene" uid="uid://n5et3iter4ro" path="res://scenes/pulsing_circle.tscn" id="11_72kxt"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_uk40m"]
 

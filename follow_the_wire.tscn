@@ -1,0 +1,57 @@
+[gd_scene load_steps=7 format=3 uid="uid://d38igcybbx3n7"]
+
+[ext_resource type="PackedScene" uid="uid://cecs1gtpvc05p" path="res://scenes/osu_circle.tscn" id="1_lhk0i"]
+[ext_resource type="Script" path="res://follow_the_wire.gd" id="1_qw5kn"]
+[ext_resource type="Shader" path="res://shader_test.gdshader" id="3_skff3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfvmp"]
+radius = 22.0227
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_448ep"]
+shader = ExtResource("3_skff3")
+shader_parameter/fade_strength = 0.5
+shader_parameter/fade_size = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_mb2se"]
+
+[node name="Follow_the_wire_node" type="Node2D"]
+script = ExtResource("1_qw5kn")
+
+[node name="Wire" type="Area2D" parent="."]
+position = Vector2(123, 148)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wire"]
+position = Vector2(-74, -37)
+polygon = PackedVector2Array(-44, 14, 185, 12, 185, 57, -41, 59)
+
+[node name="Circle" parent="." instance=ExtResource("1_lhk0i")]
+visible = true
+position = Vector2(29, 148)
+
+[node name="Start_zone" type="Area2D" parent="."]
+position = Vector2(28, 148)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_zone"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_tfvmp")
+
+[node name="End_zone" type="Area2D" parent="."]
+position = Vector2(210, 147)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End_zone"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_tfvmp")
+
+[node name="Start_circle" parent="." instance=ExtResource("1_lhk0i")]
+visible = true
+position = Vector2(209, 146)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_448ep")
+position = Vector2(121.264, 146.907)
+rotation = -0.0123753
+scale = Vector2(191, 40.9396)
+texture = SubResource("CanvasTexture_mb2se")
+
+[connection signal="mouse_entered" from="Wire" to="." method="_on_wire_mouse_entered"]
+[connection signal="mouse_exited" from="Wire" to="." method="_on_wire_mouse_exited"]
