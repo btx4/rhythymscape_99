@@ -8,8 +8,9 @@ func _ready() -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
-	#if event.is_action_pressed("stomp"):
+	if event.is_action_pressed("stomp"):
 		#spawn_spray_can()
+		pass
 	
 	pass
 # Spawns a spray can in a random Area2D and applies rotation based on the selected area.

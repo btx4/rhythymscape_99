@@ -60,6 +60,8 @@ var perfect_timing
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# ##############################################################################################################################aLERT
+	
 	if poppable == true:
 		$Sprite2D.modulate.a = 255
 	else: $Sprite2D.modulate.a = 0.2

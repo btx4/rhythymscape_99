@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ncn5tl5kes3g"]
+
+[ext_resource type="PackedScene" uid="uid://bpqhs2ykmd0aq" path="res://green_stomp.tscn" id="1_3rols"]
+
+[node name="Blue_stomp" instance=ExtResource("1_3rols")]
+modulate = Color(0, 0, 1, 1)
+lifetime = 0.2

@@ -6,6 +6,7 @@ extends Node2D
 @export var osu_circle_scene : PackedScene
 @export var smog_scene : PackedScene
 @export var follow_the_wire_scene : PackedScene
+@export var follow_the_wire_zigzag_scene : PackedScene
 
 @export var attack_start_beat = 20
 @export var beats_per_measure = 4
@@ -89,7 +90,8 @@ func beat_listener(beat: int) ->void:
 		get_parent().get_node("Pulsing_circle").targetBeat.append([beat + 9,beat_color])
 		get_parent().get_node("Pulsing_circle").targetBeat.append([beat + 9 + beats_per_measure,beat_color])
 		new_scene.circle_color = beat_color
-		
+
+		add_child(new_scene)
 	if (data_array[beat][2] == 1):
 		
 		match randi()%2:
@@ -111,18 +113,34 @@ func _on_circle_circle_popped(quality: int) -> void:
 			$Combo.text = "[center]" + "Perfect!" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
+			
+			$Combo2.text = "[center]" + "Perfect!" + "[/center]"
+			$Combo2.modulate.a = 255
+			$Combo2.start_fade_out()
 		2:
 			$Combo.text = "[center]" + "Great!" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
+			
+			$Combo2.text = "[center]" + "Great!" + "[/center]"
+			$Combo2.modulate.a = 255
+			$Combo2.start_fade_out()
 		1:
 			$Combo.text = "[center]" + "Good" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
+			
+			$Combo2.text = "[center]" + "Good" + "[/center]"
+			$Combo2.modulate.a = 255
+			$Combo2.start_fade_out()
 		0:
 			$Combo.text = "[center]" + "Ok" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
+			
+			$Combo2.text = "[center]" + "Ok" + "[/center]"
+			$Combo2.modulate.a = 255
+			$Combo2.start_fade_out()
 	
 	COMBO = ceil(pop_streak / 10)
 	

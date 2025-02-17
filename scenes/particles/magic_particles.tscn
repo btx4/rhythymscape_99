@@ -26,6 +26,8 @@ linear_accel_min = -3.89
 linear_accel_max = 42.34
 scale_curve = SubResource("CurveTexture_g0vxu")
 alpha_curve = SubResource("CurveTexture_n214v")
+hue_variation_min = -0.43
+hue_variation_max = -0.23
 
 [node name="Magic" type="GPUParticles2D" groups=["magic_particles"]]
 texture_filter = 1

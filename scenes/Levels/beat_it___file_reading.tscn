@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b0g8gtffmemhq"]
+[gd_scene load_steps=24 format=3 uid="uid://b0g8gtffmemhq"]
 
 [ext_resource type="Script" path="res://scripts/level_script.gd" id="1_ag5wq"]
 [ext_resource type="AudioStream" uid="uid://dcw21rksjky5j" path="res://music/Michael Jackson - Beat It [8 Bit - Chiptune Remix]  8 Bit Planet.mp3" id="1_yh68l"]
@@ -11,28 +11,38 @@
 [ext_resource type="PackedScene" uid="uid://klvmo4jisord" path="res://scenes/spray_paint_minigame.tscn" id="8_uj7w7"]
 [ext_resource type="PackedScene" uid="uid://bu2kk1dlh78d2" path="res://scenes/boom_box_challenge.tscn" id="9_lk1gt"]
 [ext_resource type="PackedScene" uid="uid://n5et3iter4ro" path="res://scenes/pulsing_circle.tscn" id="10_6l20k"]
-[ext_resource type="PackedScene" uid="uid://d38igcybbx3n7" path="res://follow_the_wire.tscn" id="10_hl4s3"]
+[ext_resource type="PackedScene" uid="uid://d38igcybbx3n7" path="res://follow_the_wire-straight.tscn" id="10_hl4s3"]
 [ext_resource type="PackedScene" uid="uid://cecs1gtpvc05p" path="res://scenes/osu_circle.tscn" id="11_ms81c"]
+[ext_resource type="PackedScene" uid="uid://bdmhryaj1aamx" path="res://follow_the_wire-zig_zag.tscn" id="11_sik85"]
 [ext_resource type="Script" path="res://scripts/score.gd" id="13_mw5p2"]
 [ext_resource type="Script" path="res://scripts/combo.gd" id="14_gk14p"]
 [ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="15_yrr88"]
 [ext_resource type="Texture2D" uid="uid://si5ssc70t4f1" path="res://assets/x_pop_up.png" id="16_rxo23"]
 [ext_resource type="Script" path="res://scenes/x_pop_up.gd" id="17_3am8d"]
+[ext_resource type="Script" path="res://scenes/Levels/combo_2.gd" id="18_n08g4"]
 [ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="18_sckji"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_d0d1d"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_1kyio"]
 
 [node name="Beat It - File Reading" type="Node2D"]
 script = ExtResource("1_ag5wq")
 
-[node name="Divider" type="Sprite2D" parent="."]
-position = Vector2(319.958, 184.394)
-scale = Vector2(2.08411, 432.013)
-texture = SubResource("CanvasTexture_1kyio")
-
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_yh68l")
 script = ExtResource("2_ghewp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Music Conductor"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(323, 171.5)
+scale = Vector2(748, 451)
+texture = SubResource("CanvasTexture_d0d1d")
+
+[node name="Divider" type="Sprite2D" parent="Music Conductor"]
+position = Vector2(319.958, 184.394)
+scale = Vector2(2.08411, 432.013)
+texture = SubResource("CanvasTexture_1kyio")
 
 [node name="Magic_Maker" type="Node2D" parent="."]
 script = ExtResource("3_h0obo")
@@ -55,6 +65,7 @@ position = Vector2(80, 90)
 script = ExtResource("7_jp0dm")
 osu_circle_scene = ExtResource("11_ms81c")
 follow_the_wire_scene = ExtResource("10_hl4s3")
+follow_the_wire_zigzag_scene = ExtResource("11_sik85")
 
 [node name="Score" type="RichTextLabel" parent="Attack_Handler"]
 visible = false
@@ -116,6 +127,31 @@ script = ExtResource("17_3am8d")
 [node name="Error" type="AudioStreamPlayer2D" parent="Attack_Handler"]
 stream = ExtResource("18_sckji")
 volume_db = -37.491
+
+[node name="Combo2" type="RichTextLabel" parent="Attack_Handler"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 515.0
+offset_top = -51.0
+offset_right = 675.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(80, 30)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[center]1[/center]"
+script = ExtResource("18_n08g4")
+metadata/_edit_use_anchors_ = true
 
 [node name="Spray_paint_minigame" parent="." instance=ExtResource("8_uj7w7")]
 

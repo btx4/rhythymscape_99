@@ -22,9 +22,10 @@ func _process(delta: float) -> void:
 		if speed > 0:
 			position = position + direction * speed * delta
 			speed = speed - 1
-		if speed < 0:
+		elif speed < 0:
 			position = position + direction * speed * delta
 			speed = speed + 1
+		
 		#rotation = angle + PI / 2
 	else:
 		# Move the sprite in the random direction
@@ -56,6 +57,5 @@ func _on_despawn_timer_timeout() -> void:
 func _on_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
 	if area:
 		if area.is_in_group("destroy"):
-			print("Boing")
 			queue_free()
 	pass # Replace with function body.
