@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlsld1sacmgxa"]
+
+[ext_resource type="Script" path="res://scenes/oops.gd" id="1_fxu4t"]
+
+[node name="Oops!" type="RichTextLabel"]
+offset_right = 48.0
+offset_bottom = 40.0
+bbcode_enabled = true
+text = "[center]Oops[/center]"
+script = ExtResource("1_fxu4t")

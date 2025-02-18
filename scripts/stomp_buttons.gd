@@ -5,7 +5,6 @@ var blu
 var yel
 var gre
 
-@onready var pause_menu := $PauseMenu
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -16,9 +15,6 @@ func _process(delta: float) -> void:
 	pass
 	
 func _input(event: InputEvent) -> void:
-	
-	if event.is_action_pressed("ui_cancel"):  # Typically "ESC"
-		pause_menu.toggle_pause()
 	
 	if event.is_action_pressed("yellow"):
 		yel = true

@@ -1,0 +1,58 @@
+[gd_scene load_steps=6 format=3 uid="uid://d38igcybbx3n7"]
+
+[ext_resource type="Script" path="res://scripts/follow_the_wire.gd" id="1_o0unv"]
+[ext_resource type="Script" path="res://scenes/line_draw_2.gd" id="3_ag18d"]
+[ext_resource type="PackedScene" uid="uid://cecs1gtpvc05p" path="res://scenes/osu_circle.tscn" id="3_xgein"]
+[ext_resource type="Script" path="res://scenes/line_draw_straight.gd" id="4_qv5aj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfvmp"]
+radius = 22.0227
+
+[node name="Follow_the_wire_node" type="Node2D"]
+script = ExtResource("1_o0unv")
+
+[node name="Line_draw_1" type="Node2D" parent="."]
+script = ExtResource("4_qv5aj")
+
+[node name="Line_draw_2" type="Node2D" parent="."]
+script = ExtResource("3_ag18d")
+
+[node name="Wire" type="Area2D" parent="."]
+position = Vector2(0.48201, -0.256954)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wire"]
+position = Vector2(-74, -37)
+polygon = PackedVector2Array(-44, 14, 185, 12, 185, 57, -41, 59)
+
+[node name="Circle" parent="." instance=ExtResource("3_xgein")]
+visible = true
+position = Vector2(-93.518, -0.256954)
+
+[node name="end_circle_position" type="Node2D" parent="Circle"]
+
+[node name="Start_zone" type="Area2D" parent="."]
+position = Vector2(-94.518, -0.256954)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_zone"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_tfvmp")
+
+[node name="End_zone" type="Area2D" parent="."]
+position = Vector2(87.482, -1.25695)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End_zone"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_tfvmp")
+
+[node name="Start_circle" parent="." instance=ExtResource("3_xgein")]
+visible = true
+position = Vector2(86.482, -2.25695)
+
+[node name="start_circle_position" type="Node2D" parent="Start_circle"]
+
+[connection signal="mouse_entered" from="Wire" to="." method="_on_wire_mouse_entered"]
+[connection signal="mouse_exited" from="Wire" to="." method="_on_wire_mouse_exited"]
+[connection signal="circle_not_popped" from="Circle" to="." method="_on_circle_circle_not_popped"]
+[connection signal="circle_popped" from="Circle" to="." method="_on_circle_circle_popped"]
+[connection signal="circle_not_popped" from="Start_circle" to="." method="_on_start_circle_circle_not_popped"]
+[connection signal="circle_popped" from="Start_circle" to="." method="_on_start_circle_circle_popped"]

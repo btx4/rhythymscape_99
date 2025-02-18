@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bpq8v08slnoid"]
 
-[ext_resource type="Shader" path="res://radar_ping.gdshader" id="1_ogaqu"]
+[ext_resource type="Shader" path="res://shaders/radar_ping.gdshader" id="1_ogaqu"]
 [ext_resource type="Script" path="res://scripts/boom_box.gd" id="2_fx8mo"]
 [ext_resource type="Texture2D" uid="uid://b5drjksq5bls0" path="res://assets/texture_tester.jpg" id="2_rla3a"]
 [ext_resource type="Script" path="res://scripts/sprite_2d.gd" id="3_netyc"]

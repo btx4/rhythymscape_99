@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bdmhryaj1aamx"]
+
+[ext_resource type="Script" path="res://scripts/follow_the_wire.gd" id="1_jculo"]
+[ext_resource type="Shader" path="res://shaders/shader_test.gdshader" id="2_0cb0m"]
+[ext_resource type="PackedScene" uid="uid://cecs1gtpvc05p" path="res://scenes/osu_circle.tscn" id="3_3ea2w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pemmr"]
+shader = ExtResource("2_0cb0m")
+shader_parameter/fade_strength = 0.5
+shader_parameter/fade_size = 0.5
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_uoykd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gog8j"]
+radius = 22.0227
+
+[node name="follow_the_wire" type="Node2D"]
+script = ExtResource("1_jculo")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pemmr")
+position = Vector2(-1.25401, -1.34995)
+rotation = -0.0123753
+scale = Vector2(191, 40.9396)
+texture = SubResource("CanvasTexture_uoykd")
+
+[node name="Wire" type="Area2D" parent="."]
+position = Vector2(0.48201, -0.256954)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wire"]
+position = Vector2(-74, -37)
+polygon = PackedVector2Array(-44, 14, 185, 12, 185, 57, -41, 59)
+
+[node name="Circle" parent="." instance=ExtResource("3_3ea2w")]
+visible = true
+position = Vector2(-93.518, -0.256954)
+
+[node name="Start_zone" type="Area2D" parent="."]
+position = Vector2(-94.518, -0.256954)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start_zone"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_gog8j")
+
+[node name="End_zone" type="Area2D" parent="."]
+position = Vector2(87.482, -1.25695)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="End_zone"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_gog8j")
+
+[node name="Start_circle" parent="." instance=ExtResource("3_3ea2w")]
+visible = true
+position = Vector2(86.482, -2.25695)

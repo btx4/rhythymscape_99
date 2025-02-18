@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://hjc61lkxyiql"]
+
+[ext_resource type="Script" path="res://scenes/poppable_sine.gd" id="1_ksj3x"]
+[ext_resource type="AudioStream" uid="uid://ducl62yscj1jw" path="res://sounds/260614__kwahmah_02__pop.wav" id="1_qqien"]
+[ext_resource type="Script" path="res://spawn_poppable_circle.gd" id="2_a8xp4"]
+[ext_resource type="PackedScene" uid="uid://bmluc6ew814ow" path="res://scenes/poppable_circle.tscn" id="3_itpwa"]
+
+[node name="poppable sine" type="Node2D"]
+script = ExtResource("1_ksj3x")
+
+[node name="Pop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_qqien")
+
+[node name="Circles" type="Node2D" parent="."]
+script = ExtResource("2_a8xp4")
+poppable_circle = ExtResource("3_itpwa")

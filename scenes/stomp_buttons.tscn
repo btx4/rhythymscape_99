@@ -1,15 +1,34 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3gw4gtlp8qb0"]
+[gd_scene load_steps=9 format=3 uid="uid://c3gw4gtlp8qb0"]
 
 [ext_resource type="Script" path="res://scripts/stomp_buttons.gd" id="1_2hwml"]
 [ext_resource type="Texture2D" uid="uid://c87yg6tuuryqy" path="res://assets/button_stomp.png" id="2_7cgcv"]
 [ext_resource type="Script" path="res://scenes/particles/color_buttons.gd" id="3_cg478"]
 [ext_resource type="Texture2D" uid="uid://j6t0wh66mbf8" path="res://assets/center_button.png" id="4_t0l2d"]
-[ext_resource type="PackedScene" uid="uid://bpqhs2ykmd0aq" path="res://green_stomp.tscn" id="5_csfd6"]
-[ext_resource type="PackedScene" uid="uid://bbo5tln2q0wb" path="res://yellow_stomp.tscn" id="6_w44mf"]
-[ext_resource type="PackedScene" uid="uid://carf73jefmpbu" path="res://red_stomp.tscn" id="7_5bp0y"]
-[ext_resource type="PackedScene" uid="uid://ncn5tl5kes3g" path="res://blue_stomp.tscn" id="8_m7ju1"]
-[ext_resource type="PackedScene" uid="uid://povabra474mo" path="res://white_stomp.tscn" id="9_a52wa"]
-[ext_resource type="PackedScene" uid="uid://wnht6jlqxxxu" path="res://pause_menu.tscn" id="10_0i83q"]
+[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="5_ijsk4"]
+
+[sub_resource type="Curve" id="Curve_q4f2f"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.486911, 0.868132), 0.0, 0.0, 0, 0, Vector2(0.801047, 0.076923), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lgfas"]
+curve = SubResource("Curve_q4f2f")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_64sb8"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 79.29
+initial_velocity_max = 211.45
+angular_velocity_min = -228.37
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, 98, 0)
+linear_accel_min = -68.72
+linear_accel_max = -68.72
+radial_accel_min = -2.23517e-06
+radial_accel_max = -2.23517e-06
+tangential_accel_min = 100.0
+tangential_accel_max = 100.0
+damping_max = 100.0
+scale_curve = SubResource("CurveTexture_lgfas")
 
 [node name="stomp_buttons" type="Node2D"]
 script = ExtResource("1_2hwml")
@@ -52,30 +71,61 @@ position = Vector2(480, 233)
 texture = ExtResource("4_t0l2d")
 script = ExtResource("3_cg478")
 
-[node name="Green_stomp" parent="." instance=ExtResource("5_csfd6")]
+[node name="Green_stomp" type="GPUParticles2D" parent="."]
 modulate = Color(0, 1, 0, 1)
 position = Vector2(481, 235)
 scale = Vector2(2, 2)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_64sb8")
+texture = ExtResource("5_ijsk4")
 lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
 
-[node name="Yellow_stomp" parent="." instance=ExtResource("6_w44mf")]
+[node name="Yellow_stomp" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 0, 1)
 position = Vector2(481, 235)
 scale = Vector2(2, 2)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_64sb8")
+texture = ExtResource("5_ijsk4")
 lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
 
-[node name="Red_stomp" parent="." instance=ExtResource("7_5bp0y")]
+[node name="Red_stomp" type="GPUParticles2D" parent="."]
+modulate = Color(1, 0, 0, 1)
 position = Vector2(481, 235)
 scale = Vector2(2, 2)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_64sb8")
+texture = ExtResource("5_ijsk4")
 lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
 
-[node name="Blue_stomp" parent="." instance=ExtResource("8_m7ju1")]
+[node name="Blue_stomp" type="GPUParticles2D" parent="."]
+modulate = Color(0, 0, 1, 1)
 position = Vector2(481, 235)
 scale = Vector2(2, 2)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_64sb8")
+texture = ExtResource("5_ijsk4")
 lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
 
-[node name="White_stomp" parent="." instance=ExtResource("9_a52wa")]
+[node name="White_stomp" type="GPUParticles2D" parent="."]
 position = Vector2(481, 235)
 scale = Vector2(2, 2)
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_64sb8")
+texture = ExtResource("5_ijsk4")
 lifetime = 0.5
-
-[node name="PauseMenu" parent="." instance=ExtResource("10_0i83q")]
+one_shot = true
+explosiveness = 0.95

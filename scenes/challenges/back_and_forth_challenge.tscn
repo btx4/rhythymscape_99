@@ -1,0 +1,137 @@
+[gd_scene load_steps=12 format=3 uid="uid://bj8g8qawd7h4r"]
+
+[ext_resource type="Script" path="res://back_and_forth_challenge.gd" id="1_8dcqp"]
+[ext_resource type="Script" path="res://mouse_area.gd" id="1_wr5uq"]
+[ext_resource type="Shader" path="res://lightning.gdshader" id="1_y6nuf"]
+[ext_resource type="Script" path="res://buzz.gd" id="3_iskf2"]
+[ext_resource type="AudioStream" uid="uid://boicxtlmhtdyf" path="res://sounds/393066__wakerone__electric-zap-electricity-2.wav" id="3_sfwsv"]
+[ext_resource type="Script" path="res://lightning.gd" id="4_5pndm"]
+[ext_resource type="Script" path="res://lightning_horiz.gd" id="5_0wm77"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3o6u7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yah5j"]
+size = Vector2(114, 102)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_trrhy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1a5yq"]
+shader = ExtResource("1_y6nuf")
+shader_parameter/lightning_number = 5
+shader_parameter/amplitude = Vector2(2, 1)
+shader_parameter/offset = 0.45
+shader_parameter/thickness = 0.04
+shader_parameter/speed = 3.0
+shader_parameter/base_color = Color(1, 1, 1, 1)
+shader_parameter/glow_thickness = 0.08
+shader_parameter/glow_color = Color(0.2, 0, 0.8, 0)
+shader_parameter/alpha = 0.275
+
+[node name="wario_ware_mouse" type="Node2D"]
+script = ExtResource("1_8dcqp")
+
+[node name="MouseAreaRight" type="Area2D" parent="."]
+position = Vector2(227, 287)
+script = ExtResource("1_wr5uq")
+
+[node name="Sprite2D" type="Sprite2D" parent="MouseAreaRight"]
+modulate = Color(0.0847004, 0.284449, 0.120272, 1)
+scale = Vector2(104, 90)
+texture = SubResource("CanvasTexture_3o6u7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseAreaRight"]
+shape = SubResource("RectangleShape2D_yah5j")
+
+[node name="MouseLabel" type="RichTextLabel" parent="MouseAreaRight"]
+offset_left = -40.0
+offset_top = -7.0
+offset_right = 42.0
+offset_bottom = 9.0
+theme_override_font_sizes/normal_font_size = 8
+text = "MOVE MOUSE IN"
+metadata/_edit_use_anchors_ = true
+
+[node name="Counter" type="RichTextLabel" parent="MouseAreaRight"]
+offset_left = -14.0
+offset_top = 9.0
+offset_right = 26.0
+offset_bottom = 49.0
+text = "10"
+
+[node name="MouseAreaLeft" type="Area2D" parent="."]
+position = Vector2(98, 287)
+script = ExtResource("1_wr5uq")
+
+[node name="Sprite2D" type="Sprite2D" parent="MouseAreaLeft"]
+modulate = Color(0.0847004, 0.284449, 0.120272, 1)
+scale = Vector2(104, 90)
+texture = SubResource("CanvasTexture_3o6u7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseAreaLeft"]
+shape = SubResource("RectangleShape2D_yah5j")
+
+[node name="MouseLabel" type="RichTextLabel" parent="MouseAreaLeft"]
+offset_left = -40.0
+offset_top = -7.0
+offset_right = 42.0
+offset_bottom = 9.0
+theme_override_font_sizes/normal_font_size = 8
+text = "MOVE MOUSE IN"
+metadata/_edit_use_anchors_ = true
+
+[node name="Counter" type="RichTextLabel" parent="MouseAreaLeft"]
+offset_left = -14.0
+offset_top = 9.0
+offset_right = 26.0
+offset_bottom = 49.0
+text = "10"
+
+[node name="Block" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(480, 114)
+scale = Vector2(320, 228)
+texture = SubResource("CanvasTexture_trrhy")
+
+[node name="Lightning" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1a5yq")
+offset_left = 320.0
+offset_right = 640.0
+offset_bottom = 98.0
+script = ExtResource("4_5pndm")
+
+[node name="Lightning2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1a5yq")
+offset_left = 320.0
+offset_top = 159.0
+offset_right = 640.0
+offset_bottom = 257.0
+script = ExtResource("4_5pndm")
+
+[node name="LightningHoriz" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1a5yq")
+offset_left = 729.0
+offset_right = 957.0
+offset_bottom = 100.0
+rotation = -4.71238
+scale = Vector2(1, 3.1845)
+script = ExtResource("5_0wm77")
+
+[node name="LightningHoriz2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_1a5yq")
+offset_left = 545.0
+offset_right = 773.0
+offset_bottom = 100.0
+rotation = -4.71238
+scale = Vector2(1, 3.1845)
+script = ExtResource("5_0wm77")
+
+[node name="Buzz" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_sfwsv")
+pitch_scale = 0.81
+autoplay = true
+script = ExtResource("3_iskf2")
+
+[connection signal="mouse_entered" from="MouseAreaRight" to="MouseAreaRight" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MouseAreaRight" to="MouseAreaRight" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="MouseAreaLeft" to="MouseAreaLeft" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="MouseAreaLeft" to="MouseAreaLeft" method="_on_mouse_exited"]

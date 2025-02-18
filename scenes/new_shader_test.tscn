@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://de5pla708hx17"]
 
-[ext_resource type="Shader" path="res://radar_ping.gdshader" id="1_o0tq8"]
+[ext_resource type="Shader" path="res://shaders/radar_ping.gdshader" id="1_o0tq8"]
 [ext_resource type="Texture2D" uid="uid://b5drjksq5bls0" path="res://assets/texture_tester.jpg" id="2_1swss"]
 [ext_resource type="Script" path="res://scripts/sprite_2d.gd" id="3_ppr3d"]
 [ext_resource type="Texture2D" uid="uid://ypsqyha0dcxm" path="res://assets/boom_box.png" id="4_07ro0"]

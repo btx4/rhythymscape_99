@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://povabra474mo"]
+
+[ext_resource type="PackedScene" uid="uid://bpqhs2ykmd0aq" path="res://scenes/green_stomp.tscn" id="1_0csrj"]
+
+[node name="White_stomp" instance=ExtResource("1_0csrj")]
+lifetime = 0.2

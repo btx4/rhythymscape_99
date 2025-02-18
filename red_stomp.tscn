@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://carf73jefmpbu"]
-
-[ext_resource type="PackedScene" uid="uid://bpqhs2ykmd0aq" path="res://green_stomp.tscn" id="1_swyse"]
-
-[node name="Red_stomp" instance=ExtResource("1_swyse")]
-modulate = Color(1, 0, 0, 1)

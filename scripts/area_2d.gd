@@ -70,7 +70,7 @@ func _process(delta: float) -> void:
 		visible = true
 		$Node2D.shrinking = true
 		$Node2D.COLOR = myColor
-		$Node2D.COLOR.a = 0.5
+		#$Node2D.COLOR.a = 0.5
 		$Node2D.tween_duration = sec_per_beat * 3
 		$Beat_Quality_Timer.start()
 	if current_beat == target_beat - 1:

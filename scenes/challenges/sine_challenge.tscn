@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxg2urdwu4h2r"]
 
-[ext_resource type="Script" path="res://scenes/challenges/sine_challenge-script.gd" id="1_xu2cm"]
+[ext_resource type="Script" path="res://scripts/sine_challenge-script.gd" id="1_xu2cm"]
 [ext_resource type="PackedScene" uid="uid://cecs1gtpvc05p" path="res://scenes/osu_circle.tscn" id="1_yc3ec"]
 
 [node name="sine_challenge" type="Node2D"]
