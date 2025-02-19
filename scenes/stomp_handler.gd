@@ -64,6 +64,7 @@ func _input(event: InputEvent) -> void:
 		stomp_window_difference = stomp_window_actual - stomp_window_start
 		print("diff is" + str(stomp_window_difference))
 		pass
+
 func stompShit(type: Color):
 	stomp_window_start = Time.get_ticks_msec()
 	isRed = false

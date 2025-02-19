@@ -72,6 +72,7 @@ func beat_listener(beat: int) ->void:
 	
 	#                                                                                                             CIRCLE VS FOLLOW WIRE
 	print(data_array[beat][1])
+	
 	if (data_array[beat][1] == 1):
 		new_scene = osu_circle_scene.instantiate()
 		new_scene.position.x = randi() % 160

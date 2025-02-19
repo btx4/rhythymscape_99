@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dctvo1ohh1dnc"]
+[gd_scene load_steps=18 format=3 uid="uid://dctvo1ohh1dnc"]
 
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="1_04gay"]
 [ext_resource type="AudioStream" uid="uid://dcw21rksjky5j" path="res://music/Michael Jackson - Beat It [8 Bit - Chiptune Remix]  8 Bit Planet.mp3" id="2_p56mu"]
@@ -7,17 +7,18 @@
 [ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="5_qjqcm"]
 [ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="6_vasnw"]
 [ext_resource type="Script" path="res://scenes/attack_handler_newest.gd" id="7_fcauf"]
-[ext_resource type="PackedScene" uid="uid://rc2xhtidjyh2" path="res://one_screen_circle.tscn" id="15_rptrf"]
+[ext_resource type="Script" path="res://scenes/one_screen_circle.gd" id="15_06jki"]
 [ext_resource type="Script" path="res://scripts/score.gd" id="16_a5hb1"]
-[ext_resource type="PackedScene" uid="uid://wnht6jlqxxxu" path="res://scenes/pause_menu.tscn" id="16_wf0d1"]
-[ext_resource type="PackedScene" uid="uid://n2iweeeq8eki" path="res://scenes/flipper_obstacle.tscn" id="17_0ugqw"]
-[ext_resource type="PackedScene" uid="uid://6q3h01gpjh47" path="res://scenes/spray_paint_minigame_one_screen.tscn" id="17_intcp"]
+[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="16_ft4bb"]
 [ext_resource type="Script" path="res://scripts/combo.gd" id="17_lqqlm"]
 [ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="18_kq4db"]
 [ext_resource type="Texture2D" uid="uid://si5ssc70t4f1" path="res://assets/x_pop_up.png" id="19_x58ee"]
 [ext_resource type="Script" path="res://scenes/x_pop_up.gd" id="20_82sbq"]
 [ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="21_ggcip"]
 [ext_resource type="Script" path="res://scenes/Levels/combo_2.gd" id="22_sc7oq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2e6kv"]
+radius = 18.0278
 
 [node name="Beat it Newest" type="Node2D"]
 
@@ -41,7 +42,6 @@ texture = ExtResource("6_vasnw")
 [node name="Attack_Handler" type="Node2D" parent="."]
 position = Vector2(80, 90)
 script = ExtResource("7_fcauf")
-osu_circle_scene = ExtResource("15_rptrf")
 
 [node name="Score" type="RichTextLabel" parent="Attack_Handler"]
 visible = false
@@ -130,10 +130,13 @@ text = "[center]1[/center]"
 script = ExtResource("22_sc7oq")
 metadata/_edit_use_anchors_ = true
 
-[node name="Pause Menu" parent="." instance=ExtResource("16_wf0d1")]
-visible = false
+[node name="One_Screen_Circle" type="Area2D" parent="."]
+position = Vector2(567, 129)
+script = ExtResource("15_06jki")
 
-[node name="Flipper_obstacle" parent="." instance=ExtResource("17_0ugqw")]
-position = Vector2(202, 180)
+[node name="Sprite2D" type="Sprite2D" parent="One_Screen_Circle"]
+texture_filter = 1
+texture = ExtResource("16_ft4bb")
 
-[node name="Spray_paint_minigame_one_screen" parent="." instance=ExtResource("17_intcp")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="One_Screen_Circle"]
+shape = SubResource("CircleShape2D_2e6kv")

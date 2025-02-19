@@ -12,7 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if started:
-		scale = scale * .999
+		scale = scale * .997
 	pass
 
 func trigger():

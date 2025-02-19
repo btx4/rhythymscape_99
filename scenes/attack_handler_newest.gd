@@ -21,11 +21,6 @@ var file = FileAccess.open(file_path, FileAccess.READ)
 
 var data_array = []
 
-var WHITE = Color(1,1,1)
-var YELLOW = Color(1,1,0)
-var RED = Color(1,0,0)
-var GREEN = Color(0,1,0)
-var BLUE = Color(0,0,1)
 
 var total_score = 0
 var random_scene
@@ -70,18 +65,39 @@ func beat_listener(beat: int) ->void:
 		print("uhoh")
 		return  # Exit early if beat exceeds the array bounds
 	
-	#                                                                                                             CIRCLE VS FOLLOW WIRE
+	#                                                                                                             CIRCLE SPAWN
 	print(data_array[beat][1])
 	if (data_array[beat][1] == 1):
 		var beat_color = get_random_color()
-		print("Beat Color is" + str(beat_color))
-		#new_scene.myColor = beat_color
-		get_parent().get_node("Pulsing_circle").targetBeat.append([beat + 9,beat_color])
+		var new_scene = osu_circle_scene.instantiate()
+		var circlecolor = randi_range(0,3)
+		match circlecolor:
+			0:
+				new_scene.color = EventScript.GREEN
+				new_scene.index = 10
+			1:
+				new_scene.color = EventScript.YELLOW
+				new_scene.index = 0
+			2:
+				new_scene.color = EventScript.RED
+				new_scene.index = 5
+			3:
+				new_scene.color = EventScript.BLUE
+				new_scene.index = 15
+				
+		
+		new_scene.circle_popped.connect(self._on_circle_circle_popped)
+		new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)
+		
+		get_parent().add_child(new_scene)
+		#get_parent().get_node("Pulsing_circle").targetBeat.append([beat + 9,beat_color])
 	
 
 var COMBO = 1
 
 func _on_circle_circle_popped(quality: int) -> void:
+	print("Popped")
+	"""
 	print("HOORAY")
 	pop_streak +=1
 	
@@ -124,9 +140,12 @@ func _on_circle_circle_popped(quality: int) -> void:
 	total_score = total_score + (pop_streak * COMBO)
 	#print(total_score)
 	pass # Replace with function body.
+	"""
 
 
 func _on_circle_circle_not_popped() -> void:
+	print("Missed")
+	"""
 	$Error.play()
 	get_parent().start_shake(6,.1)
 	pop_streak = 0
@@ -134,6 +153,7 @@ func _on_circle_circle_not_popped() -> void:
 	#$Combo.text = "[center]" + str(pop_streak) + "[/center]"
 	$XPopUp.modulate.a = 255
 	$XPopUp.start_fade_out()
+	"""
 	pass # Replace with function body.
 
 
@@ -147,11 +167,11 @@ func get_random_color() -> Color:
 	#print(type)
 	match type:
 		1: #yello
-			return YELLOW
+			return EventScript.YELLOW
 		2: #red
-			return RED
+			return EventScript.RED
 		3: #gre
-			return GREEN
+			return EventScript.GREEN
 		4: #blu
-			return BLUE
-	return RED
+			return EventScript.BLUE
+	return EventScript.RED

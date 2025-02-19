@@ -1,0 +1,19 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://mvunm1pcr1sv"]
+
+[sub_resource type="Curve" id="Curve_xp6he"]
+_data = [Vector2(0, 0.516483), 0.0, 0.0, 0, 0, Vector2(0.460733, 0.428571), 0.0, 0.0, 0, 0, Vector2(0.801047, 0.076923), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lgfas"]
+curve = SubResource("Curve_xp6he")
+
+[resource]
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+spread = 90.0
+initial_velocity_min = 237.88
+initial_velocity_max = 370.04
+angular_velocity_min = -228.37
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("CurveTexture_lgfas")

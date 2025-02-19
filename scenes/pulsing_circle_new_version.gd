@@ -112,31 +112,34 @@ func beat_listener(beat: int) ->void:
 
 func _input(event: InputEvent) -> void:
 	
+	if event.is_action_pressed("ui_cancel"):
+		print("Paused")
+		get_parent().get_node("Pause Menu").toggle_pause
 	if event.is_action_pressed("yellow"):
+		$"Stomp Buttons/Yellow_stomp".restart()
 		yel = true
 		$"Stomp Buttons/Button_Yellow".trigger()
 	elif event.is_action_pressed("red"):
+		$"Stomp Buttons/Red_stomp".restart()
 		red = true
 		$"Stomp Buttons/Button_Red".trigger()
 	elif event.is_action_pressed("green"):
+		$"Stomp Buttons/Green_stomp".restart()
 		gre = true
 		$"Stomp Buttons/Button_Green".trigger()
 	elif event.is_action_pressed("blue"):
+		$"Stomp Buttons/Blue_stomp".restart()
 		blu = true
 		$"Stomp Buttons/Button_Blue".trigger()
-	elif event.is_action_pressed("stomp"):
-		if red:
-			$"Stomp Buttons/Red_stomp".restart()
-			$"Stomp Buttons/Red_stomp".emitting = true
-		if blu:
-			$"Stomp Buttons/Blue_stomp".restart()
-			$"Stomp Buttons/Blue_stomp".emitting = true
-		if yel:
-			$"Stomp Buttons/Yellow_stomp".restart()
-			$"Stomp Buttons/Yellow_stomp".emitting = true
-		if gre:
-			$"Stomp Buttons/Green_stomp".restart()
-			$"Stomp Buttons/Green_stomp".emitting = true
+	if red:
+		$"Stomp Buttons/Red_stomp".emitting = true
+	if blu:
+		$"Stomp Buttons/Blue_stomp".emitting = true
+	if yel:
+		$"Stomp Buttons/Yellow_stomp".emitting = true
+	if gre:
+		$"Stomp Buttons/Green_stomp".emitting = true
+	if event.is_action_pressed("stomp"):
 		$"Stomp Buttons/Button_center".trigger()
 		if (not red and not blu and not gre and not yel):
 			$"Stomp Buttons/White_stomp".restart()

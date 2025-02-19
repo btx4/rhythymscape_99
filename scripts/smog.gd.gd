@@ -11,6 +11,7 @@ var fade_speed: float = 1.0  # Speed at which the sprite fades out
 var direction = Vector2(0,0)
 
 func _ready() -> void:
+	self.z_index = 10
 	$Despawn_timer.start()
 	var random_angle = randf_range(0, 2 * PI)
 	velocity = Vector2(cos(random_angle), sin(random_angle)) * speed

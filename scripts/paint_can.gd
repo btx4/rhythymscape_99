@@ -6,7 +6,7 @@ extends Node2D
 var SPEED = 5
 
 func _ready() -> void:
-	z_index = 2
+	z_index = 11
 	$Despawn_timer.start()
 	pass
 

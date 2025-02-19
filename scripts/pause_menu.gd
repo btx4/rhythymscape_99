@@ -9,6 +9,7 @@ func _ready():
 	volume_slider.value_changed.connect(_on_volume_changed)
 
 func toggle_pause():
+	visible = true
 	get_tree().paused = !get_tree().paused
 	pause_menu.visible = get_tree().paused  # Show menu only when paused
 
