@@ -1,0 +1,255 @@
+[gd_scene load_steps=12 format=3 uid="uid://cahfqtrtojgof"]
+
+[ext_resource type="Script" path="res://scenes/pulsing_circle_new_version.gd" id="1_clnas"]
+[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="2_8ivju"]
+[ext_resource type="Texture2D" uid="uid://c87yg6tuuryqy" path="res://assets/button_stomp.png" id="2_8y8y5"]
+[ext_resource type="Script" path="res://scenes/stomp_buttons.gd" id="2_kpnj4"]
+[ext_resource type="Script" path="res://scenes/particles/color_buttons.gd" id="3_o56q4"]
+[ext_resource type="Texture2D" uid="uid://j6t0wh66mbf8" path="res://assets/center_button.png" id="4_hfokl"]
+[ext_resource type="Script" path="res://scenes/input_line.gd" id="6_8evvu"]
+[ext_resource type="Script" path="res://scenes/stomp_handler.gd" id="7_4taql"]
+
+[sub_resource type="Curve" id="Curve_xp6he"]
+_data = [Vector2(0, 0.516483), 0.0, 0.0, 0, 0, Vector2(0.460733, 0.428571), 0.0, 0.0, 0, 0, Vector2(0.801047, 0.076923), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_lgfas"]
+curve = SubResource("Curve_xp6he")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aubpy"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 237.88
+initial_velocity_max = 370.04
+angular_velocity_min = -228.37
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, 98, 0)
+linear_accel_min = -68.72
+linear_accel_max = -68.72
+radial_accel_min = -2.23517e-06
+radial_accel_max = -2.23517e-06
+tangential_accel_min = 100.0
+tangential_accel_max = 100.0
+damping_max = 100.0
+scale_curve = SubResource("CurveTexture_lgfas")
+
+[node name="Pulsing_circle" type="Node2D"]
+script = ExtResource("1_clnas")
+
+[node name="Background" type="ColorRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -197.0
+offset_top = -197.0
+offset_right = 197.0
+offset_bottom = 197.0
+
+[node name="Stomp Buttons" type="Node2D" parent="."]
+rotation = -4.71238
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_kpnj4")
+
+[node name="Button_Yellow" type="Sprite2D" parent="Stomp Buttons"]
+modulate = Color(1, 1, 0, 1)
+texture_filter = 1
+texture = ExtResource("2_8y8y5")
+script = ExtResource("3_o56q4")
+
+[node name="Button_Red" type="Sprite2D" parent="Stomp Buttons"]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+rotation = 1.57079
+scale = Vector2(1, 1)
+texture = ExtResource("2_8y8y5")
+script = ExtResource("3_o56q4")
+
+[node name="Button_Green" type="Sprite2D" parent="Stomp Buttons"]
+modulate = Color(0, 1, 0, 1)
+texture_filter = 1
+rotation = 3.14159
+texture = ExtResource("2_8y8y5")
+script = ExtResource("3_o56q4")
+
+[node name="Button_Blue" type="Sprite2D" parent="Stomp Buttons"]
+modulate = Color(0, 0, 1, 1)
+texture_filter = 1
+rotation = -1.5708
+texture = ExtResource("2_8y8y5")
+script = ExtResource("3_o56q4")
+
+[node name="Button_center" type="Sprite2D" parent="Stomp Buttons"]
+texture_filter = 1
+rotation = -1.57079
+texture = ExtResource("4_hfokl")
+script = ExtResource("3_o56q4")
+
+[node name="Green_stomp" type="GPUParticles2D" parent="Stomp Buttons"]
+modulate = Color(0, 1, 0, 1)
+rotation = 0.785397
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_aubpy")
+texture = ExtResource("2_8ivju")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
+
+[node name="Yellow_stomp" type="GPUParticles2D" parent="Stomp Buttons"]
+modulate = Color(1, 1, 0, 1)
+rotation = 0.785397
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_aubpy")
+texture = ExtResource("2_8ivju")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
+
+[node name="Red_stomp" type="GPUParticles2D" parent="Stomp Buttons"]
+modulate = Color(1, 0, 0, 1)
+rotation = 0.785397
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_aubpy")
+texture = ExtResource("2_8ivju")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
+
+[node name="Blue_stomp" type="GPUParticles2D" parent="Stomp Buttons"]
+modulate = Color(0, 0, 1, 1)
+rotation = 0.785397
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_aubpy")
+texture = ExtResource("2_8ivju")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
+
+[node name="White_stomp" type="GPUParticles2D" parent="Stomp Buttons"]
+rotation = 0.785397
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_aubpy")
+texture = ExtResource("2_8ivju")
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.95
+
+[node name="Trigger_Line" type="Sprite2D" parent="."]
+position = Vector2(-320, -180)
+
+[node name="Yellow Input" type="Node2D" parent="."]
+position = Vector2(0, -41)
+script = ExtResource("6_8evvu")
+
+[node name="Stomp_spot" type="Sprite2D" parent="Yellow Input"]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Yellow Input"]
+texture_filter = 1
+position = Vector2(0, -38)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Yellow Input"]
+texture_filter = 1
+position = Vector2(0, -76)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Yellow Input"]
+texture_filter = 1
+position = Vector2(0, -114)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Red Input" type="Node2D" parent="."]
+position = Vector2(43, 0)
+script = ExtResource("6_8evvu")
+
+[node name="Stomp_spot" type="Sprite2D" parent="Red Input"]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Red Input"]
+texture_filter = 1
+position = Vector2(38, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Red Input"]
+texture_filter = 1
+position = Vector2(76, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Red Input"]
+texture_filter = 1
+position = Vector2(114, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Green Input" type="Node2D" parent="."]
+position = Vector2(0, 44)
+script = ExtResource("6_8evvu")
+
+[node name="Stomp_spot" type="Sprite2D" parent="Green Input"]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Green Input"]
+texture_filter = 1
+position = Vector2(0, 38)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Green Input"]
+texture_filter = 1
+position = Vector2(0, 76)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Green Input"]
+texture_filter = 1
+position = Vector2(0, 114)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Blue Input" type="Node2D" parent="."]
+position = Vector2(-42, 0)
+script = ExtResource("6_8evvu")
+
+[node name="Stomp_spot" type="Sprite2D" parent="Blue Input"]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Blue Input"]
+texture_filter = 1
+position = Vector2(-38, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Blue Input"]
+texture_filter = 1
+position = Vector2(-76, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Blue Input"]
+texture_filter = 1
+position = Vector2(-114, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_8ivju")
+
+[node name="Stomp_handler" type="Node2D" parent="."]
+script = ExtResource("7_4taql")
+
+[node name="FailCase" type="Timer" parent="Stomp_handler"]
+
+[connection signal="timeout" from="Stomp_handler/FailCase" to="Stomp_handler" method="_on_fail_case_timeout"]

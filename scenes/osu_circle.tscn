@@ -9,7 +9,6 @@
 radius = 23.0868
 
 [node name="Circle" type="Area2D"]
-visible = false
 position = Vector2(178, 198)
 script = ExtResource("1_wdsxo")
 
