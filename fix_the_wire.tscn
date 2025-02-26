@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://dn3tkucttetq3"]
+
+[ext_resource type="Script" path="res://start_point.gd" id="1_ti48y"]
+[ext_resource type="Script" path="res://line_drawer.gd" id="2_lv4jm"]
+[ext_resource type="PackedScene" uid="uid://c0ukbmn3q05mp" path="res://electricity.tscn" id="2_ov66h"]
+[ext_resource type="Script" path="res://wire_end_point.gd" id="3_23b7c"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r3rfe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qasw7"]
+radius = 51.3847
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rfnfd"]
+radius = 271.066
+
+[node name="Fix the Wire" type="Node2D"]
+position = Vector2(320, 180)
+
+[node name="Everything_but_draw" type="Node2D" parent="."]
+rotation = -0.261799
+
+[node name="Sprite2D" type="Sprite2D" parent="Everything_but_draw"]
+position = Vector2(-320, 0)
+rotation = 0.261799
+scale = Vector2(192.75, 8.5)
+texture = SubResource("CanvasTexture_r3rfe")
+
+[node name="Start point" type="Node2D" parent="Everything_but_draw/Sprite2D"]
+position = Vector2(0.475357, 0.0294037)
+scale = Vector2(0.00518807, 0.117647)
+script = ExtResource("1_ti48y")
+
+[node name="Wire_entry_point" type="Area2D" parent="Everything_but_draw/Sprite2D/Start point"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Everything_but_draw/Sprite2D/Start point/Wire_entry_point"]
+shape = SubResource("CircleShape2D_qasw7")
+
+[node name="Electricity" parent="Everything_but_draw/Sprite2D/Start point" instance=ExtResource("2_ov66h")]
+position = Vector2(5, 0)
+
+[node name="Break_radius" type="Area2D" parent="Everything_but_draw/Sprite2D/Start point"]
+position = Vector2(217.471, -4.0719)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Everything_but_draw/Sprite2D/Start point/Break_radius"]
+position = Vector2(34, 4)
+shape = SubResource("CircleShape2D_rfnfd")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Everything_but_draw"]
+position = Vector2(316.523, 174.881)
+rotation = 0.261799
+scale = Vector2(192.75, 8.5)
+texture = SubResource("CanvasTexture_r3rfe")
+
+[node name="End point" type="Node2D" parent="Everything_but_draw/Sprite2D2"]
+position = Vector2(-0.472107, 0.0294037)
+scale = Vector2(0.00518807, 0.117647)
+script = ExtResource("1_ti48y")
+
+[node name="Wire_end_point" type="Area2D" parent="Everything_but_draw/Sprite2D2/End point"]
+script = ExtResource("3_23b7c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Everything_but_draw/Sprite2D2/End point/Wire_end_point"]
+shape = SubResource("CircleShape2D_qasw7")
+
+[node name="Electricity" parent="Everything_but_draw/Sprite2D2/End point" instance=ExtResource("2_ov66h")]
+position = Vector2(-4, 0)
+
+[node name="Line drawer" type="Node2D" parent="."]
+position = Vector2(-320, -180)
+script = ExtResource("2_lv4jm")
+
+[connection signal="mouse_entered" from="Everything_but_draw/Sprite2D/Start point/Wire_entry_point" to="Line drawer" method="_on_wire_entry_point_mouse_entered"]
+[connection signal="mouse_exited" from="Everything_but_draw/Sprite2D/Start point/Break_radius" to="Line drawer" method="_on_break_radius_mouse_exited"]
+[connection signal="mouse_entered" from="Everything_but_draw/Sprite2D2/End point/Wire_end_point" to="Line drawer" method="_on_wire_end_point_mouse_entered"]

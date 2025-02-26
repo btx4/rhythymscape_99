@@ -11,6 +11,7 @@ extends Node2D
 @export var charge_up_challenge_scene : PackedScene
 @export var poppable_arc_scene : PackedScene
 @export var poppable_sine_scene : PackedScene
+@export var flipper_scene : PackedScene
 
 @export var attack_start_beat = 20
 @export var beats_per_measure = 4
@@ -84,21 +85,25 @@ func beat_listener(beat: int) ->void:
 			3:
 				new_scene.color = EventScript.BLUE
 				new_scene.index = 15
-				
+		
 		
 		new_scene.circle_popped.connect(self._on_circle_circle_popped)
 		new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)
 		
 		get_parent().add_child(new_scene)
-		#get_parent().get_node("Pulsing_circle").targetBeat.append([beat + 9,beat_color])
 	
+	if (data_array[beat][2] == 1):
+		get_parent().get_node("Spray_paint_minigame_one_screen").spawn_spray_can()
+		print("SPAWN")
+	print(data_array[beat][2] == 2)
+	if (data_array[beat][2] == 2):
+		print("SPAWN")
+		new_scene = flipper_scene.instantiate()
+		get_parent().add_child(new_scene)
 
 var COMBO = 1
 
 func _on_circle_circle_popped(quality: int) -> void:
-	print("Popped")
-	"""
-	print("HOORAY")
 	pop_streak +=1
 	
 	match(quality):
@@ -106,46 +111,30 @@ func _on_circle_circle_popped(quality: int) -> void:
 			$Combo.text = "[center]" + "Perfect!" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
-			
-			$Combo2.text = "[center]" + "Perfect!" + "[/center]"
-			$Combo2.modulate.a = 255
-			$Combo2.start_fade_out()
 		2:
 			$Combo.text = "[center]" + "Great!" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
 			
-			$Combo2.text = "[center]" + "Great!" + "[/center]"
-			$Combo2.modulate.a = 255
-			$Combo2.start_fade_out()
 		1:
 			$Combo.text = "[center]" + "Good" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
 			
-			$Combo2.text = "[center]" + "Good" + "[/center]"
-			$Combo2.modulate.a = 255
-			$Combo2.start_fade_out()
 		0:
 			$Combo.text = "[center]" + "Ok" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
 			
-			$Combo2.text = "[center]" + "Ok" + "[/center]"
-			$Combo2.modulate.a = 255
-			$Combo2.start_fade_out()
-	
 	COMBO = ceil(pop_streak / 10)
 	
 	total_score = total_score + (pop_streak * COMBO)
 	#print(total_score)
 	pass # Replace with function body.
-	"""
 
 
 func _on_circle_circle_not_popped() -> void:
 	print("Missed")
-	"""
 	$Error.play()
 	get_parent().start_shake(6,.1)
 	pop_streak = 0
@@ -153,8 +142,7 @@ func _on_circle_circle_not_popped() -> void:
 	#$Combo.text = "[center]" + str(pop_streak) + "[/center]"
 	$XPopUp.modulate.a = 255
 	$XPopUp.start_fade_out()
-	"""
-	pass # Replace with function body.
+	pass 
 
 
 func _on_music_conductor_song_over() -> void:

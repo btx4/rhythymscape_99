@@ -5,9 +5,12 @@ var index = 0
 var popping_protocol = false
 var hitit = false
 
+var rotated = false
+
 var pop_window_actual
 var pop_window_start
 var pop_window_difference
+var pop_window_target
 
 var target_difference = 0
 
@@ -26,6 +29,8 @@ signal circle_not_popped
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	z_index = 0.1
+	if color == null:
+		color = Color(1,1,1)
 	$Sprite2D.modulate = color
 	position_change()
 	EventScript.beat.connect(beat_listener)
@@ -56,8 +61,7 @@ func _input(event: InputEvent) -> void:
 			hitit = true
 		if hitit:
 			pop_window_actual = Time.get_ticks_msec()
-			pop_window_difference = pop_window_actual - pop_window_start
-			
+			pop_window_difference = pop_window_actual - pop_window_target
 			print("diff is" + str(pop_window_difference))
 			if pop_window_difference < target_difference + thresh_perf and pop_window_difference > target_difference - thresh_perf:
 				print("Perfect")
@@ -86,6 +90,15 @@ func position_change():
 			queue_free()
 		fails = fails + 1
 	
+	if index >=0 and index <=4:
+		change_color(EventScript.YELLOW)
+	elif index >= 5 and index <= 9:
+		change_color(EventScript.RED)
+	elif index >= 10 and index <= 14:
+		change_color(EventScript.GREEN)
+	elif index >= 15 and index <= 19:
+		change_color(EventScript.BLUE)
+	
 	match index:
 		#YELLOWS
 		0:
@@ -97,10 +110,12 @@ func position_change():
 		3:
 			global_position = get_parent().get_node("Pulsing_circle/Yellow Input/Sprite2D2").global_position
 			popping_protocol = true
-			pop_window_start = Time.get_ticks_msec() + seconds_per_beat*100
+			pop_window_start = Time.get_ticks_msec()
+			pop_window_target = pop_window_start + (seconds_per_beat *1000)
+			print("Start:" + str(pop_window_start) + "AND  the target window is" + str(pop_window_target))
 		4:
 			global_position = get_parent().get_node("Pulsing_circle/Yellow Input/Stomp_spot").global_position
-			pop_window_start = Time.get_ticks_msec()
+			pop_window_target = Time.get_ticks_msec()
 			popping_protocol = true
 		#REDS
 		5:
@@ -112,10 +127,11 @@ func position_change():
 		8:
 			global_position = get_parent().get_node("Pulsing_circle/Red Input/Sprite2D2").global_position
 			popping_protocol = true
-			pop_window_start = Time.get_ticks_msec() + seconds_per_beat*100
+			pop_window_start = Time.get_ticks_msec()
+			pop_window_target = pop_window_start + (seconds_per_beat *1000)
 		9:
 			global_position = get_parent().get_node("Pulsing_circle/Red Input/Stomp_spot").global_position
-			pop_window_start = Time.get_ticks_msec()
+			pop_window_target = Time.get_ticks_msec()
 			popping_protocol = true
 		#GREENS
 		10:
@@ -127,10 +143,11 @@ func position_change():
 		13:
 			global_position = get_parent().get_node("Pulsing_circle/Green Input/Sprite2D2").global_position
 			popping_protocol = true
-			pop_window_start = Time.get_ticks_msec() + seconds_per_beat*100
+			pop_window_start = Time.get_ticks_msec() 
+			pop_window_target = pop_window_start + (seconds_per_beat *1000)
 		14:
 			global_position = get_parent().get_node("Pulsing_circle/Green Input/Stomp_spot").global_position
-			pop_window_start = Time.get_ticks_msec()
+			pop_window_target = Time.get_ticks_msec()
 			popping_protocol = true
 		#BLUES
 		15:
@@ -142,10 +159,12 @@ func position_change():
 		18:
 			global_position = get_parent().get_node("Pulsing_circle/Blue Input/Sprite2D2").global_position
 			popping_protocol = true
-			pop_window_start = Time.get_ticks_msec() + seconds_per_beat*100
+			pop_window_start = Time.get_ticks_msec()
+			pop_window_target = pop_window_start + (seconds_per_beat *1000)
 		19:
 			global_position = get_parent().get_node("Pulsing_circle/Blue Input/Stomp_spot").global_position
-			pop_window_start = Time.get_ticks_msec()
+			pop_window_target = Time.get_ticks_msec()
+
 			popping_protocol = true
 			
 		_:
@@ -155,4 +174,99 @@ func position_change():
 
 func beat_listener(beat: int) ->void:
 	index = index + 1
-	position_change()
+	
+	if index > 19:
+		index = index % 20
+	
+	if popping_protocol:
+		if fails == 1:
+			circle_not_popped.emit()
+			queue_free()
+		fails = fails + 1
+	
+	if index >=0 and index <=4:
+		change_color(EventScript.YELLOW)
+	elif index >= 5 and index <= 9:
+		change_color(EventScript.RED)
+	elif index >= 10 and index <= 14:
+		change_color(EventScript.GREEN)
+	elif index >= 15 and index <= 19:
+		change_color(EventScript.BLUE)
+	
+	match index:
+		#YELLOWS
+		0:
+			global_position = get_parent().get_node("Pulsing_circle/Yellow Input/Sprite2D5").global_position
+		1:
+			global_position = get_parent().get_node("Pulsing_circle/Yellow Input/Sprite2D4").global_position
+		2:
+			global_position = get_parent().get_node("Pulsing_circle/Yellow Input/Sprite2D3").global_position
+		3:
+			global_position = get_parent().get_node("Pulsing_circle/Yellow Input/Sprite2D2").global_position
+			popping_protocol = true
+			pop_window_start = Time.get_ticks_msec()
+			pop_window_target = pop_window_start + (seconds_per_beat *1000)
+			print("Start:" + str(pop_window_start) + "AND  the target window is" + str(pop_window_target))
+		4:
+			global_position = get_parent().get_node("Pulsing_circle/Yellow Input/Stomp_spot").global_position
+			pop_window_target = Time.get_ticks_msec()
+			popping_protocol = true
+		#REDS
+		5:
+			global_position = get_parent().get_node("Pulsing_circle/Red Input/Sprite2D5").global_position
+		6:
+			global_position = get_parent().get_node("Pulsing_circle/Red Input/Sprite2D4").global_position
+		7:
+			global_position = get_parent().get_node("Pulsing_circle/Red Input/Sprite2D3").global_position
+		8:
+			global_position = get_parent().get_node("Pulsing_circle/Red Input/Sprite2D2").global_position
+			popping_protocol = true
+			pop_window_start = Time.get_ticks_msec()
+			pop_window_target = pop_window_start + (seconds_per_beat *1000)
+		9:
+			global_position = get_parent().get_node("Pulsing_circle/Red Input/Stomp_spot").global_position
+			pop_window_target = Time.get_ticks_msec()
+			popping_protocol = true
+		#GREENS
+		10:
+			global_position = get_parent().get_node("Pulsing_circle/Green Input/Sprite2D5").global_position
+		11:
+			global_position = get_parent().get_node("Pulsing_circle/Green Input/Sprite2D4").global_position
+		12:
+			global_position = get_parent().get_node("Pulsing_circle/Green Input/Sprite2D3").global_position
+		13:
+			global_position = get_parent().get_node("Pulsing_circle/Green Input/Sprite2D2").global_position
+			popping_protocol = true
+			pop_window_start = Time.get_ticks_msec() 
+			pop_window_target = pop_window_start + (seconds_per_beat *1000)
+		14:
+			global_position = get_parent().get_node("Pulsing_circle/Green Input/Stomp_spot").global_position
+			pop_window_target = Time.get_ticks_msec()
+			popping_protocol = true
+		#BLUES
+		15:
+			global_position = get_parent().get_node("Pulsing_circle/Blue Input/Sprite2D5").global_position
+		16:
+			global_position = get_parent().get_node("Pulsing_circle/Blue Input/Sprite2D4").global_position
+		17:
+			global_position = get_parent().get_node("Pulsing_circle/Blue Input/Sprite2D3").global_position
+		18:
+			global_position = get_parent().get_node("Pulsing_circle/Blue Input/Sprite2D2").global_position
+			popping_protocol = true
+			pop_window_start = Time.get_ticks_msec()
+			pop_window_target = pop_window_start + (seconds_per_beat *1000)
+		19:
+			global_position = get_parent().get_node("Pulsing_circle/Blue Input/Stomp_spot").global_position
+			pop_window_target = Time.get_ticks_msec()
+
+			popping_protocol = true
+			
+		_:
+			global_position = get_parent().get_node("Pulsing_circle").global_position
+			pop_window_start = Time.get_ticks_msec()
+			popping_protocol = true
+
+func change_color(new_color :Color):
+	color = new_color
+	$Sprite2D.modulate = new_color
+	pass

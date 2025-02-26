@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddbrty2fx4y7x"]
+
+[ext_resource type="Script" path="res://enemy_basic.gd" id="1_5w0c6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bhbql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfpve"]
+size = Vector2(50, 52)
+
+[node name="Enemy_Basic" type="RigidBody2D"]
+script = ExtResource("1_5w0c6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(46, 46)
+texture = SubResource("CanvasTexture_bhbql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bfpve")

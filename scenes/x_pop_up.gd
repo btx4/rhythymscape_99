@@ -11,12 +11,13 @@ func _ready():
 	
 # Function to start the fade-out effect
 func start_fade_out():
-	
+	visible = true
 	fade_timer = fade_duration
-	position.x =  randi_range(0,160)
-	position.y =  randi_range(0,126)
+	position.x =  randi_range(320 - 80,320 + 80)
+	position.y =  randi_range(180 - 63,180  + 63)
 	rotation = deg_to_rad(randi_range(-60, 60))
 	set_process(true)
+	get_parent().get_parent().get_node("CanvasLayer").sat_down()
 
 # Process function to handle the fade
 func _process(delta):

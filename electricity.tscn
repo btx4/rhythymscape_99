@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0ukbmn3q05mp"]
+
+[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="1_luons"]
+
+[sub_resource type="Curve" id="Curve_2caac"]
+_data = [Vector2(0.408377, 1), 0.0, 0.0, 0, 0, Vector2(0.633508, 0.505494), 0.0, 0.0, 0, 0, Vector2(0.921466, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bi87x"]
+curve = SubResource("Curve_2caac")
+
+[sub_resource type="Gradient" id="Gradient_mkxpu"]
+offsets = PackedFloat32Array(0, 0.441718)
+colors = PackedColorArray(1, 0.580392, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cggw1"]
+gradient = SubResource("Gradient_mkxpu")
+
+[sub_resource type="Curve" id="Curve_50qw8"]
+_data = [Vector2(0, 0.505494), 0.0, 0.0, 0, 0, Vector2(0.664921, 0.450549), 0.0, 0.0, 0, 0, Vector2(0.994764, 0.923077), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_sxfe0"]
+curve = SubResource("Curve_50qw8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tuk8i"]
+particle_flag_disable_z = true
+angle_min = -243.7
+angle_max = 374.3
+spread = 180.0
+initial_velocity_min = 132.17
+initial_velocity_max = 449.34
+scale_curve = SubResource("CurveTexture_sxfe0")
+color_ramp = SubResource("GradientTexture1D_cggw1")
+alpha_curve = SubResource("CurveTexture_bi87x")
+hue_variation_min = -0.02
+hue_variation_max = 0.06
+turbulence_enabled = true
+turbulence_noise_strength = 11.13
+turbulence_noise_scale = 3.739
+turbulence_influence_min = 0.012
+turbulence_influence_max = 0.205
+
+[node name="Electricity" type="GPUParticles2D"]
+texture_filter = 1
+position = Vector2(178, 144)
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_tuk8i")
+texture = ExtResource("1_luons")
+lifetime = 1.5
+collision_base_size = 0.5
+trail_lifetime = 0.2
+trail_sections = 4
+trail_section_subdivisions = 1
