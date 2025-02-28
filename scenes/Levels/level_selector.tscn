@@ -1,18 +1,115 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsju3om1r6a3r"]
+[gd_scene load_steps=26 format=3 uid="uid://bsju3om1r6a3r"]
 
 [ext_resource type="Script" path="res://scripts/level_selector.gd" id="1_7knvd"]
 [ext_resource type="PackedScene" uid="uid://b0g8gtffmemhq" path="res://scenes/Levels/beat_it___file_reading.tscn" id="2_63jka"]
 [ext_resource type="PackedScene" uid="uid://vmlkwng6geex" path="res://scenes/Levels/lacrimosa_requiem.tscn" id="3_qxbrq"]
 [ext_resource type="PackedScene" uid="uid://oxh5ihuddeen" path="res://scenes/Levels/take_five.tscn" id="4_pvpq6"]
 [ext_resource type="Script" path="res://scenes/Levels/magic_maker_lvl_0.gd" id="5_oeepc"]
+[ext_resource type="Texture2D" uid="uid://bw6601kps10aq" path="res://assets/menus/level_menu/lvl_bg_1.png" id="5_tfvrs"]
+[ext_resource type="Texture2D" uid="uid://blv6ira18w3ks" path="res://assets/menus/level_menu/cd_walkman.png" id="6_2pboo"]
 [ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="6_gbnht"]
 [ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="7_755us"]
+[ext_resource type="Texture2D" uid="uid://cbj11kjmdjrqi" path="res://assets/menus/level_menu/dither_screen.png" id="7_ubdew"]
+[ext_resource type="Texture2D" uid="uid://bjts3xahxjj2b" path="res://assets/menus/level_menu/dither_screen2.png" id="8_86vrq"]
+[ext_resource type="Texture2D" uid="uid://bk7vb3pyx6rnj" path="res://assets/menus/level_menu/level_start_quit.png" id="12_0wd1w"]
+[ext_resource type="Texture2D" uid="uid://dqb8446uahenp" path="res://assets/menus/level_menu/level_settings.png" id="13_ke132"]
+[ext_resource type="Texture2D" uid="uid://cx12mmrjt4lgj" path="res://assets/menus/level_menu/level_left_button.png" id="14_6vxcv"]
+[ext_resource type="Texture2D" uid="uid://s07788r48o6g" path="res://assets/menus/level_menu/level_right_button.png" id="15_noiam"]
+[ext_resource type="Texture2D" uid="uid://d0iai8igkicf0" path="res://assets/menus/level_menu/start_light.png" id="16_ad67u"]
+[ext_resource type="Texture2D" uid="uid://bjc62f0fd3ir" path="res://assets/menus/level_menu/settings_light.png" id="17_np74t"]
+[ext_resource type="Texture2D" uid="uid://28xsf0cet6r" path="res://assets/menus/level_menu/quit_light.png" id="18_qm5d6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c6ed7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tfvrs")
+}],
+"loop": true,
+"name": &"loop",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8twhl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ubdew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_86vrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_86vrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ubdew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_86vrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ubdew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_86vrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_86vrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_86vrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_86vrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ubdew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ubdew")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oqf2j"]
+radius = 75.0267
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y61rr"]
+radius = 53.0377
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqpuw"]
+size = Vector2(299.892, 91.6397)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvhhy"]
+size = Vector2(525.918, 75.0344)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70pgo"]
+size = Vector2(218.044, 59.905)
 
 [node name="Level_Selector" type="Node2D"]
 script = ExtResource("1_7knvd")
 beat_it = ExtResource("2_63jka")
 lacrimosa_requiem = ExtResource("3_qxbrq")
 take_five = ExtResource("4_pvpq6")
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(1280, 720)
+sprite_frames = SubResource("SpriteFrames_c6ed7")
+animation = &"loop"
+
+[node name="Walkman" type="Sprite2D" parent="."]
+position = Vector2(1280, 720)
+texture = ExtResource("6_2pboo")
+
+[node name="DitherAnimate" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.398504, 0.390156, 0.398503, 0.2)
+position = Vector2(1280, 720)
+sprite_frames = SubResource("SpriteFrames_8twhl")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="Beat It" type="Button" parent="."]
 offset_left = 230.0
@@ -53,7 +150,114 @@ lifetime = 0.5
 texture_filter = 1
 texture = ExtResource("7_755us")
 
+[node name="Text" type="Node" parent="."]
+
+[node name="StartQuitText" type="Sprite2D" parent="Text"]
+modulate = Color(0.219608, 0.101961, 0.258824, 1)
+position = Vector2(1280, 720)
+texture = ExtResource("12_0wd1w")
+
+[node name="SettingsText" type="Sprite2D" parent="Text"]
+modulate = Color(0.0509804, 0.168627, 0.478431, 1)
+position = Vector2(1280, 720)
+texture = ExtResource("13_ke132")
+
+[node name="LeftButton" type="Node" parent="."]
+
+[node name="LeftHoverArea" type="Area2D" parent="LeftButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftButton/LeftHoverArea"]
+visible = false
+position = Vector2(236, 864)
+shape = SubResource("CircleShape2D_oqf2j")
+
+[node name="PointLight2D" type="PointLight2D" parent="LeftButton"]
+visible = false
+position = Vector2(1280, 720)
+color = Color(0.542785, 0.25426, 0.076301, 1)
+energy = 0.8
+texture = ExtResource("14_6vxcv")
+height = 10.0
+
+[node name="RightButton" type="Node" parent="."]
+
+[node name="RightHoverArea" type="Area2D" parent="RightButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightButton/RightHoverArea"]
+visible = false
+position = Vector2(1562, 782)
+shape = SubResource("CircleShape2D_y61rr")
+
+[node name="PointLight2D" type="PointLight2D" parent="RightButton"]
+visible = false
+position = Vector2(1280, 720)
+color = Color(0.541176, 0.254902, 0.0745098, 1)
+energy = 0.9
+texture = ExtResource("15_noiam")
+height = 10.0
+
+[node name="Start" type="Node" parent="."]
+
+[node name="StartHoverArea" type="Area2D" parent="Start"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start/StartHoverArea"]
+visible = false
+position = Vector2(432, 1162)
+rotation = -0.0920162
+shape = SubResource("RectangleShape2D_mqpuw")
+
+[node name="PointLight2D" type="PointLight2D" parent="Start"]
+visible = false
+position = Vector2(1280, 720)
+color = Color(0.956863, 0.352941, 0.419608, 1)
+energy = 2.1
+texture = ExtResource("16_ad67u")
+
+[node name="Settings" type="Node" parent="."]
+
+[node name="SettingsHoverArea" type="Area2D" parent="Settings"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Settings/SettingsHoverArea"]
+visible = false
+position = Vector2(877.896, 1127.42)
+rotation = -0.079258
+shape = SubResource("RectangleShape2D_hvhhy")
+
+[node name="PointLight2D" type="PointLight2D" parent="Settings"]
+visible = false
+position = Vector2(1280, 720)
+color = Color(0.261096, 0.682127, 0.610984, 1)
+energy = 2.1
+texture = ExtResource("17_np74t")
+
+[node name="Quit" type="Node" parent="."]
+
+[node name="QuitHoverArea" type="Area2D" parent="Quit"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Quit/QuitHoverArea"]
+visible = false
+position = Vector2(1519.24, 1072.67)
+rotation = -0.0616412
+shape = SubResource("RectangleShape2D_70pgo")
+
+[node name="PointLight2D" type="PointLight2D" parent="Quit"]
+visible = false
+position = Vector2(1280, 720)
+color = Color(0.956863, 0.352941, 0.419608, 1)
+energy = 2.0
+texture = ExtResource("18_qm5d6")
+
 [connection signal="pressed" from="Beat It" to="." method="_on_beat_it_pressed"]
 [connection signal="pressed" from="Lacrimosa Requiem" to="." method="_on_lacrimosa_requiem_pressed"]
 [connection signal="pressed" from="Take 5" to="." method="_on_take_5_pressed"]
 [connection signal="pressed" from="Lean Beef Patty" to="." method="_on_beat_it_button_4_pressed"]
+[connection signal="mouse_entered" from="LeftButton/LeftHoverArea" to="." method="_on_left_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="LeftButton/LeftHoverArea" to="." method="_on_left_hover_area_mouse_exited"]
+[connection signal="mouse_entered" from="RightButton/RightHoverArea" to="." method="_on_right_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="RightButton/RightHoverArea" to="." method="_on_right_hover_area_mouse_exited"]
+[connection signal="mouse_entered" from="Start/StartHoverArea" to="." method="_on_start_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="Start/StartHoverArea" to="." method="_on_start_hover_area_mouse_exited"]
+[connection signal="mouse_entered" from="Settings/SettingsHoverArea" to="." method="_on_settings_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="Settings/SettingsHoverArea" to="." method="_on_settings_hover_area_mouse_exited"]
+[connection signal="mouse_entered" from="Quit/QuitHoverArea" to="." method="_on_quit_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="Quit/QuitHoverArea" to="." method="_on_quit_hover_area_mouse_exited"]
