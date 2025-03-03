@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://bsju3om1r6a3r"]
 
 [ext_resource type="Script" path="res://scripts/level_selector.gd" id="1_7knvd"]
-[ext_resource type="PackedScene" uid="uid://b0g8gtffmemhq" path="res://scenes/Levels/beat_it___file_reading.tscn" id="2_63jka"]
+[ext_resource type="PackedScene" uid="uid://dctvo1ohh1dnc" path="res://scenes/beat_it_newest.tscn" id="2_0yuob"]
 [ext_resource type="PackedScene" uid="uid://vmlkwng6geex" path="res://scenes/Levels/lacrimosa_requiem.tscn" id="3_qxbrq"]
 [ext_resource type="PackedScene" uid="uid://oxh5ihuddeen" path="res://scenes/Levels/take_five.tscn" id="4_pvpq6"]
 [ext_resource type="Script" path="res://scenes/Levels/magic_maker_lvl_0.gd" id="5_oeepc"]
@@ -91,7 +91,7 @@ size = Vector2(218.044, 59.905)
 
 [node name="Level_Selector" type="Node2D"]
 script = ExtResource("1_7knvd")
-beat_it = ExtResource("2_63jka")
+beat_it = ExtResource("2_0yuob")
 lacrimosa_requiem = ExtResource("3_qxbrq")
 take_five = ExtResource("4_pvpq6")
 
@@ -117,6 +117,7 @@ offset_top = 116.0
 offset_right = 410.0
 offset_bottom = 153.0
 text = "Beat It"
+metadata/_edit_use_anchors_ = true
 
 [node name="Lacrimosa Requiem" type="Button" parent="."]
 offset_left = 230.0
@@ -125,6 +126,7 @@ offset_right = 410.0
 offset_bottom = 213.0
 text = "Lacrimosa Requiem
 "
+metadata/_edit_use_anchors_ = true
 
 [node name="Take 5" type="Button" parent="."]
 offset_left = 230.0
@@ -132,6 +134,7 @@ offset_top = 236.0
 offset_right = 410.0
 offset_bottom = 273.0
 text = "Take 5"
+metadata/_edit_use_anchors_ = true
 
 [node name="Lean Beef Patty" type="Button" parent="."]
 offset_left = 230.0
@@ -139,6 +142,7 @@ offset_top = 296.0
 offset_right = 410.0
 offset_bottom = 333.0
 text = "Lean Beef Patty"
+metadata/_edit_use_anchors_ = true
 
 [node name="Magic_maker_Lvl_0" type="Node2D" parent="."]
 script = ExtResource("5_oeepc")
@@ -247,12 +251,61 @@ color = Color(0.956863, 0.352941, 0.419608, 1)
 energy = 2.0
 texture = ExtResource("18_qm5d6")
 
+[node name="Song1" type="RichTextLabel" parent="." groups=["songs"]]
+visible = false
+offset_left = 416.0
+offset_top = 764.0
+offset_right = 921.0
+offset_bottom = 929.0
+theme_override_font_sizes/normal_font_size = 120
+text = "SONG 1"
+fit_content = true
+
+[node name="Song2" type="RichTextLabel" parent="." groups=["songs"]]
+visible = false
+offset_left = 412.0
+offset_top = 766.0
+offset_right = 1004.0
+offset_bottom = 1002.0
+theme_override_font_sizes/normal_font_size = 120
+text = "SONG 2"
+
+[node name="Song3" type="RichTextLabel" parent="." groups=["songs"]]
+visible = false
+offset_left = 410.0
+offset_top = 764.0
+offset_right = 911.0
+offset_bottom = 929.0
+theme_override_font_sizes/normal_font_size = 120
+text = "SONG 3"
+fit_content = true
+
+[node name="Song4" type="RichTextLabel" parent="." groups=["songs"]]
+visible = false
+offset_left = 415.0
+offset_top = 761.0
+offset_right = 1191.0
+offset_bottom = 965.0
+theme_override_font_sizes/normal_font_size = 120
+text = "SONG 4"
+
+[node name="Song5" type="RichTextLabel" parent="." groups=["songs"]]
+visible = false
+offset_left = 419.0
+offset_top = 761.0
+offset_right = 1033.0
+offset_bottom = 951.0
+theme_override_font_sizes/normal_font_size = 120
+text = "SONG 5"
+
 [connection signal="pressed" from="Beat It" to="." method="_on_beat_it_pressed"]
 [connection signal="pressed" from="Lacrimosa Requiem" to="." method="_on_lacrimosa_requiem_pressed"]
 [connection signal="pressed" from="Take 5" to="." method="_on_take_5_pressed"]
 [connection signal="pressed" from="Lean Beef Patty" to="." method="_on_beat_it_button_4_pressed"]
+[connection signal="input_event" from="LeftButton/LeftHoverArea" to="." method="_on_left_hover_area_input_event"]
 [connection signal="mouse_entered" from="LeftButton/LeftHoverArea" to="." method="_on_left_hover_area_mouse_entered"]
 [connection signal="mouse_exited" from="LeftButton/LeftHoverArea" to="." method="_on_left_hover_area_mouse_exited"]
+[connection signal="input_event" from="RightButton/RightHoverArea" to="." method="_on_right_hover_area_input_event"]
 [connection signal="mouse_entered" from="RightButton/RightHoverArea" to="." method="_on_right_hover_area_mouse_entered"]
 [connection signal="mouse_exited" from="RightButton/RightHoverArea" to="." method="_on_right_hover_area_mouse_exited"]
 [connection signal="mouse_entered" from="Start/StartHoverArea" to="." method="_on_start_hover_area_mouse_entered"]

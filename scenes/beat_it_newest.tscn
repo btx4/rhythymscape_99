@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dctvo1ohh1dnc"]
+[gd_scene load_steps=24 format=3 uid="uid://dctvo1ohh1dnc"]
 
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="1_04gay"]
 [ext_resource type="Script" path="res://scenes/beat_it_newest.gd" id="1_sh5nd"]
@@ -27,6 +27,8 @@ shader_parameter/desaturation = 1.0
 shader_parameter/opacity = 0.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5a8sr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g7n6l"]
 
 [node name="Beat it Newest" type="Node2D"]
 script = ExtResource("1_sh5nd")
@@ -116,3 +118,8 @@ material = SubResource("ShaderMaterial_hiix8")
 position = Vector2(318.5, 180)
 scale = Vector2(757, 427.818)
 texture = SubResource("CanvasTexture_5a8sr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 539)
+scale = Vector2(1920, 1080)
+texture = SubResource("CanvasTexture_g7n6l")

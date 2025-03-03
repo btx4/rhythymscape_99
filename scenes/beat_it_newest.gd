@@ -7,6 +7,9 @@ var shake_timer: float = 0.0
 var original_position: Vector2
 
 func _ready():
+	ProjectSettings.set_setting("display/window/stretch/scale", 1)
+	print(str(ProjectSettings.get_setting("display/window/stretch/scale")))
+	#ProjectSettings.set("display/window/stretch/scale", 1)
 	# Store the original position of the node
 	original_position = position
 
