@@ -1,9 +1,8 @@
 extends Node2D
-
-
+var basePos
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	start()
+	basePos = $Circles.position
 	pass # Replace with function body.
 
 """
@@ -25,5 +24,9 @@ func no_pop():
 	$Pop.play()
 
 func start():
+	$Circles.position = basePos
+	$Circles.position.x += randi_range(-100,900)
+	$Circles.position.y += randi_range(-300,300)
 	$Circles.spawn_circles()
+	$Circles
 	$Pop.pitch_scale = 1

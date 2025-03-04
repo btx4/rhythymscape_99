@@ -66,6 +66,9 @@ func beat_listener(beat: int) ->void:
 	#TEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMP
 	
 	#print(data_array[beat])
+	if beat % 16 == 4:
+		$"Poppable Arc".start()
+	
 	if beat >= data_array.size():
 		print("uhoh")
 		return  # Exit early if beat exceeds the array bounds
