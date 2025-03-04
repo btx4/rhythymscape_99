@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://scenes/pulsing_circle_new_version.gd" id="1_clnas"]
 [ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="2_8ivju"]
 [ext_resource type="Texture2D" uid="uid://c87yg6tuuryqy" path="res://assets/button_stomp.png" id="2_8y8y5"]
-[ext_resource type="Script" path="res://scenes/stomp_buttons.gd" id="2_kpnj4"]
+[ext_resource type="Script" path="res://scripts/stomp_buttons (2).gd" id="2_kpnj4"]
 [ext_resource type="Script" path="res://scenes/particles/color_buttons.gd" id="3_o56q4"]
 [ext_resource type="Texture2D" uid="uid://j6t0wh66mbf8" path="res://assets/center_button.png" id="4_hfokl"]
-[ext_resource type="Script" path="res://scenes/input_line.gd" id="6_8evvu"]
+[ext_resource type="Script" path="res://scripts/input_line.gd" id="6_8evvu"]
 [ext_resource type="Material" uid="uid://mvunm1pcr1sv" path="res://scenes/stomp_particles.tres" id="6_kym7s"]
-[ext_resource type="Script" path="res://scenes/stomp_handler.gd" id="7_4taql"]
-[ext_resource type="Script" path="res://scenes/basic_pulse.gd" id="9_mkg5h"]
+[ext_resource type="Script" path="res://scripts/stomp_handler.gd" id="7_4taql"]
+[ext_resource type="Script" path="res://scripts/basic_pulse.gd" id="9_mkg5h"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8ld1v"]
 

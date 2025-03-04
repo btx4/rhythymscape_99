@@ -7,15 +7,12 @@
 script = ExtResource("1_e2pnn")
 
 [node name="Area2D" parent="." instance=ExtResource("1_fefk0")]
-visible = true
 position = Vector2(160, 60)
 
 [node name="Area2D2" parent="." instance=ExtResource("1_fefk0")]
-visible = true
 position = Vector2(244.853, 95.147)
 
 [node name="Area2D3" parent="." instance=ExtResource("1_fefk0")]
-visible = true
 position = Vector2(280, 180)
 
 [node name="Area2D4" parent="." instance=ExtResource("1_fefk0")]

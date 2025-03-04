@@ -1,0 +1,92 @@
+[gd_scene load_steps=13 format=3 uid="uid://cgb41vyns58vg"]
+
+[ext_resource type="Script" path="res://fix_the_wire_top.gd" id="1_ause2"]
+[ext_resource type="Script" path="res://start_point.gd" id="1_rxdp8"]
+[ext_resource type="PackedScene" uid="uid://c0ukbmn3q05mp" path="res://electricity.tscn" id="2_cpobi"]
+[ext_resource type="Script" path="res://wire_end_point.gd" id="3_nr8pv"]
+[ext_resource type="Script" path="res://line_drawer.gd" id="4_obopa"]
+[ext_resource type="Script" path="res://break_radius_left.gd" id="4_tpfw0"]
+[ext_resource type="AudioStream" uid="uid://boicxtlmhtdyf" path="res://sounds/393066__wakerone__electric-zap-electricity-2.wav" id="7_y2srj"]
+[ext_resource type="Script" path="res://buzz.gd" id="8_inora"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tqsp8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qasw7"]
+radius = 51.3847
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ug46n"]
+radius = 13.9625
+height = 270.393
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r3rfe"]
+
+[node name="Fix the Wire Horizontal" type="Node2D"]
+position = Vector2(960, 540)
+script = ExtResource("1_ause2")
+
+[node name="Everything_but_draw" type="Node2D" parent="."]
+rotation = -3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="Everything_but_draw"]
+self_modulate = Color(0, 0, 1, 1)
+position = Vector2(24.6362, -0.341064)
+scale = Vector2(48.5646, 8.5)
+texture = SubResource("CanvasTexture_tqsp8")
+
+[node name="Start point" type="Node2D" parent="Everything_but_draw/Sprite2D"]
+position = Vector2(0.493381, 0.059351)
+scale = Vector2(0.0205911, 0.117647)
+script = ExtResource("1_rxdp8")
+
+[node name="Wire_entry_point" type="Area2D" parent="Everything_but_draw/Sprite2D/Start point"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Everything_but_draw/Sprite2D/Start point/Wire_entry_point"]
+shape = SubResource("CircleShape2D_qasw7")
+
+[node name="Electricity" parent="Everything_but_draw/Sprite2D/Start point" instance=ExtResource("2_cpobi")]
+position = Vector2(5, 0)
+
+[node name="Break_radius" type="Area2D" parent="Everything_but_draw/Sprite2D/Start point"]
+position = Vector2(459.404, -0.164675)
+script = ExtResource("4_tpfw0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Everything_but_draw/Sprite2D/Start point/Break_radius"]
+position = Vector2(41, 0.000305176)
+rotation = 1.57079
+scale = Vector2(-10.7431, 3.5356)
+shape = SubResource("CapsuleShape2D_ug46n")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Everything_but_draw"]
+self_modulate = Color(0, 0, 1, 1)
+position = Vector2(960, -0.00244969)
+scale = Vector2(192.75, 8.5)
+texture = SubResource("CanvasTexture_r3rfe")
+
+[node name="End point" type="Node2D" parent="Everything_but_draw/Sprite2D2"]
+position = Vector2(-0.472107, 0.0294037)
+scale = Vector2(0.00518807, 0.117647)
+script = ExtResource("1_rxdp8")
+
+[node name="Wire_end_point" type="Area2D" parent="Everything_but_draw/Sprite2D2/End point"]
+script = ExtResource("3_nr8pv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Everything_but_draw/Sprite2D2/End point/Wire_end_point"]
+shape = SubResource("CircleShape2D_qasw7")
+
+[node name="Electricity" parent="Everything_but_draw/Sprite2D2/End point" instance=ExtResource("2_cpobi")]
+position = Vector2(-4, 0)
+
+[node name="Line drawer" type="Node2D" parent="."]
+position = Vector2(-960, -540)
+script = ExtResource("4_obopa")
+
+[node name="Buzz" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_y2srj")
+volume_db = -8.32
+autoplay = true
+script = ExtResource("8_inora")
+
+[connection signal="mouse_entered" from="Everything_but_draw/Sprite2D/Start point/Wire_entry_point" to="Line drawer" method="_on_wire_entry_point_mouse_entered"]
+[connection signal="mouse_exited" from="Everything_but_draw/Sprite2D/Start point/Break_radius" to="Line drawer" method="_on_break_radius_mouse_exited"]
+[connection signal="mouse_entered" from="Everything_but_draw/Sprite2D2/End point/Wire_end_point" to="Line drawer" method="_on_wire_end_point_mouse_entered"]
+[connection signal="finished" from="Buzz" to="Buzz" method="_on_finished"]

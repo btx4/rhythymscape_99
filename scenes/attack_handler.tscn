@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://scripts/combo.gd" id="8_dyfi2"]
 [ext_resource type="Script" path="res://scripts/rich_text_label.gd" id="9_ro5oc"]
 [ext_resource type="Texture2D" uid="uid://si5ssc70t4f1" path="res://assets/x_pop_up.png" id="10_ajtvq"]
-[ext_resource type="Script" path="res://scenes/x_pop_up.gd" id="11_85cym"]
+[ext_resource type="Script" path="res://scripts/x_pop_up.gd" id="11_85cym"]
 [ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="12_5sjp1"]
 
 [node name="Attack_Handler" type="Node2D"]

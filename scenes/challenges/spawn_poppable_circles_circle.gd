@@ -15,7 +15,7 @@ func spawn_circles() -> void:
 		var position_offset = Vector2(cos(angle), sin(angle)) * spawn_radius
 		spawn_circle(position + position_offset)
 
-# Spawns a single circle at a given position
+# Spawns a single circle at a given positions
 func spawn_circle(spawn_position: Vector2) -> void:
 	if poppable_circle:
 		var circle_instance = poppable_circle.instantiate() as Node2D

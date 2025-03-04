@@ -2,13 +2,13 @@ extends Node2D
 
 
 @export var osu_circle_scene : PackedScene
-@export var follow_the_wire_scene : PackedScene
-@export var follow_the_wire_zigzag_scene : PackedScene
 
 # challenges
-@export var back_and_forth_challenge_scene : PackedScene
-@export var smog_scene : PackedScene
-@export var charge_up_challenge_scene : PackedScene
+@export var fix_the_wire_top_scene : PackedScene
+@export var fix_the_wire_bottom_scene : PackedScene
+@export var fix_the_wire_left_scene : PackedScene
+@export var fix_the_wire_right_scene : PackedScene
+
 @export var poppable_arc_scene : PackedScene
 @export var poppable_sine_scene : PackedScene
 @export var flipper_scene : PackedScene
@@ -61,6 +61,10 @@ func _process(delta: float) -> void:
 
 var index2value
 func beat_listener(beat: int) ->void:
+	#TEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMP
+	
+	#TEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMP
+	
 	#print(data_array[beat])
 	if beat >= data_array.size():
 		print("uhoh")
@@ -95,11 +99,29 @@ func beat_listener(beat: int) ->void:
 	if (data_array[beat][2] == 1):
 		get_parent().get_node("Spray_paint_minigame_one_screen").spawn_spray_can()
 		print("SPAWN")
-	print(data_array[beat][2] == 2)
 	if (data_array[beat][2] == 2):
 		print("SPAWN")
 		new_scene = flipper_scene.instantiate()
 		get_parent().add_child(new_scene)
+	if (data_array[beat][2] == 3):
+		new_scene = fix_the_wire_top_scene.instantiate()
+		new_scene.position = get_parent().get_node("Pulsing_circle").position
+		new_scene.z_index = get_parent().get_node("Pulsing_circle/Background").z_index + 1
+		get_parent().add_child(new_scene)
+		get_parent().get_node("Pulsing_circle").yellow_hittable = false
+	if (data_array[beat][2] == 4):
+		new_scene = fix_the_wire_left_scene.instantiate()
+		new_scene.position = get_parent().get_node("Pulsing_circle").position
+		new_scene.z_index = get_parent().get_node("Pulsing_circle/Background").z_index + 1
+		get_parent().add_child(new_scene)
+		get_parent().get_node("Pulsing_circle").blue_hittable = false
+	if (data_array[beat][2] == 5):
+		new_scene = fix_the_wire_right_scene.instantiate()
+		new_scene.position = get_parent().get_node("Pulsing_circle").position
+		new_scene.z_index = get_parent().get_node("Pulsing_circle/Background").z_index + 1
+		get_parent().add_child(new_scene)
+		get_parent().get_node("Pulsing_circle").red_hittable = false
+		
 
 var COMBO = 1
 

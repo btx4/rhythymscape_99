@@ -3,8 +3,9 @@ extends Node2D
 var mouse_position: Vector2
 var should_draw_line: bool = false  # Renamed to avoid conflict with the draw_line method
 var complete = false
-var stroke = 8.5
+var stroke = 10
 func _process(delta: float) -> void:
+	position = Vector2(-960,-540)
 	queue_redraw()  # Ensure the line updates
 var start
 func _draw() -> void:
@@ -33,12 +34,15 @@ func _on_wire_entry_point_mouse_entered() -> void:
 
 func _on_wire_end_point_mouse_entered() -> void:
 	if should_draw_line:
+		get_parent().get_node("Buzz").stop()
 		complete = true
+		get_parent().fading = true
 	pass # Replace with function body.
 
 
 func _on_break_radius_mouse_exited() -> void:
 	should_draw_line = false
-	
 	get_parent().get_node("Everything_but_draw/Sprite2D/Start point/Electricity").position = Vector2(5,0)
+	if !complete:
+		get_parent().get_node("Everything_but_draw/Sprite2D/Start point").should_draw = true
 	pass # Replace with function body.

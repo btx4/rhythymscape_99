@@ -1,4 +1,4 @@
-extends AudioStreamPlayer2D
+extends Timer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -11,6 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_finished() -> void:
-	play()
+func _on_timeout() -> void:
+	get_parent().start()
 	pass # Replace with function body.
