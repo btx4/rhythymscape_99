@@ -3,7 +3,7 @@ extends Node2D
 @export var instance_scene: PackedScene  # Drag and drop your scene in the Inspector
 @export var spawn_count: int = 180  # Number of instances to spawn
 
-var SPEED = 5
+var SPEED = 750
 
 func _ready() -> void:
 	z_index = 11
@@ -13,7 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Move in the direction of the rotation
 	var direction = Vector2.UP.rotated(rotation) 
-	position += direction * 5  
+	position += direction * SPEED *delta  
 	
 	spawn_instances()
 	
@@ -30,6 +30,7 @@ func spawn_instances() -> void:
 		dir = !dir
 	instance.position = position
 	instance.direction = direction
+
 
 	# Add the instance to the parent node
 	get_parent().add_child(instance)

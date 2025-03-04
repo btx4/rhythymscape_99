@@ -8,6 +8,7 @@
 [node name="Paint_can" type="Sprite2D"]
 texture_filter = 1
 position = Vector2(327, 397)
+scale = Vector2(4, 4)
 texture = ExtResource("1_u4fys")
 script = ExtResource("2_sjd4x")
 instance_scene = ExtResource("3_e7k7o")

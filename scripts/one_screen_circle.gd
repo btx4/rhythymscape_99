@@ -4,7 +4,7 @@ var color
 var index = 0
 var popping_protocol = false
 var hitit = false
-
+var disabled = false
 var rotated = false
 
 var pop_window_actual
@@ -50,33 +50,34 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
-	if popping_protocol:
-		if event.is_action_pressed("red") and color == EventScript.RED:
-			hitit = true
-		if event.is_action_pressed("yellow") and color == EventScript.YELLOW:
-			hitit = true
-		if event.is_action_pressed("green") and color == EventScript.GREEN:
-			hitit = true
-		if event.is_action_pressed("blue") and color == EventScript.BLUE:
-			hitit = true
-		if hitit:
-			pop_window_actual = Time.get_ticks_msec()
-			pop_window_difference = pop_window_actual - pop_window_target
-			print("diff is" + str(pop_window_difference))
-			if pop_window_difference < target_difference + thresh_perf and pop_window_difference > target_difference - thresh_perf:
-				print("Perfect")
-				quality = 3
-			elif pop_window_difference < target_difference + thresh_great and pop_window_difference > target_difference - thresh_great:
-				print("Great!")
-				quality = 2
-			elif pop_window_difference < target_difference + thresh_good and pop_window_difference > target_difference - thresh_good:
-				print("Good")
-				quality = 1
-			else:
-				print("Ok...")
-				quality = 0
-			emit_signal("circle_popped", quality)
-			queue_free()
+	if !disabled:
+		if popping_protocol:
+			if event.is_action_pressed("red") and color == EventScript.RED:
+				hitit = true
+			if event.is_action_pressed("yellow") and color == EventScript.YELLOW:
+				hitit = true
+			if event.is_action_pressed("green") and color == EventScript.GREEN:
+				hitit = true
+			if event.is_action_pressed("blue") and color == EventScript.BLUE:
+				hitit = true
+			if hitit:
+				pop_window_actual = Time.get_ticks_msec()
+				pop_window_difference = pop_window_actual - pop_window_target
+				print("diff is" + str(pop_window_difference))
+				if pop_window_difference < target_difference + thresh_perf and pop_window_difference > target_difference - thresh_perf:
+					print("Perfect")
+					quality = 3
+				elif pop_window_difference < target_difference + thresh_great and pop_window_difference > target_difference - thresh_great:
+					print("Great!")
+					quality = 2
+				elif pop_window_difference < target_difference + thresh_good and pop_window_difference > target_difference - thresh_good:
+					print("Good")
+					quality = 1
+				else:
+					print("Ok...")
+					quality = 0
+				emit_signal("circle_popped", quality)
+				queue_free()
 
 var fails = 0
 func position_change():

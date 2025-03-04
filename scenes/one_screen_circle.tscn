@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://rc2xhtidjyh2"]
 
-[ext_resource type="Script" path="res://scenes/one_screen_circle.gd" id="1_h2cvm"]
+[ext_resource type="Script" path="res://scripts/one_screen_circle.gd" id="1_h2cvm"]
 [ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="2_3rfx1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2e6kv"]
@@ -8,6 +8,7 @@ radius = 18.0278
 
 [node name="One_Screen_Circle" type="Area2D" groups=["note"]]
 position = Vector2(567, 129)
+scale = Vector2(3, 3)
 script = ExtResource("1_h2cvm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

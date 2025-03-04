@@ -12,6 +12,6 @@ script = ExtResource("1_kvfwb")
 stream = ExtResource("3_7wiqn")
 
 [node name="Circles" type="Node2D" parent="."]
-position = Vector2(80, 90)
+position = Vector2(104, 233)
 script = ExtResource("3_nqdee")
 poppable_circle = ExtResource("1_0qhrq")

@@ -11,6 +11,6 @@ func _process(delta: float) -> void:
 	queue_redraw()
 	pass
 
-func _draw() -> void:	
+func _draw() -> void:
 	
-	draw_circle(Vector2.ZERO, 16, Color(1,1,1), false,4)  # WhiteCircle
+	draw_circle(Vector2.ZERO, 25, Color(1,1,1), false,8)  # WhiteCircle

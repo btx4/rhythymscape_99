@@ -109,25 +109,29 @@ func beat_listener(beat: int) ->void:
 	pass
 
 
+var red_hittable = true
+var blue_hittable = true
+var green_hittable = true
+var yellow_hittable = true
 
 func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("ui_cancel"):
 		print("Paused")
 		get_parent().get_node("Pause Menu").toggle_pause
-	if event.is_action_pressed("yellow"):
+	if event.is_action_pressed("yellow") and yellow_hittable:
 		$"Stomp Buttons/Yellow_stomp".restart()
 		yel = true
 		$"Stomp Buttons/Button_Yellow".trigger()
-	elif event.is_action_pressed("red"):
+	elif event.is_action_pressed("red") and red_hittable:
 		$"Stomp Buttons/Red_stomp".restart()
 		red = true
 		$"Stomp Buttons/Button_Red".trigger()
-	elif event.is_action_pressed("green"):
+	elif event.is_action_pressed("green") and green_hittable:
 		$"Stomp Buttons/Green_stomp".restart()
 		gre = true
 		$"Stomp Buttons/Button_Green".trigger()
-	elif event.is_action_pressed("blue"):
+	elif event.is_action_pressed("blue") and blue_hittable:
 		$"Stomp Buttons/Blue_stomp".restart()
 		blu = true
 		$"Stomp Buttons/Button_Blue".trigger()

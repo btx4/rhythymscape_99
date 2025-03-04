@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://d38igcybbx3n7"]
 
 [ext_resource type="Script" path="res://scripts/follow_the_wire.gd" id="1_o0unv"]
-[ext_resource type="Script" path="res://scenes/line_draw_2.gd" id="3_ag18d"]
+[ext_resource type="Script" path="res://scripts/line_draw_2.gd" id="3_ag18d"]
 [ext_resource type="PackedScene" uid="uid://cecs1gtpvc05p" path="res://scenes/osu_circle.tscn" id="3_xgein"]
-[ext_resource type="Script" path="res://scenes/line_draw_straight.gd" id="4_qv5aj"]
+[ext_resource type="Script" path="res://scripts/line_draw_straight.gd" id="4_qv5aj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tfvmp"]
 radius = 22.0227
