@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmluc6ew814ow"]
 
-[ext_resource type="Script" path="res://poppable_circle.gd" id="1_penxy"]
-[ext_resource type="Script" path="res://poppable_circle_area2d.gd" id="1_ydgeq"]
+[ext_resource type="Script" path="res://scripts/poppable_circle.gd" id="1_penxy"]
+[ext_resource type="Script" path="res://scripts/poppable_circle_area2d.gd" id="1_ydgeq"]
 [ext_resource type="PackedScene" uid="uid://boyyjjusfj47u" path="res://scenes/nice!.tscn" id="2_f3dya"]
 [ext_resource type="PackedScene" uid="uid://dlsld1sacmgxa" path="res://scenes/oops!.tscn" id="3_s3ido"]
 

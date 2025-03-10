@@ -49,6 +49,7 @@ position = Vector2(960, 540)
 scale = Vector2(3, 3)
 
 [node name="Camera2D" type="Camera2D" parent="Pulsing_circle"]
+zoom = Vector2(0.9, 0.9)
 
 [node name="Magic_Maker" type="Node2D" parent="."]
 script = ExtResource("4_khxod")
@@ -125,13 +126,6 @@ visible = false
 
 [node name="Spray_paint_minigame_one_screen" parent="." instance=ExtResource("17_intcp")]
 
-[node name="ScoreBar" parent="." instance=ExtResource("26_nfqmw")]
-offset_left = 1015.0
-offset_top = 1012.0
-offset_right = 1463.0
-offset_bottom = 1046.0
-max_value = 4500.0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_lknng")
 
@@ -150,6 +144,12 @@ offset_bottom = 810.0
 text = "0"
 script = ExtResource("26_c0qyj")
 
+[node name="ScoreBar" parent="CanvasLayer" instance=ExtResource("26_nfqmw")]
+offset_left = 1227.0
+offset_top = 990.0
+offset_right = 1427.0
+offset_bottom = 1005.0
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(960, 539)
@@ -157,4 +157,3 @@ scale = Vector2(1920, 1080)
 texture = SubResource("CanvasTexture_g7n6l")
 
 [node name="Bonus_zone" parent="." instance=ExtResource("25_2u372")]
-position = Vector2(-215, -200)

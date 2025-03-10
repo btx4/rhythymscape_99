@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://boyyjjusfj47u"]
 
-[ext_resource type="Script" path="res://nice!.gd" id="1_xbiio"]
+[ext_resource type="Script" path="res://scripts/nice!.gd" id="1_xbiio"]
 
 [node name="Nice!" type="RichTextLabel"]
 offset_right = 40.0

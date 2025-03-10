@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://dsqf0cfxbwbne"]
 
 [ext_resource type="Shader" path="res://lightning.gdshader" id="1_mrluq"]
-[ext_resource type="Script" path="res://charge_up_challenge.gd" id="1_y0wb4"]
+[ext_resource type="Script" path="res://scripts/charge_up_challenge.gd" id="1_y0wb4"]
 [ext_resource type="AudioStream" uid="uid://boicxtlmhtdyf" path="res://sounds/393066__wakerone__electric-zap-electricity-2.wav" id="2_u3xwc"]
-[ext_resource type="Script" path="res://lightning.gd" id="3_30nep"]
-[ext_resource type="Script" path="res://buzz.gd" id="3_g4tls"]
-[ext_resource type="Script" path="res://charge_up_challenge_buttom.gd" id="4_lq11b"]
+[ext_resource type="Script" path="res://scripts/lightning.gd" id="3_30nep"]
+[ext_resource type="Script" path="res://scripts/buzz.gd" id="3_g4tls"]
+[ext_resource type="Script" path="res://scripts/charge_up_challenge_buttom.gd" id="4_lq11b"]
 [ext_resource type="Texture2D" uid="uid://j6t0wh66mbf8" path="res://assets/center_button.png" id="4_y43om"]
-[ext_resource type="Script" path="res://lightning_horiz.gd" id="8_qnjbp"]
+[ext_resource type="Script" path="res://scripts/lightning_horiz.gd" id="8_qnjbp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q5kuc"]
 radius = 53.1507
