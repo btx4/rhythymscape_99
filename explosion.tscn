@@ -1,0 +1,96 @@
+[gd_scene load_steps=15 format=3 uid="uid://wls8fam2q681"]
+
+[ext_resource type="Script" path="res://explosion.gd" id="1_dhbpd"]
+[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="2_y6phl"]
+[ext_resource type="AudioStream" uid="uid://myh1pw6o21ub" path="res://sounds/435416__v-ktor__explosion13.wav" id="3_uswip"]
+
+[sub_resource type="Curve" id="Curve_7b45i"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0779221, 1), 0.0, 0.0, 0, 0, Vector2(0.658009, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_3o8b7"]
+curve = SubResource("Curve_7b45i")
+
+[sub_resource type="Curve" id="Curve_31b5s"]
+min_value = 2.0
+max_value = 10.0
+_data = [Vector2(0, 0.1), 0.0, 4.4448, 0, 0, Vector2(1e-05, 4.9011), 0.0, 0.0, 0, 0, Vector2(0.705628, 10), 0.0, 0.0, 0, 0, Vector2(1, 10), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_opwri"]
+curve = SubResource("Curve_31b5s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pnxg0"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_max = 243.43
+gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("CurveTexture_opwri")
+alpha_curve = SubResource("CurveTexture_3o8b7")
+
+[sub_resource type="Curve" id="Curve_t6foo"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_a8bof"]
+curve = SubResource("Curve_t6foo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_b887x"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 220.97
+initial_velocity_max = 456.93
+gravity = Vector3(0, 98, 0)
+alpha_curve = SubResource("CurveTexture_a8bof")
+
+[sub_resource type="Curve" id="Curve_rnyd3"]
+_data = [Vector2(0.316017, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_57qtb"]
+curve = SubResource("Curve_rnyd3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_iadfr"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 164.8
+initial_velocity_max = 584.27
+gravity = Vector3(0, 98, 0)
+alpha_curve = SubResource("CurveTexture_57qtb")
+hue_variation_min = 0.21
+hue_variation_max = 0.54
+
+[node name="Explosion" type="Node2D"]
+script = ExtResource("1_dhbpd")
+
+[node name="Gray" type="GPUParticles2D" parent="."]
+modulate = Color(0.466181, 0.466181, 0.466181, 1)
+texture_filter = 1
+emitting = false
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_pnxg0")
+texture = ExtResource("2_y6phl")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+
+[node name="yellow" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 0.141176, 1)
+emitting = false
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_b887x")
+texture = ExtResource("2_y6phl")
+one_shot = true
+explosiveness = 0.9
+
+[node name="red" type="GPUParticles2D" parent="."]
+modulate = Color(1, 0.156863, 0.168627, 1)
+emitting = false
+amount = 25
+process_material = SubResource("ParticleProcessMaterial_iadfr")
+texture = ExtResource("2_y6phl")
+one_shot = true
+explosiveness = 0.9
+
+[node name="Boom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_uswip")

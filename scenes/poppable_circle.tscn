@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dlsld1sacmgxa" path="res://scenes/oops!.tscn" id="3_s3ido"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ra27x"]
-radius = 35.0
+radius = 73.2462
 
 [node name="Poppable Circle" type="Area2D"]
 script = ExtResource("1_ydgeq")

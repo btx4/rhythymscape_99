@@ -20,8 +20,9 @@ func _process(delta: float) -> void:
 func beat_listener(beat: int) ->void:
 	started = true
 	if beat% 16 == 0:
-		position.x = randi_range(0,get_viewport().get_visible_rect().size.x)
-		position.y = randi_range(0,get_viewport().get_visible_rect().size.y)
+		points = 5
+		position.x = randi_range(460,1455)
+		position.y = randi_range(52,1044)
 	$Sprite2D.scale = Vector2(13,13)
 	if score:
 		EventScript.report_points(points)
