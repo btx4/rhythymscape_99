@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cahfqtrtojgof"]
+[gd_scene load_steps=13 format=3 uid="uid://cahfqtrtojgof"]
 
 [ext_resource type="Script" path="res://scenes/pulsing_circle_new_version.gd" id="1_clnas"]
 [ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="2_8ivju"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/input_line.gd" id="6_8evvu"]
 [ext_resource type="Material" uid="uid://mvunm1pcr1sv" path="res://scenes/stomp_particles.tres" id="6_kym7s"]
 [ext_resource type="Script" path="res://scripts/stomp_handler.gd" id="7_4taql"]
+[ext_resource type="Texture2D" uid="uid://bs03ybhsnpjq4" path="res://assets/global_assets/whole_note.png" id="9_hgx8x"]
 [ext_resource type="Script" path="res://scripts/basic_pulse.gd" id="9_mkg5h"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8ld1v"]
@@ -17,8 +18,8 @@
 script = ExtResource("1_clnas")
 
 [node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-scale = Vector2(360, 360)
+modulate = Color(0.847059, 0.572549, 0.270588, 1)
+scale = Vector2(1214, 788)
 texture = SubResource("CanvasTexture_8ld1v")
 
 [node name="Stomp Buttons" type="Node2D" parent="."]
@@ -125,36 +126,36 @@ script = ExtResource("6_8evvu")
 
 [node name="Stomp_spot" type="Sprite2D" parent="Yellow Input"]
 texture_filter = 1
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_8ivju")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_hgx8x")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Yellow Input" groups=["flipper_spawn_points"]]
 texture_filter = 1
 position = Vector2(0, -38)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_8ivju")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_hgx8x")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Yellow Input" groups=["flipper_spawn_points"]]
 texture_filter = 1
 position = Vector2(0, -76)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_8ivju")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_hgx8x")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Yellow Input" groups=["flipper_spawn_points"]]
 texture_filter = 1
 position = Vector2(0, -114)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_8ivju")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_hgx8x")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Yellow Input"]
 texture_filter = 1
 position = Vector2(0, -152)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_8ivju")
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("9_hgx8x")
 script = ExtResource("9_mkg5h")
 
 [node name="Red Input" type="Node2D" parent="."]

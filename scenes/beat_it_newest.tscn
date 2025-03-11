@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://treqbo30sr45" path="res://fix_the_wire_right.tscn" id="13_cuyex"]
 [ext_resource type="PackedScene" uid="uid://rc2xhtidjyh2" path="res://scenes/one_screen_circle.tscn" id="15_rptrf"]
 [ext_resource type="Script" path="res://scripts/score.gd" id="16_a5hb1"]
-[ext_resource type="PackedScene" uid="uid://wnht6jlqxxxu" path="res://scenes/pause_menu.tscn" id="16_wf0d1"]
 [ext_resource type="PackedScene" uid="uid://n2iweeeq8eki" path="res://scenes/flipper_obstacle.tscn" id="17_0ugqw"]
 [ext_resource type="PackedScene" uid="uid://6q3h01gpjh47" path="res://scenes/spray_paint_minigame_one_screen.tscn" id="17_intcp"]
 [ext_resource type="Script" path="res://scripts/combo.gd" id="17_lqqlm"]
@@ -24,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://si5ssc70t4f1" path="res://assets/x_pop_up.png" id="19_x58ee"]
 [ext_resource type="Script" path="res://scripts/x_pop_up.gd" id="20_82sbq"]
 [ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="21_ggcip"]
+[ext_resource type="PackedScene" uid="uid://bwokrlbp1eguf" path="res://scenes/pause_menu.tscn" id="22_bjg3q"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hiix8"]
 shader = ExtResource("18_lmtt0")
@@ -118,9 +118,6 @@ position = Vector2(240, 90)
 stream = ExtResource("21_ggcip")
 volume_db = -14.195
 
-[node name="Pause Menu" parent="." instance=ExtResource("16_wf0d1")]
-visible = false
-
 [node name="Spray_paint_minigame_one_screen" parent="." instance=ExtResource("17_intcp")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -137,3 +134,6 @@ visible = false
 position = Vector2(960, 539)
 scale = Vector2(1920, 1080)
 texture = SubResource("CanvasTexture_g7n6l")
+
+[node name="PauseMenu" parent="." instance=ExtResource("22_bjg3q")]
+visible = false

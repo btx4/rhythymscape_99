@@ -25,7 +25,7 @@
 [ext_resource type="Script" path="res://scripts/x_pop_up.gd" id="17_3am8d"]
 [ext_resource type="Script" path="res://scenes/Levels/combo_2.gd" id="18_n08g4"]
 [ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="18_sckji"]
-[ext_resource type="PackedScene" uid="uid://wnht6jlqxxxu" path="res://scenes/pause_menu.tscn" id="22_g6nkt"]
+[ext_resource type="PackedScene" uid="uid://wnht6jlqxxxu" path="res://scenes/pause_menu_old.tscn" id="22_g6nkt"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_d0d1d"]
 
