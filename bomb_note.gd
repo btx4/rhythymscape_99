@@ -66,13 +66,17 @@ func _input(event: InputEvent) -> void:
 				hitit = false
 				boomed = true
 				$Sprite2D.visible = false
-
+				delete_bomb = true
+				
+var blow = false
 var fails = 0
 var delete_bomb = false
 func position_change():
 	if delete_bomb:
 		$Sprite2D.visible = false
-		queue_free()
+		if blow == true:
+			queue_free()
+		blow = true
 	if !boomed:
 	#Bound Checking
 		if index > 19:
@@ -178,7 +182,10 @@ func beat_listener(beat: int) ->void:
 	index = index + 1
 	if delete_bomb:
 		$Sprite2D.visible = false
-		queue_free()
+		
+		if blow == true:
+			queue_free()
+		blow = true
 		
 	if !boomed:
 		if index > 19:

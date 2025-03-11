@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://wls8fam2q681"]
 
 [ext_resource type="Script" path="res://explosion.gd" id="1_dhbpd"]
-[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="2_y6phl"]
+[ext_resource type="Texture2D" uid="uid://xmoow8lrasrn" path="res://assets/circle.png" id="2_y6phl"]
 [ext_resource type="AudioStream" uid="uid://myh1pw6o21ub" path="res://sounds/435416__v-ktor__explosion13.wav" id="3_uswip"]
 
 [sub_resource type="Curve" id="Curve_7b45i"]

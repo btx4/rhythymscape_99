@@ -28,7 +28,6 @@ func pop() -> void:
 func _on_despawn_timer_timeout() -> void:
 	var new_scene = oops_scene.instantiate()
 	new_scene.position = global_position
-	
 	get_parent().get_parent().add_child(new_scene)
 	
 	get_parent().get_parent().no_pop()
