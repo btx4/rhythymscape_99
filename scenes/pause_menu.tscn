@@ -91,6 +91,7 @@ expand_margin_right = 6.0
 expand_margin_bottom = 5.0
 
 [node name="PauseMenu" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_5xaed")
 
 [node name="Magic_maker_Lvl_0" type="Node2D" parent="."]
@@ -279,7 +280,7 @@ offset_bottom = 312.0
 text = "Quit"
 metadata/_edit_use_anchors_ = true
 
-[node name="Volume_Slider" type="HSlider" parent="."]
+[node name="HSlider" type="HSlider" parent="."]
 process_mode = 3
 visible = false
 offset_left = 198.0
