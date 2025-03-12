@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=3 uid="uid://bodetw4ekbg6m"]
 
-[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_5xaed"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_5xaed"]
 [ext_resource type="Texture2D" uid="uid://b7bhfff65p05s" path="res://assets/menus/pause_menu/pause_bg.png" id="2_dqjpn"]
 [ext_resource type="Texture2D" uid="uid://c0xa82njwuxyf" path="res://assets/menus/pause_menu/cd_player.png" id="3_g7dl0"]
 [ext_resource type="Script" path="res://scenes/Levels/magic_maker_lvl_0.gd" id="4_casfo"]
@@ -94,30 +94,37 @@ expand_margin_bottom = 5.0
 script = ExtResource("1_5xaed")
 
 [node name="Magic_maker_Lvl_0" type="Node2D" parent="."]
+process_mode = 3
 script = ExtResource("4_casfo")
 
 [node name="Magic" parent="Magic_maker_Lvl_0" instance=ExtResource("5_top0c")]
+process_mode = 3
 lifetime = 0.5
 
 [node name="cursor_sprite" type="Sprite2D" parent="Magic_maker_Lvl_0"]
+process_mode = 3
 texture_filter = 1
 texture = ExtResource("6_qslsk")
 
 [node name="Background" type="Sprite2D" parent="."]
+process_mode = 3
 position = Vector2(1280, 720)
 texture = ExtResource("2_dqjpn")
 
 [node name="CDPlayer" type="Sprite2D" parent="."]
+process_mode = 3
 position = Vector2(1280, 720)
 texture = ExtResource("3_g7dl0")
 
 [node name="PausedDither" type="AnimatedSprite2D" parent="."]
+process_mode = 3
 position = Vector2(1280, 720)
 sprite_frames = SubResource("SpriteFrames_yoyvr")
 autoplay = "default"
 frame_progress = 0.141413
 
 [node name="Quit" type="Node" parent="."]
+process_mode = 3
 
 [node name="QuitHoverArea" type="Area2D" parent="Quit"]
 
@@ -135,6 +142,7 @@ texture = ExtResource("13_4ftuu")
 height = 10.0
 
 [node name="Resume" type="Node" parent="."]
+process_mode = 3
 
 [node name="ResumeHoverArea" type="Area2D" parent="Resume"]
 
@@ -151,6 +159,7 @@ energy = 1.5
 texture = ExtResource("14_2fs2k")
 
 [node name="Restart" type="Node" parent="."]
+process_mode = 3
 
 [node name="RestartHoverArea" type="Area2D" parent="Restart"]
 
@@ -167,6 +176,7 @@ energy = 3.0
 texture = ExtResource("15_3xkpy")
 
 [node name="VolumeSlider" type="HSlider" parent="."]
+process_mode = 3
 offset_left = 1601.0
 offset_top = 495.0
 offset_right = 2308.0
@@ -187,22 +197,26 @@ position = Vector2(0, 7)
 stream = ExtResource("18_bgku8")
 
 [node name="Resume2" type="Sprite2D" parent="."]
+process_mode = 3
 modulate = Color(5.49894e-06, 0.0962857, 0.332815, 1)
 position = Vector2(1280, 720)
 texture = ExtResource("9_p1g1s")
 
 [node name="Quit2" type="Sprite2D" parent="."]
+process_mode = 3
 modulate = Color(0.00042124, 0.0832513, 0.391665, 1)
 position = Vector2(1280, 720)
 texture = ExtResource("10_6ewqu")
 
 [node name="Paused" type="Sprite2D" parent="."]
+process_mode = 3
 visible = false
 modulate = Color(7.79718e-06, 0.776497, 0.545235, 1)
 position = Vector2(2288, 528)
 texture = ExtResource("11_3sdux")
 
 [node name="PausedLight" type="PointLight2D" parent="."]
+process_mode = 3
 position = Vector2(1262, 688)
 scale = Vector2(1.1, 1.1)
 color = Color(0.909443, 0.106937, 0.320768, 1)
@@ -211,18 +225,20 @@ texture = ExtResource("11_3sdux")
 height = 30.0
 
 [node name="Restart2" type="Sprite2D" parent="."]
+process_mode = 3
 modulate = Color(0, 0.144768, 0.251047, 1)
 position = Vector2(1280, 720)
 texture = ExtResource("12_m3hfo")
 
 [node name="Volume" type="Sprite2D" parent="."]
+process_mode = 3
 modulate = Color(0.376471, 0.0352941, 0.223529, 1)
 position = Vector2(1272, 697)
 scale = Vector2(0.641667, 0.641667)
 texture = ExtResource("18_1pak0")
 
 [node name="Resume3" type="Button" parent="."]
-process_mode = 2
+process_mode = 3
 visible = false
 offset_left = 218.0
 offset_top = 128.0
@@ -232,7 +248,7 @@ text = "Resume"
 metadata/_edit_use_anchors_ = true
 
 [node name="Main Menu" type="Button" parent="."]
-process_mode = 2
+process_mode = 3
 visible = false
 offset_left = 219.0
 offset_top = 228.0
@@ -243,7 +259,7 @@ text = "Main Menu
 metadata/_edit_use_anchors_ = true
 
 [node name="Restart3" type="Button" parent="."]
-process_mode = 2
+process_mode = 3
 visible = false
 offset_left = 220.0
 offset_top = 178.0
@@ -254,7 +270,7 @@ text = "Restart Level
 metadata/_edit_use_anchors_ = true
 
 [node name="Quit3" type="Button" parent="."]
-process_mode = 2
+process_mode = 3
 visible = false
 offset_left = 219.0
 offset_top = 278.0
@@ -264,7 +280,7 @@ text = "Quit"
 metadata/_edit_use_anchors_ = true
 
 [node name="Volume_Slider" type="HSlider" parent="."]
-process_mode = 2
+process_mode = 3
 visible = false
 offset_left = 198.0
 offset_top = 329.0

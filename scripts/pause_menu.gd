@@ -7,7 +7,7 @@ func _ready():
 	
 	#$SubViewportContainer/SubViewport.size_2d_override = Vector2i(1920, 1080) # Custom size for 2D.
 	#$SubViewportContainer/SubViewport.size_2d_override_stretch = true # Enable stretch for custom size.
-	#pause_menu.visible = false  # Hide the menu at the start
+	pause_menu.visible = false  # Hide the menu at the start
 	volume_slider.value = db_to_linear(AudioServer.get_bus_volume_db(0)) * 100
 	volume_slider.value_changed.connect(_on_volume_changed)
 
@@ -28,7 +28,8 @@ func _process(delta: float) -> void:
 func toggle_pause():
 	visible = true
 	get_tree().paused = !get_tree().paused
-	pause_menu.visible = get_tree().paused  # Show menu only when paused
+	visible = get_tree().paused  # Show menu only when paused
+	
 
 #func _on_quit_pressed():
 	#get_tree().quit()
