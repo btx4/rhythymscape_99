@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://cahfqtrtojgof"]
+[gd_scene load_steps=14 format=3 uid="uid://cahfqtrtojgof"]
 
 [ext_resource type="Script" path="res://scenes/pulsing_circle_new_version.gd" id="1_clnas"]
-[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="2_8ivju"]
+[ext_resource type="Texture2D" uid="uid://xmoow8lrasrn" path="res://assets/circle.png" id="2_8ivju"]
 [ext_resource type="Texture2D" uid="uid://c87yg6tuuryqy" path="res://assets/button_stomp.png" id="2_8y8y5"]
+[ext_resource type="Texture2D" uid="uid://opbys3frq28" path="res://assets/global_assets/stomp_board-01.png" id="2_dk3q4"]
 [ext_resource type="Script" path="res://scripts/stomp_buttons (2).gd" id="2_kpnj4"]
 [ext_resource type="Script" path="res://scenes/particles/color_buttons.gd" id="3_o56q4"]
 [ext_resource type="Texture2D" uid="uid://j6t0wh66mbf8" path="res://assets/center_button.png" id="4_hfokl"]
@@ -12,15 +13,20 @@
 [ext_resource type="Texture2D" uid="uid://bs03ybhsnpjq4" path="res://assets/global_assets/whole_note.png" id="9_hgx8x"]
 [ext_resource type="Script" path="res://scripts/basic_pulse.gd" id="9_mkg5h"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_8ld1v"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_lnh2p"]
 
 [node name="Pulsing_circle" type="Node2D"]
 script = ExtResource("1_clnas")
 
-[node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0.847059, 0.572549, 0.270588, 1)
-scale = Vector2(1214, 788)
-texture = SubResource("CanvasTexture_8ld1v")
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("2_dk3q4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.352941, 0.584314, 1, 1)
+scale = Vector2(1920, 1080)
+texture = SubResource("CanvasTexture_lnh2p")
 
 [node name="Stomp Buttons" type="Node2D" parent="."]
 rotation = -4.71238

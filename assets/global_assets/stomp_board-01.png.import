@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xmoow8lrasrn"
-path="res://.godot/imported/circle.png-6efbe600b7e2418cd5091089237d13c1.ctex"
+uid="uid://opbys3frq28"
+path="res://.godot/imported/stomp_board-01.png-56972275d86142b30c34d22376978fe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/circle.png"
-dest_files=["res://.godot/imported/circle.png-6efbe600b7e2418cd5091089237d13c1.ctex"]
+source_file="res://assets/global_assets/stomp_board-01.png"
+dest_files=["res://.godot/imported/stomp_board-01.png-56972275d86142b30c34d22376978fe9.ctex"]
 
 [params]
 

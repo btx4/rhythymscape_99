@@ -10,8 +10,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-func _on_timer_timeout() -> void:
-	print("Freed")
-	queue_free()
-	pass # Replace with function body.
+func explode():
+	$Gray.restart()
+	$yellow.restart()
+	$red.restart()
+	$Gray.emitting = true
+	$red.emitting = true
+	$yellow.emitting = true
+	$Boom.play()

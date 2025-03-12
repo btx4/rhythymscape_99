@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/poppable_sine.gd" id="1_ksj3x"]
 [ext_resource type="AudioStream" uid="uid://ducl62yscj1jw" path="res://sounds/260614__kwahmah_02__pop.wav" id="1_qqien"]
-[ext_resource type="Script" path="res://spawn_poppable_circle.gd" id="2_a8xp4"]
+[ext_resource type="Script" path="res://scripts/spawn_poppable_circle.gd" id="2_a8xp4"]
 [ext_resource type="PackedScene" uid="uid://bmluc6ew814ow" path="res://scenes/poppable_circle.tscn" id="3_itpwa"]
 
 [node name="poppable sine" type="Node2D"]

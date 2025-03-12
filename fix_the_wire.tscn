@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dn3tkucttetq3"]
 
-[ext_resource type="Script" path="res://start_point.gd" id="1_ti48y"]
-[ext_resource type="Script" path="res://line_drawer.gd" id="2_lv4jm"]
+[ext_resource type="Script" path="res://scripts/start_point.gd" id="1_ti48y"]
+[ext_resource type="Script" path="res://scripts/line_drawer.gd" id="2_lv4jm"]
 [ext_resource type="PackedScene" uid="uid://c0ukbmn3q05mp" path="res://electricity.tscn" id="2_ov66h"]
-[ext_resource type="Script" path="res://wire_end_point.gd" id="3_23b7c"]
+[ext_resource type="Script" path="res://scripts/wire_end_point.gd" id="3_23b7c"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r3rfe"]
 

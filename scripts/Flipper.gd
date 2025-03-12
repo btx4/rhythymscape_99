@@ -9,16 +9,23 @@ func _ready() -> void:
 		var random_spawn = spawn_points.pick_random()
 		position = random_spawn.global_position
 		
+		print("In a new position, its:" + str(position))
+		if random_spawn.position.x < 0:
+			rotation_degrees = 270
+		elif random_spawn.position.x >0:
+			rotation_degrees = 90
+		elif random_spawn.position.y > 0:
+			rotation_degrees = 180
+			
+		
 	print(spawn_points)
 	var viewport_size = get_viewport_rect().size
 	var half_width = viewport_size.x / 2
 	var half_height = viewport_size.y / 2
 
-	if position.x > half_width:  # Right side
+	if position.x > half_width + 20:  # Right side
 		rotation_degrees = 90
-	elif position.x < half_width:  # Left side
-		rotation_degrees = 270
-	elif position.y > half_height:  # Bottom
+	elif position.y > half_height + 20:  # Bottom
 		rotation_degrees = 180
 	
 	pass # Replace with function body.

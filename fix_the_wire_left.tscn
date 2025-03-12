@@ -1,13 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://cgb41vyns58vg"]
 
-[ext_resource type="Script" path="res://fix_the_wire_top.gd" id="1_ause2"]
-[ext_resource type="Script" path="res://start_point.gd" id="1_rxdp8"]
+[ext_resource type="Script" path="res://scripts/fix_the_wire_top.gd" id="1_ause2"]
+[ext_resource type="Script" path="res://scripts/start_point.gd" id="1_rxdp8"]
 [ext_resource type="PackedScene" uid="uid://c0ukbmn3q05mp" path="res://electricity.tscn" id="2_cpobi"]
-[ext_resource type="Script" path="res://wire_end_point.gd" id="3_nr8pv"]
-[ext_resource type="Script" path="res://line_drawer.gd" id="4_obopa"]
-[ext_resource type="Script" path="res://break_radius_left.gd" id="4_tpfw0"]
+[ext_resource type="Script" path="res://scripts/wire_end_point.gd" id="3_nr8pv"]
+[ext_resource type="Script" path="res://scripts/line_drawer.gd" id="4_obopa"]
+[ext_resource type="Script" path="res://scripts/break_radius_left.gd" id="4_tpfw0"]
 [ext_resource type="AudioStream" uid="uid://boicxtlmhtdyf" path="res://sounds/393066__wakerone__electric-zap-electricity-2.wav" id="7_y2srj"]
-[ext_resource type="Script" path="res://buzz.gd" id="8_inora"]
+[ext_resource type="Script" path="res://scripts/buzz.gd" id="8_inora"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_tqsp8"]
 
@@ -15,8 +15,8 @@
 radius = 51.3847
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ug46n"]
-radius = 13.9625
-height = 270.393
+radius = 11.17
+height = 302.071
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r3rfe"]
 
@@ -87,6 +87,5 @@ autoplay = true
 script = ExtResource("8_inora")
 
 [connection signal="mouse_entered" from="Everything_but_draw/Sprite2D/Start point/Wire_entry_point" to="Line drawer" method="_on_wire_entry_point_mouse_entered"]
-[connection signal="mouse_exited" from="Everything_but_draw/Sprite2D/Start point/Break_radius" to="Line drawer" method="_on_break_radius_mouse_exited"]
 [connection signal="mouse_entered" from="Everything_but_draw/Sprite2D2/End point/Wire_end_point" to="Line drawer" method="_on_wire_end_point_mouse_entered"]
 [connection signal="finished" from="Buzz" to="Buzz" method="_on_finished"]

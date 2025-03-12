@@ -1,11 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://d4gai1dy8gqn2"]
+[gd_scene load_steps=13 format=3 uid="uid://d4gai1dy8gqn2"]
 
-[ext_resource type="Script" path="res://start_point.gd" id="1_tlfnt"]
+[ext_resource type="Script" path="res://scripts/fix_the_wire_top.gd" id="1_28bxm"]
+[ext_resource type="Script" path="res://scripts/start_point.gd" id="1_tlfnt"]
 [ext_resource type="PackedScene" uid="uid://c0ukbmn3q05mp" path="res://electricity.tscn" id="2_835hk"]
-[ext_resource type="Script" path="res://wire_end_point.gd" id="3_xq0d5"]
-[ext_resource type="Script" path="res://line_drawer.gd" id="4_cgc0n"]
+[ext_resource type="Script" path="res://scripts/wire_end_point.gd" id="3_xq0d5"]
+[ext_resource type="Script" path="res://scripts/line_drawer.gd" id="4_cgc0n"]
+[ext_resource type="Script" path="res://break_radius_bottom.gd" id="4_txtix"]
 [ext_resource type="AudioStream" uid="uid://boicxtlmhtdyf" path="res://sounds/393066__wakerone__electric-zap-electricity-2.wav" id="5_0sfxg"]
-[ext_resource type="Script" path="res://buzz.gd" id="6_hbqif"]
+[ext_resource type="Script" path="res://scripts/buzz.gd" id="6_hbqif"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_tqsp8"]
 
@@ -20,6 +22,7 @@ height = 141.457
 
 [node name="Fix the Wire Bottom" type="Node2D"]
 position = Vector2(320, 180)
+script = ExtResource("1_28bxm")
 
 [node name="Everything_but_draw" type="Node2D" parent="."]
 position = Vector2(960, 540)
@@ -46,6 +49,7 @@ position = Vector2(5, 0)
 
 [node name="Break_radius" type="Area2D" parent="Everything_but_draw/Sprite2D/Start point"]
 position = Vector2(217.471, -4.0719)
+script = ExtResource("4_txtix")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Everything_but_draw/Sprite2D/Start point/Break_radius"]
 position = Vector2(-46, 4)

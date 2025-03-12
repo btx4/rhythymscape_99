@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cc2qiwmb4inlj"]
 
 [ext_resource type="PackedScene" uid="uid://bmluc6ew814ow" path="res://scenes/poppable_circle.tscn" id="1_0qhrq"]
-[ext_resource type="Script" path="res://poppable_arc.gd" id="1_kvfwb"]
+[ext_resource type="Script" path="res://scripts/poppable_arc.gd" id="1_kvfwb"]
 [ext_resource type="AudioStream" uid="uid://ducl62yscj1jw" path="res://sounds/260614__kwahmah_02__pop.wav" id="3_7wiqn"]
 [ext_resource type="Script" path="res://scenes/challenges/spawn_poppable_circles_circle.gd" id="3_nqdee"]
 

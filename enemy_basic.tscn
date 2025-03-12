@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ddbrty2fx4y7x"]
 
-[ext_resource type="Script" path="res://enemy_basic.gd" id="1_5w0c6"]
+[ext_resource type="Script" path="res://scripts/enemy_basic.gd" id="1_5w0c6"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_bhbql"]
 

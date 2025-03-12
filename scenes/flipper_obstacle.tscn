@@ -17,8 +17,8 @@ shape = SubResource("RectangleShape2D_f3srd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 modulate = Color(1, 0.662745, 0, 1)
-position = Vector2(0, 7)
-scale = Vector2(0.53, 0.53)
+position = Vector2(0, 31)
+scale = Vector2(2, 2)
 texture = ExtResource("2_k4aqt")
 
 [node name="Timer" type="Timer" parent="."]
