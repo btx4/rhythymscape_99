@@ -23,4 +23,4 @@ func untrigger():
 
 func beat_listener(beat: int) ->void:
 	started = true
-	scale = Vector2(.6,.6)
+	scale = get_parent().beat_scale

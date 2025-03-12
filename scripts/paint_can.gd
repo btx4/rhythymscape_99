@@ -10,14 +10,15 @@ func _ready() -> void:
 	z_index = 11
 	$Despawn_timer.start()
 	pass
-
+var spawn = false
 func _process(delta: float) -> void:
 	# Move in the direction of the rotation
 	var direction = Vector2.UP.rotated(rotation) 
 	position += direction * SPEED *delta  
-	
-	spawn_instances()
-	
+	if spawn:
+		spawn_instances()
+	spawn = !spawn
+
 var dir = false
 func spawn_instances() -> void:
 	if instances < spawn_count:
