@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bsju3om1r6a3r"]
+[gd_scene load_steps=26 format=3 uid="uid://bsju3om1r6a3r"]
 
 [ext_resource type="Script" path="res://scripts/level_selector.gd" id="1_7knvd"]
 [ext_resource type="PackedScene" uid="uid://dctvo1ohh1dnc" path="res://scenes/beat_it_newest.tscn" id="2_0yuob"]
@@ -18,8 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://d0iai8igkicf0" path="res://assets/menus/level_menu/start_light.png" id="16_ad67u"]
 [ext_resource type="Texture2D" uid="uid://bjc62f0fd3ir" path="res://assets/menus/level_menu/settings_light.png" id="17_np74t"]
 [ext_resource type="Texture2D" uid="uid://28xsf0cet6r" path="res://assets/menus/level_menu/quit_light.png" id="18_qm5d6"]
-[ext_resource type="Texture2D" uid="uid://cgfdey84oc6dr" path="res://assets/menus/level_menu/song_1_placeholder_sprite.png" id="19_3wppe"]
-[ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="20_djrlj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c6ed7"]
 animations = [{
@@ -91,7 +89,7 @@ size = Vector2(525.918, 75.0344)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70pgo"]
 size = Vector2(218.044, 59.905)
 
-[node name="LevelSelector" type="Node2D"]
+[node name="Level_Selector" type="Node2D"]
 script = ExtResource("1_7knvd")
 beat_it = ExtResource("2_0yuob")
 lacrimosa_requiem = ExtResource("3_qxbrq")
@@ -108,13 +106,12 @@ texture = ExtResource("6_2pboo")
 
 [node name="DitherAnimate" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.398504, 0.390156, 0.398503, 0.2)
-position = Vector2(1301, 724)
+position = Vector2(1280, 720)
 sprite_frames = SubResource("SpriteFrames_8twhl")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="Beat It" type="Button" parent="."]
-visible = false
 offset_left = 230.0
 offset_top = 116.0
 offset_right = 410.0
@@ -123,7 +120,6 @@ text = "Beat It"
 metadata/_edit_use_anchors_ = true
 
 [node name="Lacrimosa Requiem" type="Button" parent="."]
-visible = false
 offset_left = 230.0
 offset_top = 176.0
 offset_right = 410.0
@@ -133,7 +129,6 @@ text = "Lacrimosa Requiem
 metadata/_edit_use_anchors_ = true
 
 [node name="Take 5" type="Button" parent="."]
-visible = false
 offset_left = 230.0
 offset_top = 236.0
 offset_right = 410.0
@@ -142,7 +137,6 @@ text = "Take 5"
 metadata/_edit_use_anchors_ = true
 
 [node name="Lean Beef Patty" type="Button" parent="."]
-visible = false
 offset_left = 230.0
 offset_top = 296.0
 offset_right = 410.0
@@ -257,29 +251,12 @@ color = Color(0.956863, 0.352941, 0.419608, 1)
 energy = 2.0
 texture = ExtResource("18_qm5d6")
 
-[node name="Song1" type="PointLight2D" parent="."]
+[node name="Song1" type="RichTextLabel" parent="." groups=["songs"]]
 visible = false
-position = Vector2(1301, 725)
-color = Color(2.69532e-06, 0.636933, 0.981488, 1)
-energy = 9.91
-texture = ExtResource("19_3wppe")
-height = 50.0
-
-[node name="Song6" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(1338, 717)
-scale = Vector2(1.06, 1.06)
-color = Color(0.594733, 0.889345, 1, 1)
-texture = ExtResource("19_3wppe")
-height = 20.0
-
-[node name="Song1Text" type="RichTextLabel" parent="." groups=["songs"]]
 offset_left = 416.0
 offset_top = 764.0
 offset_right = 921.0
 offset_bottom = 929.0
-rotation = 0.00347195
-theme_override_fonts/normal_font = ExtResource("20_djrlj")
 theme_override_font_sizes/normal_font_size = 120
 text = "SONG 1"
 fit_content = true

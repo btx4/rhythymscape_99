@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://wnht6jlqxxxu"]
+[gd_scene load_steps=6 format=3 uid="uid://wnht6jlqxxxu"]
 
+[ext_resource type="Script" path="res://scripts/pause_menu_old.gd" id="1_0mr2w"]
 [ext_resource type="Texture2D" uid="uid://b7bhfff65p05s" path="res://assets/menus/pause_menu/pause_bg.png" id="2_dqjpn"]
 [ext_resource type="AudioStream" uid="uid://2qttiuahjq0e" path="res://sounds/youtube_XXvuUp-KY5g_audio.mp3" id="2_n7myl"]
 [ext_resource type="Texture2D" uid="uid://c0xa82njwuxyf" path="res://assets/menus/pause_menu/cd_player.png" id="3_g7dl0"]
@@ -15,12 +16,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Pause Menu OLd" type="Control"]
+[node name="Pause Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -48.0
 offset_right = 40.0
 offset_bottom = -8.0
+script = ExtResource("1_0mr2w")
 
 [node name="Background" type="AnimatedSprite2D" parent="."]
 position = Vector2(1280, 720)

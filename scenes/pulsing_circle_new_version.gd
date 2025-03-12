@@ -116,12 +116,9 @@ var yellow_hittable = true
 
 func _input(event: InputEvent) -> void:
 	
-	#if event.is_action_pressed("pause"):
-		#print("Paused")
-		#get_parent().get_node("PauseMenu").toggle_pause
-	#THIS ISN'T WORKING WELL W THE CAMERA AND VIEWPORT, CHANGING IT TO JUST "WHEN THIS BUTTON IS PRESSED, NAVIGATE TO THIS SCENE"	
-		
-		
+	if event.is_action_pressed("ui_cancel"):
+		print("Paused")
+		get_parent().get_node("Pause Menu").toggle_pause
 	if event.is_action_pressed("yellow") and yellow_hittable:
 		$"Stomp Buttons/Yellow_stomp".restart()
 		yel = true

@@ -1,6 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://bwokrlbp1eguf"]
+[gd_scene load_steps=23 format=3 uid="uid://bodetw4ekbg6m"]
 
-[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_ylu3t"]
+[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_5xaed"]
 [ext_resource type="Texture2D" uid="uid://b7bhfff65p05s" path="res://assets/menus/pause_menu/pause_bg.png" id="2_dqjpn"]
 [ext_resource type="Texture2D" uid="uid://c0xa82njwuxyf" path="res://assets/menus/pause_menu/cd_player.png" id="3_g7dl0"]
 [ext_resource type="Script" path="res://scenes/Levels/magic_maker_lvl_0.gd" id="4_casfo"]
@@ -11,12 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://cd87ildvvro66" path="res://assets/menus/pause_menu/pause_resume.png" id="9_p1g1s"]
 [ext_resource type="Texture2D" uid="uid://ctomyqmljc8u7" path="res://assets/menus/pause_menu/pause_quit.png" id="10_6ewqu"]
 [ext_resource type="Texture2D" uid="uid://wo4bo6ujd65d" path="res://assets/menus/pause_menu/pause_paused.png" id="11_3sdux"]
+[ext_resource type="Texture2D" uid="uid://bl6cuso4hcajg" path="res://assets/menus/pause_menu/volume_slider.png" id="12_ab6y2"]
 [ext_resource type="Texture2D" uid="uid://dvci6uno1x6ai" path="res://assets/menus/pause_menu/pause_restart.png" id="12_m3hfo"]
 [ext_resource type="Texture2D" uid="uid://bnkvw0xm02xiq" path="res://assets/menus/pause_menu/pause_quit_light.png" id="13_4ftuu"]
-[ext_resource type="Texture2D" uid="uid://bmj7oc24enfeu" path="res://assets/menus/pause_menu/pause_volume.png" id="13_55kig"]
 [ext_resource type="Texture2D" uid="uid://cstef3d4kfpl3" path="res://assets/menus/pause_menu/resume_light.png" id="14_2fs2k"]
-[ext_resource type="Texture2D" uid="uid://bl6cuso4hcajg" path="res://assets/menus/pause_menu/volume_slider.png" id="14_ys54l"]
 [ext_resource type="Texture2D" uid="uid://bccgw244kr2lc" path="res://assets/menus/pause_menu/restart_light.png" id="15_3xkpy"]
+[ext_resource type="Texture2D" uid="uid://bmj7oc24enfeu" path="res://assets/menus/pause_menu/pause_volume.png" id="18_1pak0"]
 [ext_resource type="AudioStream" uid="uid://2qttiuahjq0e" path="res://sounds/youtube_XXvuUp-KY5g_audio.mp3" id="18_bgku8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yoyvr"]
@@ -91,7 +91,7 @@ expand_margin_right = 6.0
 expand_margin_bottom = 5.0
 
 [node name="PauseMenu" type="Node2D"]
-script = ExtResource("1_ylu3t")
+script = ExtResource("1_5xaed")
 
 [node name="Magic_maker_Lvl_0" type="Node2D" parent="."]
 script = ExtResource("4_casfo")
@@ -172,9 +172,9 @@ offset_top = 495.0
 offset_right = 2308.0
 offset_bottom = 640.0
 rotation = -0.194825
-theme_override_icons/grabber = ExtResource("14_ys54l")
-theme_override_icons/grabber_highlight = ExtResource("14_ys54l")
-theme_override_icons/grabber_disabled = ExtResource("14_ys54l")
+theme_override_icons/grabber = ExtResource("12_ab6y2")
+theme_override_icons/grabber_highlight = ExtResource("12_ab6y2")
+theme_override_icons/grabber_disabled = ExtResource("12_ab6y2")
 theme_override_styles/slider = SubResource("StyleBoxFlat_22bup")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_m4xqa")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_4bpam")
@@ -219,7 +219,7 @@ texture = ExtResource("12_m3hfo")
 modulate = Color(0.376471, 0.0352941, 0.223529, 1)
 position = Vector2(1272, 697)
 scale = Vector2(0.641667, 0.641667)
-texture = ExtResource("13_55kig")
+texture = ExtResource("18_1pak0")
 
 [node name="Resume3" type="Button" parent="."]
 process_mode = 2

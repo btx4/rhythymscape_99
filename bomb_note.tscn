@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://djgk4opf1l07q"]
+[gd_scene load_steps=5 format=3 uid="uid://cb7y6x4rn270v"]
 
 [ext_resource type="Script" path="res://bomb_note.gd" id="1_c02ls"]
 [ext_resource type="Texture2D" uid="uid://cimdlugbqp5ir" path="res://assets/bomb.png" id="2_rvm0o"]
-[ext_resource type="PackedScene" path="res://explosion.tscn" id="3_kmid6"]
+[ext_resource type="PackedScene" uid="uid://wls8fam2q681" path="res://explosion.tscn" id="3_kmid6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0d1wj"]
 radius = 18.0278
