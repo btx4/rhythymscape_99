@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4itde6e83rnp"]
+
+[ext_resource type="Script" path="res://scripts/score_bar.gd" id="2_tslqc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp3i0"]
+bg_color = Color(0.266575, 0.266575, 0.266575, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 100
+corner_radius_bottom_right = 100
+shadow_color = Color(0.920834, 0.920833, 1.54018e-06, 0.6)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mn0ui"]
+bg_color = Color(0.712736, 0.589792, 5.77569e-07, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 100
+corner_radius_bottom_right = 100
+shadow_color = Color(0, 0, 1, 0.6)
+
+[node name="ScoreBar" type="ProgressBar"]
+offset_top = 12.0
+offset_right = 747.0
+offset_bottom = 68.0
+theme_override_styles/background = SubResource("StyleBoxFlat_xp3i0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mn0ui")
+show_percentage = false
+script = ExtResource("2_tslqc")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dctvo1ohh1dnc"]
+[gd_scene load_steps=31 format=3 uid="uid://dctvo1ohh1dnc"]
 
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="1_04gay"]
 [ext_resource type="Script" path="res://scripts/beat_it_newest.gd" id="1_sh5nd"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="6_vasnw"]
 [ext_resource type="Script" path="res://scripts/attack_handler_newest.gd" id="7_fcauf"]
 [ext_resource type="PackedScene" uid="uid://povabra474mo" path="res://scenes/white_stomp.tscn" id="8_5usqr"]
-[ext_resource type="PackedScene" uid="uid://cb7y6x4rn270v" path="res://bomb_note.tscn" id="11_kmncr"]
 [ext_resource type="PackedScene" uid="uid://16aq3nabvm05" path="res://fix_the_wire_top.tscn" id="11_sl6qf"]
 [ext_resource type="PackedScene" uid="uid://cgb41vyns58vg" path="res://fix_the_wire_left.tscn" id="12_gmx3m"]
 [ext_resource type="PackedScene" uid="uid://treqbo30sr45" path="res://fix_the_wire_right.tscn" id="13_cuyex"]
@@ -50,7 +49,7 @@ position = Vector2(960, 540)
 scale = Vector2(3, 3)
 
 [node name="Camera2D" type="Camera2D" parent="Pulsing_circle"]
-position = Vector2(0, 7.62939e-06)
+zoom = Vector2(0.9, 0.9)
 
 [node name="Magic_Maker" type="Node2D" parent="."]
 script = ExtResource("4_khxod")
@@ -69,7 +68,6 @@ texture = ExtResource("6_vasnw")
 [node name="Attack_Handler" type="Node2D" parent="."]
 script = ExtResource("7_fcauf")
 osu_circle_scene = ExtResource("15_rptrf")
-bomb_note_scene = ExtResource("11_kmncr")
 fix_the_wire_top_scene = ExtResource("11_sl6qf")
 fix_the_wire_left_scene = ExtResource("12_gmx3m")
 fix_the_wire_right_scene = ExtResource("13_cuyex")
@@ -128,13 +126,6 @@ visible = false
 
 [node name="Spray_paint_minigame_one_screen" parent="." instance=ExtResource("17_intcp")]
 
-[node name="ScoreBar" parent="." instance=ExtResource("26_nfqmw")]
-offset_left = 1015.0
-offset_top = 1012.0
-offset_right = 1463.0
-offset_bottom = 1046.0
-max_value = 4500.0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_lknng")
 
@@ -153,6 +144,12 @@ offset_bottom = 810.0
 text = "0"
 script = ExtResource("26_c0qyj")
 
+[node name="ScoreBar" parent="CanvasLayer" instance=ExtResource("26_nfqmw")]
+offset_left = 1227.0
+offset_top = 990.0
+offset_right = 1427.0
+offset_bottom = 1005.0
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(960, 539)
@@ -160,4 +157,3 @@ scale = Vector2(1920, 1080)
 texture = SubResource("CanvasTexture_g7n6l")
 
 [node name="Bonus_zone" parent="." instance=ExtResource("25_2u372")]
-position = Vector2(1455, 52)

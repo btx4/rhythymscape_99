@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://bj8g8qawd7h4r"]
 
-[ext_resource type="Script" path="res://back_and_forth_challenge.gd" id="1_8dcqp"]
-[ext_resource type="Script" path="res://mouse_area.gd" id="1_wr5uq"]
+[ext_resource type="Script" path="res://scripts/back_and_forth_challenge.gd" id="1_8dcqp"]
+[ext_resource type="Script" path="res://scripts/mouse_area.gd" id="1_wr5uq"]
 [ext_resource type="Shader" path="res://lightning.gdshader" id="1_y6nuf"]
-[ext_resource type="Script" path="res://buzz.gd" id="3_iskf2"]
+[ext_resource type="Script" path="res://scripts/buzz.gd" id="3_iskf2"]
 [ext_resource type="AudioStream" uid="uid://boicxtlmhtdyf" path="res://sounds/393066__wakerone__electric-zap-electricity-2.wav" id="3_sfwsv"]
-[ext_resource type="Script" path="res://lightning.gd" id="4_5pndm"]
-[ext_resource type="Script" path="res://lightning_horiz.gd" id="5_0wm77"]
+[ext_resource type="Script" path="res://scripts/lightning.gd" id="4_5pndm"]
+[ext_resource type="Script" path="res://scripts/lightning_horiz.gd" id="5_0wm77"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_3o6u7"]
 

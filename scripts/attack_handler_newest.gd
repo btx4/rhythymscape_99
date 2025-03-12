@@ -2,6 +2,7 @@ extends Node2D
 
 
 @export var osu_circle_scene : PackedScene
+@export var bomb_note_scene : PackedScene
 
 # challenges
 @export var fix_the_wire_top_scene : PackedScene
@@ -66,10 +67,12 @@ func beat_listener(beat: int) ->void:
 	#TEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMPTEMP
 	
 	#print(data_array[beat])
+	if beat % 16 == 4:
+		$"Poppable Arc".start()
+	
 	if beat >= data_array.size():
 		print("uhoh")
 		return  # Exit early if beat exceeds the array bounds
-	
 	#                                                                                                             CIRCLE SPAWN
 	print(data_array[beat][1])
 	if (data_array[beat][1] == 1):
@@ -89,7 +92,10 @@ func beat_listener(beat: int) ->void:
 			3:
 				new_scene.color = EventScript.BLUE
 				new_scene.index = 15
-		
+		if randi_range(0,9) == 5:
+			var bomb_scene = bomb_note_scene.instantiate()
+			bomb_scene.index = new_scene.index + 5
+			get_parent().add_child(bomb_scene)
 		
 		new_scene.circle_popped.connect(self._on_circle_circle_popped)
 		new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)

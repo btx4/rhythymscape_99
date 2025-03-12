@@ -8,10 +8,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	queue_redraw()
 	pass
 
-
-func _on_timer_timeout() -> void:
-	print("Freed")
-	queue_free()
-	pass # Replace with function body.
+func _draw() -> void:
+	
+	draw_circle(Vector2.ZERO, 50, Color(1,1,1), false,8)  # WhiteCircle

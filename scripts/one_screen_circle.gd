@@ -11,7 +11,7 @@ var pop_window_actual
 var pop_window_start
 var pop_window_difference
 var pop_window_target
-
+var score = 0
 var target_difference = 0
 
 @export var seconds_per_beat = 0.4317
@@ -66,17 +66,23 @@ func _input(event: InputEvent) -> void:
 				print("diff is" + str(pop_window_difference))
 				if pop_window_difference < target_difference + thresh_perf and pop_window_difference > target_difference - thresh_perf:
 					print("Perfect")
+					score = 25
 					quality = 3
 				elif pop_window_difference < target_difference + thresh_great and pop_window_difference > target_difference - thresh_great:
 					print("Great!")
+					score = 15
 					quality = 2
 				elif pop_window_difference < target_difference + thresh_good and pop_window_difference > target_difference - thresh_good:
 					print("Good")
+					score = 10
 					quality = 1
 				else:
 					print("Ok...")
+					score = 5
 					quality = 0
 				emit_signal("circle_popped", quality)
+				
+				EventScript.report_points(score)
 				queue_free()
 
 var fails = 0
@@ -172,6 +178,7 @@ func position_change():
 			global_position = get_parent().get_node("Pulsing_circle").global_position
 			pop_window_start = Time.get_ticks_msec()
 			popping_protocol = true
+	
 
 func beat_listener(beat: int) ->void:
 	index = index + 1
