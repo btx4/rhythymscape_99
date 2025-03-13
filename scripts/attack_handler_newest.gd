@@ -136,21 +136,21 @@ func _on_circle_circle_popped(quality: int) -> void:
 	
 	match(quality):
 		3:
-			$Combo.text = "[center]" + "Perfect!" + "[/center]"
+			$Combo.text = "[center]" + "PERFECT!" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
 		2:
-			$Combo.text = "[center]" + "Great!" + "[/center]"
+			$Combo.text = "[center]" + "GREAT!" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
 			
 		1:
-			$Combo.text = "[center]" + "Good" + "[/center]"
+			$Combo.text = "[center]" + "GOOD" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
 			
 		0:
-			$Combo.text = "[center]" + "Ok" + "[/center]"
+			$Combo.text = "[center]" + "OK" + "[/center]"
 			$Combo.modulate.a = 255
 			$Combo.start_fade_out()
 			

@@ -12,8 +12,6 @@ func _ready():
 	volume_slider.value_changed.connect(_on_volume_changed)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("stomp"):
-		print("YEOOOOWCH")
 	if ($Quit/PointLight2D.visible == true) && Input.is_action_just_pressed("stomp"):
 		print("quit -> nav to start level menu")
 		get_tree().paused = false

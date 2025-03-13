@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://opbys3frq28"
-path="res://.godot/imported/stomp_board-01.png-56972275d86142b30c34d22376978fe9.ctex"
+uid="uid://c5cwexu3ts2y1"
+path="res://.godot/imported/bg_right_spray.png-4ec43f1a0cf5d56aa8b0c4596de60e8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/global_assets/stomp_board-01.png"
-dest_files=["res://.godot/imported/stomp_board-01.png-56972275d86142b30c34d22376978fe9.ctex"]
+source_file="res://assets/level_assets/classical/bg_right_spray.png"
+dest_files=["res://.godot/imported/bg_right_spray.png-4ec43f1a0cf5d56aa8b0c4596de60e8b.ctex"]
 
 [params]
 

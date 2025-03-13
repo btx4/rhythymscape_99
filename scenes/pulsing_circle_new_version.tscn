@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cahfqtrtojgof"]
+[gd_scene load_steps=28 format=3 uid="uid://cahfqtrtojgof"]
 
 [ext_resource type="Script" path="res://scenes/pulsing_circle_new_version.gd" id="1_clnas"]
+[ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="2_4x36r"]
 [ext_resource type="Texture2D" uid="uid://xmoow8lrasrn" path="res://assets/circle.png" id="2_8ivju"]
 [ext_resource type="Texture2D" uid="uid://c87yg6tuuryqy" path="res://assets/button_stomp.png" id="2_8y8y5"]
 [ext_resource type="Script" path="res://scripts/stomp_buttons (2).gd" id="2_kpnj4"]
@@ -12,21 +13,33 @@
 [ext_resource type="Script" path="res://scripts/stomp_handler.gd" id="7_4taql"]
 [ext_resource type="Script" path="res://scripts/basic_pulse.gd" id="9_mkg5h"]
 [ext_resource type="Texture2D" uid="uid://bs03ybhsnpjq4" path="res://assets/global_assets/whole_note.png" id="10_pio36"]
+[ext_resource type="Texture2D" uid="uid://bnvmltu5ixga5" path="res://assets/level_assets/classical/bg_action lines.png" id="13_4ebxh"]
+[ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="14_6qvt8"]
+[ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="14_qf5ss"]
+[ext_resource type="Texture2D" uid="uid://hhvkohk7a2qc" path="res://assets/global_assets/stomp/yellow_light.png" id="14_ytrjq"]
+[ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="15_fkxtc"]
+[ext_resource type="Texture2D" uid="uid://dakpdjm67ifjb" path="res://assets/global_assets/stomp/red_light.png" id="15_y452v"]
+[ext_resource type="Script" path="res://scenes/stomp_backing.gd" id="16_dls1c"]
+[ext_resource type="Texture2D" uid="uid://bd4ynw6lh6qrv" path="res://assets/global_assets/stomp/green_light.png" id="16_suqum"]
+[ext_resource type="Texture2D" uid="uid://d3ro744x5bvuf" path="res://assets/global_assets/stomp/blue_light.png" id="17_bpmuc"]
+[ext_resource type="Texture2D" uid="uid://b8ovsjtdk0rlw" path="res://assets/global_assets/stomp/99_light.png" id="18_ax362"]
+[ext_resource type="Texture2D" uid="uid://gvr83r5cjlc0" path="res://assets/global_assets/stomp/stomp_99.png" id="19_p5bd1"]
+[ext_resource type="Texture2D" uid="uid://smwnn0fybf1t" path="res://assets/global_assets/staff_lines.png" id="20_tg258"]
+[ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="22_2asni"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_8ld1v"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_qepe8"]
 
 [node name="Pulsing_circle" type="Node2D"]
 script = ExtResource("1_clnas")
 
-[node name="Background" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
-position = Vector2(0, 477.924)
-scale = Vector2(7124, 5451.85)
-texture = SubResource("CanvasTexture_8ld1v")
+[node name="BgSPrite" type="Sprite2D" parent="."]
+modulate = Color(0.905882, 0.596078, 0.227451, 1)
+scale = Vector2(2560, 1440)
+texture = SubResource("CanvasTexture_qepe8")
 
-[node name="StompBacking" type="Sprite2D" parent="."]
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_ts7yt")
+[node name="ClassicalBg" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_4x36r")
 
 [node name="Stomp Buttons" type="Node2D" parent="."]
 rotation = -4.71238
@@ -34,6 +47,7 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("2_kpnj4")
 
 [node name="Button_Yellow" type="Sprite2D" parent="Stomp Buttons"]
+visible = false
 modulate = Color(1, 1, 0, 1)
 texture_filter = 1
 position = Vector2(-208, 0.00198364)
@@ -41,6 +55,7 @@ texture = ExtResource("2_8y8y5")
 script = ExtResource("3_o56q4")
 
 [node name="Button_Red" type="Sprite2D" parent="Stomp Buttons"]
+visible = false
 modulate = Color(1, 0, 0, 1)
 texture_filter = 1
 position = Vector2(-0.00182343, -202)
@@ -49,6 +64,7 @@ texture = ExtResource("2_8y8y5")
 script = ExtResource("3_o56q4")
 
 [node name="Button_Green" type="Sprite2D" parent="Stomp Buttons"]
+visible = false
 modulate = Color(0, 1, 0, 1)
 texture_filter = 1
 position = Vector2(200, -0.00183105)
@@ -57,6 +73,7 @@ texture = ExtResource("2_8y8y5")
 script = ExtResource("3_o56q4")
 
 [node name="Button_Blue" type="Sprite2D" parent="Stomp Buttons"]
+visible = false
 modulate = Color(0, 0, 1, 1)
 texture_filter = 1
 position = Vector2(0.0018692, 206)
@@ -65,6 +82,7 @@ texture = ExtResource("2_8y8y5")
 script = ExtResource("3_o56q4")
 
 [node name="Button_center" type="Sprite2D" parent="Stomp Buttons"]
+visible = false
 texture_filter = 1
 rotation = -1.57079
 texture = ExtResource("4_hfokl")
@@ -150,12 +168,14 @@ position = Vector2(0, -144)
 script = ExtResource("6_8evvu")
 
 [node name="Stomp_spot" type="Sprite2D" parent="Yellow Input"]
+visible = false
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Yellow Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(0, -114)
 scale = Vector2(0.2, 0.2)
@@ -163,6 +183,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Yellow Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(0, -228)
 scale = Vector2(0.2, 0.2)
@@ -170,6 +191,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Yellow Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(0, -342)
 scale = Vector2(0.2, 0.2)
@@ -177,6 +199,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Yellow Input"]
+visible = false
 texture_filter = 1
 position = Vector2(0, -456)
 scale = Vector2(0.2, 0.2)
@@ -188,6 +211,7 @@ position = Vector2(144, 0)
 script = ExtResource("6_8evvu")
 
 [node name="Stomp_spot" type="Sprite2D" parent="Red Input"]
+visible = false
 texture_filter = 1
 rotation = 1.57079
 scale = Vector2(0.2, 0.2)
@@ -195,6 +219,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Red Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(114, 0)
 rotation = 1.57079
@@ -203,6 +228,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Red Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(228, 0)
 rotation = 1.57079
@@ -211,6 +237,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Red Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(342, 0)
 rotation = 1.57079
@@ -219,6 +246,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Red Input"]
+visible = false
 texture_filter = 1
 position = Vector2(456, 0)
 rotation = 1.57079
@@ -231,12 +259,14 @@ position = Vector2(0, 144)
 script = ExtResource("6_8evvu")
 
 [node name="Stomp_spot" type="Sprite2D" parent="Green Input"]
+visible = false
 texture_filter = 1
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Green Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(0, 114)
 scale = Vector2(0.2, 0.2)
@@ -244,6 +274,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Green Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(0, 228)
 scale = Vector2(0.2, 0.2)
@@ -251,6 +282,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Green Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(0, 342)
 scale = Vector2(0.2, 0.2)
@@ -258,6 +290,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Green Input"]
+visible = false
 texture_filter = 1
 position = Vector2(0, 456)
 scale = Vector2(0.2, 0.2)
@@ -269,6 +302,7 @@ position = Vector2(-144, 0)
 script = ExtResource("6_8evvu")
 
 [node name="Stomp_spot" type="Sprite2D" parent="Blue Input"]
+visible = false
 texture_filter = 1
 rotation = -1.57079
 scale = Vector2(0.2, 0.2)
@@ -276,6 +310,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Blue Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(-114, 0)
 rotation = -1.57079
@@ -284,6 +319,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Blue Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(-228, 0)
 rotation = -1.57079
@@ -292,6 +328,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Blue Input" groups=["flipper_spawn_points"]]
+visible = false
 texture_filter = 1
 position = Vector2(-342, 0)
 rotation = -1.57079
@@ -300,6 +337,7 @@ texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Blue Input"]
+visible = false
 texture_filter = 1
 position = Vector2(-456, 0)
 rotation = -1.57079
@@ -311,5 +349,109 @@ script = ExtResource("9_mkg5h")
 script = ExtResource("7_4taql")
 
 [node name="FailCase" type="Timer" parent="Stomp_handler"]
+
+[node name="BgActionLines" type="Sprite2D" parent="."]
+modulate = Color(0.858824, 0.262745, 0, 0.121569)
+texture = ExtResource("13_4ebxh")
+
+[node name="BgRightSpray" type="PointLight2D" parent="."]
+position = Vector2(713, -326)
+scale = Vector2(0.75, 0.75)
+color = Color(0.344076, 0.344076, 0.344076, 1)
+energy = 0.2
+texture = ExtResource("14_qf5ss")
+
+[node name="BgLeftSpray" type="PointLight2D" parent="."]
+position = Vector2(-418, 474)
+scale = Vector2(0.75, 0.75)
+color = Color(0.277528, 0.277528, 0.277528, 1)
+texture = ExtResource("15_fkxtc")
+
+[node name="BgSpraypaint" type="Sprite2D" parent="."]
+modulate = Color(0.459228, 0.998071, 1, 0.835294)
+position = Vector2(8, 0)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("14_6qvt8")
+
+[node name="Staff" type="Node2D" parent="."]
+
+[node name="LinesRed" type="Sprite2D" parent="Staff"]
+position = Vector2(301, 0)
+scale = Vector2(0.35, 0.5)
+texture = ExtResource("20_tg258")
+
+[node name="LinesBlue" type="Sprite2D" parent="Staff"]
+position = Vector2(-301, 0)
+rotation = 3.14159
+scale = Vector2(0.35, 0.5)
+texture = ExtResource("20_tg258")
+
+[node name="LinesYellow" type="Sprite2D" parent="Staff"]
+position = Vector2(0, -301)
+rotation = -1.5708
+scale = Vector2(0.35, 0.5)
+texture = ExtResource("20_tg258")
+
+[node name="LinesGreen" type="Sprite2D" parent="Staff"]
+position = Vector2(0, 301)
+rotation = 1.5708
+scale = Vector2(0.35, 0.5)
+texture = ExtResource("20_tg258")
+
+[node name="StompBacking" type="Sprite2D" parent="."]
+modulate = Color(0.907942, 0.907942, 0.907942, 1)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_ts7yt")
+script = ExtResource("16_dls1c")
+
+[node name="BackingLight" type="PointLight2D" parent="."]
+visible = false
+scale = Vector2(0.75, 0.75)
+color = Color(1, 0.560784, 0, 1)
+energy = 0.37
+texture = ExtResource("2_ts7yt")
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Yellow" type="PointLight2D" parent="Lights"]
+visible = false
+scale = Vector2(0.75, 0.75)
+energy = 0.6
+texture = ExtResource("14_ytrjq")
+
+[node name="Red" type="PointLight2D" parent="Lights"]
+visible = false
+scale = Vector2(0.75, 0.75)
+energy = 0.6
+texture = ExtResource("15_y452v")
+
+[node name="Green" type="PointLight2D" parent="Lights"]
+visible = false
+scale = Vector2(0.75, 0.75)
+energy = 0.4
+texture = ExtResource("16_suqum")
+
+[node name="Blue" type="PointLight2D" parent="Lights"]
+visible = false
+scale = Vector2(0.75, 0.75)
+energy = 0.4
+texture = ExtResource("17_bpmuc")
+
+[node name="99Light" type="PointLight2D" parent="Lights"]
+visible = false
+scale = Vector2(0.75, 0.75)
+energy = 0.4
+texture = ExtResource("18_ax362")
+
+[node name="99" type="Sprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("19_p5bd1")
+
+[node name="BgRing" type="PointLight2D" parent="."]
+position = Vector2(10, 15)
+scale = Vector2(0.95, 0.95)
+color = Color(0.968627, 1, 0.184314, 1)
+energy = 0.1
+texture = ExtResource("22_2asni")
 
 [connection signal="timeout" from="Stomp_handler/FailCase" to="Stomp_handler" method="_on_fail_case_timeout"]

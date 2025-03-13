@@ -123,18 +123,22 @@ func _input(event: InputEvent) -> void:
 		$"Stomp Buttons/Yellow_stomp".restart()
 		yel = true
 		$"Stomp Buttons/Button_Yellow".trigger()
+		$Lights/Yellow.visible = true
 	elif event.is_action_pressed("red") and red_hittable:
 		$"Stomp Buttons/Red_stomp".restart()
 		red = true
 		$"Stomp Buttons/Button_Red".trigger()
+		$Lights/Red.visible = true
 	elif event.is_action_pressed("green") and green_hittable:
 		$"Stomp Buttons/Green_stomp".restart()
 		gre = true
 		$"Stomp Buttons/Button_Green".trigger()
+		$Lights/Green.visible = true
 	elif event.is_action_pressed("blue") and blue_hittable:
 		$"Stomp Buttons/Blue_stomp".restart()
 		blu = true
 		$"Stomp Buttons/Button_Blue".trigger()
+		$Lights/Blue.visible = true
 	if red:
 		$"Stomp Buttons/Red_stomp".emitting = true
 	if blu:
@@ -144,6 +148,7 @@ func _input(event: InputEvent) -> void:
 	if gre:
 		$"Stomp Buttons/Green_stomp".emitting = true
 	if event.is_action_pressed("stomp"):
+		$Lights/"99Light".visible = true
 		$"Stomp Buttons/Button_center".trigger()
 		if (not red and not blu and not gre and not yel):
 			$"Stomp Buttons/White_stomp".restart()
@@ -154,14 +159,19 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_released("yellow"):
 		yel = false
 		$"Stomp Buttons/Button_Yellow".untrigger()
+		$Lights/Yellow.visible = false
 	elif event.is_action_released("red"):
 		red = false
 		$"Stomp Buttons/Button_Red".untrigger()
+		$Lights/Red.visible = false
 	elif event.is_action_released("green"):
 		gre = false
 		$"Stomp Buttons/Button_Green".untrigger()
+		$Lights/Green.visible = false
 	elif event.is_action_released("blue"):
 		blu = false
 		$"Stomp Buttons/Button_Blue".untrigger()
+		$Lights/Blue.visible = false
 	elif event.is_action_released("stomp"):
 		$"Stomp Buttons/Button_center".untrigger()
+		$"Lights/99Light".visible = false
