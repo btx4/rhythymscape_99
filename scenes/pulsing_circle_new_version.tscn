@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scenes/pulsing_circle_new_version.gd" id="1_clnas"]
 [ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="2_4x36r"]
-[ext_resource type="Texture2D" uid="uid://xmoow8lrasrn" path="res://assets/circle.png" id="2_8ivju"]
 [ext_resource type="Texture2D" uid="uid://c87yg6tuuryqy" path="res://assets/button_stomp.png" id="2_8y8y5"]
 [ext_resource type="Script" path="res://scripts/stomp_buttons (2).gd" id="2_kpnj4"]
 [ext_resource type="Texture2D" uid="uid://cf564v74xv0xe" path="res://assets/global_assets/stomp/stomp_backing.png" id="2_ts7yt"]
@@ -12,6 +11,7 @@
 [ext_resource type="Material" uid="uid://mvunm1pcr1sv" path="res://scenes/stomp_particles.tres" id="6_kym7s"]
 [ext_resource type="Script" path="res://scripts/stomp_handler.gd" id="7_4taql"]
 [ext_resource type="Script" path="res://scripts/basic_pulse.gd" id="9_mkg5h"]
+[ext_resource type="Texture2D" uid="uid://dgc53rxa6kwmc" path="res://assets/global_assets/spray_particle.png" id="9_t2gxq"]
 [ext_resource type="Texture2D" uid="uid://bs03ybhsnpjq4" path="res://assets/global_assets/whole_note.png" id="10_pio36"]
 [ext_resource type="Texture2D" uid="uid://bnvmltu5ixga5" path="res://assets/level_assets/classical/bg_action lines.png" id="13_4ebxh"]
 [ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="14_6qvt8"]
@@ -92,51 +92,55 @@ script = ExtResource("3_o56q4")
 modulate = Color(0, 1, 0, 1)
 position = Vector2(288, -0.00256348)
 rotation = 4.71238
-scale = Vector2(3, 3)
+scale = Vector2(2.3, 2.3)
 emitting = false
-amount = 20
+amount = 30
 process_material = ExtResource("6_kym7s")
-texture = ExtResource("2_8ivju")
+texture = ExtResource("9_t2gxq")
 lifetime = 0.5
 one_shot = true
+speed_scale = 1.2
 explosiveness = 0.95
 
 [node name="Yellow_stomp" type="GPUParticles2D" parent="Stomp Buttons"]
 modulate = Color(1, 1, 0, 1)
 position = Vector2(-288, 0.00262451)
 rotation = 1.57079
-scale = Vector2(3, 3)
+scale = Vector2(2.3, 2.3)
 emitting = false
-amount = 20
+amount = 30
 process_material = ExtResource("6_kym7s")
-texture = ExtResource("2_8ivju")
+texture = ExtResource("9_t2gxq")
 lifetime = 0.5
 one_shot = true
+speed_scale = 1.2
 explosiveness = 0.95
 
 [node name="Red_stomp" type="GPUParticles2D" parent="Stomp Buttons"]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(-0.00259399, -288)
 rotation = 3.14159
-scale = Vector2(3, 3)
+scale = Vector2(2.3, 2.3)
 emitting = false
-amount = 20
+amount = 30
 process_material = ExtResource("6_kym7s")
-texture = ExtResource("2_8ivju")
+texture = ExtResource("9_t2gxq")
 lifetime = 0.5
 one_shot = true
+speed_scale = 1.2
 explosiveness = 0.95
 
 [node name="Blue_stomp" type="GPUParticles2D" parent="Stomp Buttons"]
 modulate = Color(0, 0, 1, 1)
 position = Vector2(0.00262451, 290)
-scale = Vector2(3, 3)
+scale = Vector2(2.3, 2.3)
 emitting = false
-amount = 20
+amount = 30
 process_material = ExtResource("6_kym7s")
-texture = ExtResource("2_8ivju")
+texture = ExtResource("9_t2gxq")
 lifetime = 0.5
 one_shot = true
+speed_scale = 1.2
 explosiveness = 0.95
 
 [node name="White_stomp" type="GPUParticles2D" parent="Stomp Buttons"]
@@ -145,20 +149,10 @@ scale = Vector2(3, 3)
 emitting = false
 amount = 20
 process_material = ExtResource("6_kym7s")
-texture = ExtResource("2_8ivju")
+texture = ExtResource("9_t2gxq")
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.95
-
-[node name="PointLight2D" type="PointLight2D" parent="Stomp Buttons"]
-
-[node name="PointLight2D2" type="PointLight2D" parent="Stomp Buttons"]
-
-[node name="PointLight2D3" type="PointLight2D" parent="Stomp Buttons"]
-
-[node name="PointLight2D4" type="PointLight2D" parent="Stomp Buttons"]
-
-[node name="PointLight2D5" type="PointLight2D" parent="Stomp Buttons"]
 
 [node name="Trigger_Line" type="Sprite2D" parent="."]
 position = Vector2(-320, -180)
@@ -368,8 +362,8 @@ color = Color(0.277528, 0.277528, 0.277528, 1)
 texture = ExtResource("15_fkxtc")
 
 [node name="BgSpraypaint" type="Sprite2D" parent="."]
-modulate = Color(0.459228, 0.998071, 1, 0.835294)
-position = Vector2(8, 0)
+modulate = Color(1, 0.882353, 0.490196, 0.87451)
+position = Vector2(12, 11)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("14_6qvt8")
 

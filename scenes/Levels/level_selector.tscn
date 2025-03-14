@@ -112,6 +112,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Beat It" type="Button" parent="."]
+visible = false
 offset_left = 230.0
 offset_top = 116.0
 offset_right = 410.0
@@ -120,6 +121,7 @@ text = "Beat It"
 metadata/_edit_use_anchors_ = true
 
 [node name="Lacrimosa Requiem" type="Button" parent="."]
+visible = false
 offset_left = 230.0
 offset_top = 176.0
 offset_right = 410.0
@@ -129,6 +131,7 @@ text = "Lacrimosa Requiem
 metadata/_edit_use_anchors_ = true
 
 [node name="Take 5" type="Button" parent="."]
+visible = false
 offset_left = 230.0
 offset_top = 236.0
 offset_right = 410.0
@@ -137,6 +140,7 @@ text = "Take 5"
 metadata/_edit_use_anchors_ = true
 
 [node name="Lean Beef Patty" type="Button" parent="."]
+visible = false
 offset_left = 230.0
 offset_top = 296.0
 offset_right = 410.0

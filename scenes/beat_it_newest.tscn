@@ -22,8 +22,8 @@
 [ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="18_36j4h"]
 [ext_resource type="Script" path="res://scripts/desat_layer.gd" id="18_lknng"]
 [ext_resource type="Shader" path="res://scenes/beat_it_newest.gdshader" id="18_lmtt0"]
-[ext_resource type="Texture2D" uid="uid://si5ssc70t4f1" path="res://assets/x_pop_up.png" id="19_x58ee"]
 [ext_resource type="Script" path="res://scripts/x_pop_up.gd" id="20_82sbq"]
+[ext_resource type="Texture2D" uid="uid://cc56u28lpa0gf" path="res://assets/global_assets/draft_x.png" id="20_oim6v"]
 [ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="21_ggcip"]
 [ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="24_1xr60"]
 [ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="25_2u372"]
@@ -47,7 +47,7 @@ stream = ExtResource("2_p56mu")
 script = ExtResource("3_gvgv5")
 
 [node name="Pulsing_circle" parent="." instance=ExtResource("1_04gay")]
-position = Vector2(960, 540)
+position = Vector2(954, 542)
 
 [node name="Camera2D" type="Camera2D" parent="Pulsing_circle"]
 position = Vector2(0, 7.62939e-06)
@@ -83,6 +83,12 @@ offset_left = 69.0
 offset_top = 220.0
 offset_right = 109.0
 offset_bottom = 260.0
+theme_override_fonts/normal_font = ExtResource("18_36j4h")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
 text = "2000"
 script = ExtResource("16_a5hb1")
 
@@ -122,8 +128,8 @@ script = ExtResource("17_lqqlm")
 [node name="XPopUp" type="Sprite2D" parent="Attack_Handler"]
 visible = false
 position = Vector2(320, 180)
-scale = Vector2(0.273438, 0.273438)
-texture = ExtResource("19_x58ee")
+scale = Vector2(0.5, 0.55)
+texture = ExtResource("20_oim6v")
 script = ExtResource("20_82sbq")
 
 [node name="Error" type="AudioStreamPlayer2D" parent="Attack_Handler"]
@@ -134,10 +140,10 @@ volume_db = -14.195
 [node name="Spray_paint_minigame_one_screen" parent="." instance=ExtResource("17_intcp")]
 
 [node name="ScoreBar" parent="." instance=ExtResource("26_nfqmw")]
-offset_left = 1015.0
-offset_top = 1012.0
-offset_right = 1463.0
-offset_bottom = 1046.0
+offset_left = -253.0
+offset_top = -108.0
+offset_right = 195.0
+offset_bottom = -74.0
 max_value = 4500.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -151,11 +157,20 @@ scale = Vector2(2319.46, 427.818)
 texture = SubResource("CanvasTexture_5a8sr")
 
 [node name="Combo Counter" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 198.0
-offset_top = 622.0
-offset_right = 390.0
-offset_bottom = 810.0
+offset_left = -142.0
+offset_top = -108.0
+offset_right = 50.0
+offset_bottom = 80.0
+theme_override_fonts/normal_font = ExtResource("18_36j4h")
+theme_override_fonts/mono_font = ExtResource("18_36j4h")
+theme_override_fonts/bold_font = ExtResource("18_36j4h")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
 text = "0"
+fit_content = true
 script = ExtResource("26_c0qyj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

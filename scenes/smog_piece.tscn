@@ -18,7 +18,7 @@ script = ExtResource("1_ho213")
 shape = SubResource("CircleShape2D_e6myq")
 
 [node name="Smog" type="Sprite2D" parent="."]
-modulate = Color(0.532288, 0.000103048, 0.487115, 1)
+modulate = Color(0, 0.882353, 0.862745, 1)
 texture_filter = 1
 script = ExtResource("3_tq2m8")
 sprite_list = Array[Texture2D]([ExtResource("3_8l7l5"), ExtResource("4_kge61"), ExtResource("5_8e3nt"), ExtResource("6_3qef4")])
