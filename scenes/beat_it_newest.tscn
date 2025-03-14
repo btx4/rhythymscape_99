@@ -157,10 +157,10 @@ scale = Vector2(2319.46, 427.818)
 texture = SubResource("CanvasTexture_5a8sr")
 
 [node name="Combo Counter" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = -142.0
-offset_top = -108.0
-offset_right = 50.0
-offset_bottom = 80.0
+offset_left = 131.0
+offset_top = 60.0
+offset_right = 323.0
+offset_bottom = 248.0
 theme_override_fonts/normal_font = ExtResource("18_36j4h")
 theme_override_fonts/mono_font = ExtResource("18_36j4h")
 theme_override_fonts/bold_font = ExtResource("18_36j4h")
