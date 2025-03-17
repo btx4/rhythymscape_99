@@ -1,14 +1,20 @@
-[gd_scene load_steps=33 format=3 uid="uid://dctvo1ohh1dnc"]
+[gd_scene load_steps=40 format=3 uid="uid://dctvo1ohh1dnc"]
 
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="1_04gay"]
 [ext_resource type="Script" path="res://scripts/beat_it_newest.gd" id="1_sh5nd"]
+[ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="2_hovaw"]
 [ext_resource type="AudioStream" uid="uid://dcw21rksjky5j" path="res://music/Michael Jackson - Beat It [8 Bit - Chiptune Remix]  8 Bit Planet.mp3" id="2_p56mu"]
 [ext_resource type="PackedScene" uid="uid://cc2qiwmb4inlj" path="res://scenes/challenges/poppable_arc.tscn" id="2_x8l68"]
+[ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="3_3bnwa"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="3_gvgv5"]
+[ext_resource type="Texture2D" uid="uid://bnvmltu5ixga5" path="res://assets/level_assets/classical/bg_action lines.png" id="4_hd1t8"]
 [ext_resource type="Script" path="res://scripts/magic_maker.gd" id="4_khxod"]
+[ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="5_52f5t"]
 [ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="5_qjqcm"]
+[ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="6_qcpen"]
 [ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="6_vasnw"]
 [ext_resource type="Script" path="res://scripts/attack_handler_newest.gd" id="7_fcauf"]
+[ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="7_riw1i"]
 [ext_resource type="PackedScene" uid="uid://povabra474mo" path="res://scenes/white_stomp.tscn" id="8_5usqr"]
 [ext_resource type="PackedScene" uid="uid://cb7y6x4rn270v" path="res://bomb_note.tscn" id="11_kmncr"]
 [ext_resource type="PackedScene" uid="uid://16aq3nabvm05" path="res://fix_the_wire_top.tscn" id="11_sl6qf"]
@@ -30,6 +36,8 @@
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="26_c0qyj"]
 [ext_resource type="PackedScene" uid="uid://d4itde6e83rnp" path="res://progress_bar.tscn" id="26_nfqmw"]
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_f4thb"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hiix8"]
 shader = ExtResource("18_lmtt0")
 shader_parameter/desaturation = 1.0
@@ -41,6 +49,46 @@ shader_parameter/opacity = 0.0
 
 [node name="Beat it Newest" type="Node2D"]
 script = ExtResource("1_sh5nd")
+
+[node name="BgSPrite" type="Sprite2D" parent="."]
+modulate = Color(0.905882, 0.596078, 0.227451, 1)
+position = Vector2(952, 542)
+scale = Vector2(2560, 1440)
+texture = SubResource("CanvasTexture_f4thb")
+
+[node name="ClassicalBg" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_hovaw")
+
+[node name="BgRing" type="PointLight2D" parent="."]
+position = Vector2(952, 542)
+color = Color(0.968627, 1, 0.184314, 1)
+energy = 0.1
+texture = ExtResource("3_3bnwa")
+
+[node name="BgActionLines" type="Sprite2D" parent="."]
+modulate = Color(0.858824, 0.262745, 0, 0.121569)
+position = Vector2(952, 542)
+texture = ExtResource("4_hd1t8")
+
+[node name="BgSpraypaint" type="Sprite2D" parent="."]
+modulate = Color(1, 0.882353, 0.490196, 0.87451)
+position = Vector2(952, 542)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_52f5t")
+
+[node name="BgRightSpray" type="PointLight2D" parent="."]
+position = Vector2(1665, 216)
+scale = Vector2(0.75, 0.75)
+color = Color(0.344076, 0.344076, 0.344076, 1)
+energy = 0.2
+texture = ExtResource("6_qcpen")
+
+[node name="BgLeftSpray" type="PointLight2D" parent="."]
+position = Vector2(534, 1016)
+scale = Vector2(0.75, 0.75)
+color = Color(0.277528, 0.277528, 0.277528, 1)
+texture = ExtResource("7_riw1i")
 
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_p56mu")

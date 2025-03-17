@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cahfqtrtojgof"]
+[gd_scene load_steps=23 format=3 uid="uid://cahfqtrtojgof"]
 
 [ext_resource type="Script" path="res://scenes/pulsing_circle_new_version.gd" id="1_clnas"]
 [ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="2_4x36r"]
@@ -13,11 +13,7 @@
 [ext_resource type="Script" path="res://scripts/basic_pulse.gd" id="9_mkg5h"]
 [ext_resource type="Texture2D" uid="uid://dgc53rxa6kwmc" path="res://assets/global_assets/spray_particle.png" id="9_t2gxq"]
 [ext_resource type="Texture2D" uid="uid://bs03ybhsnpjq4" path="res://assets/global_assets/whole_note.png" id="10_pio36"]
-[ext_resource type="Texture2D" uid="uid://bnvmltu5ixga5" path="res://assets/level_assets/classical/bg_action lines.png" id="13_4ebxh"]
-[ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="14_6qvt8"]
-[ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="14_qf5ss"]
 [ext_resource type="Texture2D" uid="uid://hhvkohk7a2qc" path="res://assets/global_assets/stomp/yellow_light.png" id="14_ytrjq"]
-[ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="15_fkxtc"]
 [ext_resource type="Texture2D" uid="uid://dakpdjm67ifjb" path="res://assets/global_assets/stomp/red_light.png" id="15_y452v"]
 [ext_resource type="Script" path="res://scenes/stomp_backing.gd" id="16_dls1c"]
 [ext_resource type="Texture2D" uid="uid://bd4ynw6lh6qrv" path="res://assets/global_assets/stomp/green_light.png" id="16_suqum"]
@@ -25,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://b8ovsjtdk0rlw" path="res://assets/global_assets/stomp/99_light.png" id="18_ax362"]
 [ext_resource type="Texture2D" uid="uid://gvr83r5cjlc0" path="res://assets/global_assets/stomp/stomp_99.png" id="19_p5bd1"]
 [ext_resource type="Texture2D" uid="uid://smwnn0fybf1t" path="res://assets/global_assets/staff_lines.png" id="20_tg258"]
-[ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="22_2asni"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qepe8"]
 
@@ -33,6 +28,7 @@
 script = ExtResource("1_clnas")
 
 [node name="BgSPrite" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.905882, 0.596078, 0.227451, 1)
 scale = Vector2(2560, 1440)
 texture = SubResource("CanvasTexture_qepe8")
@@ -345,29 +341,6 @@ script = ExtResource("7_4taql")
 
 [node name="FailCase" type="Timer" parent="Stomp_handler"]
 
-[node name="BgActionLines" type="Sprite2D" parent="."]
-modulate = Color(0.858824, 0.262745, 0, 0.121569)
-texture = ExtResource("13_4ebxh")
-
-[node name="BgRightSpray" type="PointLight2D" parent="."]
-position = Vector2(713, -326)
-scale = Vector2(0.75, 0.75)
-color = Color(0.344076, 0.344076, 0.344076, 1)
-energy = 0.2
-texture = ExtResource("14_qf5ss")
-
-[node name="BgLeftSpray" type="PointLight2D" parent="."]
-position = Vector2(-418, 474)
-scale = Vector2(0.75, 0.75)
-color = Color(0.277528, 0.277528, 0.277528, 1)
-texture = ExtResource("15_fkxtc")
-
-[node name="BgSpraypaint" type="Sprite2D" parent="."]
-modulate = Color(1, 0.882353, 0.490196, 0.87451)
-position = Vector2(12, 11)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("14_6qvt8")
-
 [node name="Staff" type="Node2D" parent="."]
 
 [node name="LinesRed" type="Sprite2D" parent="Staff"]
@@ -441,12 +414,5 @@ texture = ExtResource("18_ax362")
 [node name="99" type="Sprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("19_p5bd1")
-
-[node name="BgRing" type="PointLight2D" parent="."]
-position = Vector2(11, 15)
-scale = Vector2(0.95, 0.95)
-color = Color(0.968627, 1, 0.184314, 1)
-energy = 0.1
-texture = ExtResource("22_2asni")
 
 [connection signal="timeout" from="Stomp_handler/FailCase" to="Stomp_handler" method="_on_fail_case_timeout"]
