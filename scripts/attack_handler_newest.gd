@@ -18,7 +18,7 @@ extends Node2D
 @export var beats_per_measure = 4
 @export var offset = 3
 
-var file_path = "res://scenes/Levels/level_layout_files/Beat it new.txt" 
+@export var file_path = "res://scenes/Levels/level_layout_files/Beat it new.txt" 
 var file = FileAccess.open(file_path, FileAccess.READ)
 
 var data_array = []

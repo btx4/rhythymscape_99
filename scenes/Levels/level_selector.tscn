@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bsju3om1r6a3r"]
+[gd_scene load_steps=27 format=3 uid="uid://bsju3om1r6a3r"]
 
 [ext_resource type="Script" path="res://scripts/level_selector.gd" id="1_7knvd"]
 [ext_resource type="PackedScene" uid="uid://dctvo1ohh1dnc" path="res://scenes/beat_it_newest.tscn" id="2_0yuob"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://oxh5ihuddeen" path="res://scenes/Levels/take_five.tscn" id="4_pvpq6"]
 [ext_resource type="Script" path="res://scenes/Levels/magic_maker_lvl_0.gd" id="5_oeepc"]
 [ext_resource type="Texture2D" uid="uid://bw6601kps10aq" path="res://assets/menus/level_menu/lvl_bg_1.png" id="5_tfvrs"]
+[ext_resource type="PackedScene" uid="uid://72es5e46wc8v" path="res://scenes/Levels/i_wish.tscn" id="5_x64nu"]
 [ext_resource type="Texture2D" uid="uid://blv6ira18w3ks" path="res://assets/menus/level_menu/cd_walkman.png" id="6_2pboo"]
 [ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="6_gbnht"]
 [ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="7_755us"]
@@ -94,6 +95,7 @@ script = ExtResource("1_7knvd")
 beat_it = ExtResource("2_0yuob")
 lacrimosa_requiem = ExtResource("3_qxbrq")
 take_five = ExtResource("4_pvpq6")
+i_wish = ExtResource("5_x64nu")
 
 [node name="Background" type="AnimatedSprite2D" parent="."]
 position = Vector2(1280, 720)
