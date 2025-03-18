@@ -147,10 +147,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 240.0
-offset_top = 152.5
-offset_right = 400.0
-offset_bottom = 207.5
+offset_left = 1550.0
+offset_top = 900.0
+offset_right = 1710.0
+offset_bottom = 1045.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(80, 30)
@@ -175,7 +175,6 @@ script = ExtResource("17_lqqlm")
 
 [node name="XPopUp" type="Sprite2D" parent="Attack_Handler"]
 visible = false
-position = Vector2(320, 180)
 scale = Vector2(0.5, 0.55)
 texture = ExtResource("20_oim6v")
 script = ExtResource("20_82sbq")
@@ -193,6 +192,7 @@ offset_top = -108.0
 offset_right = 195.0
 offset_bottom = -74.0
 max_value = 4500.0
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("18_lknng")
@@ -220,6 +220,7 @@ theme_override_font_sizes/bold_font_size = 40
 text = "0"
 fit_content = true
 script = ExtResource("26_c0qyj")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

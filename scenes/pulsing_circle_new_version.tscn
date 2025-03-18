@@ -415,4 +415,6 @@ texture = ExtResource("18_ax362")
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("19_p5bd1")
 
+[node name="Background" type="Sprite2D" parent="."]
+
 [connection signal="timeout" from="Stomp_handler/FailCase" to="Stomp_handler" method="_on_fail_case_timeout"]

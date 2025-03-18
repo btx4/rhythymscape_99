@@ -13,8 +13,9 @@ func _ready():
 func start_fade_out():
 	visible = true
 	fade_timer = fade_duration
-	position.x =  randi_range(320 - 80,320 + 80)
-	position.y =  randi_range(180 - 63,180  + 63)
+	
+	position.x =  randi_range(250,1550)
+	position.y =  randi_range(0, 900)
 	rotation = deg_to_rad(randi_range(-60, 60))
 	set_process(true)
 	get_parent().get_parent().get_node("CanvasLayer").sat_down()
