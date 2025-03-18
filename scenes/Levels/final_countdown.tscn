@@ -93,7 +93,6 @@ texture = ExtResource("6_14j2h")
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_nkg5a")
 script = ExtResource("8_vuxs7")
-bpm = 118
 
 [node name="Pulsing_circle" parent="." instance=ExtResource("9_sp2x0")]
 position = Vector2(954, 542)
@@ -186,6 +185,7 @@ stream = ExtResource("27_u6fyd")
 volume_db = -14.195
 
 [node name="Spray_paint_minigame_one_screen" parent="." instance=ExtResource("28_7ri6y")]
+position = Vector2(-6, 0)
 
 [node name="ScoreBar" parent="." instance=ExtResource("29_nh44c")]
 offset_left = -253.0

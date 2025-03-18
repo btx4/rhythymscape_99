@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8yxgpf6lm40"
+path="res://.godot/imported/Micheal Jackson - Beat It.mp3-af73dcd81702a1d20f78035988d88c6a.mp3str"
+
+[deps]
+
+source_file="res://music/Micheal Jackson - Beat It.mp3"
+dest_files=["res://.godot/imported/Micheal Jackson - Beat It.mp3-af73dcd81702a1d20f78035988d88c6a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -8,15 +8,14 @@ func _ready() -> void:
 	if spawn_points.size() > 0:
 		var random_spawn = spawn_points.pick_random()
 		position = random_spawn.global_position
-		
-		print("In a new position, its:" + str(position))
-		if random_spawn.position.x < 0:
+		for point in spawn_points:
+			print(point.position)
+		if random_spawn.position.x < -50:
 			rotation_degrees = 270
-		elif random_spawn.position.x >0:
+		elif random_spawn.position.x >50:
 			rotation_degrees = 90
-		elif random_spawn.position.y > 0:
+		elif random_spawn.position.y > 50:
 			rotation_degrees = 180
-			
 		
 	print(spawn_points)
 	var viewport_size = get_viewport_rect().size

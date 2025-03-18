@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bc6fia77s2wku"]
 
-[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="1_hfvdj"]
+[ext_resource type="Texture2D" uid="uid://xmoow8lrasrn" path="res://assets/circle.png" id="1_hfvdj"]
 [ext_resource type="Script" path="res://scripts/bonus_zone.gd" id="1_rnwit"]
 [ext_resource type="PackedScene" uid="uid://dnc8ndi3cuwsx" path="res://fading_points.tscn" id="2_ldifg"]
 
@@ -13,7 +13,7 @@ script = ExtResource("1_rnwit")
 fading_points_scene = ExtResource("2_ldifg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0.533333, 0, 0.294118)
+modulate = Color(0.4, 0.533333, 0, 0.294118)
 scale = Vector2(13, 13)
 texture = ExtResource("1_hfvdj")
 

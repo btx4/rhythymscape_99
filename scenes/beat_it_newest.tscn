@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="1_04gay"]
 [ext_resource type="Script" path="res://scripts/beat_it_newest.gd" id="1_sh5nd"]
 [ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="2_hovaw"]
-[ext_resource type="AudioStream" uid="uid://dcw21rksjky5j" path="res://music/Michael Jackson - Beat It [8 Bit - Chiptune Remix]  8 Bit Planet.mp3" id="2_p56mu"]
 [ext_resource type="PackedScene" uid="uid://cc2qiwmb4inlj" path="res://scenes/challenges/poppable_arc.tscn" id="2_x8l68"]
 [ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="3_3bnwa"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="3_gvgv5"]
@@ -16,6 +15,7 @@
 [ext_resource type="Script" path="res://scripts/attack_handler_newest.gd" id="7_fcauf"]
 [ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="7_riw1i"]
 [ext_resource type="PackedScene" uid="uid://povabra474mo" path="res://scenes/white_stomp.tscn" id="8_5usqr"]
+[ext_resource type="AudioStream" uid="uid://c8yxgpf6lm40" path="res://music/Micheal Jackson - Beat It.mp3" id="8_grvso"]
 [ext_resource type="PackedScene" uid="uid://cb7y6x4rn270v" path="res://bomb_note.tscn" id="11_kmncr"]
 [ext_resource type="PackedScene" uid="uid://16aq3nabvm05" path="res://fix_the_wire_top.tscn" id="11_sl6qf"]
 [ext_resource type="PackedScene" uid="uid://cgb41vyns58vg" path="res://fix_the_wire_left.tscn" id="12_gmx3m"]
@@ -91,8 +91,9 @@ color = Color(0.277528, 0.277528, 0.277528, 1)
 texture = ExtResource("7_riw1i")
 
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_p56mu")
+stream = ExtResource("8_grvso")
 script = ExtResource("3_gvgv5")
+bpm = 138.95
 
 [node name="Pulsing_circle" parent="." instance=ExtResource("1_04gay")]
 position = Vector2(954, 542)

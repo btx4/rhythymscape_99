@@ -1,6 +1,6 @@
 extends AudioStreamPlayer2D
 
-@export var bpm = 139
+@export var bpm = 139.0
 @export var measures = 4
 
 # Tracking the beat and song position

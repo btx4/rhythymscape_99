@@ -1,0 +1,236 @@
+[gd_scene load_steps=40 format=3 uid="uid://bjssg6ykob50c"]
+
+[ext_resource type="Script" path="res://scenes/Levels/the_chain.gd" id="1_6mb5p"]
+[ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="1_ev65r"]
+[ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="2_l4esu"]
+[ext_resource type="Texture2D" uid="uid://bnvmltu5ixga5" path="res://assets/level_assets/classical/bg_action lines.png" id="3_jq5cy"]
+[ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="4_tcf2q"]
+[ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="5_w3uuc"]
+[ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="6_cei0s"]
+[ext_resource type="AudioStream" uid="uid://d033rkbgbth0w" path="res://music/The Chain - Fleetwood Mac.mp3" id="8_auyq5"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="8_ndt08"]
+[ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="9_0f1mn"]
+[ext_resource type="Script" path="res://scripts/magic_maker.gd" id="10_gql2r"]
+[ext_resource type="PackedScene" uid="uid://povabra474mo" path="res://scenes/white_stomp.tscn" id="11_vydo0"]
+[ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="12_kyxib"]
+[ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="13_eri87"]
+[ext_resource type="Script" path="res://scripts/attack_handler_newest.gd" id="14_etshm"]
+[ext_resource type="PackedScene" uid="uid://rc2xhtidjyh2" path="res://scenes/one_screen_circle.tscn" id="15_115fd"]
+[ext_resource type="PackedScene" uid="uid://cb7y6x4rn270v" path="res://bomb_note.tscn" id="16_88isy"]
+[ext_resource type="PackedScene" uid="uid://16aq3nabvm05" path="res://fix_the_wire_top.tscn" id="17_0qfx1"]
+[ext_resource type="PackedScene" uid="uid://cgb41vyns58vg" path="res://fix_the_wire_left.tscn" id="18_do3xr"]
+[ext_resource type="PackedScene" uid="uid://treqbo30sr45" path="res://fix_the_wire_right.tscn" id="19_57431"]
+[ext_resource type="PackedScene" uid="uid://n2iweeeq8eki" path="res://scenes/flipper_obstacle.tscn" id="20_236fj"]
+[ext_resource type="PackedScene" uid="uid://cc2qiwmb4inlj" path="res://scenes/challenges/poppable_arc.tscn" id="21_ft2x4"]
+[ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="22_i30p8"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="23_hbbo3"]
+[ext_resource type="Script" path="res://scripts/combo.gd" id="24_ucvyv"]
+[ext_resource type="Texture2D" uid="uid://cc56u28lpa0gf" path="res://assets/global_assets/draft_x.png" id="25_0tqao"]
+[ext_resource type="Script" path="res://scripts/x_pop_up.gd" id="26_xwus3"]
+[ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="27_uo1ih"]
+[ext_resource type="PackedScene" uid="uid://6q3h01gpjh47" path="res://scenes/spray_paint_minigame_one_screen.tscn" id="28_l6jfo"]
+[ext_resource type="PackedScene" uid="uid://d4itde6e83rnp" path="res://progress_bar.tscn" id="29_q3npg"]
+[ext_resource type="Script" path="res://scripts/desat_layer.gd" id="30_e5y6x"]
+[ext_resource type="Shader" path="res://scenes/beat_it_newest.gdshader" id="31_oshqf"]
+[ext_resource type="Script" path="res://scenes/combo_counter.gd" id="32_cabkl"]
+[ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="33_k1t0p"]
+[ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="34_armeq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qc7u1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xrlyu"]
+shader = ExtResource("31_oshqf")
+shader_parameter/desaturation = 1.0
+shader_parameter/opacity = 0.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_srmxh"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_opphg"]
+
+[node name="The Chain" type="Node2D"]
+script = ExtResource("1_6mb5p")
+
+[node name="BgSPrite" type="Sprite2D" parent="."]
+modulate = Color(0.905882, 0.596078, 0.227451, 1)
+position = Vector2(952, 542)
+scale = Vector2(2560, 1440)
+texture = SubResource("CanvasTexture_qc7u1")
+
+[node name="ClassicalBg" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_ev65r")
+
+[node name="BgRing" type="PointLight2D" parent="."]
+position = Vector2(952, 542)
+color = Color(0.968627, 1, 0.184314, 1)
+energy = 0.1
+texture = ExtResource("2_l4esu")
+
+[node name="BgActionLines" type="Sprite2D" parent="."]
+modulate = Color(0.858824, 0.262745, 0, 0.121569)
+position = Vector2(952, 542)
+texture = ExtResource("3_jq5cy")
+
+[node name="BgSpraypaint" type="Sprite2D" parent="."]
+modulate = Color(1, 0.882353, 0.490196, 0.87451)
+position = Vector2(952, 542)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_tcf2q")
+
+[node name="BgRightSpray" type="PointLight2D" parent="."]
+position = Vector2(1665, 216)
+scale = Vector2(0.75, 0.75)
+color = Color(0.344076, 0.344076, 0.344076, 1)
+energy = 0.2
+texture = ExtResource("5_w3uuc")
+
+[node name="BgLeftSpray" type="PointLight2D" parent="."]
+position = Vector2(534, 1016)
+scale = Vector2(0.75, 0.75)
+color = Color(0.277528, 0.277528, 0.277528, 1)
+texture = ExtResource("6_cei0s")
+
+[node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_auyq5")
+script = ExtResource("8_ndt08")
+
+[node name="Pulsing_circle" parent="." instance=ExtResource("9_0f1mn")]
+position = Vector2(954, 542)
+
+[node name="Camera2D" type="Camera2D" parent="Pulsing_circle"]
+position = Vector2(0, 7.62939e-06)
+
+[node name="Magic_Maker" type="Node2D" parent="."]
+script = ExtResource("10_gql2r")
+
+[node name="White_stomp" parent="Magic_Maker" instance=ExtResource("11_vydo0")]
+visible = false
+position = Vector2(0, 0)
+
+[node name="Magic" parent="Magic_Maker" instance=ExtResource("12_kyxib")]
+lifetime = 0.5
+
+[node name="cursor_sprite" type="Sprite2D" parent="Magic_Maker"]
+texture_filter = 1
+texture = ExtResource("13_eri87")
+
+[node name="Attack_Handler" type="Node2D" parent="."]
+script = ExtResource("14_etshm")
+osu_circle_scene = ExtResource("15_115fd")
+bomb_note_scene = ExtResource("16_88isy")
+fix_the_wire_top_scene = ExtResource("17_0qfx1")
+fix_the_wire_left_scene = ExtResource("18_do3xr")
+fix_the_wire_right_scene = ExtResource("19_57431")
+flipper_scene = ExtResource("20_236fj")
+
+[node name="Poppable Arc" parent="Attack_Handler" instance=ExtResource("21_ft2x4")]
+
+[node name="Score" type="RichTextLabel" parent="Attack_Handler"]
+visible = false
+offset_left = 69.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 260.0
+theme_override_fonts/normal_font = ExtResource("22_i30p8")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+text = "2000"
+script = ExtResource("23_hbbo3")
+
+[node name="Combo" type="RichTextLabel" parent="Attack_Handler"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1550.0
+offset_top = 900.0
+offset_right = 1710.0
+offset_bottom = 1045.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(80, 30)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("22_i30p8")
+theme_override_fonts/mono_font = ExtResource("22_i30p8")
+theme_override_fonts/italics_font = ExtResource("22_i30p8")
+theme_override_fonts/bold_italics_font = ExtResource("22_i30p8")
+theme_override_fonts/bold_font = ExtResource("22_i30p8")
+theme_override_font_sizes/bold_italics_font_size = 120
+theme_override_font_sizes/italics_font_size = 120
+theme_override_font_sizes/mono_font_size = 120
+theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/bold_font_size = 120
+bbcode_enabled = true
+text = "[center]1[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("24_ucvyv")
+
+[node name="XPopUp" type="Sprite2D" parent="Attack_Handler"]
+visible = false
+scale = Vector2(0.5, 0.55)
+texture = ExtResource("25_0tqao")
+script = ExtResource("26_xwus3")
+
+[node name="Error" type="AudioStreamPlayer2D" parent="Attack_Handler"]
+position = Vector2(240, 90)
+stream = ExtResource("27_uo1ih")
+volume_db = -14.195
+
+[node name="Spray_paint_minigame_one_screen" parent="." instance=ExtResource("28_l6jfo")]
+
+[node name="ScoreBar" parent="." instance=ExtResource("29_q3npg")]
+offset_left = -253.0
+offset_top = -108.0
+offset_right = 195.0
+offset_bottom = -74.0
+max_value = 4500.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("30_e5y6x")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_xrlyu")
+position = Vector2(8, 540)
+rotation = -1.57079
+scale = Vector2(2319.46, 427.818)
+texture = SubResource("CanvasTexture_srmxh")
+
+[node name="Combo Counter" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 131.0
+offset_top = 60.0
+offset_right = 323.0
+offset_bottom = 248.0
+theme_override_fonts/normal_font = ExtResource("22_i30p8")
+theme_override_fonts/mono_font = ExtResource("22_i30p8")
+theme_override_fonts/bold_font = ExtResource("22_i30p8")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+text = "0"
+fit_content = true
+script = ExtResource("32_cabkl")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 539)
+scale = Vector2(1920, 1080)
+texture = SubResource("CanvasTexture_opphg")
+
+[node name="Bonus_zone" parent="." instance=ExtResource("33_k1t0p")]
+position = Vector2(1455, 52)
+
+[node name="PauseMenu" parent="." instance=ExtResource("34_armeq")]
+visible = false
+position = Vector2(-320, -180)
