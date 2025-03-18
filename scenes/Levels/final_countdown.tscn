@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="4_ohfb3"]
 [ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="5_jip1d"]
 [ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="6_14j2h"]
-[ext_resource type="AudioStream" uid="uid://dcw21rksjky5j" path="res://music/Michael Jackson - Beat It [8 Bit - Chiptune Remix]  8 Bit Planet.mp3" id="7_hbu85"]
+[ext_resource type="AudioStream" uid="uid://bqskehqm6l5na" path="res://music/the_final_countdown.mp3" id="8_nkg5a"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="8_vuxs7"]
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="9_sp2x0"]
 [ext_resource type="Script" path="res://scripts/magic_maker.gd" id="10_6c76p"]
@@ -91,8 +91,9 @@ color = Color(0.277528, 0.277528, 0.277528, 1)
 texture = ExtResource("6_14j2h")
 
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_hbu85")
+stream = ExtResource("8_nkg5a")
 script = ExtResource("8_vuxs7")
+bpm = 118
 
 [node name="Pulsing_circle" parent="." instance=ExtResource("9_sp2x0")]
 position = Vector2(954, 542)
