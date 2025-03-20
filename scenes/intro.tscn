@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://devuigsck1t7c"]
+
+[ext_resource type="VideoStream" path="res://assets/intro/intro.ogv" id="1_4rljx"]
+[ext_resource type="VideoStream" path="res://assets/intro/output.ogv" id="2_32hmv"]
+
+[node name="Intro" type="Node2D"]
+
+[node name="IntroAnimation" type="VideoStreamPlayer" parent="."]
+offset_left = -898.0
+offset_top = -559.0
+offset_right = 1022.0
+offset_bottom = 529.0
+stream = ExtResource("1_4rljx")
+autoplay = true
+
+[node name="LoopingANimation" type="VideoStreamPlayer" parent="."]
+offset_left = -992.0
+offset_top = -576.0
+offset_right = 928.0
+offset_bottom = 512.0
+stream = ExtResource("2_32hmv")
+loop = true

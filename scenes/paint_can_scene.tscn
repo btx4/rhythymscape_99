@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dpwjegdem0px3"]
 
-[ext_resource type="Texture2D" uid="uid://donvgox5413le" path="res://assets/PAINTCAN.png" id="1_u4fys"]
+[ext_resource type="Texture2D" uid="uid://dah3f68528s6e" path="res://assets/global_assets/spray_paint_can.png" id="1_kwj3n"]
 [ext_resource type="Script" path="res://scripts/paint_can.gd" id="2_sjd4x"]
 [ext_resource type="PackedScene" uid="uid://mkcoxqia2fyf" path="res://scenes/smog_piece.tscn" id="3_e7k7o"]
 [ext_resource type="AudioStream" uid="uid://d2dey20gbqknq" path="res://sounds/spray_sound.mp3" id="4_37nhg"]
@@ -8,8 +8,7 @@
 [node name="Paint_can" type="Sprite2D"]
 texture_filter = 1
 position = Vector2(327, 397)
-scale = Vector2(4, 4)
-texture = ExtResource("1_u4fys")
+texture = ExtResource("1_kwj3n")
 script = ExtResource("2_sjd4x")
 instance_scene = ExtResource("3_e7k7o")
 
