@@ -7,11 +7,14 @@ var shake_timer: float = 0.0
 var original_position: Vector2
 
 func _ready():
+	$Scene_Transition/AnimationPlayer.play("fade_in")
 	ProjectSettings.set_setting("display/window/stretch/scale", 1)
 	print(str(ProjectSettings.get_setting("display/window/stretch/scale")))
 	#ProjectSettings.set("display/window/stretch/scale", 1)
 	# Store the original position of the node
 	original_position = position
+	await get_tree().create_timer(0.5).timeout
+	$"Music Conductor"._play_song()
 
 func start_shake(intensity: float, duration: float):
 	# Start the screen shake with specified intensity and duration

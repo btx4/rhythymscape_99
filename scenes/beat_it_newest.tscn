@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://dctvo1ohh1dnc"]
+[gd_scene load_steps=42 format=3 uid="uid://dctvo1ohh1dnc"]
 
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="1_04gay"]
 [ext_resource type="Script" path="res://scripts/beat_it_newest.gd" id="1_sh5nd"]
@@ -36,6 +36,7 @@
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="26_c0qyj"]
 [ext_resource type="PackedScene" uid="uid://d4itde6e83rnp" path="res://progress_bar.tscn" id="26_nfqmw"]
 [ext_resource type="PackedScene" uid="uid://c68rjx6nmxbk7" path="res://stephanie.tscn" id="36_lcx5h"]
+[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="37_hafii"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_f4thb"]
 
@@ -239,3 +240,5 @@ position = Vector2(-320, -180)
 
 [node name="Stephanie" parent="." instance=ExtResource("36_lcx5h")]
 position = Vector2(-253, 26)
+
+[node name="Scene_Transition" parent="." instance=ExtResource("37_hafii")]

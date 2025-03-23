@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://72es5e46wc8v"]
+[gd_scene load_steps=41 format=3 uid="uid://72es5e46wc8v"]
 
 [ext_resource type="Script" path="res://scenes/Levels/i_wish.gd" id="1_2a8ok"]
 [ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="2_yy48b"]
@@ -35,6 +35,7 @@
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="33_w4x6p"]
 [ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="34_rwb5r"]
 [ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="35_5pyv4"]
+[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="36_iduvr"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_o5erl"]
 
@@ -235,3 +236,5 @@ position = Vector2(1455, 52)
 [node name="PauseMenu" parent="." instance=ExtResource("35_5pyv4")]
 visible = false
 position = Vector2(-320, -180)
+
+[node name="Scene_Transition" parent="." instance=ExtResource("36_iduvr")]

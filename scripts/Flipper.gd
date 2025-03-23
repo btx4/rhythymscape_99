@@ -41,6 +41,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if scale.x > 1:
+		scale = scale *.99
 	time_passed += delta  # Accumulate time
 
 	var new_x = amplitude_x * sin(time_passed * frequency_x)

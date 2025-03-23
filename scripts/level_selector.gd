@@ -38,6 +38,10 @@ func _process(delta: float) -> void:
 		$ScrollClick.play()
 		print ("change level forward")
 	if ($Start/PointLight2D.visible == true) && Input.is_action_just_pressed("stomp"):
+		$Scene_Transition/AnimationPlayer.play("fade_out")
+		await get_tree().create_timer(.5).timeout
+		$Text/StartQuitText.visible = false
+		$Text/SettingsText.visible = false
 		level_selector(current_song, true)
 		
 func change_level(num: int): 
