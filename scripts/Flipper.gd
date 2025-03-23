@@ -1,6 +1,14 @@
 extends Area2D
 
+@export var amplitude_x: float = 5.0  # How far to move in the x direction
+@export var amplitude_y: float = 5.0  # How far to move in the y direction
+@export var frequency_x: float = 1.0   # Speed of oscillation in x
+@export var frequency_y: float = 2.0   # Speed of oscillation in y
 
+
+
+var time_passed: float = 0.0  # Keeps track of time for sine wave
+var start_position
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var spawn_points = get_tree().get_nodes_in_group("flipper_spawn_points")
@@ -27,11 +35,18 @@ func _ready() -> void:
 	elif position.y > half_height + 20:  # Bottom
 		rotation_degrees = 180
 	
+	start_position = position
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	time_passed += delta  # Accumulate time
+
+	var new_x = amplitude_x * sin(time_passed * frequency_x)
+	var new_y = amplitude_y * sin(time_passed * frequency_y)
+	
+	position = start_position + Vector2(new_x, new_y)
 	pass
 
 
@@ -41,4 +56,10 @@ func _on_area_entered(area: Area2D) -> void:
 		area.index = area.index + 5
 		area.position_change()
 		area.rotated = true
+		_on_trigger()
+		
 	pass # Replace with function body.
+
+func _on_trigger():
+	scale.x = 1.5
+	scale.y = 1.5

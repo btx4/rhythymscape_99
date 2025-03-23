@@ -1,15 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://y0fdcejylxy"]
+[gd_scene load_steps=9 format=3 uid="uid://y0fdcejylxy"]
 
-[ext_resource type="AudioStream" uid="uid://dcw21rksjky5j" path="res://music/Michael Jackson - Beat It [8 Bit - Chiptune Remix]  8 Bit Planet.mp3" id="2_r5q03"]
+[ext_resource type="Script" path="res://testing_environment.gd" id="1_iawho"]
+[ext_resource type="AudioStream" uid="uid://c8yxgpf6lm40" path="res://music/Micheal Jackson - Beat It.mp3" id="1_nyecv"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="3_h803y"]
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="4_6wcnk"]
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="4_cteh8"]
 [ext_resource type="PackedScene" uid="uid://cb7y6x4rn270v" path="res://bomb_note.tscn" id="5_v5h0t"]
+[ext_resource type="PackedScene" uid="uid://c68rjx6nmxbk7" path="res://stephanie.tscn" id="6_3xl0t"]
+[ext_resource type="PackedScene" uid="uid://n2iweeeq8eki" path="res://scenes/flipper_obstacle.tscn" id="12_niet2"]
 
 [node name="Testing_Environment" type="Node2D"]
+script = ExtResource("1_iawho")
 
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_r5q03")
+stream = ExtResource("1_nyecv")
 script = ExtResource("3_h803y")
 
 [node name="Combo Counter" type="RichTextLabel" parent="."]
@@ -22,6 +26,11 @@ script = ExtResource("4_6wcnk")
 
 [node name="Pulsing_circle" parent="." instance=ExtResource("4_cteh8")]
 position = Vector2(904, 547)
-scale = Vector2(3, 3)
 
 [node name="Bomb_note" parent="." instance=ExtResource("5_v5h0t")]
+
+[node name="Stephanie" parent="." instance=ExtResource("6_3xl0t")]
+position = Vector2(-240, 31)
+
+[node name="Flipper_obstacle5" parent="." instance=ExtResource("12_niet2")]
+position = Vector2(504, 547)

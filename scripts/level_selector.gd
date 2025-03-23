@@ -31,9 +31,11 @@ func _process(delta: float) -> void:
 		song_sprites[sprite_index].visible = false
 		change_level(-1)
 		print("change level back")
+		$ScrollClick.play()
 	if ($RightButton/PointLight2D.visible == true) && Input.is_action_just_pressed("stomp"):
 		song_sprites[sprite_index].visible = false
 		change_level(1)
+		$ScrollClick.play()
 		print ("change level forward")
 	if ($Start/PointLight2D.visible == true) && Input.is_action_just_pressed("stomp"):
 		level_selector(current_song, true)
@@ -163,18 +165,23 @@ func _on_beat_it_button_4_pressed() -> void:
 func _on_left_hover_area_mouse_entered() -> void:
 	#print("MOUSE ENTERED LEFT BUTTON")
 	$LeftButton/PointLight2D.visible = true
+	$ClickSound.play()
 
 func _on_right_hover_area_mouse_entered() -> void:
 	$RightButton/PointLight2D.visible = true
+	$ClickSound.play()
 
 func _on_start_hover_area_mouse_entered() -> void:
 	$Start/PointLight2D.visible = true
+	$ClickSound.play()
 
 func _on_settings_hover_area_mouse_entered() -> void:
 	$Settings/PointLight2D.visible = true
+	$ClickSound.play()
 
 func _on_quit_hover_area_mouse_entered() -> void:
 	$Quit/PointLight2D.visible = true
+	$ClickSound.play()
 
 
 func _on_left_hover_area_mouse_exited() -> void:
