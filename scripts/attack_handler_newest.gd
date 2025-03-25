@@ -18,8 +18,7 @@ extends Node2D
 @export var beats_per_measure = 4
 @export var offset = 3
 
-@export var file_path = "res://scenes/Levels/level_layout_files/Beat it new.txt" 
-var file = FileAccess.open(file_path, FileAccess.READ)
+@export var file_path = "res://scenes/Levels/level_layout_files/Beat it 3.23.txt" 
 
 var data_array = []
 
@@ -35,6 +34,7 @@ var last_location
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var file = FileAccess.open(file_path, FileAccess.READ)
 	EventScript.beat.connect(beat_listener)
 	
 	if file:
@@ -46,9 +46,10 @@ func _ready() -> void:
 
 			line = line.trim_suffix(" :")  # Remove the trailing " :"
 			var parts = line.split(",")
-
-			if parts.size() == 4:  # Ensure correct format
-				var tuple_data = [int(parts[0]), int(parts[1]), int(parts[2])]  # Use an array instead of a tuple
+			print(parts)
+			print("SIZE PARTS" +str(parts.size()))
+			if parts.size() == 11:  # Ensure correct format
+				var tuple_data = [int(parts[0]), int(parts[1]), int(parts[2]), int(parts[3]), int(parts[4]), int(parts[5]), int(parts[6]), int(parts[7]), int(parts[8]), int(parts[9]), int(parts[10])]  # Use an array instead of a tuple
 				data_array.append(tuple_data)
 	else:
 		print("Failed to open file.")
@@ -75,7 +76,7 @@ func beat_listener(beat: int) ->void:
 		return  # Exit early if beat exceeds the array bounds
 	#                                                                                                             CIRCLE SPAWN
 	print(data_array[beat][1])
-	if (data_array[beat][1] == 1):
+	if (data_array[beat][1] == 1):                                   #spawn RANDOM COLOR NOTE
 		var beat_color = get_random_color()
 		var new_scene = osu_circle_scene.instantiate()
 		var circlecolor = randi_range(0,3)
@@ -96,32 +97,64 @@ func beat_listener(beat: int) ->void:
 			var bomb_scene = bomb_note_scene.instantiate()
 			bomb_scene.index = new_scene.index + 5
 			get_parent().add_child(bomb_scene)
-		
 		new_scene.circle_popped.connect(self._on_circle_circle_popped)
 		new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)
-		
+		get_parent().add_child(new_scene)
+	if (data_array[beat][2] == 1):                                   #spawn GREEN NOTE
+		var beat_color = get_random_color()
+		var new_scene = osu_circle_scene.instantiate()
+		new_scene.color = EventScript.GREEN
+		new_scene.index = 10
+		new_scene.circle_popped.connect(self._on_circle_circle_popped)
+		new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)
+		get_parent().add_child(new_scene)
+	if (data_array[beat][3] == 1):                                   #spawn YELLOW NOTE
+		var beat_color = get_random_color()
+		var new_scene = osu_circle_scene.instantiate()
+		new_scene.color = EventScript.YELLOW
+		new_scene.index = 0
+		new_scene.circle_popped.connect(self._on_circle_circle_popped)
+		new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)
 		get_parent().add_child(new_scene)
 	
-	if (data_array[beat][2] == 1):
+	if (data_array[beat][4] == 1):                                   #spawn RED NOTE
+		var beat_color = get_random_color()
+		var new_scene = osu_circle_scene.instantiate()
+		new_scene.color = EventScript.RED
+		new_scene.index = 5
+		new_scene.circle_popped.connect(self._on_circle_circle_popped)
+		new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)
+		get_parent().add_child(new_scene)
+		
+	if (data_array[beat][5] == 1):                                   #spawn BLUE NOTE
+		var beat_color = get_random_color()
+		var new_scene = osu_circle_scene.instantiate()
+		new_scene.color = EventScript.BLUE
+		new_scene.index = 15
+		new_scene.circle_popped.connect(self._on_circle_circle_popped)
+		new_scene.circle_not_popped.connect(self._on_circle_circle_not_popped)
+		get_parent().add_child(new_scene)
+	
+	if (data_array[beat][9] == 1):
 		get_parent().get_node("Spray_paint_minigame_one_screen").spawn_spray_can()
-		print("SPAWN")
-	if (data_array[beat][2] == 2):
-		print("SPAWN")
+		#print("SPAWN")
+	if (data_array[beat][9] == 2):
+		#print("SPAWN")
 		new_scene = flipper_scene.instantiate()
 		get_parent().add_child(new_scene)
-	if (data_array[beat][2] == 3):
+	if (data_array[beat][9] == 3):
 		new_scene = fix_the_wire_top_scene.instantiate()
 		new_scene.position = get_parent().get_node("Pulsing_circle").position
 		new_scene.z_index = get_parent().get_node("Pulsing_circle/Background").z_index + 1
 		get_parent().add_child(new_scene)
 		get_parent().get_node("Pulsing_circle").yellow_hittable = false
-	if (data_array[beat][2] == 4):
+	if (data_array[beat][9] == 4):
 		new_scene = fix_the_wire_left_scene.instantiate()
 		new_scene.position = get_parent().get_node("Pulsing_circle").position
 		new_scene.z_index = get_parent().get_node("Pulsing_circle/Background").z_index + 1
 		get_parent().add_child(new_scene)
 		get_parent().get_node("Pulsing_circle").blue_hittable = false
-	if (data_array[beat][2] == 5):
+	if (data_array[beat][9] == 5):
 		new_scene = fix_the_wire_right_scene.instantiate()
 		new_scene.position = get_parent().get_node("Pulsing_circle").position
 		new_scene.z_index = get_parent().get_node("Pulsing_circle/Background").z_index + 1
