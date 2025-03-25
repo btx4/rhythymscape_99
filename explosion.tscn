@@ -75,7 +75,7 @@ one_shot = true
 explosiveness = 1.0
 
 [node name="yellow" type="GPUParticles2D" parent="."]
-modulate = Color(1, 1, 0.141176, 1)
+modulate = Color(1, 0.419608, 0.141176, 1)
 emitting = false
 amount = 15
 process_material = SubResource("ParticleProcessMaterial_b887x")
@@ -84,7 +84,7 @@ one_shot = true
 explosiveness = 0.9
 
 [node name="red" type="GPUParticles2D" parent="."]
-modulate = Color(1, 0.156863, 0.168627, 1)
+modulate = Color(0.552941, 0, 0.678431, 1)
 emitting = false
 amount = 25
 process_material = SubResource("ParticleProcessMaterial_iadfr")

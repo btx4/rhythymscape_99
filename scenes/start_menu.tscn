@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://be60yuv6eis23"]
+[gd_scene load_steps=10 format=3 uid="uid://dt4ruwdgyxbyv"]
 
 [ext_resource type="Script" path="res://scenes/start_menu.gd" id="1_51lhc"]
 [ext_resource type="Texture2D" uid="uid://dpp1kdmgmermc" path="res://assets/menus/start_menu/start_menu.png" id="1_r0myl"]
@@ -66,25 +66,45 @@ texture = ExtResource("5_a850b")
 visible = false
 modulate = Color(0.0769674, 0.0121306, 0.492348, 1)
 position = Vector2(1280, 720)
-color = Color(1, 1, 0.34902, 1)
+energy = 1.5
 texture = ExtResource("4_mb8f6")
 
 [node name="StartSprite2" type="PointLight2D" parent="."]
 visible = false
 modulate = Color(0.0784314, 0.0117647, 0.494118, 1)
 position = Vector2(1280, 720)
-color = Color(1, 1, 0.34902, 1)
-energy = 0.8
+energy = 1.5
 texture = ExtResource("5_a850b")
 
 [node name="QuitHighlight" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(0, 1, 1, 1)
+modulate = Color(0.0904262, 0.775406, 0.871765, 1)
 position = Vector2(1280, 720)
 texture = ExtResource("6_ujcv0")
 
 [node name="StartHighlight" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(0, 1, 1, 1)
+modulate = Color(0.0814928, 0.757713, 0.848099, 1)
 position = Vector2(1280, 720)
 texture = ExtResource("7_jqak6")
+
+[node name="Start" type="Node2D" parent="."]
+
+[node name="StartHoverArea" type="Area2D" parent="Start"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Start/StartHoverArea"]
+visible = false
+polygon = PackedVector2Array(1039, 542, 1068, 517, 1099, 546, 1127, 544, 1107, 517, 1060, 490, 1058, 446, 1097, 407, 1151, 408, 1179, 433, 1178, 417, 1320, 416, 1322, 461, 1312, 479, 1324, 491, 1361, 405, 1415, 414, 1462, 570, 1460, 409, 1559, 405, 1590, 423, 1596, 446, 1599, 401, 1745, 419, 1741, 452, 1689, 450, 1683, 583, 1639, 583, 1644, 449, 1598, 450, 1600, 495, 1622, 568, 1565, 580, 1524, 522, 1514, 522, 1517, 582, 1467, 589, 1410, 589, 1407, 547, 1348, 545, 1331, 586, 1284, 578, 1279, 592, 1226, 595, 1223, 455, 1173, 466, 1158, 474, 1112, 445, 1109, 464, 1174, 508, 1180, 551, 1151, 582, 1097, 591, 1047, 561)
+
+[node name="Quit" type="Node2D" parent="."]
+
+[node name="QuitHoverArea" type="Area2D" parent="Quit"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Quit/QuitHoverArea"]
+visible = false
+polygon = PackedVector2Array(1054, 724, 1046, 679, 1065, 634, 1108, 618, 1147, 628, 1177, 653, 1187, 680, 1184, 637, 1217, 640, 1227, 721, 1247, 741, 1267, 727, 1261, 637, 1294, 634, 1299, 732, 1311, 636, 1342, 636, 1459, 634, 1457, 668, 1418, 667, 1422, 770, 1384, 768, 1381, 663, 1345, 664, 1342, 767, 1307, 768, 1298, 742, 1272, 770, 1220, 769, 1190, 745, 1184, 698, 1171, 729, 1184, 747, 1165, 762, 1149, 747, 1118, 760, 1074, 746)
+
+[connection signal="mouse_entered" from="Start/StartHoverArea" to="." method="_on_start_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="Start/StartHoverArea" to="." method="_on_start_hover_area_mouse_exited"]
+[connection signal="mouse_entered" from="Quit/QuitHoverArea" to="." method="_on_quit_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="Quit/QuitHoverArea" to="." method="_on_quit_hover_area_mouse_exited"]

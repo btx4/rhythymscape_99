@@ -1,11 +1,13 @@
-[gd_scene load_steps=41 format=3 uid="uid://72es5e46wc8v"]
+[gd_scene load_steps=46 format=3 uid="uid://72es5e46wc8v"]
 
 [ext_resource type="Script" path="res://scenes/Levels/i_wish.gd" id="1_2a8ok"]
-[ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="2_yy48b"]
+[ext_resource type="Script" path="res://scenes/Levels/bg_s_prite.gd" id="2_se3j1"]
 [ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="3_ytp6p"]
+[ext_resource type="Script" path="res://scenes/Levels/bg_action_lines.gd" id="4_ehua7"]
 [ext_resource type="Texture2D" uid="uid://bnvmltu5ixga5" path="res://assets/level_assets/classical/bg_action lines.png" id="4_k52we"]
 [ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="5_xl5r3"]
 [ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="6_ww466"]
+[ext_resource type="Script" path="res://scenes/Levels/bg_spraypaint.gd" id="7_d4nyy"]
 [ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="7_klasg"]
 [ext_resource type="AudioStream" uid="uid://786455i5av6" path="res://music/I Wish - Skee Lo.mp3" id="8_rh6ua"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="9_4pxpt"]
@@ -35,7 +37,9 @@
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="33_w4x6p"]
 [ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="34_rwb5r"]
 [ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="35_5pyv4"]
-[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="36_iduvr"]
+[ext_resource type="PackedScene" path="res://scene_transition.tscn" id="36_iduvr"]
+[ext_resource type="Script" path="res://scenes/pause_button.gd" id="37_3et36"]
+[ext_resource type="Texture2D" uid="uid://drr217jaqhjvr" path="res://assets/global_assets/pause_button.png" id="38_qotgp"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_o5erl"]
 
@@ -48,47 +52,50 @@ shader_parameter/opacity = 0.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_yc1l3"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dqp0"]
+size = Vector2(78, 112)
+
 [node name="i wish" type="Node2D"]
 script = ExtResource("1_2a8ok")
 
-[node name="BgSPrite" type="Sprite2D" parent="."]
-modulate = Color(0.905882, 0.596078, 0.227451, 1)
+[node name="BgSprite" type="Sprite2D" parent="."]
+modulate = Color(0.705918, 0.89, 0.2403, 1)
 position = Vector2(952, 542)
 scale = Vector2(2560, 1440)
 texture = SubResource("CanvasTexture_o5erl")
-
-[node name="ClassicalBg" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_yy48b")
+script = ExtResource("2_se3j1")
 
 [node name="BgRing" type="PointLight2D" parent="."]
-position = Vector2(952, 542)
-color = Color(0.968627, 1, 0.184314, 1)
+position = Vector2(965, 563)
+color = Color(0.552941, 1, 0.580392, 1)
 energy = 0.1
 texture = ExtResource("3_ytp6p")
 
 [node name="BgActionLines" type="Sprite2D" parent="."]
-modulate = Color(0.858824, 0.262745, 0, 0.121569)
-position = Vector2(952, 542)
+modulate = Color(0.145098, 0.482353, 0.709804, 0.121569)
+position = Vector2(1000, 580)
+scale = Vector2(1.1, 1.1)
 texture = ExtResource("4_k52we")
+script = ExtResource("4_ehua7")
 
 [node name="BgSpraypaint" type="Sprite2D" parent="."]
-modulate = Color(1, 0.882353, 0.490196, 0.87451)
-position = Vector2(952, 542)
+modulate = Color(0.3293, 0.89, 0.525545, 1)
+position = Vector2(973, 550)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_xl5r3")
+script = ExtResource("7_d4nyy")
 
 [node name="BgRightSpray" type="PointLight2D" parent="."]
-position = Vector2(1665, 216)
+position = Vector2(1773, 362)
 scale = Vector2(0.75, 0.75)
-color = Color(0.344076, 0.344076, 0.344076, 1)
+color = Color(0.294118, 0.85098, 0.843137, 1)
 energy = 0.2
 texture = ExtResource("6_ww466")
 
 [node name="BgLeftSpray" type="PointLight2D" parent="."]
-position = Vector2(534, 1016)
+position = Vector2(464, 826)
 scale = Vector2(0.75, 0.75)
-color = Color(0.277528, 0.277528, 0.277528, 1)
+color = Color(0.143791, 0.520355, 0.515465, 1)
 texture = ExtResource("7_klasg")
 
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
@@ -200,10 +207,11 @@ metadata/_edit_use_anchors_ = true
 script = ExtResource("31_f1daa")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0.0177324, 0.0177324, 0.0177324, 1)
 material = SubResource("ShaderMaterial_31h38")
-position = Vector2(8, 540)
+position = Vector2(951, 548.915)
 rotation = -1.57079
-scale = Vector2(2319.46, 427.818)
+scale = Vector2(1524.78, 2629.82)
 texture = SubResource("CanvasTexture_4ha1l")
 
 [node name="Combo Counter" type="RichTextLabel" parent="CanvasLayer"]
@@ -233,8 +241,35 @@ texture = SubResource("CanvasTexture_yc1l3")
 [node name="Bonus_zone" parent="." instance=ExtResource("34_rwb5r")]
 position = Vector2(1455, 52)
 
+[node name="PauseButton" type="Node2D" parent="."]
+script = ExtResource("37_3et36")
+
+[node name="Pause" type="Sprite2D" parent="PauseButton"]
+modulate = Color(0.321988, 0.814677, 0.460087, 1)
+position = Vector2(2142, -52)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("38_qotgp")
+
+[node name="PauseHoverArea" type="Area2D" parent="PauseButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PauseButton/PauseHoverArea"]
+visible = false
+position = Vector2(2136, -60)
+shape = SubResource("RectangleShape2D_1dqp0")
+
+[node name="PointLight2D" type="PointLight2D" parent="PauseButton"]
+visible = false
+position = Vector2(2142, -52)
+scale = Vector2(0.4, 0.4)
+color = Color(0.447059, 0.964706, 0.564706, 1)
+energy = 1.37
+texture = ExtResource("38_qotgp")
+
 [node name="PauseMenu" parent="." instance=ExtResource("35_5pyv4")]
 visible = false
 position = Vector2(-320, -180)
 
 [node name="Scene_Transition" parent="." instance=ExtResource("36_iduvr")]
+
+[connection signal="mouse_entered" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_exited"]

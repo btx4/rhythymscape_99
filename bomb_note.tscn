@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cb7y6x4rn270v"]
 
 [ext_resource type="Script" path="res://bomb_note.gd" id="1_c02ls"]
-[ext_resource type="Texture2D" uid="uid://cimdlugbqp5ir" path="res://assets/bomb.png" id="2_rvm0o"]
+[ext_resource type="Texture2D" uid="uid://1wmidqrnvye" path="res://assets/global_assets/bomb.png" id="2_btpgj"]
 [ext_resource type="PackedScene" uid="uid://wls8fam2q681" path="res://explosion.tscn" id="3_kmid6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0d1wj"]
@@ -14,9 +14,19 @@ script = ExtResource("1_c02ls")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_rvm0o")
+position = Vector2(3, -7)
+rotation = -0.331613
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_btpgj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_0d1wj")
 
 [node name="Explosion" parent="." instance=ExtResource("3_kmid6")]
+
+[node name="Bomb" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(3.00061, -7.00024)
+rotation = -0.333358
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_btpgj")

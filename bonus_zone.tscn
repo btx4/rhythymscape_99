@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc6fia77s2wku"]
+[gd_scene load_steps=6 format=3 uid="uid://bc6fia77s2wku"]
 
 [ext_resource type="Texture2D" uid="uid://xmoow8lrasrn" path="res://assets/circle.png" id="1_hfvdj"]
 [ext_resource type="Script" path="res://scripts/bonus_zone.gd" id="1_rnwit"]
 [ext_resource type="PackedScene" uid="uid://dnc8ndi3cuwsx" path="res://fading_points.tscn" id="2_ldifg"]
+[ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="4_ctj35"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4iki2"]
 radius = 217.559
@@ -19,12 +20,15 @@ texture = ExtResource("1_hfvdj")
 
 [node name="Bonus" type="RichTextLabel" parent="."]
 offset_left = -101.0
-offset_top = -43.0
-offset_right = 138.0
-offset_bottom = 38.0
+offset_top = -30.0
+offset_right = 96.0
+offset_bottom = 31.0
 mouse_filter = 2
-theme_override_font_sizes/normal_font_size = 55
+theme_override_fonts/normal_font = ExtResource("4_ctj35")
+theme_override_font_sizes/normal_font_size = 50
 text = "BONUS!"
+fit_content = true
+autowrap_mode = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4iki2")

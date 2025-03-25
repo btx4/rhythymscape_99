@@ -23,6 +23,7 @@ func start_shake(intensity: float, duration: float):
 	shake_timer = duration
 
 func _process(delta: float):
+	
 	if shake_timer > 0:
 		# Apply random offset based on shake intensity
 		position = original_position + Vector2(

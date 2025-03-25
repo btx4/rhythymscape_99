@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://boyyjjusfj47u"]
+[gd_scene load_steps=3 format=3 uid="uid://boyyjjusfj47u"]
 
+[ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="1_t3fk1"]
 [ext_resource type="Script" path="res://scripts/nice!.gd" id="1_xbiio"]
 
 [node name="Nice!" type="RichTextLabel"]
@@ -8,6 +9,8 @@ offset_bottom = 40.0
 pivot_offset = Vector2(20, 20)
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_fonts/normal_font = ExtResource("1_t3fk1")
 bbcode_enabled = true
-text = "[center]Nice![/center]"
+text = "[center]NICE[/center]"
+fit_content = true
 script = ExtResource("1_xbiio")

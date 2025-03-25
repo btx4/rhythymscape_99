@@ -14,7 +14,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if started:
-		$Sprite2D.scale = $Sprite2D.scale * 0.99
+		$Sprite2D.scale = $Sprite2D.scale * 0.999
+		$Bonus.scale = $Bonus.scale * 0.9996
 	pass
 
 func beat_listener(beat: int) ->void:

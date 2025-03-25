@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://28xsf0cet6r" path="res://assets/menus/level_menu/quit_light.png" id="18_qm5d6"]
 [ext_resource type="AudioStream" uid="uid://typ7oacxaxx7" path="res://sounds/click.wav" id="20_4whd5"]
 [ext_resource type="AudioStream" uid="uid://cacg6pwkvarym" path="res://sounds/scroll_click.wav" id="21_u78ct"]
-[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="22_r5k1h"]
+[ext_resource type="PackedScene" path="res://scene_transition.tscn" id="22_r5k1h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c6ed7"]
 animations = [{

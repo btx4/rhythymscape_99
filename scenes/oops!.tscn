@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlsld1sacmgxa"]
+[gd_scene load_steps=3 format=3 uid="uid://dlsld1sacmgxa"]
 
 [ext_resource type="Script" path="res://scripts/oops.gd" id="1_fxu4t"]
+[ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="1_gj37d"]
 
 [node name="Oops!" type="RichTextLabel"]
 offset_right = 48.0
 offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("1_gj37d")
 bbcode_enabled = true
-text = "[center]Oops[/center]"
+text = "[center]OOPS[/center]"
+fit_content = true
 script = ExtResource("1_fxu4t")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4o8lct88t0m"]
+[gd_scene load_steps=5 format=3 uid="uid://c4o8lct88t0m"]
 
 [ext_resource type="Script" path="res://scripts/smog_spawner.gd" id="1_cd7bg"]
 [ext_resource type="PackedScene" uid="uid://mkcoxqia2fyf" path="res://scenes/smog_piece.tscn" id="2_gbfkn"]
 [ext_resource type="Script" path="res://scripts/label.gd" id="3_d30q1"]
+[ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="3_l6eb8"]
 
 [node name="Smog_Minigame" type="Node2D"]
 script = ExtResource("1_cd7bg")
@@ -11,7 +12,9 @@ instance_scene = ExtResource("2_gbfkn")
 [node name="Label" type="RichTextLabel" parent="."]
 offset_left = 73.0
 offset_top = 140.0
-offset_right = 199.0
+offset_right = 227.0
 offset_bottom = 180.0
-text = "Clear The Smog!"
+theme_override_fonts/normal_font = ExtResource("3_l6eb8")
+text = "CLEAR THE SMOG!"
+fit_content = true
 script = ExtResource("3_d30q1")

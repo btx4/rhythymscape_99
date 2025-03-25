@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cahfqtrtojgof"]
+[gd_scene load_steps=24 format=3 uid="uid://cahfqtrtojgof"]
 
 [ext_resource type="Script" path="res://scenes/pulsing_circle_new_version.gd" id="1_clnas"]
 [ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="2_4x36r"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b8ovsjtdk0rlw" path="res://assets/global_assets/stomp/99_light.png" id="18_ax362"]
 [ext_resource type="Texture2D" uid="uid://gvr83r5cjlc0" path="res://assets/global_assets/stomp/stomp_99.png" id="19_p5bd1"]
 [ext_resource type="Texture2D" uid="uid://smwnn0fybf1t" path="res://assets/global_assets/staff_lines.png" id="20_tg258"]
+[ext_resource type="Script" path="res://scenes/99.gd" id="22_co5d3"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qepe8"]
 
@@ -160,7 +161,7 @@ script = ExtResource("6_8evvu")
 [node name="Stomp_spot" type="Sprite2D" parent="Yellow Input"]
 visible = false
 texture_filter = 1
-position = Vector2(0, 33)
+position = Vector2(0, 35)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
@@ -204,6 +205,7 @@ script = ExtResource("6_8evvu")
 [node name="Stomp_spot" type="Sprite2D" parent="Red Input"]
 visible = false
 texture_filter = 1
+position = Vector2(4, 0)
 rotation = 1.57079
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_pio36")
@@ -252,6 +254,7 @@ script = ExtResource("6_8evvu")
 [node name="Stomp_spot" type="Sprite2D" parent="Green Input"]
 visible = false
 texture_filter = 1
+position = Vector2(0, 11)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
@@ -295,6 +298,7 @@ script = ExtResource("6_8evvu")
 [node name="Stomp_spot" type="Sprite2D" parent="Blue Input"]
 visible = false
 texture_filter = 1
+position = Vector2(-9, 0)
 rotation = -1.57079
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_pio36")
@@ -414,6 +418,7 @@ texture = ExtResource("18_ax362")
 [node name="99" type="Sprite2D" parent="."]
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("19_p5bd1")
+script = ExtResource("22_co5d3")
 
 [node name="Background" type="Sprite2D" parent="."]
 
