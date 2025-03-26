@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dctvo1ohh1dnc"]
+[gd_scene load_steps=51 format=3 uid="uid://dctvo1ohh1dnc"]
 
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="1_04gay"]
 [ext_resource type="Script" path="res://scripts/beat_it_newest.gd" id="1_sh5nd"]
@@ -36,9 +36,14 @@
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="26_c0qyj"]
 [ext_resource type="PackedScene" uid="uid://d4itde6e83rnp" path="res://progress_bar.tscn" id="26_nfqmw"]
 [ext_resource type="PackedScene" uid="uid://b4tb16h1xqvmb" path="res://stephanie.tscn" id="36_lcx5h"]
-[ext_resource type="PackedScene" path="res://scene_transition.tscn" id="37_hafii"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="37_hafii"]
 [ext_resource type="Script" path="res://scenes/pause_button.gd" id="38_rdb01"]
 [ext_resource type="Texture2D" uid="uid://drr217jaqhjvr" path="res://assets/global_assets/pause_button.png" id="38_vcfrv"]
+[ext_resource type="Texture2D" uid="uid://cmj8dvyotfahc" path="res://assets/global_assets/girl_idle/idle_1.png" id="40_j3ysx"]
+[ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="41_0pl0c"]
+[ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="42_4ad0g"]
+[ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="43_bi1wt"]
+[ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="44_ythl5"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_f4thb"]
 
@@ -50,6 +55,29 @@ shader_parameter/opacity = 0.0
 [sub_resource type="CanvasTexture" id="CanvasTexture_5a8sr"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_g7n6l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7pbg4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_j3ysx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_0pl0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_4ad0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_bi1wt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_ythl5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbgl5"]
 size = Vector2(78, 112)
@@ -240,7 +268,13 @@ texture = SubResource("CanvasTexture_g7n6l")
 position = Vector2(1455, 52)
 
 [node name="Stephanie" parent="." instance=ExtResource("36_lcx5h")]
+visible = false
 position = Vector2(-253, 26)
+
+[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(-56, 862)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_7pbg4")
 
 [node name="PauseButton" type="Node2D" parent="."]
 script = ExtResource("38_rdb01")
