@@ -1,0 +1,244 @@
+[gd_scene load_steps=42 format=3 uid="uid://c685jdilogltc"]
+
+[ext_resource type="Script" path="res://it_don't_mean_a_thing.gd" id="1_t026r"]
+[ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="2_7hjkb"]
+[ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="3_hsauu"]
+[ext_resource type="Texture2D" uid="uid://bnvmltu5ixga5" path="res://assets/level_assets/classical/bg_action lines.png" id="4_x85wy"]
+[ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="5_x8oij"]
+[ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="6_72wlj"]
+[ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="7_q253b"]
+[ext_resource type="AudioStream" uid="uid://dkayef26kguie" path="res://music/Solid As A Rock - Ella Fitzgerald.mp3" id="8_q3bjd"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="9_hwt4u"]
+[ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="10_4ij8m"]
+[ext_resource type="Script" path="res://scripts/magic_maker.gd" id="11_1yb87"]
+[ext_resource type="PackedScene" uid="uid://povabra474mo" path="res://scenes/white_stomp.tscn" id="12_t8pbt"]
+[ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="13_n6gb6"]
+[ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="14_v02jx"]
+[ext_resource type="Script" path="res://scripts/attack_handler_newest.gd" id="15_w3ndl"]
+[ext_resource type="PackedScene" uid="uid://rc2xhtidjyh2" path="res://scenes/one_screen_circle.tscn" id="16_s58pf"]
+[ext_resource type="PackedScene" uid="uid://cb7y6x4rn270v" path="res://bomb_note.tscn" id="17_acb3j"]
+[ext_resource type="PackedScene" uid="uid://16aq3nabvm05" path="res://fix_the_wire_top.tscn" id="18_t60j1"]
+[ext_resource type="PackedScene" uid="uid://cgb41vyns58vg" path="res://fix_the_wire_left.tscn" id="19_7f5mq"]
+[ext_resource type="PackedScene" uid="uid://treqbo30sr45" path="res://fix_the_wire_right.tscn" id="20_hwnw4"]
+[ext_resource type="PackedScene" uid="uid://n2iweeeq8eki" path="res://scenes/flipper_obstacle.tscn" id="21_y0kil"]
+[ext_resource type="PackedScene" uid="uid://cc2qiwmb4inlj" path="res://scenes/challenges/poppable_arc.tscn" id="22_hvyos"]
+[ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="23_ty2tb"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="24_d48bl"]
+[ext_resource type="Script" path="res://scripts/combo.gd" id="25_p8s7a"]
+[ext_resource type="Texture2D" uid="uid://cc56u28lpa0gf" path="res://assets/global_assets/draft_x.png" id="26_w1mg2"]
+[ext_resource type="Script" path="res://scripts/x_pop_up.gd" id="27_fknrw"]
+[ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="28_5ulsg"]
+[ext_resource type="PackedScene" uid="uid://6q3h01gpjh47" path="res://scenes/spray_paint_minigame_one_screen.tscn" id="29_q1h4q"]
+[ext_resource type="PackedScene" uid="uid://d4itde6e83rnp" path="res://progress_bar.tscn" id="30_eudpm"]
+[ext_resource type="Script" path="res://scripts/desat_layer.gd" id="31_c30qa"]
+[ext_resource type="Shader" path="res://scenes/beat_it_newest.gdshader" id="32_2w8qm"]
+[ext_resource type="Script" path="res://scenes/combo_counter.gd" id="33_73i7t"]
+[ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="34_ywjit"]
+[ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="35_qbsy5"]
+[ext_resource type="PackedScene" uid="uid://c68rjx6nmxbk7" path="res://stephanie.tscn" id="36_n7dwy"]
+[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="37_tfrg4"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_s2xum"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5uhc"]
+shader = ExtResource("32_2w8qm")
+shader_parameter/desaturation = 1.0
+shader_parameter/opacity = 0.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g74jc"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lrhbu"]
+
+[node name="Solid As A Rock" type="Node2D"]
+script = ExtResource("1_t026r")
+
+[node name="BgSPrite" type="Sprite2D" parent="."]
+modulate = Color(0.905882, 0.596078, 0.227451, 1)
+position = Vector2(952, 542)
+scale = Vector2(2560, 1440)
+texture = SubResource("CanvasTexture_s2xum")
+
+[node name="ClassicalBg" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_7hjkb")
+
+[node name="BgRing" type="PointLight2D" parent="."]
+position = Vector2(952, 542)
+color = Color(0.968627, 1, 0.184314, 1)
+energy = 0.1
+texture = ExtResource("3_hsauu")
+
+[node name="BgActionLines" type="Sprite2D" parent="."]
+modulate = Color(0.858824, 0.262745, 0, 0.121569)
+position = Vector2(952, 542)
+texture = ExtResource("4_x85wy")
+
+[node name="BgSpraypaint" type="Sprite2D" parent="."]
+modulate = Color(1, 0.882353, 0.490196, 0.87451)
+position = Vector2(952, 542)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_x8oij")
+
+[node name="BgRightSpray" type="PointLight2D" parent="."]
+position = Vector2(1665, 216)
+scale = Vector2(0.75, 0.75)
+color = Color(0.344076, 0.344076, 0.344076, 1)
+energy = 0.2
+texture = ExtResource("6_72wlj")
+
+[node name="BgLeftSpray" type="PointLight2D" parent="."]
+position = Vector2(534, 1016)
+scale = Vector2(0.75, 0.75)
+color = Color(0.277528, 0.277528, 0.277528, 1)
+texture = ExtResource("7_q253b")
+
+[node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_q3bjd")
+script = ExtResource("9_hwt4u")
+bpm = 149.39
+
+[node name="Pulsing_circle" parent="." instance=ExtResource("10_4ij8m")]
+position = Vector2(954, 542)
+
+[node name="Camera2D" type="Camera2D" parent="Pulsing_circle"]
+position = Vector2(0, 7.62939e-06)
+
+[node name="Magic_Maker" type="Node2D" parent="."]
+script = ExtResource("11_1yb87")
+
+[node name="White_stomp" parent="Magic_Maker" instance=ExtResource("12_t8pbt")]
+visible = false
+position = Vector2(0, 0)
+
+[node name="Magic" parent="Magic_Maker" instance=ExtResource("13_n6gb6")]
+lifetime = 0.5
+
+[node name="cursor_sprite" type="Sprite2D" parent="Magic_Maker"]
+texture_filter = 1
+texture = ExtResource("14_v02jx")
+
+[node name="Attack_Handler" type="Node2D" parent="."]
+script = ExtResource("15_w3ndl")
+osu_circle_scene = ExtResource("16_s58pf")
+bomb_note_scene = ExtResource("17_acb3j")
+fix_the_wire_top_scene = ExtResource("18_t60j1")
+fix_the_wire_left_scene = ExtResource("19_7f5mq")
+fix_the_wire_right_scene = ExtResource("20_hwnw4")
+flipper_scene = ExtResource("21_y0kil")
+
+[node name="Poppable Arc" parent="Attack_Handler" instance=ExtResource("22_hvyos")]
+
+[node name="Score" type="RichTextLabel" parent="Attack_Handler"]
+visible = false
+offset_left = 69.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 260.0
+theme_override_fonts/normal_font = ExtResource("23_ty2tb")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+text = "2000"
+script = ExtResource("24_d48bl")
+
+[node name="Combo" type="RichTextLabel" parent="Attack_Handler"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1550.0
+offset_top = 900.0
+offset_right = 1710.0
+offset_bottom = 1045.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(80, 30)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("23_ty2tb")
+theme_override_fonts/mono_font = ExtResource("23_ty2tb")
+theme_override_fonts/italics_font = ExtResource("23_ty2tb")
+theme_override_fonts/bold_italics_font = ExtResource("23_ty2tb")
+theme_override_fonts/bold_font = ExtResource("23_ty2tb")
+theme_override_font_sizes/bold_italics_font_size = 120
+theme_override_font_sizes/italics_font_size = 120
+theme_override_font_sizes/mono_font_size = 120
+theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/bold_font_size = 120
+bbcode_enabled = true
+text = "[center]1[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("25_p8s7a")
+
+[node name="XPopUp" type="Sprite2D" parent="Attack_Handler"]
+visible = false
+scale = Vector2(0.5, 0.55)
+texture = ExtResource("26_w1mg2")
+script = ExtResource("27_fknrw")
+
+[node name="Error" type="AudioStreamPlayer2D" parent="Attack_Handler"]
+position = Vector2(240, 90)
+stream = ExtResource("28_5ulsg")
+volume_db = -14.195
+
+[node name="Spray_paint_minigame_one_screen" parent="." instance=ExtResource("29_q1h4q")]
+
+[node name="ScoreBar" parent="." instance=ExtResource("30_eudpm")]
+offset_left = -253.0
+offset_top = -108.0
+offset_right = 195.0
+offset_bottom = -74.0
+max_value = 4500.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("31_c30qa")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_c5uhc")
+position = Vector2(8, 540)
+rotation = -1.57079
+scale = Vector2(2319.46, 427.818)
+texture = SubResource("CanvasTexture_g74jc")
+
+[node name="Combo Counter" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 131.0
+offset_top = 60.0
+offset_right = 323.0
+offset_bottom = 248.0
+theme_override_fonts/normal_font = ExtResource("23_ty2tb")
+theme_override_fonts/mono_font = ExtResource("23_ty2tb")
+theme_override_fonts/bold_font = ExtResource("23_ty2tb")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+text = "0"
+fit_content = true
+script = ExtResource("33_73i7t")
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 539)
+scale = Vector2(1920, 1080)
+texture = SubResource("CanvasTexture_lrhbu")
+
+[node name="Bonus_zone" parent="." instance=ExtResource("34_ywjit")]
+position = Vector2(1455, 52)
+
+[node name="PauseMenu" parent="." instance=ExtResource("35_qbsy5")]
+visible = false
+position = Vector2(-320, -180)
+
+[node name="Stephanie" parent="." instance=ExtResource("36_n7dwy")]
+position = Vector2(-253, 26)
+
+[node name="Scene_Transition" parent="." instance=ExtResource("37_tfrg4")]

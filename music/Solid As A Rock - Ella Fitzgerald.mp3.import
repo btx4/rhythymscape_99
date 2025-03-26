@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dkayef26kguie"
+path="res://.godot/imported/Solid As A Rock - Ella Fitzgerald.mp3-1cef313253c3ad0d64b3dd60093f5709.mp3str"
+
+[deps]
+
+source_file="res://music/Solid As A Rock - Ella Fitzgerald.mp3"
+dest_files=["res://.godot/imported/Solid As A Rock - Ella Fitzgerald.mp3-1cef313253c3ad0d64b3dd60093f5709.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
