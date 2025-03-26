@@ -10,9 +10,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var bodies  = get_overlapping_areas()
 	for body in bodies:
-		print(bodies)
+		#print(bodies)
 		if body.is_in_group("note"):
-			print("DISABLED")
+			#print("DISABLED")
 			body.disabled = true
 	pass
 

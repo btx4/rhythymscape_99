@@ -15,6 +15,7 @@ var song_list: Array = ["song1", "song2", "song3", "song4", "song5"]
 @export var take_five : PackedScene
 @export var final_countdown : PackedScene
 @export var i_wish : PackedScene
+@export var solid_as_a_rock : PackedScene
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ProjectSettings.set_setting("display/window/stretch/scale", 0.75)
@@ -87,6 +88,22 @@ func level_selector(song_num: int, start: bool):
 			if i_wish:
 				# Instance the new scene
 				var scene_instance = i_wish.instantiate()
+
+				# Replace the current scene
+				var current_scene = get_tree().get_current_scene()
+				if current_scene:
+					current_scene.queue_free()  # Free the current scene
+
+				get_tree().root.add_child(scene_instance)  # Add the new scene to the root
+				get_tree().set_current_scene(scene_instance)  # Set it as the current scene
+			else:
+				print("PackedScene is not set!")
+
+	if (song == "song3"):
+		if (start == true):
+			if solid_as_a_rock:
+				# Instance the new scene
+				var scene_instance = solid_as_a_rock.instantiate()
 
 				# Replace the current scene
 				var current_scene = get_tree().get_current_scene()

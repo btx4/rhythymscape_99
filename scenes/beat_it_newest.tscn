@@ -35,8 +35,13 @@
 [ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="25_2u372"]
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="26_c0qyj"]
 [ext_resource type="PackedScene" uid="uid://d4itde6e83rnp" path="res://progress_bar.tscn" id="26_nfqmw"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://b4tb16h1xqvmb" path="res://stephanie.tscn" id="36_lcx5h"]
 [ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="37_hafii"]
+=======
+[ext_resource type="PackedScene" uid="uid://c68rjx6nmxbk7" path="res://stephanie.tscn" id="36_lcx5h"]
+[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="37_hafii"]
+>>>>>>> 652ff77c4c326ed688f4d6633325ebc4f534809e
 [ext_resource type="Script" path="res://scenes/pause_button.gd" id="38_rdb01"]
 [ext_resource type="Texture2D" uid="uid://drr217jaqhjvr" path="res://assets/global_assets/pause_button.png" id="38_vcfrv"]
 [ext_resource type="Texture2D" uid="uid://cmj8dvyotfahc" path="res://assets/global_assets/girl_idle/idle_1.png" id="40_j3ysx"]
@@ -267,6 +272,7 @@ texture = SubResource("CanvasTexture_g7n6l")
 [node name="Bonus_zone" parent="." instance=ExtResource("25_2u372")]
 position = Vector2(1455, 52)
 
+<<<<<<< HEAD
 [node name="Stephanie" parent="." instance=ExtResource("36_lcx5h")]
 visible = false
 position = Vector2(-253, 26)
@@ -276,6 +282,8 @@ position = Vector2(-56, 862)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_7pbg4")
 
+=======
+>>>>>>> 652ff77c4c326ed688f4d6633325ebc4f534809e
 [node name="PauseButton" type="Node2D" parent="."]
 script = ExtResource("38_rdb01")
 
@@ -305,6 +313,10 @@ visible = false
 position = Vector2(-320, -180)
 
 [node name="Scene_Transition" parent="." instance=ExtResource("37_hafii")]
+position = Vector2(-320, -18)
+
+[node name="Stephanie" parent="." instance=ExtResource("36_lcx5h")]
+position = Vector2(-280, 56)
 
 [connection signal="mouse_entered" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_entered"]
 [connection signal="mouse_exited" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_exited"]
