@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xqkawr6jqalj"
+path="res://.godot/imported/SpotiDownloader.com - William Tell - Overture - London Symphony Orchestra.mp3-e3f7f426d092c26e46331dd64f5fc080.mp3str"
+
+[deps]
+
+source_file="res://music/SpotiDownloader.com - William Tell - Overture - London Symphony Orchestra.mp3"
+dest_files=["res://.godot/imported/SpotiDownloader.com - William Tell - Overture - London Symphony Orchestra.mp3-e3f7f426d092c26e46331dd64f5fc080.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

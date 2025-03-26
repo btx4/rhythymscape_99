@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="5_ewram"]
 [ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="6_jlqsv"]
 [ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="7_twgkf"]
-[ext_resource type="AudioStream" uid="uid://c5nxxr6pb8dqk" path="res://music/Romeo and Juliet Suite No. 2 Montague and Capulets (Excerpt) Op. 64ter - Sergei Prokofiev.mp3" id="8_86cxn"]
+[ext_resource type="AudioStream" uid="uid://xqkawr6jqalj" path="res://music/SpotiDownloader.com - William Tell - Overture - London Symphony Orchestra.mp3" id="8_ko1qd"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="9_knipk"]
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="10_34hg0"]
 [ext_resource type="Script" path="res://scripts/magic_maker.gd" id="11_8sx2c"]
@@ -49,7 +49,7 @@ shader_parameter/opacity = 0.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nl52c"]
 
-[node name="Romeo and Juliet Suite" type="Node2D"]
+[node name="William Tell" type="Node2D"]
 script = ExtResource("1_wv6m8")
 
 [node name="BgSPrite" type="Sprite2D" parent="."]
@@ -93,9 +93,9 @@ color = Color(0.277528, 0.277528, 0.277528, 1)
 texture = ExtResource("7_twgkf")
 
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_86cxn")
+stream = ExtResource("8_ko1qd")
 script = ExtResource("9_knipk")
-bpm = 110.93
+bpm = 171.3
 
 [node name="Pulsing_circle" parent="." instance=ExtResource("10_34hg0")]
 position = Vector2(954, 542)
