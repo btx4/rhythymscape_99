@@ -46,7 +46,7 @@ func _ready() -> void:
 
 			line = line.trim_suffix(" :")  # Remove the trailing " :"
 			var parts = line.split(",")
-			print(parts)
+			#print(parts)
 			print("SIZE PARTS" +str(parts.size()))
 			if parts.size() == 11:  # Ensure correct format
 				var tuple_data = [int(parts[0]), int(parts[1]), int(parts[2]), int(parts[3]), int(parts[4]), int(parts[5]), int(parts[6]), int(parts[7]), int(parts[8]), int(parts[9]), int(parts[10])]  # Use an array instead of a tuple

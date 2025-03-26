@@ -13,6 +13,5 @@ func _process(delta: float) -> void:
 
 
 func beat_listener(beat: int) ->void:
-	if beat % 4 == 1:
-		$AnimationPlayer.play("strum")
+	$AnimationPlayer.play("idle")
 	pass

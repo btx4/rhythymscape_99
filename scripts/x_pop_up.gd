@@ -18,8 +18,8 @@ func start_fade_out():
 	position.y =  randi_range(0, 900)
 	rotation = deg_to_rad(randi_range(-60, 60))
 	set_process(true)
-	get_parent().get_parent().get_node("BgSprite").sat_down()
-	get_parent().get_parent().get_node("BgSpraypaint").sat_down()
+	#get_parent().get_parent().get_node("BgSprite").sat_down()
+	#get_parent().get_parent().get_node("BgSpraypaint").sat_down()
 
 # Process function to handle the fade
 func _process(delta):

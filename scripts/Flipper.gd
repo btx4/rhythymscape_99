@@ -16,8 +16,6 @@ func _ready() -> void:
 	if spawn_points.size() > 0:
 		var random_spawn = spawn_points.pick_random()
 		position = random_spawn.global_position
-		for point in spawn_points:
-			print(point.position)
 		if random_spawn.position.x < -50:
 			rotation_degrees = 270
 		elif random_spawn.position.x >50:
@@ -25,7 +23,7 @@ func _ready() -> void:
 		elif random_spawn.position.y > 50:
 			rotation_degrees = 180
 		
-	print(spawn_points)
+	#print(spawn_points)
 	var viewport_size = get_viewport_rect().size
 	var half_width = viewport_size.x / 2
 	var half_height = viewport_size.y / 2

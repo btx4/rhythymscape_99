@@ -124,7 +124,6 @@ fix_the_wire_top_scene = ExtResource("18_t60j1")
 fix_the_wire_left_scene = ExtResource("19_7f5mq")
 fix_the_wire_right_scene = ExtResource("20_hwnw4")
 flipper_scene = ExtResource("21_y0kil")
-file_path = "res://scenes/Levels/level_layout_files/SolidAsARock.txt"
 
 [node name="Poppable Arc" parent="Attack_Handler" instance=ExtResource("22_hvyos")]
 

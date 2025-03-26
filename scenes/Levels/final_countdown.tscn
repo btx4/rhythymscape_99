@@ -35,7 +35,7 @@
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="32_k1see"]
 [ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="33_yfjrf"]
 [ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="34_yvbdt"]
-[ext_resource type="PackedScene" path="res://scene_transition.tscn" id="36_n6wsl"]
+[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="36_n6wsl"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m8cnm"]
 

@@ -1,11 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4tb16h1xqvmb"]
+[gd_scene load_steps=17 format=3 uid="uid://c68rjx6nmxbk7"]
 
 [ext_resource type="Texture2D" uid="uid://c1sf01w5e6lj" path="res://assets/global_assets/girl_animation/Untitled_Artwork-1.png" id="1_vivdl"]
 [ext_resource type="Texture2D" uid="uid://cupfimkblkfxp" path="res://assets/global_assets/girl_animation/Untitled_Artwork-2.png" id="2_furlj"]
 [ext_resource type="Script" path="res://stephanie_sprite.gd" id="2_xnryl"]
+[ext_resource type="Texture2D" uid="uid://cmj8dvyotfahc" path="res://assets/global_assets/girl_idle/idle_1.png" id="3_ug6wh"]
 [ext_resource type="Texture2D" uid="uid://dytyhu1pohb0h" path="res://assets/global_assets/girl_animation/Untitled_Artwork-3.png" id="3_vcp2x"]
 [ext_resource type="Texture2D" uid="uid://coey77t0k2w1u" path="res://assets/global_assets/girl_animation/Untitled_Artwork-4.png" id="4_iov3t"]
+[ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="4_lgv00"]
+[ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="5_2dcuf"]
 [ext_resource type="Texture2D" uid="uid://b18gukrihww1" path="res://assets/global_assets/girl_animation/Untitled_Artwork.png" id="5_e5siq"]
+[ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="6_noha2"]
+[ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="7_xka37"]
 
 [sub_resource type="Animation" id="Animation_uvxye"]
 length = 0.001
@@ -24,6 +29,8 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_l6jk4"]
 resource_name = "idle"
+length = 0.416675
+loop_mode = 1
 step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -32,10 +39,10 @@ tracks/0/path = NodePath("Stephanie_Sprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("5_e5siq")]
+"values": [ExtResource("3_ug6wh"), ExtResource("4_lgv00"), ExtResource("5_2dcuf"), ExtResource("6_noha2"), ExtResource("7_xka37")]
 }
 
 [sub_resource type="Animation" id="Animation_qaxtq"]
@@ -69,7 +76,7 @@ _data = {
 [node name="Stephanie" type="Node2D"]
 
 [node name="Stephanie_Sprite" type="Sprite2D" parent="."]
-position = Vector2(276, 525)
+position = Vector2(252, 518)
 texture = ExtResource("1_vivdl")
 script = ExtResource("2_xnryl")
 
