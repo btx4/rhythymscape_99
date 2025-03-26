@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://72es5e46wc8v"]
+[gd_scene load_steps=52 format=3 uid="uid://72es5e46wc8v"]
 
 [ext_resource type="Script" path="res://scenes/Levels/i_wish.gd" id="1_2a8ok"]
 [ext_resource type="Script" path="res://scenes/Levels/bg_s_prite.gd" id="2_se3j1"]
@@ -39,7 +39,12 @@
 [ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="35_5pyv4"]
 [ext_resource type="PackedScene" path="res://scene_transition.tscn" id="36_iduvr"]
 [ext_resource type="Script" path="res://scenes/pause_button.gd" id="37_3et36"]
+[ext_resource type="Texture2D" uid="uid://cmj8dvyotfahc" path="res://assets/global_assets/girl_idle/idle_1.png" id="37_obcxd"]
+[ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="38_o3i6r"]
 [ext_resource type="Texture2D" uid="uid://drr217jaqhjvr" path="res://assets/global_assets/pause_button.png" id="38_qotgp"]
+[ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="39_j2np2"]
+[ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="40_tf4et"]
+[ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="41_qsm45"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_o5erl"]
 
@@ -51,6 +56,29 @@ shader_parameter/opacity = 0.0
 [sub_resource type="CanvasTexture" id="CanvasTexture_4ha1l"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_yc1l3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jas1k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_obcxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_o3i6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_j2np2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_tf4et")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_qsm45")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dqp0"]
 size = Vector2(78, 112)
@@ -241,6 +269,13 @@ texture = SubResource("CanvasTexture_yc1l3")
 
 [node name="Bonus_zone" parent="." instance=ExtResource("34_rwb5r")]
 position = Vector2(1455, 52)
+
+[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(-56, 862)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_jas1k")
+frame = 3
+frame_progress = 0.33757
 
 [node name="PauseButton" type="Node2D" parent="."]
 script = ExtResource("37_3et36")

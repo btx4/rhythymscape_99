@@ -15,6 +15,7 @@ func _ready():
 	original_position = position
 	await get_tree().create_timer(0.5).timeout
 	$"Music Conductor"._play_song()
+	$GirlIdle.play()
 
 func start_shake(intensity: float, duration: float):
 	# Start the screen shake with specified intensity and duration
