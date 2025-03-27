@@ -20,6 +20,7 @@ func start_fade_out():
 	set_process(true)
 	#get_parent().get_parent().get_node("BgSprite").sat_down()
 	#get_parent().get_parent().get_node("BgSpraypaint").sat_down()
+	#this works for i_wish but not beat it newest because I hadn't added the right scripts in that scene yet
 
 # Process function to handle the fade
 func _process(delta):

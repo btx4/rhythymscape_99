@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://1kwj72f8w2vc"]
+[gd_scene load_steps=42 format=3 uid="uid://b7chh8qgpjdw6"]
 
 [ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="1_em3ek"]
 [ext_resource type="Script" path="res://it_don't_mean_a_thing.gd" id="1_mr3fc"]
@@ -36,7 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="33_0m1oa"]
 [ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="34_1s16s"]
 [ext_resource type="PackedScene" uid="uid://c68rjx6nmxbk7" path="res://stephanie.tscn" id="35_jw580"]
-[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="36_gtmbm"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="36_gtmbm"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_s2xum"]
 

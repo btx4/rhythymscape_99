@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://72es5e46wc8v"]
+[gd_scene load_steps=58 format=3 uid="uid://72es5e46wc8v"]
 
 [ext_resource type="Script" path="res://scenes/Levels/i_wish.gd" id="1_2a8ok"]
 [ext_resource type="Script" path="res://scenes/Levels/bg_s_prite.gd" id="2_se3j1"]
@@ -37,7 +37,7 @@
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="33_w4x6p"]
 [ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="34_rwb5r"]
 [ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="35_5pyv4"]
-[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="36_iduvr"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="36_iduvr"]
 [ext_resource type="Script" path="res://scenes/pause_button.gd" id="37_3et36"]
 [ext_resource type="Texture2D" uid="uid://cmj8dvyotfahc" path="res://assets/global_assets/girl_idle/idle_1.png" id="37_obcxd"]
 [ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="38_o3i6r"]
@@ -45,6 +45,12 @@
 [ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="39_j2np2"]
 [ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="40_tf4et"]
 [ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="41_qsm45"]
+[ext_resource type="Texture2D" uid="uid://dr7t07ekx003y" path="res://assets/global_assets/score_bar/backing.png" id="42_ngk5r"]
+[ext_resource type="Texture2D" uid="uid://b4x6iy4m6lcow" path="res://assets/global_assets/score_bar/right_accent.png" id="43_pckl1"]
+[ext_resource type="Texture2D" uid="uid://cx640jqbd0om2" path="res://assets/global_assets/score_bar/main_card.png" id="44_e00x6"]
+[ext_resource type="Texture2D" uid="uid://dacja82xj05tl" path="res://assets/global_assets/score_bar/left_tab.png" id="45_0piq7"]
+[ext_resource type="Script" path="res://scenes/Levels/main_card.gd" id="45_q5bjf"]
+[ext_resource type="Texture2D" uid="uid://bfnudn5yerbo6" path="res://assets/global_assets/score_bar/left_accent.png" id="46_sh8j6"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_o5erl"]
 
@@ -225,6 +231,7 @@ volume_db = -14.195
 [node name="Spray_paint_minigame_one_screen" parent="." instance=ExtResource("29_j8vqu")]
 
 [node name="ScoreBar" parent="." instance=ExtResource("30_4l4hm")]
+visible = false
 offset_left = -253.0
 offset_top = -108.0
 offset_right = 195.0
@@ -244,17 +251,20 @@ scale = Vector2(1524.78, 2629.82)
 texture = SubResource("CanvasTexture_4ha1l")
 
 [node name="Combo Counter" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 131.0
-offset_top = 60.0
-offset_right = 323.0
-offset_bottom = 248.0
+anchors_preset = -1
+anchor_right = 0.0609375
+anchor_bottom = 0.00555556
+offset_left = 205.0
+offset_top = 97.0
+offset_right = 397.0
+offset_bottom = 285.0
 theme_override_fonts/normal_font = ExtResource("23_p65an")
 theme_override_fonts/mono_font = ExtResource("23_p65an")
 theme_override_fonts/bold_font = ExtResource("23_p65an")
 theme_override_font_sizes/bold_italics_font_size = 40
 theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/mono_font_size = 40
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 100
 theme_override_font_sizes/bold_font_size = 40
 text = "0"
 fit_content = true
@@ -276,6 +286,39 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_jas1k")
 frame = 3
 frame_progress = 0.33757
+
+[node name="ScoreBarSprite" type="Node2D" parent="."]
+
+[node name="Backing" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.70976, 0.96, 0.0768, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("42_ngk5r")
+
+[node name="RightAccent" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.26372, 0.777714, 0.413513, 1)
+position = Vector2(-55, -46)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("43_pckl1")
+
+[node name="MainCard" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.337255, 0.890196, 0.517647, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.21)
+texture = ExtResource("44_e00x6")
+script = ExtResource("45_q5bjf")
+
+[node name="LeftTab" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.709804, 0.960784, 0.0784314, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("45_0piq7")
+
+[node name="LeftAccent" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.26372, 0.777714, 0.413513, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("46_sh8j6")
 
 [node name="PauseButton" type="Node2D" parent="."]
 script = ExtResource("37_3et36")

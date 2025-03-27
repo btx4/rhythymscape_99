@@ -14,8 +14,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if started:
-		$Sprite2D.scale = $Sprite2D.scale * 0.999
-		$Bonus.scale = $Bonus.scale * 0.9996
+		$MainCircle.scale = $MainCircle.scale * 0.9995
+		$Neon.scale = $Neon.scale * 0.9995
+		$Spray.scale = $Spray.scale * 0.9995
+		$BonusDrip.scale = $BonusDrip.scale * 0.9995
+		$Bonus.scale = $Bonus.scale * 0.9995
 	pass
 
 func beat_listener(beat: int) ->void:
@@ -24,7 +27,13 @@ func beat_listener(beat: int) ->void:
 		points = 5
 		position.x = randi_range(460,1455)
 		position.y = randi_range(52,1044)
-	$Sprite2D.scale = Vector2(13,13)
+		
+	$MainCircle.scale = Vector2(1,1)
+	$Neon.scale = Vector2(1,1)
+	$Spray.scale = Vector2(1,1)
+	$BonusDrip.scale = Vector2(1,1)
+	$Bonus.scale = Vector2(1,1)
+	#$Sprite2D.scale = Vector2(13,13)
 	if score:
 		EventScript.report_points(points)
 		points =floor( points * 1.2)

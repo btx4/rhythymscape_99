@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6601kps10aq" path="res://assets/menus/level_menu/lvl_bg_1.png" id="5_tfvrs"]
 [ext_resource type="PackedScene" uid="uid://72es5e46wc8v" path="res://scenes/Levels/i_wish.tscn" id="5_x64nu"]
 [ext_resource type="Texture2D" uid="uid://blv6ira18w3ks" path="res://assets/menus/level_menu/cd_walkman.png" id="6_2pboo"]
-[ext_resource type="PackedScene" uid="uid://c685jdilogltc" path="res://solid_as_a_rock.tscn" id="6_ea7p2"]
+[ext_resource type="PackedScene" path="res://solid_as_a_rock.tscn" id="6_ea7p2"]
 [ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="6_gbnht"]
 [ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="7_755us"]
 [ext_resource type="Texture2D" uid="uid://cbj11kjmdjrqi" path="res://assets/menus/level_menu/dither_screen.png" id="7_ubdew"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://28xsf0cet6r" path="res://assets/menus/level_menu/quit_light.png" id="18_qm5d6"]
 [ext_resource type="AudioStream" uid="uid://typ7oacxaxx7" path="res://sounds/click.wav" id="20_4whd5"]
 [ext_resource type="AudioStream" uid="uid://cacg6pwkvarym" path="res://sounds/scroll_click.wav" id="21_u78ct"]
-[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="22_r5k1h"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="22_r5k1h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c6ed7"]
 animations = [{
@@ -117,43 +117,6 @@ position = Vector2(1280, 720)
 sprite_frames = SubResource("SpriteFrames_8twhl")
 animation = &"idle"
 autoplay = "idle"
-
-[node name="Beat It" type="Button" parent="."]
-visible = false
-offset_left = 230.0
-offset_top = 116.0
-offset_right = 410.0
-offset_bottom = 153.0
-text = "Beat It"
-metadata/_edit_use_anchors_ = true
-
-[node name="Lacrimosa Requiem" type="Button" parent="."]
-visible = false
-offset_left = 230.0
-offset_top = 176.0
-offset_right = 410.0
-offset_bottom = 213.0
-text = "Lacrimosa Requiem
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="Take 5" type="Button" parent="."]
-visible = false
-offset_left = 230.0
-offset_top = 236.0
-offset_right = 410.0
-offset_bottom = 273.0
-text = "Take 5"
-metadata/_edit_use_anchors_ = true
-
-[node name="Lean Beef Patty" type="Button" parent="."]
-visible = false
-offset_left = 230.0
-offset_top = 296.0
-offset_right = 410.0
-offset_bottom = 333.0
-text = "Lean Beef Patty"
-metadata/_edit_use_anchors_ = true
 
 [node name="Magic_maker_Lvl_0" type="Node2D" parent="."]
 script = ExtResource("5_oeepc")
@@ -317,10 +280,6 @@ stream = ExtResource("21_u78ct")
 
 [node name="Scene_Transition" parent="." instance=ExtResource("22_r5k1h")]
 
-[connection signal="pressed" from="Beat It" to="." method="_on_beat_it_pressed"]
-[connection signal="pressed" from="Lacrimosa Requiem" to="." method="_on_lacrimosa_requiem_pressed"]
-[connection signal="pressed" from="Take 5" to="." method="_on_take_5_pressed"]
-[connection signal="pressed" from="Lean Beef Patty" to="." method="_on_beat_it_button_4_pressed"]
 [connection signal="input_event" from="LeftButton/LeftHoverArea" to="." method="_on_left_hover_area_input_event"]
 [connection signal="mouse_entered" from="LeftButton/LeftHoverArea" to="." method="_on_left_hover_area_mouse_entered"]
 [connection signal="mouse_exited" from="LeftButton/LeftHoverArea" to="." method="_on_left_hover_area_mouse_exited"]
