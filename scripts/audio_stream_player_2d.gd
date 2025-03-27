@@ -23,10 +23,10 @@ signal song_over()
 func _ready():
 	sec_per_beat = 60.0 / bpm
 	#play_from_beat(0,0)
-	last_reported_beat = 0
+	last_reported_beat = 400
 
 func _play_song():
-	play_from_beat(0,0)
+	play_from_beat(400,0)
 
 
 func _physics_process(_delta):

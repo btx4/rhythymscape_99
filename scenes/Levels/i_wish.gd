@@ -17,6 +17,7 @@ func _ready():
 	$"Music Conductor"._play_song()
 	$GirlIdle.play()
 
+
 func start_shake(intensity: float, duration: float):
 	# Start the screen shake with specified intensity and duration
 	shake_intensity = intensity

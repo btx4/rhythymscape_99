@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bw6601kps10aq" path="res://assets/menus/level_menu/lvl_bg_1.png" id="5_tfvrs"]
 [ext_resource type="PackedScene" uid="uid://72es5e46wc8v" path="res://scenes/Levels/i_wish.tscn" id="5_x64nu"]
 [ext_resource type="Texture2D" uid="uid://blv6ira18w3ks" path="res://assets/menus/level_menu/cd_walkman.png" id="6_2pboo"]
-[ext_resource type="PackedScene" path="res://solid_as_a_rock.tscn" id="6_ea7p2"]
+[ext_resource type="PackedScene" uid="uid://c685jdilogltc" path="res://solid_as_a_rock.tscn" id="6_ea7p2"]
 [ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="6_gbnht"]
 [ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="7_755us"]
 [ext_resource type="Texture2D" uid="uid://cbj11kjmdjrqi" path="res://assets/menus/level_menu/dither_screen.png" id="7_ubdew"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://28xsf0cet6r" path="res://assets/menus/level_menu/quit_light.png" id="18_qm5d6"]
 [ext_resource type="AudioStream" uid="uid://typ7oacxaxx7" path="res://sounds/click.wav" id="20_4whd5"]
 [ext_resource type="AudioStream" uid="uid://cacg6pwkvarym" path="res://sounds/scroll_click.wav" id="21_u78ct"]
-[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="22_r5k1h"]
+[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="22_r5k1h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c6ed7"]
 animations = [{

@@ -36,7 +36,7 @@
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="26_c0qyj"]
 [ext_resource type="PackedScene" uid="uid://d4itde6e83rnp" path="res://progress_bar.tscn" id="26_nfqmw"]
 [ext_resource type="PackedScene" uid="uid://c68rjx6nmxbk7" path="res://stephanie.tscn" id="36_lcx5h"]
-[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="37_hafii"]
+[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="37_hafii"]
 [ext_resource type="Script" path="res://scenes/pause_button.gd" id="38_rdb01"]
 [ext_resource type="Texture2D" uid="uid://drr217jaqhjvr" path="res://assets/global_assets/pause_button.png" id="38_vcfrv"]
 

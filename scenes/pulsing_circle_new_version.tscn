@@ -166,7 +166,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Yellow Input" groups=["flipper_spawn_points"]]
+[node name="Sprite2D2" type="Sprite2D" parent="Yellow Input"]
 visible = false
 texture_filter = 1
 position = Vector2(-2, -121)
@@ -211,7 +211,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Red Input" groups=["flipper_spawn_points"]]
+[node name="Sprite2D2" type="Sprite2D" parent="Red Input"]
 visible = false
 texture_filter = 1
 position = Vector2(150, -1)
@@ -259,7 +259,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Green Input" groups=["flipper_spawn_points"]]
+[node name="Sprite2D2" type="Sprite2D" parent="Green Input"]
 visible = false
 texture_filter = 1
 position = Vector2(3, 158)
@@ -304,7 +304,7 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_pio36")
 script = ExtResource("9_mkg5h")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Blue Input" groups=["flipper_spawn_points"]]
+[node name="Sprite2D2" type="Sprite2D" parent="Blue Input"]
 visible = false
 texture_filter = 1
 position = Vector2(-151, 3)

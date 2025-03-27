@@ -47,6 +47,7 @@ func _on_wire_end_point_mouse_entered() -> void:
 		get_parent().get_node("Buzz").stop()
 		complete = true
 		get_parent().fading = true
+		get_parent().get_node("Everything_but_draw/Sprite2D/Start point/Break_radius").minigame_over()
 	pass # Replace with function body.
 
 

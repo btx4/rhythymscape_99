@@ -16,6 +16,13 @@ func _process(delta: float) -> void:
 			body.disabled = true
 	pass
 
+func minigame_over():
+	var bodies  = get_overlapping_areas()
+	for body in bodies:
+		#print(bodies)
+		if body.is_in_group("note"):
+			#print("DISABLED")
+			body.disabled = false
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("note"):
