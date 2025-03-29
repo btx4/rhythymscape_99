@@ -41,11 +41,11 @@ func _on_volume_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(0, linear_to_db(value / 100.0))
 	pass # Replace with function body.
 	
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("pause"):  # Typically "ESC"
-		print("PAUSE PRESSED")
-		pause_menu.toggle_pause()
-		$AudioStreamPlayer2D.play()
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("pause"):  # Typically "ESC"
+		#print("PAUSE PRESSED")
+		#pause_menu.toggle_pause()
+		#$AudioStreamPlayer2D.play()
 
 
 func _on_quit_hover_area_mouse_entered() -> void:

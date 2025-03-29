@@ -24,7 +24,8 @@ func sat_down():
 	if color.v <= 0.50:
 		color = Color.from_hsv(0.2145, 0.73, 0.89, 1.0)
 		self.modulate = color
-		get_tree().reload_current_scene()
+		if get_tree():
+			get_tree().reload_current_scene()
 
 func sat_up():
 	print("MOVING UP IN THE WORLD")

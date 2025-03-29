@@ -1,13 +1,13 @@
-[gd_scene load_steps=53 format=3 uid="uid://72es5e46wc8v"]
+[gd_scene load_steps=59 format=3 uid="uid://72es5e46wc8v"]
 
 [ext_resource type="Script" path="res://scenes/Levels/i_wish.gd" id="1_2a8ok"]
-[ext_resource type="Script" path="res://scenes/Levels/bg_s_prite.gd" id="2_se3j1"]
+[ext_resource type="Script" path="res://scenes/Levels/hiphop_bg_sprite.gd" id="2_se3j1"]
 [ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="3_ytp6p"]
 [ext_resource type="Script" path="res://scenes/Levels/bg_action_lines.gd" id="4_ehua7"]
 [ext_resource type="Texture2D" uid="uid://bnvmltu5ixga5" path="res://assets/level_assets/classical/bg_action lines.png" id="4_k52we"]
 [ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="5_xl5r3"]
 [ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="6_ww466"]
-[ext_resource type="Script" path="res://scenes/Levels/bg_spraypaint.gd" id="7_d4nyy"]
+[ext_resource type="Script" path="res://scenes/Levels/hiphop_bg_spraypaint.gd" id="7_d4nyy"]
 [ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="7_klasg"]
 [ext_resource type="AudioStream" uid="uid://786455i5av6" path="res://music/I Wish - Skee Lo.mp3" id="8_rh6ua"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="9_4pxpt"]
@@ -41,16 +41,41 @@
 [ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="38_o3i6r"]
 [ext_resource type="Texture2D" uid="uid://drr217jaqhjvr" path="res://assets/global_assets/pause_button.png" id="38_qotgp"]
 [ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="39_j2np2"]
-[ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="40_tf4et"]
 [ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="41_qsm45"]
+[ext_resource type="Texture2D" uid="uid://4lkyga610bxn" path="res://assets/global_assets/boy_idle/idle_1.png" id="41_xxun3"]
+[ext_resource type="Texture2D" uid="uid://dq23h2p0feyg4" path="res://assets/global_assets/boy_idle/idle_2.png" id="42_6wm0p"]
 [ext_resource type="Texture2D" uid="uid://dr7t07ekx003y" path="res://assets/global_assets/score_bar/backing.png" id="42_ngk5r"]
+[ext_resource type="Texture2D" uid="uid://cf0pg0uk7n1dg" path="res://assets/global_assets/boy_idle/idle_3.png" id="43_cxfk5"]
 [ext_resource type="Texture2D" uid="uid://b4x6iy4m6lcow" path="res://assets/global_assets/score_bar/right_accent.png" id="43_pckl1"]
+[ext_resource type="Texture2D" uid="uid://cutw7ejrrqb70" path="res://assets/global_assets/boy_idle/idle_4.png" id="44_2i1fd"]
 [ext_resource type="Texture2D" uid="uid://cx640jqbd0om2" path="res://assets/global_assets/score_bar/main_card.png" id="44_e00x6"]
 [ext_resource type="Texture2D" uid="uid://dacja82xj05tl" path="res://assets/global_assets/score_bar/left_tab.png" id="45_0piq7"]
+[ext_resource type="Script" path="res://scenes/Levels/boy_idle.gd" id="45_e3gcb"]
 [ext_resource type="Script" path="res://scenes/Levels/main_card.gd" id="45_q5bjf"]
 [ext_resource type="Texture2D" uid="uid://bfnudn5yerbo6" path="res://assets/global_assets/score_bar/left_accent.png" id="46_sh8j6"]
+[ext_resource type="Script" path="res://scenes/Levels/girl_idle.gd" id="51_i5k8j"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_o5erl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0b4c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_xxun3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_6wm0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_cxfk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_2i1fd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.52
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jas1k"]
 animations = [{
@@ -65,14 +90,11 @@ animations = [{
 "texture": ExtResource("39_j2np2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_tf4et")
-}, {
-"duration": 1.0,
 "texture": ExtResource("41_qsm45")
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 6.52
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dqp0"]
@@ -286,12 +308,20 @@ metadata/_edit_use_anchors_ = true
 [node name="Bonus_zone" parent="." instance=ExtResource("34_rwb5r")]
 position = Vector2(1455, 52)
 
+[node name="BoyIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(1903, 741)
+sprite_frames = SubResource("SpriteFrames_p0b4c")
+autoplay = "default"
+script = ExtResource("45_e3gcb")
+
 [node name="GirlIdle" type="AnimatedSprite2D" parent="."]
-position = Vector2(-7, 715)
-scale = Vector2(0.8, 0.8)
+position = Vector2(-12, 686)
+scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_jas1k")
+autoplay = "default"
 frame = 3
 frame_progress = 0.33757
+script = ExtResource("51_i5k8j")
 
 [node name="PauseButton" type="Node2D" parent="."]
 script = ExtResource("37_3et36")

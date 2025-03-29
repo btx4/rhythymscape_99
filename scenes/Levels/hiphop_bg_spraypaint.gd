@@ -1,8 +1,8 @@
 extends Sprite2D
 var degree_of_sat
-var color = Color.from_hsv(0.09192, 0.75, 0.91, 1.0)
-var value = 0.91
-var saturation = 0.75
+var color = Color.from_hsv(0.3928, 0.63, 0.89, 1.0)
+var value = 0.89
+var saturation = 0.73
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,26 +15,25 @@ func _process(delta: float) -> void:
 
 
 func sat_down():
-	print("okay it works")
-	value = value - 0.08
-	saturation = saturation - 0.126
+	#print("okay it works")
+	saturation = saturation - 0.1
+	value = value - 0.1
 	color.v = value
 	color.s = saturation
 	self.modulate = color
-	if color.v <= 0.51:
-		color = Color.from_hsv(0.09192, 0.75, 0.91, 1.0)
+	if color.s <= 0.13:
+		color = Color.from_hsv(0.3928, 0.63, 0.89, 1.0)
 		self.modulate = color
 		if get_tree():
 			get_tree().reload_current_scene()
 
 func sat_up():
-	print("MOVING UP IN THE WORLD")
-	saturation = saturation + 0.126
-	value = value + 0.08
-	if saturation > 0.75:
-		saturation = 0.75
-	if value > 0.91:
-		value = 0.91
-	color.v = value
+	saturation = saturation + 0.1
+	value = value + 0.1
+	if saturation > 0.63:
+		saturation = 0.63
+	if value > 0.89:
+		value = 0.89
 	color.s = saturation
+	color.v = value
 	self.modulate = color

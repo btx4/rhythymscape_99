@@ -49,6 +49,9 @@ func _process(delta: float) -> void:
 		$Text/StartQuitText.visible = false
 		$Text/SettingsText.visible = false
 		level_selector(current_song, true)
+	if ($Quit/PointLight2D.visible == true) && Input.is_action_just_pressed("stomp"):
+		print("exit to start menu")
+		get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
 		
 func change_level(num: int): 
 	sprite_index += num

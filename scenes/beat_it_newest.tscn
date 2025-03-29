@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dctvo1ohh1dnc"]
+[gd_scene load_steps=59 format=3 uid="uid://dctvo1ohh1dnc"]
 
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="1_04gay"]
 [ext_resource type="Script" path="res://scripts/beat_it_newest.gd" id="1_sh5nd"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="6_qcpen"]
 [ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="6_vasnw"]
 [ext_resource type="Script" path="res://scripts/attack_handler_newest.gd" id="7_fcauf"]
+[ext_resource type="Script" path="res://scenes/Levels/rock_bg_spraypaint.gd" id="7_frvb5"]
 [ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="7_riw1i"]
 [ext_resource type="PackedScene" uid="uid://povabra474mo" path="res://scenes/white_stomp.tscn" id="8_5usqr"]
 [ext_resource type="AudioStream" uid="uid://c8yxgpf6lm40" path="res://music/Micheal Jackson - Beat It.mp3" id="8_grvso"]
@@ -45,14 +46,39 @@
 [ext_resource type="Texture2D" uid="uid://drr217jaqhjvr" path="res://assets/global_assets/pause_button.png" id="38_vcfrv"]
 [ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="39_3j7d8"]
 [ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="40_5terg"]
-[ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="41_6krtm"]
 [ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="42_vnlcf"]
+[ext_resource type="Script" path="res://scenes/Levels/boy_idle.gd" id="44_2yqyh"]
+[ext_resource type="Texture2D" uid="uid://4lkyga610bxn" path="res://assets/global_assets/boy_idle/idle_1.png" id="44_wim36"]
+[ext_resource type="Texture2D" uid="uid://dq23h2p0feyg4" path="res://assets/global_assets/boy_idle/idle_2.png" id="45_ncr3o"]
+[ext_resource type="Texture2D" uid="uid://cf0pg0uk7n1dg" path="res://assets/global_assets/boy_idle/idle_3.png" id="46_0c66d"]
+[ext_resource type="Texture2D" uid="uid://cutw7ejrrqb70" path="res://assets/global_assets/boy_idle/idle_4.png" id="47_wq4hl"]
+[ext_resource type="Script" path="res://scenes/Levels/girl_idle.gd" id="49_tyj6v"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_f4thb"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_g7n6l"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hrjw1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fes31"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_wim36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ncr3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_0c66d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_wq4hl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.27
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8sqhi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -65,14 +91,11 @@ animations = [{
 "texture": ExtResource("40_5terg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_6krtm")
-}, {
-"duration": 1.0,
 "texture": ExtResource("42_vnlcf")
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 9.27
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbgl5"]
@@ -81,7 +104,7 @@ size = Vector2(78, 112)
 [node name="Beat it Newest" type="Node2D"]
 script = ExtResource("1_sh5nd")
 
-[node name="BgSPrite" type="Sprite2D" parent="."]
+[node name="BgSprite" type="Sprite2D" parent="."]
 modulate = Color(0.470588, 0.192157, 0.74902, 1)
 position = Vector2(954, 542)
 scale = Vector2(2560, 1440)
@@ -105,6 +128,7 @@ modulate = Color(1, 0.262745, 0.490196, 0.87451)
 position = Vector2(952, 542)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_52f5t")
+script = ExtResource("7_frvb5")
 
 [node name="BgRightSpray" type="PointLight2D" parent="."]
 position = Vector2(1665, 216)
@@ -280,11 +304,18 @@ autowrap_mode = 0
 script = ExtResource("26_c0qyj")
 metadata/_edit_use_anchors_ = true
 
-[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
-position = Vector2(-7, 715)
-scale = Vector2(0.8, 0.8)
-sprite_frames = SubResource("SpriteFrames_hrjw1")
+[node name="BoyIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(1903, 741)
+sprite_frames = SubResource("SpriteFrames_fes31")
 autoplay = "default"
+script = ExtResource("44_2yqyh")
+
+[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(-12, 686)
+scale = Vector2(0.85, 0.85)
+sprite_frames = SubResource("SpriteFrames_8sqhi")
+autoplay = "default"
+script = ExtResource("49_tyj6v")
 
 [node name="PauseButton" type="Node2D" parent="."]
 script = ExtResource("38_rdb01")

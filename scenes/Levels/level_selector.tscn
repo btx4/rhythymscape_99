@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bsju3om1r6a3r"]
+[gd_scene load_steps=41 format=3 uid="uid://bsju3om1r6a3r"]
 
 [ext_resource type="Script" path="res://scripts/level_selector.gd" id="1_7knvd"]
 [ext_resource type="PackedScene" uid="uid://dctvo1ohh1dnc" path="res://scenes/beat_it_newest.tscn" id="2_0yuob"]
@@ -21,8 +21,17 @@
 [ext_resource type="Texture2D" uid="uid://bjc62f0fd3ir" path="res://assets/menus/level_menu/settings_light.png" id="17_np74t"]
 [ext_resource type="Texture2D" uid="uid://28xsf0cet6r" path="res://assets/menus/level_menu/quit_light.png" id="18_qm5d6"]
 [ext_resource type="AudioStream" uid="uid://typ7oacxaxx7" path="res://sounds/click.wav" id="20_4whd5"]
+[ext_resource type="Texture2D" uid="uid://dd3s4f4bxf5po" path="res://assets/menus/level_menu/song_genres/splatter/classical.png" id="21_7yobm"]
 [ext_resource type="AudioStream" uid="uid://cacg6pwkvarym" path="res://sounds/scroll_click.wav" id="21_u78ct"]
 [ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="22_r5k1h"]
+[ext_resource type="Texture2D" uid="uid://bhpxiunsqqxel" path="res://assets/menus/level_menu/song_genres/splatter/jazz.png" id="22_xpl4c"]
+[ext_resource type="Texture2D" uid="uid://msna6wa3e2qk" path="res://assets/menus/level_menu/song_genres/splatter/rock.png" id="23_1y1hu"]
+[ext_resource type="Texture2D" uid="uid://dwld0a0xg7rms" path="res://assets/menus/level_menu/song_genres/splatter/hip_hop.png" id="24_wswyo"]
+[ext_resource type="Texture2D" uid="uid://cqge4ny4san1n" path="res://assets/menus/level_menu/death_1.png" id="25_0st7r"]
+[ext_resource type="Texture2D" uid="uid://5b7r5ja0pjtc" path="res://assets/menus/level_menu/song_genres/tone_death_frames/death_4.png" id="26_fu5xq"]
+[ext_resource type="Texture2D" uid="uid://lndlffnvtw3q" path="res://assets/menus/level_menu/song_genres/tone_death_frames/death_2.png" id="27_hevml"]
+[ext_resource type="Texture2D" uid="uid://ts4hf32tbyw3" path="res://assets/menus/level_menu/song_genres/tone_death_frames/death_5.png" id="28_rcfqi"]
+[ext_resource type="Texture2D" uid="uid://6uli3fijoxm7" path="res://assets/menus/level_menu/song_genres/tone_death_frames/death_3.png" id="29_pnxnu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c6ed7"]
 animations = [{
@@ -76,7 +85,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 20.0
+"speed": 18.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_oqf2j"]
@@ -93,6 +102,35 @@ size = Vector2(525.918, 75.0344)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70pgo"]
 size = Vector2(218.044, 59.905)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vyii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_0st7r")
+}, {
+"duration": 2.0,
+"texture": ExtResource("26_fu5xq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_hevml")
+}, {
+"duration": 0.5,
+"texture": ExtResource("28_rcfqi")
+}, {
+"duration": 2.0,
+"texture": ExtResource("25_0st7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0st7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_pnxnu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
 
 [node name="Level_Selector" type="Node2D"]
 script = ExtResource("1_7knvd")
@@ -112,11 +150,12 @@ position = Vector2(1280, 720)
 texture = ExtResource("6_2pboo")
 
 [node name="DitherAnimate" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.398504, 0.390156, 0.398503, 0.2)
+modulate = Color(0.4, 0.388235, 0.4, 0.392157)
 position = Vector2(1280, 720)
 sprite_frames = SubResource("SpriteFrames_8twhl")
 animation = &"idle"
 autoplay = "idle"
+frame_progress = 0.0614164
 
 [node name="Magic_maker_Lvl_0" type="Node2D" parent="."]
 script = ExtResource("5_oeepc")
@@ -225,52 +264,43 @@ color = Color(0.956863, 0.352941, 0.419608, 1)
 energy = 2.0
 texture = ExtResource("18_qm5d6")
 
-[node name="Song1" type="RichTextLabel" parent="." groups=["songs"]]
+[node name="Classical" type="PointLight2D" parent="." groups=["songs"]]
 visible = false
-offset_left = 416.0
-offset_top = 764.0
-offset_right = 921.0
-offset_bottom = 929.0
-theme_override_font_sizes/normal_font_size = 120
-text = "SONG 1"
-fit_content = true
+position = Vector2(1280, 720)
+color = Color(0.94902, 0.737255, 0, 1)
+energy = 9.0
+texture = ExtResource("21_7yobm")
 
-[node name="Song2" type="RichTextLabel" parent="." groups=["songs"]]
+[node name="Jazz" type="PointLight2D" parent="." groups=["songs"]]
 visible = false
-offset_left = 412.0
-offset_top = 766.0
-offset_right = 1004.0
-offset_bottom = 1002.0
-theme_override_font_sizes/normal_font_size = 120
-text = "SONG 2"
+position = Vector2(1280, 720)
+color = Color(0.180392, 0.831373, 0.94902, 1)
+energy = 9.0
+blend_mode = 2
+texture = ExtResource("22_xpl4c")
 
-[node name="Song3" type="RichTextLabel" parent="." groups=["songs"]]
+[node name="Rock" type="PointLight2D" parent="." groups=["songs"]]
 visible = false
-offset_left = 410.0
-offset_top = 764.0
-offset_right = 911.0
-offset_bottom = 929.0
-theme_override_font_sizes/normal_font_size = 120
-text = "SONG 3"
-fit_content = true
+modulate = Color(0.470588, 0.192157, 0.74902, 1)
+position = Vector2(1280, 720)
+color = Color(0.637451, 0.118173, 0.912878, 1)
+energy = 9.0
+texture = ExtResource("23_1y1hu")
 
-[node name="Song4" type="RichTextLabel" parent="." groups=["songs"]]
+[node name="HipHop" type="PointLight2D" parent="." groups=["songs"]]
 visible = false
-offset_left = 415.0
-offset_top = 761.0
-offset_right = 1191.0
-offset_bottom = 965.0
-theme_override_font_sizes/normal_font_size = 120
-text = "SONG 4"
+position = Vector2(1280, 720)
+color = Color(0.45098, 0.988235, 0, 1)
+energy = 9.0
+texture = ExtResource("24_wswyo")
 
-[node name="Song5" type="RichTextLabel" parent="." groups=["songs"]]
+[node name="ToneDeath" type="AnimatedSprite2D" parent="." groups=["songs"]]
 visible = false
-offset_left = 419.0
-offset_top = 761.0
-offset_right = 1033.0
-offset_bottom = 951.0
-theme_override_font_sizes/normal_font_size = 120
-text = "SONG 5"
+modulate = Color(1, 1, 1, 0.572549)
+position = Vector2(1280, 720)
+sprite_frames = SubResource("SpriteFrames_3vyii")
+autoplay = "default"
+frame_progress = 0.31282
 
 [node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("20_4whd5")

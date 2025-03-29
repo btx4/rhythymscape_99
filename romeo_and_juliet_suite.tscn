@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://b1reqwl43x7s6"]
+[gd_scene load_steps=58 format=3 uid="uid://b1reqwl43x7s6"]
 
 [ext_resource type="Script" path="res://romeo_and_juliet_suite.gd" id="1_wv6m8"]
 [ext_resource type="Script" path="res://scenes/Levels/classical_bg_sprite.gd" id="2_3qqmj"]
@@ -41,20 +41,42 @@
 [ext_resource type="Script" path="res://scenes/Levels/main_card.gd" id="37_c8cvm"]
 [ext_resource type="Texture2D" uid="uid://dacja82xj05tl" path="res://assets/global_assets/score_bar/left_tab.png" id="38_ravgi"]
 [ext_resource type="Texture2D" uid="uid://bfnudn5yerbo6" path="res://assets/global_assets/score_bar/left_accent.png" id="39_5np0u"]
+[ext_resource type="Texture2D" uid="uid://4lkyga610bxn" path="res://assets/global_assets/boy_idle/idle_1.png" id="40_st786"]
+[ext_resource type="Texture2D" uid="uid://dq23h2p0feyg4" path="res://assets/global_assets/boy_idle/idle_2.png" id="41_aolqg"]
 [ext_resource type="Script" path="res://scenes/pause_button.gd" id="41_lmmfd"]
+[ext_resource type="Texture2D" uid="uid://cf0pg0uk7n1dg" path="res://assets/global_assets/boy_idle/idle_3.png" id="42_aoidk"]
 [ext_resource type="Texture2D" uid="uid://drr217jaqhjvr" path="res://assets/global_assets/pause_button.png" id="42_g0mg7"]
+[ext_resource type="Texture2D" uid="uid://cutw7ejrrqb70" path="res://assets/global_assets/boy_idle/idle_4.png" id="43_gld8g"]
 [ext_resource type="Texture2D" uid="uid://cmj8dvyotfahc" path="res://assets/global_assets/girl_idle/idle_1.png" id="43_v3y1r"]
+[ext_resource type="Script" path="res://scenes/Levels/boy_idle.gd" id="44_fyd4q"]
 [ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="44_vg0xq"]
 [ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="45_b8asi"]
-[ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="46_rchuh"]
 [ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="47_1il38"]
+[ext_resource type="Script" path="res://scenes/Levels/girl_idle.gd" id="49_6f0lg"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vrnem"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_41hwf"]
-size = Vector2(78, 112)
+[sub_resource type="SpriteFrames" id="SpriteFrames_f6kmn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_st786")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_aolqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_aoidk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_gld8g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.42
+}]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_31xcr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ec4n5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -67,15 +89,15 @@ animations = [{
 "texture": ExtResource("45_b8asi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("46_rchuh")
-}, {
-"duration": 1.0,
 "texture": ExtResource("47_1il38")
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 11.42
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_41hwf"]
+size = Vector2(78, 112)
 
 [node name="William Tell" type="Node2D"]
 script = ExtResource("1_wv6m8")
@@ -274,6 +296,19 @@ autowrap_mode = 0
 script = ExtResource("33_uor3q")
 metadata/_edit_use_anchors_ = true
 
+[node name="BoyIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(1903, 741)
+sprite_frames = SubResource("SpriteFrames_f6kmn")
+autoplay = "default"
+script = ExtResource("44_fyd4q")
+
+[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(-12, 686)
+scale = Vector2(0.85, 0.85)
+sprite_frames = SubResource("SpriteFrames_ec4n5")
+autoplay = "default"
+script = ExtResource("49_6f0lg")
+
 [node name="PauseButton" type="Node2D" parent="."]
 script = ExtResource("41_lmmfd")
 
@@ -297,12 +332,6 @@ scale = Vector2(0.4, 0.4)
 color = Color(1, 0.54902, 0.313726, 1)
 energy = 2.94
 texture = ExtResource("42_g0mg7")
-
-[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
-position = Vector2(-7, 715)
-scale = Vector2(0.8, 0.8)
-sprite_frames = SubResource("SpriteFrames_31xcr")
-autoplay = "default"
 
 [node name="PauseMenu" parent="." instance=ExtResource("35_dvnai")]
 visible = false
