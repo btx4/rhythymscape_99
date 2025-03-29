@@ -1,10 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://bonpk6o2ehkhm"]
+[gd_scene load_steps=47 format=3 uid="uid://bonpk6o2ehkhm"]
 
 [ext_resource type="Script" path="res://scenes/Levels/final_countdown.gd" id="1_f8d11"]
-[ext_resource type="Texture2D" uid="uid://cpubfv6y1catn" path="res://assets/level_assets/classical/classical_bg.png" id="1_gq5k7"]
 [ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="2_1h1pv"]
 [ext_resource type="Texture2D" uid="uid://bnvmltu5ixga5" path="res://assets/level_assets/classical/bg_action lines.png" id="3_d81yx"]
 [ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="4_ohfb3"]
+[ext_resource type="Script" path="res://scenes/Levels/bg_action_lines.gd" id="4_uav25"]
 [ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="5_jip1d"]
 [ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="6_14j2h"]
 [ext_resource type="AudioStream" uid="uid://sgmahdvqvowy" path="res://music/SpotiDownloader.com - The Final Countdown - Europe.mp3" id="8_o60x2"]
@@ -29,24 +29,46 @@
 [ext_resource type="Script" path="res://scripts/x_pop_up.gd" id="26_e0b74"]
 [ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="27_u6fyd"]
 [ext_resource type="PackedScene" uid="uid://6q3h01gpjh47" path="res://scenes/spray_paint_minigame_one_screen.tscn" id="28_7ri6y"]
-[ext_resource type="PackedScene" uid="uid://d4itde6e83rnp" path="res://progress_bar.tscn" id="29_nh44c"]
-[ext_resource type="Script" path="res://scripts/desat_layer.gd" id="30_ngnlo"]
-[ext_resource type="Shader" path="res://scenes/beat_it_newest.gdshader" id="31_me412"]
+[ext_resource type="Texture2D" uid="uid://dr7t07ekx003y" path="res://assets/global_assets/score_bar/backing.png" id="30_f6m6n"]
+[ext_resource type="Texture2D" uid="uid://b4x6iy4m6lcow" path="res://assets/global_assets/score_bar/right_accent.png" id="31_phurb"]
+[ext_resource type="Texture2D" uid="uid://cx640jqbd0om2" path="res://assets/global_assets/score_bar/main_card.png" id="32_f3p5t"]
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="32_k1see"]
+[ext_resource type="Script" path="res://scenes/Levels/main_card.gd" id="33_qvk2r"]
 [ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="33_yfjrf"]
+[ext_resource type="Texture2D" uid="uid://dacja82xj05tl" path="res://assets/global_assets/score_bar/left_tab.png" id="34_wnt5o"]
 [ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="34_yvbdt"]
-[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="36_n6wsl"]
+[ext_resource type="Texture2D" uid="uid://bfnudn5yerbo6" path="res://assets/global_assets/score_bar/left_accent.png" id="35_o1eof"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="36_n6wsl"]
+[ext_resource type="Texture2D" uid="uid://cmj8dvyotfahc" path="res://assets/global_assets/girl_idle/idle_1.png" id="37_2usj2"]
+[ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="38_pswjj"]
+[ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="39_jpbdu"]
+[ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="40_2xuh4"]
+[ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="41_qe4ie"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m8cnm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ad24b"]
-shader = ExtResource("31_me412")
-shader_parameter/desaturation = 1.0
-shader_parameter/opacity = 0.0
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_t18qg"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_a1ubx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4b18a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_2usj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_pswjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_jpbdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_2xuh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_qe4ie")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
 
 [node name="final_countdown" type="Node2D"]
 script = ExtResource("1_f8d11")
@@ -57,12 +79,8 @@ position = Vector2(952, 542)
 scale = Vector2(2560, 1440)
 texture = SubResource("CanvasTexture_m8cnm")
 
-[node name="ClassicalBg" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_gq5k7")
-
 [node name="BgRing" type="PointLight2D" parent="."]
-position = Vector2(952, 542)
+position = Vector2(965, 563)
 color = Color(0.968627, 1, 0.184314, 1)
 energy = 0.1
 texture = ExtResource("2_1h1pv")
@@ -71,6 +89,7 @@ texture = ExtResource("2_1h1pv")
 modulate = Color(0.858824, 0.262745, 0, 0.121569)
 position = Vector2(952, 542)
 texture = ExtResource("3_d81yx")
+script = ExtResource("4_uav25")
 
 [node name="BgSpraypaint" type="Sprite2D" parent="."]
 modulate = Color(1, 0.882353, 0.490196, 0.87451)
@@ -189,53 +208,72 @@ volume_db = -14.195
 [node name="Spray_paint_minigame_one_screen" parent="." instance=ExtResource("28_7ri6y")]
 position = Vector2(-6, 0)
 
-[node name="ScoreBar" parent="." instance=ExtResource("29_nh44c")]
-offset_left = -253.0
-offset_top = -108.0
-offset_right = 195.0
-offset_bottom = -74.0
-max_value = 4500.0
-metadata/_edit_use_anchors_ = true
+[node name="ScoreBarSprite" type="Node2D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("30_ngnlo")
+[node name="Backing" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.70976, 0.96, 0.0768, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("30_f6m6n")
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_ad24b")
-position = Vector2(8, 540)
-rotation = -1.57079
-scale = Vector2(2319.46, 427.818)
-texture = SubResource("CanvasTexture_t18qg")
+[node name="RightAccent" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.26372, 0.777714, 0.413513, 1)
+position = Vector2(-55, -46)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("31_phurb")
 
-[node name="Combo Counter" type="RichTextLabel" parent="CanvasLayer"]
-offset_left = 131.0
-offset_top = 60.0
-offset_right = 323.0
-offset_bottom = 248.0
+[node name="MainCard" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.337255, 0.890196, 0.517647, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.21)
+texture = ExtResource("32_f3p5t")
+script = ExtResource("33_qvk2r")
+
+[node name="LeftTab" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.709804, 0.960784, 0.0784314, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("34_wnt5o")
+
+[node name="LeftAccent" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.26372, 0.777714, 0.413513, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("35_o1eof")
+
+[node name="Combo Counter" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.0609375
+anchor_bottom = 0.00555556
+offset_left = -122.0
+offset_top = -83.0
+offset_right = 133.0
+offset_bottom = 105.0
 theme_override_fonts/normal_font = ExtResource("22_qigum")
 theme_override_fonts/mono_font = ExtResource("22_qigum")
 theme_override_fonts/bold_font = ExtResource("22_qigum")
 theme_override_font_sizes/bold_italics_font_size = 40
 theme_override_font_sizes/italics_font_size = 40
 theme_override_font_sizes/mono_font_size = 40
-theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/normal_font_size = 100
 theme_override_font_sizes/bold_font_size = 40
 text = "0"
 fit_content = true
+autowrap_mode = 0
 script = ExtResource("32_k1see")
 metadata/_edit_use_anchors_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(960, 539)
-scale = Vector2(1920, 1080)
-texture = SubResource("CanvasTexture_a1ubx")
+[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, 715)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_4b18a")
+autoplay = "default"
 
 [node name="Bonus_zone" parent="." instance=ExtResource("33_yfjrf")]
 position = Vector2(1455, 52)
 
 [node name="PauseMenu" parent="." instance=ExtResource("34_yvbdt")]
 visible = false
-position = Vector2(-320, -180)
+position = Vector2(-328, -178)
 
 [node name="Scene_Transition" parent="." instance=ExtResource("36_n6wsl")]

@@ -30,7 +30,6 @@
 [ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="27_yd0cb"]
 [ext_resource type="PackedScene" uid="uid://6q3h01gpjh47" path="res://scenes/spray_paint_minigame_one_screen.tscn" id="28_h72p2"]
 [ext_resource type="PackedScene" uid="uid://d4itde6e83rnp" path="res://progress_bar.tscn" id="29_xocgq"]
-[ext_resource type="Script" path="res://scripts/desat_layer.gd" id="30_nhhhv"]
 [ext_resource type="Shader" path="res://scenes/beat_it_newest.gdshader" id="31_5e6uq"]
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="32_wbtfm"]
 [ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="33_0m1oa"]
@@ -39,6 +38,36 @@
 [ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="36_gtmbm"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_s2xum"]
+
+[sub_resource type="GDScript" id="GDScript_xcvwm"]
+script/source = "extends Node2D
+var degree_of_sat
+var opacity = 0.0
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	print(\"all of this has moved to just affecting the background sprite to make it look better check BgSprite script\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+#
+#func sat_down():
+	#opacity = opacity + 0.2
+	#$Sprite2D.material.set(\"shader_parameter/opacity\", opacity)
+	#if opacity > .70:
+		#opacity = 0
+		#$Sprite2D.material.set(\"shader_parameter/opacity\", opacity)
+		#get_tree().reload_current_scene()
+
+#func sat_up():
+	#opacity = opacity - 0.2
+	#if opacity < 0:
+		#opacity = 0
+	#$Sprite2D.material.set(\"shader_parameter/opacity\", opacity)
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c5uhc"]
 shader = ExtResource("31_5e6uq")
@@ -198,7 +227,7 @@ max_value = 4500.0
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("30_nhhhv")
+script = SubResource("GDScript_xcvwm")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_c5uhc")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://72es5e46wc8v"]
+[gd_scene load_steps=53 format=3 uid="uid://72es5e46wc8v"]
 
 [ext_resource type="Script" path="res://scenes/Levels/i_wish.gd" id="1_2a8ok"]
 [ext_resource type="Script" path="res://scenes/Levels/bg_s_prite.gd" id="2_se3j1"]
@@ -32,12 +32,10 @@
 [ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="28_ho1yu"]
 [ext_resource type="PackedScene" uid="uid://6q3h01gpjh47" path="res://scenes/spray_paint_minigame_one_screen.tscn" id="29_j8vqu"]
 [ext_resource type="PackedScene" uid="uid://d4itde6e83rnp" path="res://progress_bar.tscn" id="30_4l4hm"]
-[ext_resource type="Script" path="res://scripts/desat_layer.gd" id="31_f1daa"]
-[ext_resource type="Shader" path="res://scenes/beat_it_newest.gdshader" id="32_d8ywq"]
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="33_w4x6p"]
 [ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="34_rwb5r"]
 [ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="35_5pyv4"]
-[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="36_iduvr"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="36_iduvr"]
 [ext_resource type="Script" path="res://scenes/pause_button.gd" id="37_3et36"]
 [ext_resource type="Texture2D" uid="uid://cmj8dvyotfahc" path="res://assets/global_assets/girl_idle/idle_1.png" id="37_obcxd"]
 [ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="38_o3i6r"]
@@ -53,15 +51,6 @@
 [ext_resource type="Texture2D" uid="uid://bfnudn5yerbo6" path="res://assets/global_assets/score_bar/left_accent.png" id="46_sh8j6"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_o5erl"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_31h38"]
-shader = ExtResource("32_d8ywq")
-shader_parameter/desaturation = 1.0
-shader_parameter/opacity = 0.0
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_4ha1l"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_yc1l3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jas1k"]
 animations = [{
@@ -239,54 +228,6 @@ offset_bottom = -74.0
 max_value = 4500.0
 metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("31_f1daa")
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-modulate = Color(0.0177324, 0.0177324, 0.0177324, 1)
-material = SubResource("ShaderMaterial_31h38")
-position = Vector2(951, 548.915)
-rotation = -1.57079
-scale = Vector2(1524.78, 2629.82)
-texture = SubResource("CanvasTexture_4ha1l")
-
-[node name="Combo Counter" type="RichTextLabel" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_right = 0.0609375
-anchor_bottom = 0.00555556
-offset_left = 205.0
-offset_top = 97.0
-offset_right = 397.0
-offset_bottom = 285.0
-theme_override_fonts/normal_font = ExtResource("23_p65an")
-theme_override_fonts/mono_font = ExtResource("23_p65an")
-theme_override_fonts/bold_font = ExtResource("23_p65an")
-theme_override_font_sizes/bold_italics_font_size = 40
-theme_override_font_sizes/italics_font_size = 40
-theme_override_font_sizes/mono_font_size = 40
-theme_override_font_sizes/normal_font_size = 100
-theme_override_font_sizes/bold_font_size = 40
-text = "0"
-fit_content = true
-script = ExtResource("33_w4x6p")
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(960, 539)
-scale = Vector2(1920, 1080)
-texture = SubResource("CanvasTexture_yc1l3")
-
-[node name="Bonus_zone" parent="." instance=ExtResource("34_rwb5r")]
-position = Vector2(1455, 52)
-
-[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
-position = Vector2(-56, 862)
-scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_jas1k")
-frame = 3
-frame_progress = 0.33757
-
 [node name="ScoreBarSprite" type="Node2D" parent="."]
 
 [node name="Backing" type="Sprite2D" parent="ScoreBarSprite"]
@@ -320,6 +261,38 @@ position = Vector2(-55, -36)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("46_sh8j6")
 
+[node name="Combo Counter" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.0609375
+anchor_bottom = 0.00555556
+offset_left = -122.0
+offset_top = -83.0
+offset_right = 133.0
+offset_bottom = 105.0
+theme_override_fonts/normal_font = ExtResource("23_p65an")
+theme_override_fonts/mono_font = ExtResource("23_p65an")
+theme_override_fonts/bold_font = ExtResource("23_p65an")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 40
+text = "0"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("33_w4x6p")
+metadata/_edit_use_anchors_ = true
+
+[node name="Bonus_zone" parent="." instance=ExtResource("34_rwb5r")]
+position = Vector2(1455, 52)
+
+[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, 715)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_jas1k")
+frame = 3
+frame_progress = 0.33757
+
 [node name="PauseButton" type="Node2D" parent="."]
 script = ExtResource("37_3et36")
 
@@ -346,7 +319,7 @@ texture = ExtResource("38_qotgp")
 
 [node name="PauseMenu" parent="." instance=ExtResource("35_5pyv4")]
 visible = false
-position = Vector2(-320, -180)
+position = Vector2(-328, -178)
 
 [node name="Scene_Transition" parent="." instance=ExtResource("36_iduvr")]
 

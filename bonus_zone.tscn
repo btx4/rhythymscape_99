@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/bonus_zone.gd" id="1_rnwit"]
 [ext_resource type="PackedScene" uid="uid://dnc8ndi3cuwsx" path="res://fading_points.tscn" id="2_ldifg"]
 [ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="4_ctj35"]
-[ext_resource type="Texture2D" uid="uid://b8a6gffpwpytr" path="res://assets/global_assets/bonus/bonus_drip.png" id="4_widj6"]
+[ext_resource type="Texture2D" uid="uid://dhkbod74ciq4w" path="res://assets/global_assets/bonus/bonus_drip.png" id="4_widj6"]
 [ext_resource type="Texture2D" uid="uid://chhdtlp611qyj" path="res://assets/global_assets/bonus/main_circle.png" id="5_q1jim"]
 [ext_resource type="Texture2D" uid="uid://di8neb4b1e7n7" path="res://assets/global_assets/bonus/neon.png" id="6_7lx11"]
 [ext_resource type="Texture2D" uid="uid://dfrl564picvuo" path="res://assets/global_assets/bonus/spray.png" id="7_prltu"]
@@ -46,8 +46,8 @@ energy = 0.2
 texture = ExtResource("5_q1jim")
 
 [node name="Neon" type="PointLight2D" parent="."]
-color = Color(0.654232, 0.654232, 0.654232, 1)
-energy = 0.45
+color = Color(0.737193, 0.737193, 0.737193, 1)
+energy = 0.6
 texture = ExtResource("6_7lx11")
 
 [node name="Spray" type="Sprite2D" parent="."]

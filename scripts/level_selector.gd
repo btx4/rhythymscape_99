@@ -10,12 +10,17 @@ var song_list: Array = ["song1", "song2", "song3", "song4", "song5"]
 #using place_holder sprites rn too
 
 
-@export var beat_it : PackedScene
-@export var lacrimosa_requiem : PackedScene
-@export var take_five : PackedScene
-@export var final_countdown : PackedScene
-@export var i_wish : PackedScene
+@export var romeo_and_juliet : PackedScene
 @export var solid_as_a_rock : PackedScene
+@export var beat_it : PackedScene
+@export var i_wish : PackedScene
+@export var final_countdown : PackedScene
+
+#@export var lacrimosa_requiem : PackedScene
+#@export var take_five : PackedScene
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ProjectSettings.set_setting("display/window/stretch/scale", 0.75)
@@ -65,8 +70,43 @@ func level_selector(song_num: int, start: bool):
 	var song = song_list[song_num]
 	print("CURRENT SONG: " + song)
 	
-	#starting song1
+	#starting classical song -> romeo and juliet
 	if (song == "song1"):
+		if (start == true):
+			if romeo_and_juliet:
+				# Instance the new scene
+				var scene_instance = romeo_and_juliet.instantiate()
+
+				# Replace the current scene
+				var current_scene = get_tree().get_current_scene()
+				if current_scene:
+					current_scene.queue_free()  # Free the current scene
+
+				get_tree().root.add_child(scene_instance)  # Add the new scene to the root
+				get_tree().set_current_scene(scene_instance)  # Set it as the current scene
+			else:
+				print("PackedScene is not set!")
+		
+		
+	#starting song1
+	if (song == "song2"):
+		if (start == true):
+			if solid_as_a_rock:
+				# Instance the new scene
+				var scene_instance = solid_as_a_rock.instantiate()
+
+				# Replace the current scene
+				var current_scene = get_tree().get_current_scene()
+				if current_scene:
+					current_scene.queue_free()  # Free the current scene
+
+				get_tree().root.add_child(scene_instance)  # Add the new scene to the root
+				get_tree().set_current_scene(scene_instance)  # Set it as the current scene
+			else:
+				print("PackedScene is not set!")
+
+
+	if (song == "song3"):
 		if (start == true):
 			if beat_it:
 				# Instance the new scene
@@ -81,9 +121,9 @@ func level_selector(song_num: int, start: bool):
 				get_tree().set_current_scene(scene_instance)  # Set it as the current scene
 			else:
 				print("PackedScene is not set!")
-		
-	#starting song1
-	if (song == "song2"):
+				
+				
+	if (song == "song4"):
 		if (start == true):
 			if i_wish:
 				# Instance the new scene
@@ -98,12 +138,12 @@ func level_selector(song_num: int, start: bool):
 				get_tree().set_current_scene(scene_instance)  # Set it as the current scene
 			else:
 				print("PackedScene is not set!")
-
-	if (song == "song3"):
+				
+	if (song == "song5"):
 		if (start == true):
-			if solid_as_a_rock:
+			if final_countdown:
 				# Instance the new scene
-				var scene_instance = solid_as_a_rock.instantiate()
+				var scene_instance = final_countdown.instantiate()
 
 				# Replace the current scene
 				var current_scene = get_tree().get_current_scene()
@@ -132,55 +172,55 @@ func level_selector(song_num: int, start: bool):
 	#else:
 		#print("PackedScene is not set!")
 
-
-func _on_lacrimosa_requiem_pressed() -> void:
-	if lacrimosa_requiem:
-		# Instance the new scene
-		var scene_instance = lacrimosa_requiem.instantiate()
-
-		# Replace the current scene
-		var current_scene = get_tree().get_current_scene()
-		if current_scene:
-			current_scene.queue_free()  # Free the current scene
-
-		get_tree().root.add_child(scene_instance)  # Add the new scene to the root
-		get_tree().set_current_scene(scene_instance)  # Set it as the current scene
-	else:
-		print("PackedScene is not set!")
-
-
-func _on_take_5_pressed() -> void:
-	if take_five:
-		# Instance the new scene
-		var scene_instance = take_five.instantiate()
-
-		# Replace the current scene
-		var current_scene = get_tree().get_current_scene()
-		if current_scene:
-			current_scene.queue_free()  # Free the current scene
-
-		get_tree().root.add_child(scene_instance)  # Add the new scene to the root
-		get_tree().set_current_scene(scene_instance)  # Set it as the current scene
-	else:
-		print("PackedScene is not set!")
-	pass # Replace with function body.
+#
+#func _on_lacrimosa_requiem_pressed() -> void:
+	#if lacrimosa_requiem:
+		## Instance the new scene
+		#var scene_instance = lacrimosa_requiem.instantiate()
+#
+		## Replace the current scene
+		#var current_scene = get_tree().get_current_scene()
+		#if current_scene:
+			#current_scene.queue_free()  # Free the current scene
+#
+		#get_tree().root.add_child(scene_instance)  # Add the new scene to the root
+		#get_tree().set_current_scene(scene_instance)  # Set it as the current scene
+	#else:
+		#print("PackedScene is not set!")
 
 
-func _on_beat_it_button_4_pressed() -> void:
-	if take_five:
-		# Instance the new scene
-		var scene_instance = take_five.instantiate()
+#func _on_take_5_pressed() -> void:
+	#if take_five:
+		## Instance the new scene
+		#var scene_instance = take_five.instantiate()
+#
+		## Replace the current scene
+		#var current_scene = get_tree().get_current_scene()
+		#if current_scene:
+			#current_scene.queue_free()  # Free the current scene
+#
+		#get_tree().root.add_child(scene_instance)  # Add the new scene to the root
+		#get_tree().set_current_scene(scene_instance)  # Set it as the current scene
+	#else:
+		#print("PackedScene is not set!")
+	#pass # Replace with function body.
 
-		# Replace the current scene
-		var current_scene = get_tree().get_current_scene()
-		if current_scene:
-			current_scene.queue_free()  # Free the current scene
 
-		get_tree().root.add_child(scene_instance)  # Add the new scene to the root
-		get_tree().set_current_scene(scene_instance)  # Set it as the current scene
-	else:
-		print("PackedScene is not set!")
-	pass # Replace with function body.
+#func _on_beat_it_button_4_pressed() -> void:
+	#if take_five:
+		## Instance the new scene
+		#var scene_instance = take_five.instantiate()
+#
+		## Replace the current scene
+		#var current_scene = get_tree().get_current_scene()
+		#if current_scene:
+			#current_scene.queue_free()  # Free the current scene
+#
+		#get_tree().root.add_child(scene_instance)  # Add the new scene to the root
+		#get_tree().set_current_scene(scene_instance)  # Set it as the current scene
+	#else:
+		#print("PackedScene is not set!")
+	#pass # Replace with function body.
 
 
 func _on_left_hover_area_mouse_entered() -> void:
