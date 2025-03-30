@@ -1,0 +1,363 @@
+[gd_scene load_steps=65 format=3 uid="uid://bonpk6o2ehkhm"]
+
+[ext_resource type="Script" path="res://scenes/Levels/final_countdown.gd" id="1_f8d11"]
+[ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="2_1h1pv"]
+[ext_resource type="Texture2D" uid="uid://cj8w26gpis21e" path="res://assets/level_assets/final/final_bg.png" id="2_gg7dw"]
+[ext_resource type="Texture2D" uid="uid://muode03qi86q" path="res://assets/level_assets/final/grey_sprite.png" id="3_8mt2d"]
+[ext_resource type="Texture2D" uid="uid://bnvmltu5ixga5" path="res://assets/level_assets/classical/bg_action lines.png" id="3_d81yx"]
+[ext_resource type="Script" path="res://scenes/Levels/final_bg_sprite.gd" id="4_h0soj"]
+[ext_resource type="Texture2D" uid="uid://drbx8iuusvmy7" path="res://assets/level_assets/final/noise_layer.png" id="4_l1iu5"]
+[ext_resource type="Texture2D" uid="uid://bjpvl7wye4dik" path="res://assets/level_assets/classical/bg_spraypaint.png" id="4_ohfb3"]
+[ext_resource type="Script" path="res://scenes/Levels/bg_action_lines.gd" id="4_uav25"]
+[ext_resource type="Texture2D" uid="uid://c5cwexu3ts2y1" path="res://assets/level_assets/classical/bg_right_spray.png" id="5_jip1d"]
+[ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="6_14j2h"]
+[ext_resource type="AudioStream" uid="uid://sgmahdvqvowy" path="res://music/SpotiDownloader.com - The Final Countdown - Europe.mp3" id="8_o60x2"]
+[ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="8_vuxs7"]
+[ext_resource type="Texture2D" uid="uid://bit24qih1lmbn" path="res://assets/level_assets/final/final_frame.png" id="9_0wdga"]
+[ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="9_sp2x0"]
+[ext_resource type="Script" path="res://scripts/magic_maker.gd" id="10_6c76p"]
+[ext_resource type="Script" path="res://scenes/Levels/final_bg_spraypaint.gd" id="10_b17ve"]
+[ext_resource type="Script" path="res://scenes/Levels/final_frame.gd" id="10_r1xre"]
+[ext_resource type="PackedScene" uid="uid://povabra474mo" path="res://scenes/white_stomp.tscn" id="11_lxxea"]
+[ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="12_gjcls"]
+[ext_resource type="Texture2D" uid="uid://mecy8ne57lvf" path="res://assets/cursor_sprite.png" id="13_80cwk"]
+[ext_resource type="Script" path="res://scripts/attack_handler_newest.gd" id="14_sptd4"]
+[ext_resource type="PackedScene" uid="uid://rc2xhtidjyh2" path="res://scenes/one_screen_circle.tscn" id="15_hwfve"]
+[ext_resource type="PackedScene" uid="uid://cb7y6x4rn270v" path="res://bomb_note.tscn" id="16_nnl6v"]
+[ext_resource type="PackedScene" uid="uid://16aq3nabvm05" path="res://fix_the_wire_top.tscn" id="17_pa4as"]
+[ext_resource type="PackedScene" uid="uid://cgb41vyns58vg" path="res://fix_the_wire_left.tscn" id="18_3rjcu"]
+[ext_resource type="PackedScene" uid="uid://treqbo30sr45" path="res://fix_the_wire_right.tscn" id="19_bpdrl"]
+[ext_resource type="PackedScene" uid="uid://n2iweeeq8eki" path="res://scenes/flipper_obstacle.tscn" id="20_63k6m"]
+[ext_resource type="PackedScene" uid="uid://cc2qiwmb4inlj" path="res://scenes/challenges/poppable_arc.tscn" id="21_vj6hs"]
+[ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="22_qigum"]
+[ext_resource type="Script" path="res://scripts/score.gd" id="23_73kh0"]
+[ext_resource type="Script" path="res://scripts/combo.gd" id="24_drpp0"]
+[ext_resource type="Texture2D" uid="uid://cc56u28lpa0gf" path="res://assets/global_assets/draft_x.png" id="25_xlneq"]
+[ext_resource type="Script" path="res://scripts/x_pop_up.gd" id="26_e0b74"]
+[ext_resource type="AudioStream" uid="uid://c7atm7uv6bxlr" path="res://sounds/WRONG_ANSWER.mp3" id="27_u6fyd"]
+[ext_resource type="PackedScene" uid="uid://6q3h01gpjh47" path="res://scenes/spray_paint_minigame_one_screen.tscn" id="28_7ri6y"]
+[ext_resource type="Texture2D" uid="uid://dr7t07ekx003y" path="res://assets/global_assets/score_bar/backing.png" id="30_f6m6n"]
+[ext_resource type="Texture2D" uid="uid://b4x6iy4m6lcow" path="res://assets/global_assets/score_bar/right_accent.png" id="31_phurb"]
+[ext_resource type="Texture2D" uid="uid://cx640jqbd0om2" path="res://assets/global_assets/score_bar/main_card.png" id="32_f3p5t"]
+[ext_resource type="Script" path="res://scenes/combo_counter.gd" id="32_k1see"]
+[ext_resource type="Script" path="res://scenes/Levels/main_card.gd" id="33_qvk2r"]
+[ext_resource type="PackedScene" uid="uid://bc6fia77s2wku" path="res://bonus_zone.tscn" id="33_yfjrf"]
+[ext_resource type="Texture2D" uid="uid://dacja82xj05tl" path="res://assets/global_assets/score_bar/left_tab.png" id="34_wnt5o"]
+[ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="34_yvbdt"]
+[ext_resource type="Texture2D" uid="uid://bfnudn5yerbo6" path="res://assets/global_assets/score_bar/left_accent.png" id="35_o1eof"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="36_n6wsl"]
+[ext_resource type="Texture2D" uid="uid://cmj8dvyotfahc" path="res://assets/global_assets/girl_idle/idle_1.png" id="37_2usj2"]
+[ext_resource type="Texture2D" uid="uid://cx7ssx2mpqo87" path="res://assets/global_assets/platform.png" id="37_440bk"]
+[ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="38_pswjj"]
+[ext_resource type="Texture2D" uid="uid://4lkyga610bxn" path="res://assets/global_assets/boy_idle/idle_1.png" id="38_yoxgf"]
+[ext_resource type="Texture2D" uid="uid://dq23h2p0feyg4" path="res://assets/global_assets/boy_idle/idle_2.png" id="39_3047o"]
+[ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="39_jpbdu"]
+[ext_resource type="Texture2D" uid="uid://cf0pg0uk7n1dg" path="res://assets/global_assets/boy_idle/idle_3.png" id="40_e8h01"]
+[ext_resource type="Texture2D" uid="uid://elbb8i0i1k1n" path="res://assets/level_assets/final/final_spray.png" id="41_30jni"]
+[ext_resource type="Texture2D" uid="uid://cutw7ejrrqb70" path="res://assets/global_assets/boy_idle/idle_4.png" id="41_iwgvp"]
+[ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="41_qe4ie"]
+[ext_resource type="Texture2D" uid="uid://bvmtxf133ao2" path="res://assets/level_assets/final/final_drip.png" id="42_0i38r"]
+[ext_resource type="Script" path="res://scenes/Levels/boy_idle.gd" id="42_ecoov"]
+[ext_resource type="Script" path="res://scenes/Levels/girl_idle.gd" id="47_sks3n"]
+[ext_resource type="Shader" uid="uid://bf7m2yu038fu0" path="res://scenes/Levels/level_layout_files/overlay.tres" id="56_c6vuh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikthn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_yoxgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_3047o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_e8h01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_iwgvp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.4
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6lxy5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_2usj2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_pswjj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_jpbdu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_qe4ie")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.4
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g816n"]
+shader = ExtResource("56_c6vuh")
+shader_parameter/ColorParameter = Color(0.211765, 0.0313726, 1, 0.207843)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nbf4e"]
+
+[node name="final_countdown" type="Node2D"]
+script = ExtResource("1_f8d11")
+
+[node name="FinalBg" type="Sprite2D" parent="."]
+position = Vector2(952, 542)
+texture = ExtResource("2_gg7dw")
+
+[node name="GreySprite2" type="Sprite2D" parent="."]
+position = Vector2(952, 542)
+texture = ExtResource("3_8mt2d")
+
+[node name="BgSprite" type="Sprite2D" parent="."]
+modulate = Color(0.164706, 0.129412, 1, 1)
+position = Vector2(952, 542)
+texture = ExtResource("3_8mt2d")
+script = ExtResource("4_h0soj")
+
+[node name="NoiseLayer" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(952, 542)
+texture = ExtResource("4_l1iu5")
+
+[node name="BgRing" type="PointLight2D" parent="."]
+position = Vector2(965, 563)
+color = Color(4.21144e-08, 0.166511, 0.164801, 1)
+energy = 5.51
+texture = ExtResource("2_1h1pv")
+
+[node name="BgActionLines" type="Sprite2D" parent="."]
+modulate = Color(0.0627451, 0.870588, 0.796078, 0.188235)
+position = Vector2(952, 542)
+texture = ExtResource("3_d81yx")
+script = ExtResource("4_uav25")
+
+[node name="BgSpraypaint" type="Sprite2D" parent="."]
+modulate = Color(0, 0.776471, 0.827451, 1)
+position = Vector2(952, 542)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_ohfb3")
+script = ExtResource("10_b17ve")
+
+[node name="FinalFrame" type="Sprite2D" parent="."]
+position = Vector2(952, 542)
+texture = ExtResource("9_0wdga")
+script = ExtResource("10_r1xre")
+
+[node name="BgRightSpray" type="PointLight2D" parent="."]
+position = Vector2(1665, 216)
+scale = Vector2(0.75, 0.75)
+color = Color(0.133333, 0.803922, 0.870588, 1)
+energy = 1.1
+texture = ExtResource("5_jip1d")
+
+[node name="BgLeftSpray" type="PointLight2D" parent="."]
+position = Vector2(534, 1016)
+scale = Vector2(0.75, 0.75)
+color = Color(0.133333, 0.803922, 0.870588, 1)
+energy = 1.1
+texture = ExtResource("6_14j2h")
+
+[node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_o60x2")
+script = ExtResource("8_vuxs7")
+bpm = 126.0
+
+[node name="Pulsing_circle" parent="." instance=ExtResource("9_sp2x0")]
+position = Vector2(954, 542)
+
+[node name="Camera2D" type="Camera2D" parent="Pulsing_circle"]
+position = Vector2(0, 7.62939e-06)
+
+[node name="Magic_Maker" type="Node2D" parent="."]
+script = ExtResource("10_6c76p")
+
+[node name="White_stomp" parent="Magic_Maker" instance=ExtResource("11_lxxea")]
+visible = false
+position = Vector2(0, 0)
+
+[node name="Magic" parent="Magic_Maker" instance=ExtResource("12_gjcls")]
+lifetime = 0.5
+
+[node name="cursor_sprite" type="Sprite2D" parent="Magic_Maker"]
+texture_filter = 1
+texture = ExtResource("13_80cwk")
+
+[node name="Attack_Handler" type="Node2D" parent="."]
+script = ExtResource("14_sptd4")
+osu_circle_scene = ExtResource("15_hwfve")
+bomb_note_scene = ExtResource("16_nnl6v")
+fix_the_wire_top_scene = ExtResource("17_pa4as")
+fix_the_wire_left_scene = ExtResource("18_3rjcu")
+fix_the_wire_right_scene = ExtResource("19_bpdrl")
+flipper_scene = ExtResource("20_63k6m")
+
+[node name="Poppable Arc" parent="Attack_Handler" instance=ExtResource("21_vj6hs")]
+
+[node name="Score" type="RichTextLabel" parent="Attack_Handler"]
+visible = false
+offset_left = 69.0
+offset_top = 220.0
+offset_right = 109.0
+offset_bottom = 260.0
+theme_override_fonts/normal_font = ExtResource("22_qigum")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+text = "2000"
+script = ExtResource("23_73kh0")
+
+[node name="Combo" type="RichTextLabel" parent="Attack_Handler"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1550.0
+offset_top = 900.0
+offset_right = 1710.0
+offset_bottom = 1045.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(80, 30)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("22_qigum")
+theme_override_fonts/mono_font = ExtResource("22_qigum")
+theme_override_fonts/italics_font = ExtResource("22_qigum")
+theme_override_fonts/bold_italics_font = ExtResource("22_qigum")
+theme_override_fonts/bold_font = ExtResource("22_qigum")
+theme_override_font_sizes/bold_italics_font_size = 120
+theme_override_font_sizes/italics_font_size = 120
+theme_override_font_sizes/mono_font_size = 120
+theme_override_font_sizes/normal_font_size = 120
+theme_override_font_sizes/bold_font_size = 120
+bbcode_enabled = true
+text = "[center]1[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("24_drpp0")
+
+[node name="XPopUp" type="Sprite2D" parent="Attack_Handler"]
+visible = false
+scale = Vector2(0.5, 0.55)
+texture = ExtResource("25_xlneq")
+script = ExtResource("26_e0b74")
+
+[node name="Error" type="AudioStreamPlayer2D" parent="Attack_Handler"]
+position = Vector2(240, 90)
+stream = ExtResource("27_u6fyd")
+volume_db = -14.195
+
+[node name="Spray_paint_minigame_one_screen" parent="." instance=ExtResource("28_7ri6y")]
+position = Vector2(-6, 0)
+
+[node name="ScoreBarSprite" type="Node2D" parent="."]
+
+[node name="Backing" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.0784314, 1, 1, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("30_f6m6n")
+
+[node name="RightAccent" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.0431373, 0.0156863, 0.129412, 1)
+position = Vector2(-55, -46)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("31_phurb")
+
+[node name="MainCard" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.113725, 0.698039, 0.619608, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.21)
+texture = ExtResource("32_f3p5t")
+script = ExtResource("33_qvk2r")
+
+[node name="LeftTab" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.113725, 0.701961, 0.623529, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("34_wnt5o")
+
+[node name="LeftAccent" type="Sprite2D" parent="ScoreBarSprite"]
+modulate = Color(0.0431373, 0.0156863, 0.129412, 1)
+position = Vector2(-55, -36)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("35_o1eof")
+
+[node name="FinalSpray" type="Sprite2D" parent="."]
+position = Vector2(952, 542)
+texture = ExtResource("41_30jni")
+
+[node name="FinalDrip" type="Sprite2D" parent="."]
+position = Vector2(952, 542)
+texture = ExtResource("42_0i38r")
+
+[node name="Combo Counter" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_right = 0.0609375
+anchor_bottom = 0.00555556
+offset_left = -122.0
+offset_top = -83.0
+offset_right = 133.0
+offset_bottom = 105.0
+theme_override_fonts/normal_font = ExtResource("22_qigum")
+theme_override_fonts/mono_font = ExtResource("22_qigum")
+theme_override_fonts/bold_font = ExtResource("22_qigum")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 100
+theme_override_font_sizes/bold_font_size = 40
+text = "0"
+fit_content = true
+autowrap_mode = 0
+script = ExtResource("32_k1see")
+metadata/_edit_use_anchors_ = true
+
+[node name="Platform" type="Sprite2D" parent="."]
+modulate = Color(0.0509804, 0.0196078, 0.113725, 1)
+position = Vector2(954, 542)
+texture = ExtResource("37_440bk")
+
+[node name="BoyIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(1903, 741)
+sprite_frames = SubResource("SpriteFrames_ikthn")
+autoplay = "default"
+script = ExtResource("42_ecoov")
+
+[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(-12, 686)
+scale = Vector2(0.85, 0.85)
+sprite_frames = SubResource("SpriteFrames_6lxy5")
+autoplay = "default"
+script = ExtResource("47_sks3n")
+
+[node name="Bonus_zone" parent="." instance=ExtResource("33_yfjrf")]
+position = Vector2(1455, 52)
+
+[node name="Overlay" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.333333)
+material = SubResource("ShaderMaterial_g816n")
+position = Vector2(952, 542)
+scale = Vector2(2560, 1440)
+texture = SubResource("CanvasTexture_nbf4e")
+
+[node name="PauseMenu" parent="." instance=ExtResource("34_yvbdt")]
+visible = false
+position = Vector2(-328, -178)
+
+[node name="Scene_Transition" parent="." instance=ExtResource("36_n6wsl")]
