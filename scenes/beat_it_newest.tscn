@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://dctvo1ohh1dnc"]
+[gd_scene load_steps=63 format=3 uid="uid://dctvo1ohh1dnc"]
 
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="1_04gay"]
 [ext_resource type="Script" path="res://scripts/beat_it_newest.gd" id="1_sh5nd"]
@@ -45,6 +45,7 @@
 [ext_resource type="Script" path="res://scenes/pause_button.gd" id="38_rdb01"]
 [ext_resource type="Texture2D" uid="uid://drr217jaqhjvr" path="res://assets/global_assets/pause_button.png" id="38_vcfrv"]
 [ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="39_3j7d8"]
+[ext_resource type="Texture2D" uid="uid://cx7ssx2mpqo87" path="res://assets/global_assets/platform.png" id="40_5pdlf"]
 [ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="40_5terg"]
 [ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="42_vnlcf"]
 [ext_resource type="Script" path="res://scenes/Levels/boy_idle.gd" id="44_2yqyh"]
@@ -53,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://cf0pg0uk7n1dg" path="res://assets/global_assets/boy_idle/idle_3.png" id="46_0c66d"]
 [ext_resource type="Texture2D" uid="uid://cutw7ejrrqb70" path="res://assets/global_assets/boy_idle/idle_4.png" id="47_wq4hl"]
 [ext_resource type="Script" path="res://scenes/Levels/girl_idle.gd" id="49_tyj6v"]
+[ext_resource type="Shader" uid="uid://bf7m2yu038fu0" path="res://scenes/Levels/level_layout_files/overlay.tres" id="54_tvv6u"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_f4thb"]
 
@@ -101,6 +103,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbgl5"]
 size = Vector2(78, 112)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rd005"]
+shader = ExtResource("54_tvv6u")
+shader_parameter/ColorParameter = Color(0.466667, 0.184314, 0.752941, 0.458824)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_m3bx5"]
+
 [node name="Beat it Newest" type="Node2D"]
 script = ExtResource("1_sh5nd")
 
@@ -137,10 +145,26 @@ color = Color(0.913725, 0.403922, 0.913725, 1)
 energy = 0.5
 texture = ExtResource("6_qcpen")
 
+[node name="BgRightSpray2" type="PointLight2D" parent="."]
+position = Vector2(1858, 924)
+rotation = 2.37888
+scale = Vector2(1, 0.75)
+color = Color(0.913725, 0.403922, 0.913725, 1)
+energy = 0.3
+texture = ExtResource("6_qcpen")
+
 [node name="BgLeftSpray" type="PointLight2D" parent="."]
 position = Vector2(534, 1016)
 scale = Vector2(0.75, 0.75)
 color = Color(0.760784, 0.113725, 0.141176, 1)
+texture = ExtResource("7_riw1i")
+
+[node name="BgLeftSpray2" type="PointLight2D" parent="."]
+position = Vector2(-63, 707)
+rotation = 1.80991
+scale = Vector2(0.75, 0.75)
+color = Color(0.760784, 0.113725, 0.141176, 1)
+energy = 0.7
 texture = ExtResource("7_riw1i")
 
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
@@ -304,6 +328,11 @@ autowrap_mode = 0
 script = ExtResource("26_c0qyj")
 metadata/_edit_use_anchors_ = true
 
+[node name="Platform" type="Sprite2D" parent="."]
+modulate = Color(0.342113, 0.144328, 0.514673, 1)
+position = Vector2(954, 542)
+texture = ExtResource("40_5pdlf")
+
 [node name="BoyIdle" type="AnimatedSprite2D" parent="."]
 position = Vector2(1903, 741)
 sprite_frames = SubResource("SpriteFrames_fes31")
@@ -346,7 +375,13 @@ visible = false
 position = Vector2(-328, -178)
 
 [node name="Scene_Transition" parent="." instance=ExtResource("37_hafii")]
-position = Vector2(-320, -18)
+
+[node name="Overlay" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.627451)
+material = SubResource("ShaderMaterial_rd005")
+position = Vector2(954, 540)
+scale = Vector2(2560, 1440)
+texture = SubResource("CanvasTexture_m3bx5")
 
 [connection signal="mouse_entered" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_entered"]
 [connection signal="mouse_exited" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_exited"]

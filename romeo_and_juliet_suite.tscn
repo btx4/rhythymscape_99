@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://b1reqwl43x7s6"]
+[gd_scene load_steps=62 format=3 uid="uid://b1reqwl43x7s6"]
 
 [ext_resource type="Script" path="res://romeo_and_juliet_suite.gd" id="1_wv6m8"]
 [ext_resource type="Script" path="res://scenes/Levels/classical_bg_sprite.gd" id="2_3qqmj"]
@@ -42,6 +42,7 @@
 [ext_resource type="Texture2D" uid="uid://dacja82xj05tl" path="res://assets/global_assets/score_bar/left_tab.png" id="38_ravgi"]
 [ext_resource type="Texture2D" uid="uid://bfnudn5yerbo6" path="res://assets/global_assets/score_bar/left_accent.png" id="39_5np0u"]
 [ext_resource type="Texture2D" uid="uid://4lkyga610bxn" path="res://assets/global_assets/boy_idle/idle_1.png" id="40_st786"]
+[ext_resource type="Texture2D" uid="uid://cx7ssx2mpqo87" path="res://assets/global_assets/platform.png" id="40_vfpxa"]
 [ext_resource type="Texture2D" uid="uid://dq23h2p0feyg4" path="res://assets/global_assets/boy_idle/idle_2.png" id="41_aolqg"]
 [ext_resource type="Script" path="res://scenes/pause_button.gd" id="41_lmmfd"]
 [ext_resource type="Texture2D" uid="uid://cf0pg0uk7n1dg" path="res://assets/global_assets/boy_idle/idle_3.png" id="42_aoidk"]
@@ -53,6 +54,7 @@
 [ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="45_b8asi"]
 [ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="47_1il38"]
 [ext_resource type="Script" path="res://scenes/Levels/girl_idle.gd" id="49_6f0lg"]
+[ext_resource type="Shader" uid="uid://bf7m2yu038fu0" path="res://scenes/Levels/level_layout_files/overlay.tres" id="55_fsjsh"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vrnem"]
 
@@ -99,6 +101,12 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_41hwf"]
 size = Vector2(78, 112)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fne2f"]
+shader = ExtResource("55_fsjsh")
+shader_parameter/ColorParameter = Color(0.705882, 0.32549, 0.137255, 0.67451)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_778cw"]
+
 [node name="William Tell" type="Node2D"]
 script = ExtResource("1_wv6m8")
 
@@ -116,7 +124,7 @@ energy = 0.2
 texture = ExtResource("3_kb0gv")
 
 [node name="BgActionLines" type="Sprite2D" parent="."]
-modulate = Color(0.858824, 0.262745, 0, 0.121569)
+modulate = Color(0.858824, 0.262745, 0, 0.247059)
 position = Vector2(952, 542)
 texture = ExtResource("4_325u6")
 script = ExtResource("6_npadm")
@@ -131,14 +139,40 @@ script = ExtResource("7_a5sq3")
 [node name="BgRightSpray" type="PointLight2D" parent="."]
 position = Vector2(1665, 216)
 scale = Vector2(0.75, 0.75)
-color = Color(0.344076, 0.344076, 0.344076, 1)
-energy = 0.2
+color = Color(0.908878, 0.690617, 0.903608, 1)
+energy = 0.4
 texture = ExtResource("6_jlqsv")
 
-[node name="BgLeftSpray" type="PointLight2D" parent="."]
-position = Vector2(534, 1016)
+[node name="BgLeftSpray3" type="PointLight2D" parent="."]
+position = Vector2(440, 240)
+rotation = 1.49051
 scale = Vector2(0.75, 0.75)
-color = Color(0.277528, 0.277528, 0.277528, 1)
+skew = 0.0785398
+color = Color(0.516068, 0.716959, 0.603732, 1)
+energy = 0.4
+texture = ExtResource("7_twgkf")
+
+[node name="BgLeftSpray" type="PointLight2D" parent="."]
+position = Vector2(522, 1046)
+scale = Vector2(0.75, 0.75)
+color = Color(0.516068, 0.716959, 0.603732, 1)
+energy = 0.6
+texture = ExtResource("7_twgkf")
+
+[node name="BgRightSpray2" type="PointLight2D" parent="."]
+position = Vector2(1858, 924)
+rotation = 2.37888
+scale = Vector2(1, 0.75)
+color = Color(0.433392, 0.82579, 0.69188, 1)
+energy = 0.4
+texture = ExtResource("6_jlqsv")
+
+[node name="BgLeftSpray2" type="PointLight2D" parent="."]
+position = Vector2(-6.99998, 644)
+rotation = 1.80991
+scale = Vector2(0.75, 0.75)
+color = Color(0.407787, 0.798417, 0.666181, 1)
+energy = 0.3
 texture = ExtResource("7_twgkf")
 
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
@@ -296,6 +330,11 @@ autowrap_mode = 0
 script = ExtResource("33_uor3q")
 metadata/_edit_use_anchors_ = true
 
+[node name="Platform" type="Sprite2D" parent="."]
+modulate = Color(0.835294, 0.364706, 0.0901961, 1)
+position = Vector2(953, 540)
+texture = ExtResource("40_vfpxa")
+
 [node name="BoyIdle" type="AnimatedSprite2D" parent="."]
 position = Vector2(1903, 741)
 sprite_frames = SubResource("SpriteFrames_f6kmn")
@@ -338,6 +377,13 @@ visible = false
 position = Vector2(-328, -178)
 
 [node name="Scene_Transition" parent="." instance=ExtResource("37_5g572")]
+
+[node name="Overlay" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.709804)
+material = SubResource("ShaderMaterial_fne2f")
+position = Vector2(954, 540)
+scale = Vector2(2560, 1440)
+texture = SubResource("CanvasTexture_778cw")
 
 [connection signal="mouse_entered" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_entered"]
 [connection signal="mouse_exited" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bonpk6o2ehkhm"]
+[gd_scene load_steps=54 format=3 uid="uid://bonpk6o2ehkhm"]
 
 [ext_resource type="Script" path="res://scenes/Levels/final_countdown.gd" id="1_f8d11"]
 [ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="2_1h1pv"]
@@ -40,14 +40,40 @@
 [ext_resource type="Texture2D" uid="uid://bfnudn5yerbo6" path="res://assets/global_assets/score_bar/left_accent.png" id="35_o1eof"]
 [ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="36_n6wsl"]
 [ext_resource type="Texture2D" uid="uid://cmj8dvyotfahc" path="res://assets/global_assets/girl_idle/idle_1.png" id="37_2usj2"]
+[ext_resource type="Texture2D" uid="uid://cx7ssx2mpqo87" path="res://assets/global_assets/platform.png" id="37_440bk"]
 [ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="38_pswjj"]
+[ext_resource type="Texture2D" uid="uid://4lkyga610bxn" path="res://assets/global_assets/boy_idle/idle_1.png" id="38_yoxgf"]
+[ext_resource type="Texture2D" uid="uid://dq23h2p0feyg4" path="res://assets/global_assets/boy_idle/idle_2.png" id="39_3047o"]
 [ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="39_jpbdu"]
-[ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="40_2xuh4"]
+[ext_resource type="Texture2D" uid="uid://cf0pg0uk7n1dg" path="res://assets/global_assets/boy_idle/idle_3.png" id="40_e8h01"]
+[ext_resource type="Texture2D" uid="uid://cutw7ejrrqb70" path="res://assets/global_assets/boy_idle/idle_4.png" id="41_iwgvp"]
 [ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="41_qe4ie"]
+[ext_resource type="Script" path="res://scenes/Levels/boy_idle.gd" id="42_ecoov"]
+[ext_resource type="Script" path="res://scenes/Levels/girl_idle.gd" id="47_sks3n"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_m8cnm"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4b18a"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ikthn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_yoxgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_3047o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_e8h01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_iwgvp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.4
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6lxy5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -60,14 +86,11 @@ animations = [{
 "texture": ExtResource("39_jpbdu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("40_2xuh4")
-}, {
-"duration": 1.0,
 "texture": ExtResource("41_qe4ie")
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 8.4
 }]
 
 [node name="final_countdown" type="Node2D"]
@@ -263,11 +286,23 @@ autowrap_mode = 0
 script = ExtResource("32_k1see")
 metadata/_edit_use_anchors_ = true
 
-[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
-position = Vector2(-7, 715)
-scale = Vector2(0.8, 0.8)
-sprite_frames = SubResource("SpriteFrames_4b18a")
+[node name="Platform" type="Sprite2D" parent="."]
+modulate = Color(0.342113, 0.144328, 0.514673, 1)
+position = Vector2(954, 542)
+texture = ExtResource("37_440bk")
+
+[node name="BoyIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(1903, 741)
+sprite_frames = SubResource("SpriteFrames_ikthn")
 autoplay = "default"
+script = ExtResource("42_ecoov")
+
+[node name="GirlIdle" type="AnimatedSprite2D" parent="."]
+position = Vector2(-12, 686)
+scale = Vector2(0.85, 0.85)
+sprite_frames = SubResource("SpriteFrames_6lxy5")
+autoplay = "default"
+script = ExtResource("47_sks3n")
 
 [node name="Bonus_zone" parent="." instance=ExtResource("33_yfjrf")]
 position = Vector2(1455, 52)
