@@ -9,9 +9,9 @@
 [ext_resource type="Script" path="res://scenes/Levels/bg_action_lines.gd" id="6_npadm"]
 [ext_resource type="Script" path="res://scenes/Levels/classical_bg_spraypaint.gd" id="7_a5sq3"]
 [ext_resource type="Texture2D" uid="uid://c2uhsnduo55yc" path="res://assets/level_assets/classical/bg_left_spray.png" id="7_twgkf"]
-[ext_resource type="AudioStream" uid="uid://xqkawr6jqalj" path="res://music/SpotiDownloader.com - William Tell - Overture - London Symphony Orchestra.mp3" id="8_ko1qd"]
 [ext_resource type="Script" path="res://scripts/audio_stream_player_2d.gd" id="9_knipk"]
 [ext_resource type="PackedScene" uid="uid://cahfqtrtojgof" path="res://scenes/pulsing_circle_new_version.tscn" id="10_34hg0"]
+[ext_resource type="AudioStream" uid="uid://dwcn4ub6tjq77" path="res://music/Take Five - The Dave Brubeck Quartet.mp3" id="10_ruums"]
 [ext_resource type="Script" path="res://scripts/magic_maker.gd" id="11_8sx2c"]
 [ext_resource type="PackedScene" uid="uid://povabra474mo" path="res://scenes/white_stomp.tscn" id="12_dfbem"]
 [ext_resource type="PackedScene" uid="uid://g1prutamg2s3" path="res://scenes/particles/magic_particles.tscn" id="13_lb3ol"]
@@ -37,7 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://bodetw4ekbg6m" path="res://scenes/pause_menu.tscn" id="35_dvnai"]
 [ext_resource type="Texture2D" uid="uid://b4x6iy4m6lcow" path="res://assets/global_assets/score_bar/right_accent.png" id="35_mwcjk"]
 [ext_resource type="Texture2D" uid="uid://cx640jqbd0om2" path="res://assets/global_assets/score_bar/main_card.png" id="36_j0id3"]
-[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="37_5g572"]
+[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="37_5g572"]
 [ext_resource type="Script" path="res://scenes/Levels/main_card.gd" id="37_c8cvm"]
 [ext_resource type="Texture2D" uid="uid://dacja82xj05tl" path="res://assets/global_assets/score_bar/left_tab.png" id="38_ravgi"]
 [ext_resource type="Texture2D" uid="uid://bfnudn5yerbo6" path="res://assets/global_assets/score_bar/left_accent.png" id="39_5np0u"]
@@ -176,9 +176,9 @@ energy = 0.3
 texture = ExtResource("7_twgkf")
 
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_ko1qd")
+stream = ExtResource("10_ruums")
 script = ExtResource("9_knipk")
-bpm = 171.3
+bpm = 172.8
 
 [node name="Pulsing_circle" parent="." instance=ExtResource("10_34hg0")]
 position = Vector2(954, 542)
@@ -208,6 +208,8 @@ fix_the_wire_top_scene = ExtResource("18_20jbv")
 fix_the_wire_left_scene = ExtResource("19_ij3h6")
 fix_the_wire_right_scene = ExtResource("20_f1yiv")
 flipper_scene = ExtResource("21_ehseb")
+offset = 2
+file_path = "res://scenes/Levels/level_layout_files/TakeFive txt.txt"
 
 [node name="Poppable Arc" parent="Attack_Handler" instance=ExtResource("22_kwhkt")]
 

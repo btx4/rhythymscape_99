@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwcn4ub6tjq77"
+path="res://.godot/imported/Take Five - The Dave Brubeck Quartet.mp3-b9c3a8bd8bdc524f1ec74b0dbf15e30c.mp3str"
+
+[deps]
+
+source_file="res://music/Take Five - The Dave Brubeck Quartet.mp3"
+dest_files=["res://.godot/imported/Take Five - The Dave Brubeck Quartet.mp3-b9c3a8bd8bdc524f1ec74b0dbf15e30c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
