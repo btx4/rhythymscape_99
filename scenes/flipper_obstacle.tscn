@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://n2iweeeq8eki"]
+[gd_scene load_steps=6 format=3 uid="uid://n2iweeeq8eki"]
 
 [ext_resource type="Script" path="res://scripts/flipper_obstacle.gd" id="1_gcfl0"]
 [ext_resource type="Script" path="res://scripts/Flipper.gd" id="1_njle4"]
 [ext_resource type="Texture2D" uid="uid://wg481sowsfb0" path="res://assets/Arrow.png" id="2_k4aqt"]
+[ext_resource type="Texture2D" uid="uid://dtb6kyyq2v2w4" path="res://assets/arrow_new.png" id="4_382g6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3srd"]
 
@@ -16,11 +17,17 @@ script = ExtResource("1_njle4")
 shape = SubResource("RectangleShape2D_f3srd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+visible = false
 modulate = Color(1, 0.662745, 0, 1)
 texture_filter = 1
 position = Vector2(0, 31)
 scale = Vector2(2, 2)
 texture = ExtResource("2_k4aqt")
+
+[node name="ArrowNew" type="Sprite2D" parent="Area2D"]
+position = Vector2(23, 32)
+scale = Vector2(0.7, 0.8)
+texture = ExtResource("4_382g6")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0

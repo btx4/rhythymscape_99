@@ -61,5 +61,5 @@ func _on_area_entered(area: Area2D) -> void:
 	pass # Replace with function body.
 
 func _on_trigger():
-	scale.x = 1.5
-	scale.y = 1.5
+	scale.x = 1.05
+	scale.y = 1.2
