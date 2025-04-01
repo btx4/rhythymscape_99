@@ -13,9 +13,11 @@ script = ExtResource("1_o0unv")
 
 [node name="Line_draw_1" type="Node2D" parent="."]
 script = ExtResource("4_qv5aj")
+line_color = Color(0, 0.776471, 0.827451, 1)
 
 [node name="Line_draw_2" type="Node2D" parent="."]
 script = ExtResource("3_ag18d")
+line_color = Color(0, 0.776471, 0.827451, 1)
 
 [node name="Wire" type="Area2D" parent="."]
 position = Vector2(0.48201, -0.256954)

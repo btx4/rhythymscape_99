@@ -28,7 +28,7 @@ script = ExtResource("1_ause2")
 rotation = -3.14159
 
 [node name="Sprite2D" type="Sprite2D" parent="Everything_but_draw"]
-self_modulate = Color(0, 0, 1, 1)
+self_modulate = Color(0, 0.776471, 0.827451, 1)
 position = Vector2(24.6362, -0.341064)
 scale = Vector2(48.5646, 8.5)
 texture = SubResource("CanvasTexture_tqsp8")
@@ -57,7 +57,7 @@ scale = Vector2(-10.7431, 3.5356)
 shape = SubResource("CapsuleShape2D_ug46n")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Everything_but_draw"]
-self_modulate = Color(0, 0, 1, 1)
+self_modulate = Color(0, 0.776471, 0.827451, 1)
 position = Vector2(960, -0.00244969)
 scale = Vector2(192.75, 8.5)
 texture = SubResource("CanvasTexture_r3rfe")

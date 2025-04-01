@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://c0ukbmn3q05mp"]
 
-[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="1_luons"]
+[ext_resource type="Texture2D" uid="uid://xmoow8lrasrn" path="res://assets/circle.png" id="1_luons"]
 
 [sub_resource type="Curve" id="Curve_2caac"]
 _data = [Vector2(0.408377, 1), 0.0, 0.0, 0, 0, Vector2(0.633508, 0.505494), 0.0, 0.0, 0, 0, Vector2(0.921466, 0), 0.0, 0.0, 0, 0]

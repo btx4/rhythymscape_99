@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://bonpk6o2ehkhm"]
+[gd_scene load_steps=68 format=3 uid="uid://bonpk6o2ehkhm"]
 
 [ext_resource type="Script" path="res://scenes/Levels/final_countdown.gd" id="1_f8d11"]
 [ext_resource type="Texture2D" uid="uid://bpuseddnu8b7v" path="res://assets/level_assets/classical/bg_ring.png" id="2_1h1pv"]
@@ -60,6 +60,8 @@
 [ext_resource type="Script" path="res://scenes/Levels/boy_idle.gd" id="42_ecoov"]
 [ext_resource type="Script" path="res://scenes/Levels/girl_idle.gd" id="47_sks3n"]
 [ext_resource type="Shader" uid="uid://bf7m2yu038fu0" path="res://scenes/Levels/level_layout_files/overlay.tres" id="56_c6vuh"]
+[ext_resource type="Script" path="res://scenes/pause_button.gd" id="59_lsaiq"]
+[ext_resource type="Texture2D" uid="uid://drr217jaqhjvr" path="res://assets/global_assets/pause_button.png" id="60_mul8l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ikthn"]
 animations = [{
@@ -106,6 +108,9 @@ shader = ExtResource("56_c6vuh")
 shader_parameter/ColorParameter = Color(0.211765, 0.0313726, 1, 0.207843)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nbf4e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lia5w"]
+size = Vector2(78, 112)
 
 [node name="final_countdown" type="Node2D"]
 script = ExtResource("1_f8d11")
@@ -356,8 +361,35 @@ position = Vector2(952, 542)
 scale = Vector2(2560, 1440)
 texture = SubResource("CanvasTexture_nbf4e")
 
+[node name="PauseButton" type="Node2D" parent="."]
+script = ExtResource("59_lsaiq")
+
+[node name="Pause" type="Sprite2D" parent="PauseButton"]
+modulate = Color(0.0901961, 0.631373, 0.537255, 1)
+position = Vector2(2142, -52)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("60_mul8l")
+
+[node name="PauseHoverArea" type="Area2D" parent="PauseButton"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PauseButton/PauseHoverArea"]
+visible = false
+position = Vector2(2136, -60)
+shape = SubResource("RectangleShape2D_lia5w")
+
+[node name="PointLight2D" type="PointLight2D" parent="PauseButton"]
+visible = false
+position = Vector2(2142, -52)
+scale = Vector2(0.4, 0.4)
+color = Color(0.51887, 0.770334, 0.355648, 1)
+energy = 3.0
+texture = ExtResource("60_mul8l")
+
 [node name="PauseMenu" parent="." instance=ExtResource("34_yvbdt")]
 visible = false
 position = Vector2(-328, -178)
 
 [node name="Scene_Transition" parent="." instance=ExtResource("36_n6wsl")]
+
+[connection signal="mouse_entered" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_entered"]
+[connection signal="mouse_exited" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_exited"]
