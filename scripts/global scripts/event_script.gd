@@ -3,6 +3,8 @@ signal beat(beat_num: int)
 signal measure(measure_num: int)
 signal add_points(point_val: int)
 
+var total_points : int = 0
+
 var YELLOW = Color(1,0.961,0)
 var RED = Color(0.91,0.176,0.514)
 var GREEN = Color(0.412,0.973,0)
@@ -15,3 +17,9 @@ func report_beat(num_beat : int):
 func report_points(num_points: int):
 	print("oop")
 	add_points.emit(num_points)  # Emit the correct signal
+
+func updating_points(num_points: int):
+	prints("adding points to the actual variable")
+	total_points = num_points
+	
+	

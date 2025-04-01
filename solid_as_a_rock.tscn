@@ -375,7 +375,6 @@ visible = false
 position = Vector2(-328, -178)
 
 [node name="Scene_Transition" parent="." instance=ExtResource("37_tfrg4")]
-rotation = 0.724694
 
 [node name="Overlay" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.894118)

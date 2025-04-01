@@ -40,3 +40,8 @@ func _process(delta: float):
 	else:
 		# Ensure position is reset when not shaking
 		position = original_position
+
+
+func _on_music_conductor_finished() -> void:
+	print("NOW PUT THE NEW THING ON WHERE IT GOES TO HIGH SCORE ON TOP OF THE SCENE")
+#	do this
