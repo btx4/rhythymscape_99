@@ -23,6 +23,7 @@ func pop() -> void:
 	get_parent().get_parent().pop()
 	emit_signal("circle_popped", 5)
 	queue_free()
+	EventScript.report_points(5)
 
 
 func _on_despawn_timer_timeout() -> void:

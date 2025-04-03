@@ -175,7 +175,7 @@ texture = ExtResource("6_14j2h")
 [node name="Music Conductor" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_o60x2")
 script = ExtResource("8_vuxs7")
-bpm = 126.0
+bpm = 117.8
 
 [node name="Pulsing_circle" parent="." instance=ExtResource("9_sp2x0")]
 position = Vector2(954, 542)

@@ -23,7 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://typ7oacxaxx7" path="res://sounds/click.wav" id="20_4whd5"]
 [ext_resource type="Texture2D" uid="uid://dd3s4f4bxf5po" path="res://assets/menus/level_menu/song_genres/splatter/classical.png" id="21_7yobm"]
 [ext_resource type="AudioStream" uid="uid://cacg6pwkvarym" path="res://sounds/scroll_click.wav" id="21_u78ct"]
-[ext_resource type="PackedScene" uid="uid://dq53peclsbdyy" path="res://scene_transition.tscn" id="22_r5k1h"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="22_r5k1h"]
 [ext_resource type="Texture2D" uid="uid://bhpxiunsqqxel" path="res://assets/menus/level_menu/song_genres/splatter/jazz.png" id="22_xpl4c"]
 [ext_resource type="Texture2D" uid="uid://msna6wa3e2qk" path="res://assets/menus/level_menu/song_genres/splatter/rock.png" id="23_1y1hu"]
 [ext_resource type="Texture2D" uid="uid://dwld0a0xg7rms" path="res://assets/menus/level_menu/song_genres/splatter/hip_hop.png" id="24_wswyo"]
