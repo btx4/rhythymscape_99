@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://nms8e6bkvfg4"]
+[gd_scene load_steps=18 format=3 uid="uid://nms8e6bkvfg4"]
 
+[ext_resource type="Script" path="res://scenes/Levels/your_score.gd" id="1_bm311"]
 [ext_resource type="Texture2D" uid="uid://s7idrblpi8mr" path="res://assets/score_scene/bg_1.png" id="1_ehkor"]
 [ext_resource type="Texture2D" uid="uid://boik55nil1riq" path="res://assets/score_scene/bg_2.png" id="2_44k5w"]
 [ext_resource type="Texture2D" uid="uid://cgu6hbwvm6esl" path="res://assets/score_scene/bg_3.png" id="3_7gtu6"]
@@ -9,8 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://cx640jqbd0om2" path="res://assets/global_assets/score_bar/main_card.png" id="7_6hvkl"]
 [ext_resource type="Texture2D" uid="uid://dacja82xj05tl" path="res://assets/global_assets/score_bar/left_tab.png" id="8_pd0hw"]
 [ext_resource type="Texture2D" uid="uid://bfnudn5yerbo6" path="res://assets/global_assets/score_bar/left_accent.png" id="9_6enqm"]
+[ext_resource type="Texture2D" uid="uid://cip4a2r8xj8i7" path="res://assets/score_scene/your_score_back_card.png" id="9_nscnt"]
+[ext_resource type="Texture2D" uid="uid://cs4mqw6vjbh1l" path="res://assets/score_scene/your_score_main_score.png" id="10_8hl6t"]
 [ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="10_278hv"]
 [ext_resource type="Script" path="res://scenes/combo_counter.gd" id="11_jtjvu"]
+[ext_resource type="Texture2D" uid="uid://tc8tgjpnu65o" path="res://assets/score_scene/your_score_texture.png" id="11_kc7u1"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="16_wiped"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_llfyk"]
 animations = [{
@@ -30,6 +35,7 @@ animations = [{
 }]
 
 [node name="YourScore" type="Node2D"]
+script = ExtResource("1_bm311")
 
 [node name="Background" type="AnimatedSprite2D" parent="."]
 position = Vector2(1280, 720)
@@ -45,6 +51,7 @@ texture = ExtResource("4_o2lvm")
 [node name="ScoreBarSprite" type="Node2D" parent="."]
 
 [node name="Backing" type="Sprite2D" parent="ScoreBarSprite"]
+visible = false
 position = Vector2(1280, 720)
 texture = ExtResource("5_rhxee")
 
@@ -53,21 +60,43 @@ position = Vector2(1280, 720)
 texture = ExtResource("6_757dj")
 
 [node name="MainCard" type="Sprite2D" parent="ScoreBarSprite"]
-modulate = Color(0.113725, 0.698039, 0.619608, 1)
-position = Vector2(1280, 720)
+position = Vector2(1276, 720)
 texture = ExtResource("7_6hvkl")
 
 [node name="LeftTab" type="Sprite2D" parent="ScoreBarSprite"]
+visible = false
 modulate = Color(0.113725, 0.701961, 0.623529, 1)
 position = Vector2(1280, 720)
 texture = ExtResource("8_pd0hw")
 
+[node name="YourScoreBackCard" type="Sprite2D" parent="ScoreBarSprite"]
+position = Vector2(1298, 771)
+texture = ExtResource("9_nscnt")
+
+[node name="YourScoreMainScore" type="Sprite2D" parent="ScoreBarSprite"]
+position = Vector2(1298, 771)
+texture = ExtResource("10_8hl6t")
+
+[node name="YourScoreTexture" type="Sprite2D" parent="ScoreBarSprite"]
+position = Vector2(1298, 771)
+texture = ExtResource("11_kc7u1")
+
+[node name="YourScoreTexture3" type="Sprite2D" parent="ScoreBarSprite"]
+position = Vector2(-1362, 487)
+scale = Vector2(2, 2)
+texture = ExtResource("11_kc7u1")
+
+[node name="YourScoreTexture2" type="Sprite2D" parent="ScoreBarSprite"]
+position = Vector2(1367, 815)
+texture = ExtResource("11_kc7u1")
+
 [node name="LeftAccent" type="Sprite2D" parent="ScoreBarSprite"]
-modulate = Color(0.0431373, 0.0156863, 0.129412, 1)
+modulate = Color(0, 0, 0, 1)
 position = Vector2(1280, 720)
 texture = ExtResource("9_6enqm")
 
 [node name="Score" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
 anchors_preset = -1
 anchor_right = 0.0609375
 anchor_bottom = 0.00555556
@@ -88,3 +117,5 @@ fit_content = true
 autowrap_mode = 0
 script = ExtResource("11_jtjvu")
 metadata/_edit_use_anchors_ = true
+
+[node name="Scene_Transition" parent="." instance=ExtResource("16_wiped")]

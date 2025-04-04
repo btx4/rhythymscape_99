@@ -23,6 +23,7 @@ var song_list: Array = ["song1", "song2", "song3", "song4", "song5"]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Scene_Transition/AnimationPlayer.play("fade_in")
 	ProjectSettings.set_setting("display/window/stretch/scale", 0.75)
 	
 	print(str(ProjectSettings.get_setting("display/window/stretch/scale")))

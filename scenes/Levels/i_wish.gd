@@ -42,3 +42,8 @@ func _process(delta: float):
 	else:
 		# Ensure position is reset when not shaking
 		position = original_position
+
+
+func _on_music_conductor_finished() -> void:
+	print("showing the score")
+	get_tree().change_scene_to_file("res://scenes/Levels/your_score.tscn")

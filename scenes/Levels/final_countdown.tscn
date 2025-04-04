@@ -80,7 +80,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.4
+"speed": 7.85
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6lxy5"]
@@ -100,7 +100,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.4
+"speed": 7.85
 }]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g816n"]

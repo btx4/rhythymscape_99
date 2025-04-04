@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c87yg6tuuryqy" path="res://assets/button_stomp.png" id="2_7cgcv"]
 [ext_resource type="Script" path="res://scenes/particles/color_buttons.gd" id="3_cg478"]
 [ext_resource type="Texture2D" uid="uid://j6t0wh66mbf8" path="res://assets/center_button.png" id="4_t0l2d"]
-[ext_resource type="Texture2D" uid="uid://bova3r3tmtcar" path="res://assets/circle.png" id="5_ijsk4"]
+[ext_resource type="Texture2D" uid="uid://xmoow8lrasrn" path="res://assets/circle.png" id="5_ijsk4"]
 
 [sub_resource type="Curve" id="Curve_q4f2f"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.486911, 0.868132), 0.0, 0.0, 0, 0, Vector2(0.801047, 0.076923), 0.0, 0.0, 0, 0]

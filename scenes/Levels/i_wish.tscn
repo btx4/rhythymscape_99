@@ -423,5 +423,6 @@ position = Vector2(954, 540)
 scale = Vector2(2560, 1440)
 texture = SubResource("CanvasTexture_m8gsh")
 
+[connection signal="finished" from="Music Conductor" to="." method="_on_music_conductor_finished"]
 [connection signal="mouse_entered" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_entered"]
 [connection signal="mouse_exited" from="PauseButton/PauseHoverArea" to="PauseButton" method="_on_pause_hover_area_mouse_exited"]

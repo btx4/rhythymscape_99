@@ -2,6 +2,7 @@ extends Node
 signal beat(beat_num: int)
 signal measure(measure_num: int)
 signal add_points(point_val: int)
+signal reset_points
 
 var total_points : int = 0
 
@@ -20,6 +21,7 @@ func report_points(num_points: int):
 
 func updating_points(num_points: int):
 	prints("adding points to the actual variable")
+	#print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -> event_points")
+	#print(num_points)
 	total_points = num_points
-	
 	

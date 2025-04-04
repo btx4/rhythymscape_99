@@ -43,5 +43,5 @@ func _process(delta: float):
 
 
 func _on_music_conductor_finished() -> void:
-	print("NOW PUT THE NEW THING ON WHERE IT GOES TO HIGH SCORE ON TOP OF THE SCENE")
-#	do this
+	print("showing the score")
+	get_tree().change_scene_to_file("res://scenes/Levels/your_score.tscn")

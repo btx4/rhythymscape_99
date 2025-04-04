@@ -29,3 +29,7 @@ texture = ExtResource("3_rwwag")
 modulate = Color(1, 1, 1, 0.435294)
 scale = Vector2(0.13, 0.13)
 texture = ExtResource("4_p50dc")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("4_p50dc")
