@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://dhjednx6ivrhv"]
+[gd_scene load_steps=2 format=3 uid="uid://dhjednx6ivrhv"]
+
+[ext_resource type="Script" path="res://high_score_retriever.gd" id="1_4vrqd"]
 
 [node name="High_Score_Retriever" type="Node2D"]
+script = ExtResource("1_4vrqd")
