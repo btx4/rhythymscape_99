@@ -188,6 +188,14 @@ func position_change():
 	
 
 func beat_listener(beat: int) ->void:
+	var bodies = get_overlapping_bodies()
+	var areas = get_overlapping_areas()
+	for area in areas:
+		if area.is_in_group("note"):
+			queue_free()
+	for bodie in bodies:
+		if bodie.is_in_group("note"):
+			queue_free()
 	index = index + 1
 	if delete_bomb:
 		$Sprite2D.visible = false
