@@ -14,7 +14,7 @@ offset_bottom = 1440.0
 stream = ExtResource("1_4rljx")
 autoplay = true
 
-[node name="LoopingANimation" type="VideoStreamPlayer" parent="."]
+[node name="LoopingAnimation" type="VideoStreamPlayer" parent="."]
 offset_right = 2560.0
 offset_bottom = 1440.0
 stream = ExtResource("3_ds1yn")

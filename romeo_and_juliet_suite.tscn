@@ -52,8 +52,8 @@
 [ext_resource type="Script" path="res://scenes/Levels/boy_idle.gd" id="44_fyd4q"]
 [ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="44_vg0xq"]
 [ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="45_b8asi"]
-[ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="47_1il38"]
 [ext_resource type="Script" path="res://scenes/Levels/girl_idle.gd" id="49_6f0lg"]
+[ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="49_s0w8r"]
 [ext_resource type="Shader" uid="uid://bf7m2yu038fu0" path="res://scenes/Levels/level_layout_files/overlay.tres" id="55_fsjsh"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_vrnem"]
@@ -91,7 +91,7 @@ animations = [{
 "texture": ExtResource("45_b8asi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("47_1il38")
+"texture": ExtResource("49_s0w8r")
 }],
 "loop": true,
 "name": &"default",
@@ -348,6 +348,8 @@ position = Vector2(-12, 686)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_ec4n5")
 autoplay = "default"
+frame = 1
+frame_progress = 0.636898
 script = ExtResource("49_6f0lg")
 
 [node name="PauseButton" type="Node2D" parent="."]

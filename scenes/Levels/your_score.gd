@@ -4,6 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Scene_Transition/AnimationPlayer.play("fade_in")
+	display_score()
 	
 	
 func _process(delta: float) -> void:

@@ -14,6 +14,7 @@ scale = Vector2(3, 3)
 script = ExtResource("1_h2cvm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_2e6kv")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]

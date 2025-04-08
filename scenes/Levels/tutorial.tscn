@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk70p5ralgaeh"]
+
+[ext_resource type="Script" path="res://scenes/Levels/tutorial.gd" id="1_d7a8w"]
+[ext_resource type="Texture2D" uid="uid://bgqdsf1rapu5q" path="res://assets/tutorial/guitar_tutorial.png" id="1_io8vf"]
+[ext_resource type="Texture2D" uid="uid://uwdr3ndd4lf" path="res://assets/tutorial/stomp_tutorial.png" id="2_6jcc7"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="4_kljih"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_d7a8w")
+
+[node name="GuitarTutorial" type="Sprite2D" parent="."]
+position = Vector2(1280, 720)
+texture = ExtResource("1_io8vf")
+
+[node name="StompTutorial" type="Sprite2D" parent="."]
+position = Vector2(1280, 720)
+texture = ExtResource("2_6jcc7")
+
+[node name="Scene_Transition" parent="." instance=ExtResource("4_kljih")]

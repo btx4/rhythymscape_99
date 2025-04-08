@@ -3,7 +3,8 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$Scene_Transition/AnimationPlayer.play("fade_in")
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,7 +14,7 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://scenes/intro.tscn")
 	if ($StartSprite2.visible == true) && Input.is_action_just_pressed("stomp"):
 		print("start game -> nav to level menu")
-		get_tree().change_scene_to_file("res://scenes/Levels/level_selector.tscn")
+		get_tree().change_scene_to_file("res://scenes/Levels/tutorial.tscn")
 		
 
 

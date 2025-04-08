@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxmbmn1bornte"]
+
+[ext_resource type="VideoStream" path="res://assets/intro/looping_intro.ogv" id="1_4fs1l"]
+[ext_resource type="Script" path="res://scenes/Levels/loading.gd" id="1_ivjro"]
+[ext_resource type="FontFile" uid="uid://bnits6cmjt52r" path="res://assets/fonts/gambado/fonnts.com-Gambado_Sans_Forte.otf" id="2_qs7rr"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="4_ne8i1"]
+
+[node name="Loading" type="Node2D"]
+script = ExtResource("1_ivjro")
+
+[node name="LoopingAnimation" type="VideoStreamPlayer" parent="."]
+offset_right = 2560.0
+offset_bottom = 1440.0
+stream = ExtResource("1_4fs1l")
+autoplay = true
+loop = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 2039.0
+offset_top = 1291.0
+offset_right = 2640.0
+offset_bottom = 1412.0
+theme_override_fonts/normal_font = ExtResource("2_qs7rr")
+theme_override_font_sizes/normal_font_size = 80
+text = "LOADING..."
+fit_content = true
+
+[node name="Scene_Transition" parent="." instance=ExtResource("4_ne8i1")]

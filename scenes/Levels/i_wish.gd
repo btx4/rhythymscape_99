@@ -46,4 +46,5 @@ func _process(delta: float):
 
 func _on_music_conductor_finished() -> void:
 	print("showing the score")
+	print(EventScript.total_points)
 	get_tree().change_scene_to_file("res://scenes/Levels/your_score.tscn")

@@ -41,7 +41,6 @@
 [ext_resource type="Texture2D" uid="uid://cbe8i8u7qd31m" path="res://assets/global_assets/girl_idle/idle_2.png" id="38_o3i6r"]
 [ext_resource type="Texture2D" uid="uid://drr217jaqhjvr" path="res://assets/global_assets/pause_button.png" id="38_qotgp"]
 [ext_resource type="Texture2D" uid="uid://bylcqly4md481" path="res://assets/global_assets/girl_idle/idle_3.png" id="39_j2np2"]
-[ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="41_qsm45"]
 [ext_resource type="Texture2D" uid="uid://cx7ssx2mpqo87" path="res://assets/global_assets/platform.png" id="41_rhxl3"]
 [ext_resource type="Texture2D" uid="uid://4lkyga610bxn" path="res://assets/global_assets/boy_idle/idle_1.png" id="41_xxun3"]
 [ext_resource type="Texture2D" uid="uid://dq23h2p0feyg4" path="res://assets/global_assets/boy_idle/idle_2.png" id="42_6wm0p"]
@@ -54,6 +53,7 @@
 [ext_resource type="Script" path="res://scenes/Levels/boy_idle.gd" id="45_e3gcb"]
 [ext_resource type="Script" path="res://scenes/Levels/main_card.gd" id="45_q5bjf"]
 [ext_resource type="Texture2D" uid="uid://bfnudn5yerbo6" path="res://assets/global_assets/score_bar/left_accent.png" id="46_sh8j6"]
+[ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="50_da1jo"]
 [ext_resource type="Script" path="res://scenes/Levels/girl_idle.gd" id="51_i5k8j"]
 [ext_resource type="Shader" uid="uid://bf7m2yu038fu0" path="res://scenes/Levels/level_layout_files/overlay.tres" id="56_2f8n1"]
 
@@ -92,7 +92,7 @@ animations = [{
 "texture": ExtResource("39_j2np2")
 }, {
 "duration": 1.0,
-"texture": ExtResource("41_qsm45")
+"texture": ExtResource("50_da1jo")
 }],
 "loop": true,
 "name": &"default",
@@ -381,7 +381,7 @@ position = Vector2(-12, 686)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_jas1k")
 autoplay = "default"
-frame = 3
+frame = 2
 frame_progress = 0.33757
 script = ExtResource("51_i5k8j")
 

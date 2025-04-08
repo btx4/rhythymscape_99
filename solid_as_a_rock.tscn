@@ -50,9 +50,9 @@
 [ext_resource type="Texture2D" uid="uid://4lkyga610bxn" path="res://assets/global_assets/boy_idle/idle_1.png" id="41_wduky"]
 [ext_resource type="Texture2D" uid="uid://dq23h2p0feyg4" path="res://assets/global_assets/boy_idle/idle_2.png" id="42_ejtxa"]
 [ext_resource type="Texture2D" uid="uid://cf0pg0uk7n1dg" path="res://assets/global_assets/boy_idle/idle_3.png" id="43_3nl2x"]
-[ext_resource type="Texture2D" uid="uid://js2app3m7oj2" path="res://assets/global_assets/girl_idle/idle_5.png" id="43_mexuq"]
 [ext_resource type="Texture2D" uid="uid://cutw7ejrrqb70" path="res://assets/global_assets/boy_idle/idle_4.png" id="44_osiis"]
 [ext_resource type="Script" path="res://scenes/Levels/boy_idle.gd" id="45_o1871"]
+[ext_resource type="Texture2D" uid="uid://ntck4u3ih3we" path="res://assets/global_assets/girl_idle/idle_4.png" id="49_ipug1"]
 [ext_resource type="Script" path="res://scenes/Levels/girl_idle.gd" id="50_gaiya"]
 [ext_resource type="Shader" uid="uid://bf7m2yu038fu0" path="res://scenes/Levels/level_layout_files/overlay.tres" id="55_4twls"]
 
@@ -91,7 +91,7 @@ animations = [{
 "texture": ExtResource("41_hujdv")
 }, {
 "duration": 1.0,
-"texture": ExtResource("43_mexuq")
+"texture": ExtResource("49_ipug1")
 }],
 "loop": true,
 "name": &"default",

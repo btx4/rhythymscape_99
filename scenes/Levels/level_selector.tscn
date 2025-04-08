@@ -167,7 +167,7 @@ lifetime = 0.5
 texture_filter = 1
 texture = ExtResource("7_755us")
 
-[node name="Text" type="Node" parent="."]
+[node name="Text" type="Node2D" parent="."]
 
 [node name="StartQuitText" type="Sprite2D" parent="Text"]
 modulate = Color(0.219608, 0.101961, 0.258824, 1)

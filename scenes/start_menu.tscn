@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt4ruwdgyxbyv"]
+[gd_scene load_steps=11 format=3 uid="uid://dt4ruwdgyxbyv"]
 
 [ext_resource type="Script" path="res://scenes/start_menu.gd" id="1_51lhc"]
 [ext_resource type="Texture2D" uid="uid://dpp1kdmgmermc" path="res://assets/menus/start_menu/start_menu.png" id="1_r0myl"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bwahu7n58df11" path="res://assets/menus/start_menu/start_sprite.png" id="5_a850b"]
 [ext_resource type="Texture2D" uid="uid://cb34qocianxm2" path="res://assets/menus/start_menu/quit_highlight.png" id="6_ujcv0"]
 [ext_resource type="Texture2D" uid="uid://wkgli0px0gsm" path="res://assets/menus/start_menu/start_highlight.png" id="7_jqak6"]
+[ext_resource type="PackedScene" uid="uid://cw5is72tmjs6h" path="res://scene_transition.tscn" id="9_iigqr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4vvv5"]
 animations = [{
@@ -103,6 +104,8 @@ polygon = PackedVector2Array(1039, 542, 1068, 517, 1099, 546, 1127, 544, 1107, 5
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Quit/QuitHoverArea"]
 visible = false
 polygon = PackedVector2Array(1054, 724, 1046, 679, 1065, 634, 1108, 618, 1147, 628, 1177, 653, 1187, 680, 1184, 637, 1217, 640, 1227, 721, 1247, 741, 1267, 727, 1261, 637, 1294, 634, 1299, 732, 1311, 636, 1342, 636, 1459, 634, 1457, 668, 1418, 667, 1422, 770, 1384, 768, 1381, 663, 1345, 664, 1342, 767, 1307, 768, 1298, 742, 1272, 770, 1220, 769, 1190, 745, 1184, 698, 1171, 729, 1184, 747, 1165, 762, 1149, 747, 1118, 760, 1074, 746)
+
+[node name="Scene_Transition" parent="." instance=ExtResource("9_iigqr")]
 
 [connection signal="mouse_entered" from="Start/StartHoverArea" to="." method="_on_start_hover_area_mouse_entered"]
 [connection signal="mouse_exited" from="Start/StartHoverArea" to="." method="_on_start_hover_area_mouse_exited"]
