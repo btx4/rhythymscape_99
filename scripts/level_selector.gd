@@ -48,7 +48,7 @@ func _process(delta: float) -> void:
 		$Scene_Transition/AnimationPlayer.play("fade_out")
 		await get_tree().create_timer(.5).timeout
 		$Text/StartQuitText.visible = false
-		$Text/SettingsText.visible = false
+		$Text/TutorialText.visible = false
 		level_selector(current_song, true)
 	if ($Quit/PointLight2D.visible == true) && Input.is_action_just_pressed("stomp"):
 		print("exit to start menu")
