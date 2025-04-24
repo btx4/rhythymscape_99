@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bsju3om1r6a3r"]
+[gd_scene load_steps=40 format=3 uid="uid://bsju3om1r6a3r"]
 
 [ext_resource type="Script" path="res://scripts/level_selector.gd" id="1_7knvd"]
 [ext_resource type="PackedScene" uid="uid://dctvo1ohh1dnc" path="res://scenes/beat_it_newest.tscn" id="2_0yuob"]
@@ -14,11 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://cbj11kjmdjrqi" path="res://assets/menus/level_menu/dither_screen.png" id="7_ubdew"]
 [ext_resource type="Texture2D" uid="uid://bjts3xahxjj2b" path="res://assets/menus/level_menu/dither_screen2.png" id="8_86vrq"]
 [ext_resource type="Texture2D" uid="uid://bk7vb3pyx6rnj" path="res://assets/menus/level_menu/level_start_quit.png" id="12_0wd1w"]
-[ext_resource type="Texture2D" uid="uid://dqb8446uahenp" path="res://assets/menus/level_menu/level_settings.png" id="13_ke132"]
 [ext_resource type="Texture2D" uid="uid://cx12mmrjt4lgj" path="res://assets/menus/level_menu/level_left_button.png" id="14_6vxcv"]
+[ext_resource type="Texture2D" uid="uid://ciggqsrl6a17m" path="res://assets/menus/level_menu/tutorial_text.png" id="15_f6rqk"]
 [ext_resource type="Texture2D" uid="uid://s07788r48o6g" path="res://assets/menus/level_menu/level_right_button.png" id="15_noiam"]
 [ext_resource type="Texture2D" uid="uid://d0iai8igkicf0" path="res://assets/menus/level_menu/start_light.png" id="16_ad67u"]
-[ext_resource type="Texture2D" uid="uid://bjc62f0fd3ir" path="res://assets/menus/level_menu/settings_light.png" id="17_np74t"]
 [ext_resource type="Texture2D" uid="uid://28xsf0cet6r" path="res://assets/menus/level_menu/quit_light.png" id="18_qm5d6"]
 [ext_resource type="AudioStream" uid="uid://typ7oacxaxx7" path="res://sounds/click.wav" id="20_4whd5"]
 [ext_resource type="Texture2D" uid="uid://dd3s4f4bxf5po" path="res://assets/menus/level_menu/song_genres/splatter/classical.png" id="21_7yobm"]
@@ -174,10 +173,10 @@ modulate = Color(0.219608, 0.101961, 0.258824, 1)
 position = Vector2(1280, 720)
 texture = ExtResource("12_0wd1w")
 
-[node name="SettingsText" type="Sprite2D" parent="Text"]
+[node name="TutorialText" type="Sprite2D" parent="Text"]
 modulate = Color(0.0509804, 0.168627, 0.478431, 1)
 position = Vector2(1280, 720)
-texture = ExtResource("13_ke132")
+texture = ExtResource("15_f6rqk")
 
 [node name="LeftButton" type="Node" parent="."]
 
@@ -245,7 +244,7 @@ visible = false
 position = Vector2(1280, 720)
 color = Color(0.261096, 0.682127, 0.610984, 1)
 energy = 2.1
-texture = ExtResource("17_np74t")
+texture = ExtResource("15_f6rqk")
 
 [node name="Quit" type="Node" parent="."]
 
